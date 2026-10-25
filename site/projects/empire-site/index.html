@@ -1,0 +1,705 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Empire Metal Products Website Case Study | Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Website case study for Empire Metal Products: service-page structure, real project proof, mobile field usability, JSON-LD, Formspree quote paths, and a." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Empire Metal Products Website Case Study | Follincraft">
+  <meta property="og:description" content="Website case study for Empire Metal Products: service-page structure, real project proof, mobile field usability, JSON-LD, Formspree quote paths, and a.">
+  <meta property="og:url" content="https://follincraft.com/projects/empire-site/">
+  <meta property="og:image" content="https://follincraft.com/projects/empire-site/empire_site1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Empire Metal Products Website Case Study | Follincraft">
+  <meta name="twitter:description" content="Website case study for Empire Metal Products: service-page structure, real project proof, mobile field usability, JSON-LD, Formspree quote paths, and a.">
+  <meta name="twitter:image" content="https://follincraft.com/projects/empire-site/empire_site1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <link rel="canonical" href="https://follincraft.com/projects/empire-site/">
+
+
+
+
+
+<link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="alternate icon" type="image/png" href="../../assets/favicon-32x32.jpg" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" sizes="180x180" />
+<link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    body:not(.in-modal) .proj-wrap{ margin-top:86px; }
+    body.in-modal .proj-wrap{ margin-top:0; }
+
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ margin:2px 0 2px; }
+
+        .detail-deck{
+      max-width:760px;
+      margin:0 0 8px;
+      color:#d7dde3;
+      font-size:1.02rem;
+      line-height:1.55;
+    }
+.project-grid{
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:start; margin-top:-2px;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left  { grid-area: media; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.right { grid-area: side;  display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.below { grid-area: below; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+
+    .hero-frame{
+      position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+      aspect-ratio:1/1; isolation:isolate; background:#000;
+    }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(18px) saturate(1.2); transform:scale(1.06); opacity:1;
+    }
+    .hero-frame img{
+      position:relative; z-index:1; display:block; width:100%; height:100%;
+      object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+      background:rgba(0,0,0,.55); color:#fff; font-size:22px; line-height:1; display:grid; place-items:center;
+      cursor:pointer; z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.82); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; }
+    .hero-nav.next{ right:8px; }
+
+    .thumbs{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thumbs a{ display:block; border-radius:10px; padding:3px; border:2px solid transparent; background:var(--panel); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ display:block; width:96px; height:68px; object-fit:cover; border-radius:8px; }
+    @media (max-width:480px){ .thumbs img{ width:74px; height:52px; } }
+
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip-row .chip{
+      background:rgba(234,88,12,.12);
+      border:1.5px solid var(--accent);
+      color:#fff;
+      padding:4px 10px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:.82rem;
+    }
+
+    .card h5.section-title{
+      color:var(--accent);
+      font-size:13px;
+      margin:0 0 6px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .project .card{
+      width:100%;
+      max-width:none;
+      height:auto !important;
+      overflow:visible !important;
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:12px;
+      padding:12px;
+    }
+    .project .card *{ overflow:visible !important; }
+    .project .lead, .project p, .project li{
+      color:#fff;
+      line-height:1.6;
+      white-space:normal !important;
+      text-overflow:clip !important;
+    }
+    .project .card p + p{ margin-top:8px; }
+    .project .card ul{ list-style:disc outside; padding-left:22px; margin:0; display:block; }
+    .project .card li{ display:list-item !important; margin:8px 0; line-height:1.6; }
+    .project .card li::marker{ color:var(--accent); }
+
+    .card.overview .lede{ font-size:1.02rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .card.overview .keyline{ height:1px; background:linear-gradient(90deg,var(--accent),transparent); border:0; margin:10px 0; }
+    .card.overview .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:8px 0 6px; }
+    @media (max-width:620px){ .card.overview .quick-grid{ grid-template-columns:1fr; } }
+    .card.overview .q{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 10px; line-height:1.5; }
+    .card.overview .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    .card.overview .pull{ margin:10px 0 6px; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:600; }
+
+    .info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{ border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 12px; }
+    .info .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info .v{ color:#fff; font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:8px; }
+
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+    .two-up{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:820px){ .two-up{ grid-template-columns:1fr; } }
+    .accent-border{ border:1.5px solid var(--accent) !important; border-radius:12px; }
+
+    .plain-link:link,
+    .plain-link:visited{
+      color:#fff;
+      text-decoration:none;
+    }
+    .plain-link:hover,
+    .plain-link:focus{
+      color:var(--accent);
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+      outline:none;
+    }
+
+    .feature-card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--panel);
+      padding:12px;
+    }
+    .feature-card h6{
+      margin:0 0 8px;
+      font-size:.9rem;
+      color:var(--muted);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .gallery-note{
+      color:var(--muted);
+      font-size:.92rem;
+      margin-top:8px;
+    }
+
+    .cta-band{
+      margin:18px 0 0;
+      border-top:2px solid var(--accent);
+      border-bottom:2px solid var(--accent);
+      background:var(--panel);
+    }
+    .cta-band .inner{
+      background:transparent;
+      border:0;
+      border-radius:0;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      padding:0;
+    }
+    @media (max-width:900px){
+      .cta-band .inner{ grid-template-columns:1fr; }
+    }
+    .cta-band .wrap{
+      padding-top:18px;
+      padding-bottom:18px;
+    }
+    .cta-eyebrow{
+      color:#fff;
+      font-size:13px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:0 0 6px;
+    }
+    .cta-title{ margin:0 0 8px; }
+    .cta-text{ color:#fff; margin:0; line-height:1.6; }
+    .cta-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .cta-actions .btn{ text-decoration:none; }
+    .cta-actions .ghost{ background:transparent; border:1px solid var(--accent); }
+    .cta-actions .btn.ghost{
+      transition:background .16s ease, color .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .cta-actions .btn.ghost:hover,
+    .cta-actions .btn.ghost:focus{
+      background:var(--accent);
+      color:#0a0c0f;
+      border-color:var(--accent);
+      box-shadow:0 0 0 2px rgba(234,88,12,.35) inset;
+      text-decoration:none;
+      outline:none;
+    }
+    .cta-actions .btn.ghost:active{
+      filter:brightness(0.95);
+    }
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://follincraft.com/projects/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Empire Metal Products Website Case Study | Follincraft",
+      "item": "https://follincraft.com/projects/empire-site/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead"><a href="../../index.html">Home</a> / <a href="../../projects/index.html">Projects</a> / <span>Empire Metal Products Website</span></div>
+    <h1 class="title proj-title">Empire Metal Products Website</h1><p class="detail-deck">A fabrication shop website rebuilt around real work, clear service paths, field-friendly mobile use, quote/contact flow, structured data, and a resources hub contractors can actually use.</p>
+  </div>
+
+  <main class="project">
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('empire_site1.png')">
+              <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+              <img id="heroImg" src="empire_site1.png" alt="Empire Metal Products website homepage" width="1251" height="909">
+              <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+            </div>
+
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="empire_site1.png" aria-label="Homepage"><img src="empire_site1.png" alt="Homepage hero" loading="lazy" width="1251" height="909"></a>
+              <a href="empire_site2.png" aria-label="About section"><img src="empire_site2.png" alt="About section" loading="lazy" width="1251" height="909"></a>
+              <a href="empire_site3.png" aria-label="Services section"><img src="empire_site3.png" alt="Services section" loading="lazy" width="1251" height="909"></a>
+              <a href="empire_site4.png" aria-label="Resources section"><img src="empire_site4.png" alt="Resources section" loading="lazy" width="1251" height="909"></a>
+            </div>
+
+            <p class="gallery-note">Four key screens: homepage proof, company context, service routing, and the resources hub for forms, references, and contractor tools.</p>
+          </div>
+
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">Web Design</span>
+              <span class="chip">UX</span>
+              <span class="chip">Content</span>
+              <span class="chip">Performance</span>
+              <span class="chip">Resources Hub</span>
+            </div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+
+              <p class="lede">
+                A fabrication shop website built around the way contractors and facility buyers actually use a shop site: verify capability fast, find the right service path, get a form or reference, and make contact without digging.
+              </p>
+
+              <p class="lead">
+                The old trap for this kind of site is brochure thinking: vague capability claims, stock-like copy, and a contact page doing too much work. This rebuild puts the useful things closer to the surface: real job photos, service categories, quote paths, resource links, and mobile layouts that still make sense from a truck or jobsite.
+              </p>
+
+              <p class="lead">
+                The information architecture separates the shop's work into recognizable lanes: HVAC sheet metal, curbs and adapters, custom fabrication, delivery, and resources. Each page is written to answer buyer questions before the phone call: what the shop does, what kind of work fits, what to send, and how to take the next step.
+              </p>
+
+              <p class="lead">
+                The <em>Resources</em> hub is the functional shift. Instead of burying order forms, submittals, and calculators behind counter calls, the site gives contractors direct access to routine documents and tools. That makes the website part of the shop workflow, not just a digital sign.
+              </p>
+
+              <hr class="keyline">
+
+              <div class="quick-grid">
+                <div class="q">
+                  <div class="sub">Problem</div>
+                  Real work, service fit, and routine documents were not surfaced clearly enough for busy contractors.
+                </div>
+                <div class="q">
+                  <div class="sub">Solution</div>
+                  Rebuild the structure around project proof, service routing, mobile field use, quote flow, and a self-serve resources section.
+                </div>
+              </div>
+
+              <p class="pull">This is not a brochure site. It is a working extension of the shop floor and the front counter.</p>
+            </article>
+          </div>
+
+          <div class="below">
+
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="info-grid">
+                <div class="info"><div class="k">Client</div><div class="v">Empire Metal Products</div></div>
+                <div class="info"><div class="k">Role</div><div class="v">Design &middot; UX &middot; Copy &middot; Build</div></div>
+                <div class="info"><div class="k">Stack</div><div class="v">HTML/CSS/JS &middot; JSON-LD &middot; Formspree</div></div>
+                <div class="info"><div class="k">Focus</div><div class="v">Speed &middot; clarity &middot; self-serve resources</div></div>
+                <div class="info"><div class="k">Audience</div><div class="v">Contractors &middot; estimators &middot; field crews &middot; facility buyers</div></div>
+                <div class="info"><div class="k">URL</div><div class="v"><a class="plain-link" href="https://empiremetalproducts.com" target="_blank" rel="noopener">empiremetalproducts.com &nearr;</a></div></div>
+              </div>
+            </article>
+
+            <article class="card rib tint accent-border">
+              <h5 class="section-title">Why It Matters</h5>
+              <p class="lead">
+                For a fabrication shop, the website is often the first prequalification step. A contractor does not need a poetic brand story. They need to know whether the shop can build the thing, how to ask for it, and whether the company looks organized enough to trust with a real job.
+              </p>
+              <p class="lead">
+                The page structure has to reduce uncertainty before the first call: show work, route visitors to the right service, make quote requests obvious, and keep common documents reachable when someone is already in the field.
+              </p>
+            </article>
+
+            <article class="card rib tint">
+              <h5 class="section-title">What Changed</h5>
+              <ul class="lead">
+                <li>Real project imagery moved into the front of the experience so capability is visible before the copy has to argue.</li>
+                <li>Services were split into buyer-recognizable categories instead of one broad "we do fabrication" bucket.</li>
+                <li>Quote/contact paths were repeated where intent is highest, not saved for the footer.</li>
+                <li>Resources were grouped into a self-serve section for forms, references, and tools.</li>
+                <li>Static HTML/CSS/JS kept the site fast, portable, and easy to host without a heavy CMS stack.</li>
+              </ul>
+            </article>
+
+            <article class="card rib tint span-2">
+              <h5 class="section-title">Implementation Details</h5>
+              <div class="two-up">
+                <div class="feature-card">
+                  <h6>Information Architecture</h6>
+                  <p class="lead">The navigation is built around how people ask for shop work: services, resources, contact, and proof. The point is to reduce "where do I click?" time for contractors who already know what they need.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Structured Data</h6>
+                  <p class="lead">JSON-LD was added where it helps search engines understand the business, pages, breadcrumbs, and service context without relying only on visible copy.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Form Flow</h6>
+                  <p class="lead">Formspree handles contact and quote intake without requiring a custom backend. That keeps the site simple while still giving visitors a direct action path.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Static Build</h6>
+                  <p class="lead">The site uses plain HTML, CSS, and JavaScript so the pages stay fast, understandable, and easy to maintain for a small business site that does not need application complexity.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="card rib tint span-2">
+              <h5 class="section-title">What The Screens Show</h5>
+              <div class="two-up">
+                <div class="feature-card">
+                  <h6>Homepage</h6>
+                  <p class="lead">The homepage sets the decision path: show the shop, show real work, move visitors toward services or a quote request, and avoid making the hero area carry the whole site.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>About</h6>
+                  <p class="lead">The about screen gives context without turning into a biography. It supports trust by explaining standards, shop character, and why the company has earned repeat work.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Services</h6>
+                  <p class="lead">The services screen breaks work into scannable categories so a contractor can tell whether Empire fits the job before reaching out.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Resources</h6>
+                  <p class="lead">The resources screen groups order forms, submittals, and calculators so the site can answer routine needs without adding another phone call.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="card rib tint span-2">
+              <h5 class="section-title">What I Built Into It</h5>
+              <div class="two-up">
+                <div class="feature-card">
+                  <h6>Real-Work First</h6>
+                  <p class="lead">The site shows real jobs and recognizable fabrication categories before asking visitors to trust the language.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Field-First UX</h6>
+                  <p class="lead">Large tap targets, short sections, readable cards, and repeated action paths make the site usable from a phone, not just from an office desktop.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Resources Hub</h6>
+                  <p class="lead">Routine documents and references live in one obvious place so the site can support contractors after the first visit.</p>
+                </div>
+                <div class="feature-card">
+                  <h6>Stronger Positioning</h6>
+                  <p class="lead">The copy is direct and shop-literate: less marketing gloss, more evidence that the company understands fabrication work and customer urgency.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="card rib tint">
+              <h5 class="section-title">My Take</h5>
+              <p class="lead">
+                Shops do not need fancy language. They need pages that respect the buyer's time. A good fabrication website should answer three questions quickly: can you make this, have you made things like it, and what should I send you next?
+              </p>
+              <ul class="lead">
+                <li>Show the work early.</li>
+                <li>Keep the copy specific to the services and constraints.</li>
+                <li>Make forms, resources, and contact paths easy to find.</li>
+              </ul>
+            </article>
+
+            <article class="card rib tint">
+              <h5 class="section-title">What I'd Do Next</h5>
+              <ul class="lead">
+                <li>Add more service-page case studies with tighter photo sets and short job writeups.</li>
+                <li>Expand the resources section with more calculators and shop-useful references.</li>
+                <li>Build a lightweight update flow so new jobs and galleries can be added faster.</li>
+                <li>Track what pages people use most, then keep sharpening those first.</li>
+              </ul>
+            </article>
+
+            <article class="card rib tint span-2">
+              <h5 class="section-title">Project Outcome</h5>
+              <p class="lead">
+                The result is a site that has a job beyond looking current. It shows the shop's work, separates the services, gives contractors a resources path, and keeps contact/quote actions close to the moments where visitors are ready to move.
+              </p>
+              <p class="lead">
+                That is the win here: better presentation, fewer unnecessary calls for routine information, and a website that behaves like part of the business instead of a detached brochure.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="inner">
+          <div>
+            <div class="cta-eyebrow">Need something like this?</div>
+            <h3 id="ctaTitle" class="title cta-title">Let's build a clean, fast site that actually gets used.</h3>
+            <p class="lead cta-text">
+              I design for the field - clear paths to action, real-work proof, and tools your team will actually use. If you are a shop, contractor, or small manufacturer, I can help.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn solid" href="https://empiremetalproducts.com" target="_blank" rel="noopener" aria-label="View the live Empire Metal Products website">See the live site &nearr;</a>
+            <a class="btn ghost" href="#contact" aria-label="Start a project with Follincraft">Start a project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="category-shell-contact">
+      <div class="wrap">
+        <div class="inline-contact-head">
+          <div>
+            <p class="section-kicker">Get in touch</p>
+            <h3 class="title">Contact</h3>
+            <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+            <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+          </div>
+          <div class="inline-contact-photo" aria-label="Chris Follin">
+            <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+          </div>
+        </div>
+        <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+          <div class="row">
+            <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+            <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+          </div>
+          <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+          <button class="btn solid" type="submit">Send Message</button>
+          <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+          <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="category-shell-footer">
+    <div class="wrap category-shell-footer-grid">
+      <div>
+        <h3>About Follincraft</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">
+          Twenty-plus years of fabrication, design, code, and field notes in one place. Shop builds, camp-tested gear, and practical tools for making the next decision faster.
+        </p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">Based in Phoenix, Arizona.</p>
+        <iframe
+          class="footer-map"
+          title="Phoenix, Arizona map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+        </div>
+        <p class="lead" style="margin-top:16px;font-size:14px;color:var(--muted)">
+          Fabrication, code, camp systems, or the half-formed idea you want to make real.
+        </p>
+      </div>
+    </div>
+    <p class="footer-copy"><span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&lsaquo;</button>
+    <img id="lbImg" src="empire_site1.png" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;" width="1251" height="909">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&rsaquo;</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    (function(){
+      const hero   = document.getElementById('heroImg');
+      const frame  = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb     = document.getElementById('lightbox');
+      const lbImg  = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+
+      frame.style.setProperty('--hero', `url('${hero.currentSrc || hero.src}')`);
+
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        const url = imgs[i];
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const idx = imgs.indexOf(a.getAttribute('href'));
+        if(idx >= 0) show(idx);
+      });
+
+      frame.querySelector('.hero-nav.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.hero-nav.next')?.addEventListener('click', () => show(i+1));
+
+      window.addEventListener('keydown', e => {
+        if (lb.style.display === 'flex') {
+          if (e.key === 'Escape') lb.style.display='none';
+          if (e.key === 'ArrowLeft') show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        } else {
+          if (e.key === 'ArrowLeft') show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        }
+      });
+
+      let sx=0, sy=0, dx=0, dy=0, touching=false;
+      function start(t){ touching=true; sx=t.touches[0].clientX; sy=t.touches[0].clientY; dx=dy=0; }
+      function move(t){ if(!touching) return; dx=t.touches[0].clientX - sx; dy=t.touches[0].clientY - sy; }
+      function end(){ if(!touching) return; touching=false; if (Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)) { dx<0 ? show(i+1) : show(i-1); } }
+      frame.addEventListener('touchstart', start, {passive:true});
+      frame.addEventListener('touchmove', move, {passive:true});
+      frame.addEventListener('touchend', end, {passive:true});
+
+      hero.addEventListener('click', () => { lbImg.src = links.length ? imgs[i] : hero.src; lb.style.display='flex'; });
+      lbClose.addEventListener('click', () => lb.style.display='none');
+      lb.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev.addEventListener('click', () => show(i-1));
+      lbNext.addEventListener('click', () => show(i+1));
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Projects", "item":"https://follincraft.com/#projects" },
+          { "@type":"ListItem", "position":3, "name":"Empire Metal Products Website", "item":"https://follincraft.com/projects/empire-site/" }
+        ]
+      },
+      {
+        "@type":"CreativeWork",
+        "name":"Empire Metal Products Website",
+        "description":"A working website for a Phoenix fabrication shop with real project proof, stronger service pages, and a field-first resources hub.",
+        "author":{"@type":"Person","name":"Chris Follin"},
+        "image":[
+          "https://follincraft.com/projects/empire-site/empire_site1.png",
+          "https://follincraft.com/projects/empire-site/empire_site2.png",
+          "https://follincraft.com/projects/empire-site/empire_site3.png",
+          "https://follincraft.com/projects/empire-site/empire_site4.png"
+        ],
+        "url":"https://follincraft.com/projects/empire-site/"
+      }
+    ]
+  }
+  </script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=clean-camp-filters-17"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=no-decision-card-1"></script>
+</body>
+</html>

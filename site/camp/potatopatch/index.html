@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- EMBED MARKER -->
+  <script>(function(){ if (window.self !== window.top) document.documentElement.classList.add('is-embed'); })();</script>
+
+  <!-- ZERO-FLASH + VEIL CSS -->
+  <style>
+    :root { color-scheme: dark; }
+    .is-embed body{ opacity:0; transition:opacity .001s linear; }
+    .is-embed body.embed-ready{ opacity:1; }
+    .veil{ position:fixed; inset:0; background:#000; opacity:0; pointer-events:none; z-index:99999; transition:opacity .18s ease; }
+    .veil.show{ opacity:1; }
+    .proj-wrap .breadcrumbs{ display:block; }
+    .is-embed .proj-wrap .breadcrumbs{ display:block !important; }
+    .is-embed header{ display:none !important; }
+    .is-embed .proj-wrap{ margin-top:8px !important; }
+    .is-embed .project-page{ padding-top:0 !important; }
+  </style>
+
+  <!-- UNIFIED ROUTER + REVEAL/VEIL CONTROL -->
+  <script>
+  (function () {
+    const embedded = (window.self !== window.top);
+    const isInternal = (u) => { try{ const x=new URL(u,location.href); return x.origin===location.origin; }catch{ return !/^\w+:\/\//.test(u);} };
+    let veil; const showVeil=()=>veil?.classList.add('show'); const hideVeil=()=>veil?.classList.remove('show');
+
+    function revealWhenHeroReady(){
+      const hero=document.getElementById('heroImg');
+      const doReveal=()=>{ document.body.classList.add('embed-ready'); setTimeout(hideVeil,80);
+        try{ window.parent.postMessage({type:'hideModalHeader',value:true},'*'); window.parent.postMessage({type:'campReady'},'*'); window.parent.postMessage({type:'setTitle',title:'Camps',generic:true},'*'); }catch(_){}
+      };
+      showVeil();
+      if(hero && !hero.complete){ const onload=()=>{ hero.removeEventListener('load',onload); requestAnimationFrame(doReveal); }; hero.addEventListener('load',onload,{once:true}); setTimeout(()=>requestAnimationFrame(doReveal),600); }
+      else requestAnimationFrame(doReveal);
+    }
+
+    document.addEventListener('click', (e)=>{
+      const a=e.target.closest('a'); if(!a) return;
+      if(a.closest('.thumbs') || a.hasAttribute('data-gallery')) return;
+      const href=a.getAttribute('href')||''; if(!href || !isInternal(href)) return;
+      e.preventDefault(); showVeil(); setTimeout(()=>location.assign(href),40);
+    }, true);
+
+    const _open=window.open.bind(window);
+    window.open=(u,t,o)=> (u && isInternal(u) ? (showVeil(), setTimeout(()=>location.assign(u),40), null) : _open(u,t,o));
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      veil=document.getElementById('veil');
+      if(embedded){
+        const hd=document.querySelector('header');
+        if(hd && hd.style) hd.style.display='none';
+        const pw=document.querySelector('.proj-wrap'); if(pw) pw.style.marginTop='12px';
+        revealWhenHeroReady();
+      }
+      document.querySelectorAll('#thumbs a').forEach(a=>a.setAttribute('data-gallery','1'));
+      document.querySelectorAll('a[href]').forEach(a=>{ if(isInternal(a.getAttribute('href')||'')) a.removeAttribute('target'); });
+    });
+
+    window.addEventListener('beforeunload', ()=>showVeil());
+  })();
+  </script>
+
+  <meta charset="utf-8" />
+  <title>Potato Patch Campground - Camping Guide - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A shady developed campground on Mingus Mountain with cooler air and easy access to viewpoints. Good for a straightforward forest stay without much...">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Potato Patch Campground - Camping Guide - Follincraft">
+  <meta property="og:description" content="A shady developed campground on Mingus Mountain with cooler air and easy access to viewpoints. Good for a straightforward forest stay without much...">
+  <meta property="og:url" content="https://follincraft.com/camp/potatopatch/">
+  <meta property="og:image" content="https://follincraft.com/camp/potatopatch/potatopatch1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Potato Patch Campground - Camping Guide - Follincraft">
+  <meta name="twitter:description" content="A shady developed campground on Mingus Mountain with cooler air and easy access to viewpoints. Good for a straightforward forest stay without much...">
+  <meta name="twitter:image" content="https://follincraft.com/camp/potatopatch/potatopatch1.jpg">
+
+  <base target="_self">
+
+  <!-- Fonts + GLOBAL styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <!-- Social -->
+  <link rel="canonical" href="https://follincraft.com/camp/potatopatch/">
+
+
+
+
+
+<!-- Favicons -->
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="alternate icon" type="image/png" href="../../assets/favicon-32x32.jpg" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" sizes="180x180" />
+<link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ margin:2px 0 2px; }
+
+    .project-grid{
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:start; margin-top:-2px;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left  { grid-area: media; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.right { grid-area: side;  display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.below { grid-area: below; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1/-1; }
+
+    .hero-frame{ position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line); aspect-ratio:1/1; isolation:isolate; background:#000; }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(18px) saturate(1.2); transform:scale(1.06); opacity:1;
+    }
+    .hero-frame img{
+      position:relative; z-index:1; display:block;
+      width:100%; height:100%; object-fit:contain;
+      background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:50%;
+      border:1px solid var(--line); background:rgba(0,0,0,.55);
+      color:#fff; font-size:22px; display:grid; place-items:center;
+      cursor:pointer; z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.82); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+
+    .thumbs{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thumbs a{ display:block; border-radius:10px; padding:3px; border:2px solid transparent; background:var(--panel); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ width:88px; height:64px; object-fit:cover; border-radius:8px; display:block; }
+    @media (max-width:480px){ .thumbs img{ width:74px; height:52px; } }
+
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+
+    /* Shared section title */
+    .section-title{
+      color:var(--accent);
+      font-size:13px;
+      margin:0 0 6px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .card h5.section-title{ margin-bottom:6px; }
+
+    .project .card{ width:100%; max-width:none; height:auto !important; overflow:visible !important; }
+    .project .card *{ overflow:visible !important; }
+    .project .lead, .project p, .project li{
+      color:#fff; line-height:1.6;
+      white-space:normal !important; text-overflow:clip !important;
+    }
+    .project .card p + p{ margin-top:8px; }
+    .project .card ul{
+      list-style:disc outside; padding-left:22px;
+      margin:0; display:block;
+    }
+    .project .card li{
+      display:list-item !important;
+      margin:8px 0;
+      line-height:1.6;
+    }
+    .project .card li::marker{ color:var(--accent); }
+
+    /* Links inside cards: white with orange hover */
+    .project .card a:any-link{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px dotted transparent;
+    }
+    .project .card a:hover,
+    .project .card a:focus-visible{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+      outline:none;
+    }
+
+    .card.overview .lede{ font-size:1.02rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .card.overview .keyline{ height:1px; background:linear-gradient(90deg,var(--accent),transparent); border:0; margin:10px 0; }
+    .card.overview .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:8px 0 6px; }
+    @media (max-width:620px){ .card.overview .quick-grid{ grid-template-columns:1fr; } }
+    .card.overview .q{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 10px; line-height:1.5; }
+    .card.overview .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    .card.overview .pull{
+      margin:10px 0 6px; padding:10px 12px;
+      border-left:3px solid var(--accent);
+      background:rgba(234,88,12,.06);
+      font-weight:600;
+    }
+
+    .info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{ border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 12px; }
+    .info .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info .v{ color:#fff; font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:8px; }
+    .copy-btn{
+      margin-left:auto; font-size:.8rem; padding:4px 8px;
+      border-radius:8px; background:rgba(234,88,12,.12);
+      border:1px solid var(--accent); color:#fff; cursor:pointer;
+    }
+
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+
+    ol.steps{ counter-reset:step; list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+    ol.steps li{
+      position:relative;
+      padding:10px 12px 10px 44px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:10px;
+    }
+    ol.steps li::before{
+      counter-increment:step; content:counter(step);
+      position:absolute; left:10px; top:50%; transform:translateY(-50%);
+      width:24px; height:24px; border-radius:50%;
+      display:grid; place-items:center;
+      background:rgba(234,88,12,.18);
+      border:1px solid var(--accent);
+      font-weight:700; color:#fff;
+    }
+
+    .bygo{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:12px;
+      padding:12px;
+    }
+    .bygo-grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
+    .bygo-card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--panel);
+      padding:12px;
+    }
+    .bygo-card h6{
+      margin:0 0 8px;
+      font-size:.9rem;
+      color:var(--muted);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .bygo-card ul{ margin:0; padding-left:22px; }
+    .bygo-card li::marker{ color:var(--accent); }
+    .bygo-card a:link,
+    .bygo-card a:visited{ color:#fff; text-decoration:none; }
+    .bygo-card a:hover,
+    .bygo-card a:focus{
+      color:#fff;
+      border-bottom:1px dotted var(--accent);
+      outline:none;
+    }
+
+    /* CTA band styling &ndash; match Pine Grove */
+    .cta-band{ margin:18px 0 0; border-top:2px solid var(--accent); border-bottom:2px solid var(--accent); background:var(--panel); }
+    .cta-band .wrap{ padding-top:18px; padding-bottom:18px; }
+    .cta-band .inner{ display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:center; }
+    @media (max-width:900px){ .cta-band .inner{ grid-template-columns:1fr; } }
+
+    .cta-title{
+      margin:0 0 8px;
+      color:#fff;
+    }
+    .cta-text{
+      color:var(--muted);
+      margin:0;
+      line-height:1.6;
+    }
+    .cta-text a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+    }
+    .cta-text a:hover{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+    }
+    .cta-actions{ display:flex; gap:10px; align-items:center; justify-content:flex-end; }
+    .cta-actions .btn{ text-decoration:none; }
+
+    .card.my-notes{
+      border:2px solid var(--accent)!important;
+      border-radius:12px;
+      background:rgba(234,88,12,.06)!important;
+    }
+
+    .sr-only{
+      position:absolute!important;
+      height:1px;width:1px;
+      overflow:hidden;
+      clip:rect(1px,1px,1px,1px);
+      white-space:nowrap;
+    }
+
+    /* Gear block &ndash; unified with other camp pages */
+    .gear-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:980px){
+      .gear-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width:680px){
+      .gear-grid{ grid-template-columns:1fr; }
+    }
+    .gear-item a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      text-decoration:none;
+      color:#fff;
+      transition:transform .14s ease, border-color .14s ease;
+    }
+    .gear-item a:hover{
+      border-color:var(--accent);
+      transform:translateY(-1px);
+    }
+    .gear-title{ font-weight:700; }
+    .gear-note{ color:var(--muted); font-size:.86rem; }
+    .gear-arrow{ transition:transform .14s ease; }
+    .gear-item a:hover .gear-arrow{ transform:translateX(3px); }
+.cta-band{ margin:18px 0 0; border-top:2px solid var(--accent); border-bottom:2px solid var(--accent); background:var(--panel); }
+.cta-band .wrap{ padding-top:18px; padding-bottom:18px; }
+.cta-band .inner{ display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:center; }
+@media (max-width:900px){ .cta-band .inner{ grid-template-columns:1fr; } }
+
+/* THIS is the big line &ndash; make it white */
+.cta-title{
+  margin:0 0 8px;
+  color:#fff;
+}
+
+/* THIS is the smaller text under it &ndash; make it grey */
+.cta-text{
+  color:var(--muted);
+  margin:0;
+  line-height:1.6;
+}
+
+.cta-text a{
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px dotted var(--accent);
+}
+.cta-text a:hover{
+  color:var(--accent);
+  border-bottom-color:var(--accent);
+}
+/* FINAL CTA COLOR OVERRIDES */
+.cta-band .cta-title{
+  color:#fff !important;      /* big line = white */
+}
+
+.cta-band .cta-text,
+.cta-band .cta-text a{
+  color:var(--muted) !important; /* paragraph + link = grey */
+}
+/* Fix hover on "See all camp locations" link */
+.cta-band .cta-text a:hover{
+  color:var(--accent) !important;
+  border-bottom-color:var(--accent) !important;
+}
+/* FORCE center the thumbnail strip */
+#thumbs{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  max-width:640px !important;
+  margin:0 auto !important;
+}
+
+#thumbs a{
+  flex:0 0 auto !important;
+}
+
+#thumbs img{
+  width:88px !important;
+  height:64px !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Camp",
+      "item": "https://follincraft.com/camp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Potato Patch Campground &ndash; Follincraft",
+      "item": "https://follincraft.com/camp/potatopatch/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-camp-seo>
+{
+    "@context":  "https://schema.org",
+    "@type":  "Article",
+    "headline":  "Potato Patch Campground camping guide",
+    "description":  "A shady developed campground on Mingus Mountain with cooler air and easy access to viewpoints. Good for a straightforward forest stay without much...",
+    "image":  "https://follincraft.com/camp/potatopatch/potatopatch1.jpg",
+    "url":  "https://follincraft.com/camp/potatopatch/",
+    "author":  {
+                   "@type":  "Person",
+                   "name":  "Chris Follin",
+                   "url":  "https://follincraft.com/contact/"
+               },
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "Follincraft",
+                      "url":  "https://follincraft.com/"
+                  },
+    "mainEntity":  {
+                       "@type":  "Place",
+                       "name":  "Potato Patch Campground",
+                       "description":  "A shady developed campground on Mingus Mountain with cooler air and easy access to viewpoints. Good for a straightforward forest stay without much complication.",
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressRegion":  "Prescott",
+                                       "addressCountry":  "US"
+                                   },
+                       "geo":  {
+                                   "@type":  "GeoCoordinates",
+                                   "latitude":  34.6958,
+                                   "longitude":  -112.1257
+                               }
+                   }
+}
+  </script>
+</head>
+<body>
+  <div id="veil" class="veil" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Breadcrumbs + Title -->
+    <div class="wrap proj-wrap">
+      <div class="breadcrumbs lead"><a href="../../index.html">Home</a> / <a href="../../camp/index.html">Camp</a> / <span>Potato Patch Campground</span></div>
+      <div class="camp-header">
+  <h1 class="title proj-title" id="campTitle">Potato Patch Campground</h1>
+
+  <div class="camp-rating">
+    <span class="stars" id="campRatingStars"></span>
+    <span class="score" id="campRatingScore"></span>
+  </div>
+</div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="project">
+      <section class="project-page">
+        <div class="wrap">
+          <div class="project-grid">
+
+            <!-- LEFT -->
+            <div class="left">
+              <div class="hero-frame" id="heroFrame" style="--hero:url('potatopatch1.jpg')">
+                <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+                <img id="heroImg" src="potatopatch1.jpg" alt="Shaded site at Potato Patch under tall pines" fetchpriority="high" decoding="async" width="1600" height="1067">
+                <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+              </div>
+              <div class="thumbs" id="thumbs">
+                <a class="active" href="potatopatch1.jpg" aria-label="Hero image"><img src="potatopatch1.jpg" alt="Camp loop" loading="lazy" width="1600" height="1067"></a>
+                <a href="potatopatch2.jpg"><img src="potatopatch2.jpg" alt="Loop A site" loading="lazy" width="1600" height="1067"></a>
+                <a href="potatopatch3.jpg"><img src="potatopatch3.jpg" alt="Pines and shade" loading="lazy" width="1600" height="1067"></a>
+                <a href="potatopatch4.jpg"><img src="potatopatch4.jpg" alt="Road and signage" loading="lazy" width="1600" height="1067"></a>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right">
+              <div class="chip-row">
+                <span class="chip">Developed</span><span class="chip">Ponderosa</span><span class="chip">Cool Temps</span>
+                <span class="chip">Views Nearby</span><span class="chip">Prescott NF</span>
+              </div>
+
+              <article class="card overview">
+                <h5 class="section-title">Overview</h5>
+                <p class="lede">A tidy two-loop high-country campground off 89A, with ponderosa shade, Mingus Mountain access, and cooler nights above the Verde Valley.</p>
+                <p class="lead">
+                  Potato Patch feels like a classic Forest Service campground: clean pads, good shade, and quick access to Mingus Mountain overlooks.
+                  Loop A is dry camping; Loop B has RV pedestals but power can be unreliable - plan to be self-sufficient.
+                  Water is available on site for containers, not for filling RV tanks.
+                </p>
+                <p class="lead">
+                  It's quiet on weekdays and a cool escape when the desert bakes. Expect afternoon breezes and a short drive to big views
+                  over the Verde Valley - and down to Jerome if you want a burger run.
+                </p>
+                <hr class="keyline">
+                <div class="quick-grid">
+                  <div class="q"><div class="sub">Best for</div>Cooler temps, pine shade, and easy access to Mingus Mountain trails and overlooks.</div>
+                  <div class="q"><div class="sub">Watch out for</div>Unreliable electricity in B-loop, summer storms, and limited cell service.</div>
+                </div>
+                <p class="pull">Best version of the trip: camp in the pines, then drive to the overlook for sunset across the Verde Valley.</p>
+              </article>
+            </div>
+
+            <!-- BELOW -->
+            <div class="below">
+
+              <article class="card span-2">
+                <h5 class="section-title">At a Glance</h5>
+                <div class="info-grid">
+                  <div class="info"><div class="k">Region</div><div class="v">Mingus Mountain &mdash; between Prescott & Jerome</div></div>
+                  <div class="info"><div class="k">Elevation</div><div class="v">~7,200 ft</div></div>
+                  <div class="info"><div class="k">Access Road</div><div class="v">Paved FR 104 from Hwy 89A, then short graded spur</div></div>
+                  <div class="info"><div class="k">Best Season</div><div class="v">Late spring through fall (weather dependent)</div></div>
+                  <div class="info"><div class="k">Campsites</div><div class="v">~40 total across two loops; RV pedestals in B-loop</div></div>
+                  <div class="info"><div class="k">Services</div><div class="v">Composting toilets, potable water (no RV tank fills), garbage service</div></div>
+                  <div class="info"><div class="k">Fires</div><div class="v">In rings only; check restrictions</div></div>
+                  <div class="info"><div class="k">Cell</div><div class="v">Spotty; sometimes better near the vista</div></div>
+                  <div class="info">
+                    <div class="k">Coordinates (area)</div>
+                    <div class="v" id="coordVal" data-lat="34.70938662" data-lon="-112.1537235">
+                      34.70939&deg; N, 112.15372&deg; W
+                      <button class="copy-btn" id="copyCoords" type="button" aria-describedby="copyMsg">Copy</button>
+                      <span id="copyMsg" class="sr-only" aria-live="polite"></span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Getting There -->
+              <article class="card rib tint">
+                <h5 class="section-title">Getting There</h5>
+                <p class="lead">
+                  From Highway 89A at the Mingus summit, turn onto <strong>FR 104</strong> (signed). Follow pavement, then a short stretch of graded gravel to the campground entrance. Roads are fine for most vehicles in dry weather.
+                </p>
+                <ol class="steps lead">
+                  <li>Turn onto FR 104 from 89A at the summit area.</li>
+                  <li>Continue past the picnic site; stay on the main road to the loops.</li>
+                  <li>Loop A for dry sites under heavy pine shade; Loop B for RV pedestals (don't rely on power).</li>
+                </ol>
+              </article>
+
+              <!-- Before You Go -->
+              <article class="card rib tint">
+                <h5 class="section-title">Before You Go</h5>
+                <div class="bygo">
+                  <div class="bygo-grid-2">
+                    <div class="bygo-card">
+                      <h6>Essential Links</h6>
+                      <ul class="lead">
+                        <li><a href="https://www.fs.usda.gov/r03/prescott/recreation/potato-patch-campground" target="_blank" rel="noopener">Prescott NF: Potato Patch details</a></li>
+                        <li><a href="https://www.recreation.gov/camping/campgrounds/270420" target="_blank" rel="noopener">Recreation.gov reservations</a></li>
+                        <li><a href="https://www.fs.usda.gov/alerts/prescott/alerts-notices" target="_blank" rel="noopener">Prescott NF fire restrictions</a></li>
+                        <li><a href="https://forecast.weather.gov/MapClick.php?lon=-112.1537235&lat=34.70938662" target="_blank" rel="noopener">NOAA point forecast</a></li>
+                      </ul>
+                    </div>
+                    <div class="bygo-card">
+                      <h6>Reminders</h6>
+                      <ul class="lead">
+                        <li>Hydrants are for containers - not for RV tank filling.</li>
+                        <li>Expect afternoon storms; bring extra stakes & guy lines.</li>
+                        <li>Quiet campground - respect neighbors and leash rules.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Camping Info -->
+              <article class="card rib tint">
+                <h5 class="section-title">Camping Info</h5>
+                <ul class="lead">
+                  <li><strong>Sites & loops:</strong> A-loop dry sites; B-loop with electrical pedestals (power not guaranteed).</li>
+                  <li><strong>Accessibility:</strong> Accessible sites and toilets in both loops.</li>
+                  <li><strong>Facilities:</strong> Picnic tables, grills, fire rings, composting toilets, water on site, garbage service.</li>
+                  <li><strong>Elevation & temps:</strong> ~7,200 ft - pack layers even in summer.</li>
+                </ul>
+              </article>
+
+              <!-- My Notes -->
+              <article class="card rib tint my-notes">
+                <h5 class="section-title">My Notes</h5>
+                <p class="lead">
+                  I aim for sites with afternoon shade and a short walk to the overlook pullouts. Treat hookups as a bonus at best - I run a battery and keep the fridge on a power bank or cooler. Jerome is 15&ndash;20 min down the hill if you want a quick diner run.
+                </p>
+                <ul class="lead">
+                  <li><strong>Power plan:</strong> assume no electricity; bring a power bank or 12V setup.</li>
+                  <li><strong>Cooking:</strong> windscreens help when storms build; butane single-burner is perfect.</li>
+                  <li><strong>Photos:</strong> golden hour at the vista; blue hour in the trees for that deep-green look.</li>
+                </ul>
+              </article>
+              <article class="card rib tint camp-decision-card">
+                <h5 class="section-title">Choose It / Skip It</h5>
+                <div class="quick-grid camp-decision-grid">
+                  <div class="q"><div class="sub">Good fit</div>Cooler temps, pine shade, and easy access to Mingus Mountain trails and overlooks.</div>
+                  <div class="q"><div class="sub">Bad fit</div>Unreliable electricity in B-loop, summer storms, and limited cell service.</div>
+                </div>
+              </article>
+
+              <!-- Gear I Used (dynamic) -->
+              <article class="card span-2" id="gearCard">
+                <h5 class="section-title">Gear I Used</h5>
+                <div class="gear-grid" id="gearGrid">
+                  <p class="lead">Gear that actually helped on this trip.</p>
+                </div>
+              </article>
+
+              <!-- Map -->
+              <article class="card span-2" id="mapCard">
+                <h5 class="section-title">Map</h5>
+                <div style="border:1px solid var(--line); border-radius:10px; overflow:hidden;">
+                  <iframe
+                    src="https://www.google.com/maps?q=Potato+Patch+Campground+AZ&output=embed"
+                    width="100%" height="400" style="border:0;"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Map - Potato Patch Campground">
+                  </iframe>
+                </div>
+              </article>
+
+            </div><!-- /below -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BAND (unified pattern with rotating line) -->
+      <section class="cta-band" role="region" aria-labelledby="ctaTagline">
+        <div class="wrap">
+          <div class="inner">
+            <div>
+              <div class="section-title" style="margin:0;">
+                FIND THE NEXT GREAT CAMPSITE
+              </div>
+              <h3 id="ctaTagline" class="title cta-title">
+                Find the next great spot that fits your trip.
+              </h3>
+              <p class="lead cta-text">
+                <span id="ctaCampLine">
+                  Use the buttons to explore the many camp locations we have catalogued.
+                </span>
+                <br>
+                <a href="../../camp/index.html" aria-label="All camp locations">See all camp locations &rarr;</a>
+              </p>
+            </div>
+            <div class="cta-actions" id="campActions" aria-live="polite" aria-label="Camp navigation actions"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section>
+        <div class="wrap">
+          <article class="card span-2" id="contact">
+            <h5 class="section-title">Contact</h5>
+            <p class="lead">Tell me what you're building, fixing, or trying to figure out. I'll read it and get back to you.</p>
+            <div style="margin-bottom: 10px;"></div>
+            <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+              <div class="row">
+                <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+                <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+              </div>
+              <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+              <button class="btn solid" type="submit">Send Message</button>
+              <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+              <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0; background: var(--panel); border-top: 1px solid var(--accent)">
+      <div
+        class="wrap"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left"
+      >
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">About Follincraft</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">
+            A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean
+            welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline
+            workflows. It's all about making things work better.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Location</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">Based in Phoenix, Arizona.</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+            width="100%"
+            height="200"
+            style="border: 1px solid var(--line); border-radius: 10px; margin-top: 10px"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Connect</h3>
+          <div style="display: flex; gap: 10px; justify-content: left">
+            <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+            <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+            <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+          </div>
+          <p class="lead" style="margin-top: 16px; font-size: 14px; color: var(--muted)">
+            Fabrication, code, camp systems, or the half-formed idea you want to make real.
+          </p>
+        </div>
+      </div>
+
+      <p
+        style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px"
+      >
+        <span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span>
+      </p>
+      <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&lsaquo;</button>
+    <img id="lbImg" src="potatopatch1.jpg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;" width="1600" height="1067">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&rsaquo;</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', ()=>{
+      const open=mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open?'true':'false');
+    });
+
+    /* Gallery + lightbox + copy coords */
+    (function(){
+      const hero=document.getElementById('heroImg');
+      const frame=document.getElementById('heroFrame');
+      const thumbs=document.getElementById('thumbs');
+      const lb=document.getElementById('lightbox');
+      const lbImg=document.getElementById('lbImg');
+      const lbPrev=document.getElementById('lbPrev');
+      const lbNext=document.getElementById('lbNext');
+      const lbClose=document.getElementById('lbClose');
+
+      if(!hero||!frame||!thumbs) return;
+      frame.style.setProperty('--hero', `url('${hero.currentSrc || hero.src}')`);
+
+      const links=Array.from(thumbs.querySelectorAll('a'));
+      const imgs=links.map(a=>a.getAttribute('href'));
+      let i=Math.max(0, links.findIndex(a=>a.classList.contains('active')));
+      links.forEach(a=>a.setAttribute('data-gallery','1'));
+
+      function show(n){
+        i=(n+imgs.length)%imgs.length;
+        const url=imgs[i];
+        hero.src=url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        links.forEach(el=>el.classList.remove('active'));
+        links[i].classList.add('active');
+        if(lb.style.display==='flex') lbImg.src=url;
+      }
+
+      thumbs.addEventListener('click', e=>{
+        const a=e.target.closest('a'); if(!a) return;
+        e.preventDefault(); e.stopPropagation();
+        const idx=links.indexOf(a);
+        if(idx>=0) show(idx);
+      }, {capture:true});
+
+      frame.querySelector('.hero-nav.prev')?.addEventListener('click', ()=>show(i-1));
+      frame.querySelector('.hero-nav.next')?.addEventListener('click', ()=>show(i+1));
+
+      // swipe
+      let sx=0,sy=0,dx=0,dy=0,touching=false;
+      function start(t){ touching=true; sx=t.touches[0].clientX; sy=t.touches[0].clientY; dx=dy=0; }
+      function move(t){ if(!touching) return; dx=t.touches[0].clientX-sx; dy=t.touches[0].clientY-sy; }
+      function end(){
+        if(!touching) return; touching=false;
+        if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)){
+          dx<0?show(i+1):show(i-1);
+        }
+      }
+      frame.addEventListener('touchstart', start, {passive:true});
+      frame.addEventListener('touchmove',  move,  {passive:true});
+      frame.addEventListener('touchend',   end,   {passive:true});
+
+      // lightbox
+      hero.addEventListener('click', ()=>{ lbImg.src=imgs[i]; lb.style.display='flex'; });
+      lbClose?.addEventListener('click', ()=>lb.style.display='none');
+      lb?.addEventListener('click', e=>{ if(e.target===lb) lb.style.display='none'; });
+      lbPrev?.addEventListener('click', ()=>show(i-1));
+      lbNext?.addEventListener('click', ()=>show(i+1));
+
+      // Copy coordinates
+      const coord=document.getElementById('coordVal');
+      const copy=document.getElementById('copyCoords');
+      const live=document.getElementById('copyMsg');
+      copy?.addEventListener('click', async ()=>{
+        const lat=coord?.dataset.lat, lon=coord?.dataset.lon;
+        try{
+          await navigator.clipboard.writeText(`${lat}, ${lon}`);
+          copy.textContent='Copied';
+          if(live) live.textContent='Coordinates copied';
+          setTimeout(()=>{
+            copy.textContent='Copy';
+            if(live) live.textContent='';
+          },1200);
+        }catch(_){}
+      });
+    })();
+
+    // CTA quotes (title + grey line)
+    (function () {
+      const titleEl = document.getElementById('ctaTagline');
+      const lineEl  = document.getElementById('ctaCampLine');
+      if (!titleEl || !lineEl) return;
+
+      const QUOTES = [
+        {
+          title: "Pick camps that are easy to win with.",
+          line:  "Short drives, simple parking, and flat ground beat a dramatic mess."
+        },
+        {
+          title: "Good camps make the whole weekend run smoother.",
+          line:  "Pick one that fits how you actually like to camp."
+        },
+        {
+          title: "Start local before you chase far away spots.",
+          line:  "Dial your kit in close to home, then push miles later."
+        },
+        {
+          title: "Match the camp to the crew you are bringing.",
+          line:  "Kids, dogs, and first timers all like simple, predictable sites."
+        },
+        {
+          title: "Plan for shade, wind, and bathrooms first.",
+          line:  "Views are nice, but comfort is what keeps people happy."
+        },
+        {
+          title: "Keep a few go to camps on rotation.",
+          line:  "You can relax more when you already know the drill."
+        },
+        {
+          title: "Pick the camp that fits the weather, not the fantasy.",
+          line:  "Wind, temps, and bugs decide more than the name on the map."
+        },
+        {
+          title: "Give yourself one easy win each trip.",
+          line:  "Maybe that is a short walk in, soft ground, or close water."
+        },
+        {
+          title: "Choose camps that forgive small mistakes.",
+          line:  "Good drainage and a bit of cover hide a lot of learning curve."
+        },
+        {
+          title: "Do not make every trip a giant experiment.",
+          line:  "Swap one new thing at a time - camp, route, or gear."
+        },
+        {
+          title: "Treat camps like tools, not trophies.",
+          line:  "Use the ones that work, not just the ones that sound impressive."
+        },
+        {
+          title: "Pick camps that leave you energy for the fun part.",
+          line:  "Less thrash on setup means more time to actually be outside."
+        }
+      ];
+
+      const pick = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+      titleEl.textContent = pick.title;
+      lineEl.textContent  = pick.line;
+    })();
+
+    // === CAMP CTA: Prev/Next from /camp/index.json ===
+    (async ()=>{
+      const actions=document.getElementById('campActions'); if(!actions) return;
+      const here=(location.pathname.replace(/[?#].*$/,'')
+        .replace(/\/index\.html?$/i,'/')
+        .replace(/\/+$/,'/')
+        .toLowerCase());
+      let items=[];
+      try{
+        const res=await fetch('/camp/index.json',{cache:'no-store'});
+        if(!res.ok) throw new Error('index.json '+res.status);
+        items=await res.json();
+      }
+      catch(e){
+        console.warn('Camp CTA:', e.message);
+        actions.innerHTML=`<a class="btn ghost" href="../../camp/index.html">All camp locations &rarr;</a>`;
+        return;
+      }
+      const norm=s=>String(s||'')
+        .toLowerCase()
+        .replace(/\/index\.html?$/i,'/')
+        .replace(/\/+$/,'/')
+        +(s&&s.endsWith('/')?'':'/');
+      const idx=items.findIndex(i=>norm(i.slug)===here);
+      if(idx===-1){
+        actions.innerHTML=`<a class="btn ghost" href="../../camp/index.html">All camp locations &rarr;</a>`;
+        return;
+      }
+      const prev=items[(idx-1+items.length)%items.length];
+      const next=items[(idx+1)%items.length];
+      actions.innerHTML=
+        `<a class="btn ghost" href="${prev.slug}" rel="prev" aria-label="Previous: ${prev.title}">&larr; ${prev.title}</a>
+         <a class="btn solid" href="${next.slug}" rel="next" aria-label="Next: ${next.title}">${next.title} &rarr;</a>`;
+    })();
+  </script>
+
+  <!-- Random gear suggestions for camp pages (4 items) -->
+  <script type="module">
+    (async () => {
+      const grid = document.getElementById('gearGrid');
+      if (!grid) return;
+
+      let raw = null;
+
+      try {
+        const mod = await import('/data-gear.js');
+        raw = mod.GEAR_DATA || mod.default || mod.items || mod.data || null;
+      } catch (err) {
+        console.warn('Gear module import failed, trying global GEAR_DATA', err);
+      }
+
+      if (!raw) {
+        if (typeof window !== 'undefined' && window.GEAR_DATA) {
+          raw = window.GEAR_DATA;
+        } else if (typeof GEAR_DATA !== 'undefined') {
+          raw = GEAR_DATA;
+        }
+      }
+
+      if (!raw) {
+        grid.innerHTML = '<p class="lead">See the gear section for all the items I use.</p>';
+        return;
+      }
+
+      const pinsAttr = (document.body.dataset.campGear || '').trim();
+      const pinnedIds = pinsAttr
+        ? pinsAttr.split(',').map(s => s.trim()).filter(Boolean)
+        : [];
+
+      let allItems = [];
+
+      if (Array.isArray(raw)) {
+        allItems = raw.map(it => ({ ...it }));
+      } else if (raw && typeof raw === 'object') {
+        allItems = Object.entries(raw).map(([id, it]) => ({ id, ...it }));
+      }
+
+      allItems = allItems
+        .map(it => {
+          const href = it.page || it.url || it.slug || it.href || '';
+          return { ...it, href };
+        })
+        .filter(it => it && it.title && it.href);
+
+      if (!allItems.length) {
+        grid.innerHTML = '<p class="lead">See the gear section for all the items I use.</p>';
+        return;
+      }
+
+      const picked = [];
+      const used = new Set();
+
+      pinnedIds.forEach(id => {
+        const match = allItems.find(it => it.id === id || it.slug === id || it.href === id);
+        if (match && !used.has(match.href)) {
+          used.add(match.href);
+          picked.push(match);
+        }
+      });
+
+      const target = Math.min(4, allItems.length);
+      while (picked.length < target) {
+        const candidate = allItems[Math.floor(Math.random() * allItems.length)];
+        if (!candidate || used.has(candidate.href)) continue;
+        used.add(candidate.href);
+        picked.push(candidate);
+      }
+
+      grid.innerHTML = '';
+      picked.forEach(item => {
+        const note =
+          item.gearNote ||
+          item.review ||
+          item.myTake ||
+          item.subtitle ||
+          (Array.isArray(item.meta) ? item.meta.join(' &bull; ') : '');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'gear-item';
+        wrap.innerHTML = `
+          <a href="${item.href}">
+            <div>
+              <div class="gear-title">${item.title}</div>
+              ${note ? `<div class="gear-note">${note}</div>` : ''}
+            </div>
+            <div class="gear-arrow">&rarr;</div>
+          </a>
+        `;
+        grid.appendChild(wrap);
+      });
+    })();
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Camp", "item":"https://follincraft.com/#camp" },
+          { "@type":"ListItem", "position":3, "name":"Potato Patch Campground", "item":"https://follincraft.com/camp/potatopatch/" }
+        ]
+      },
+      {
+        "@type":"Campground",
+        "name":"Potato Patch Campground",
+        "description":"Developed campground in ponderosa pine at ~7,200 ft on Mingus Mountain with two loops and water on site.",
+        "url":"https://follincraft.com/camp/potatopatch/",
+        "image":[
+          "https://follincraft.com/camp/potatopatch/potatopatch1.jpg",
+          "https://follincraft.com/camp/potatopatch/potatopatch2.jpg",
+          "https://follincraft.com/camp/potatopatch/potatopatch3.jpg"
+        ],
+        "geo": { "@type":"GeoCoordinates", "latitude": 34.70938662, "longitude": -112.1537235 }
+      }
+    ]
+  }
+  </script>
+  <script src="../../data-camp.js"></script>
+<script>
+(function(){
+
+  function getStars(rating){
+    const rounded = Math.max(0, Math.min(5, Math.round(Number(rating || 0))));
+    return "\u2605".repeat(rounded) + "\u2606".repeat(5 - rounded);
+  }
+
+  // Auto get camp ID from URL
+  const parts = location.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  const campId = parts[parts.length - 1]?.replace(/index\.html?$/i, "") || parts[parts.length - 2];
+
+  const camp = window.CAMP_DATA?.[campId];
+  if (!camp) return;
+
+  //  TITLE
+  const titleEl = document.getElementById("campTitle");
+  if (titleEl && camp.title){
+    titleEl.textContent = camp.title;
+  }
+
+  //  RATING
+  if (camp.rating?.overall){
+    const starsEl = document.getElementById("campRatingStars");
+    const scoreEl = document.getElementById("campRatingScore");
+
+    if (starsEl) starsEl.textContent = getStars(camp.rating.overall);
+    if (scoreEl) scoreEl.textContent = camp.rating.overall.toFixed(1);
+  }
+
+})();
+</script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=clean-camp-filters-17"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=camp-breadcrumb-row-1"></script>
+</body>
+</html>

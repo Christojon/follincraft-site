@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Campground & Dispersed Finder - Follincraft</title>
+<meta name="description" content="Campground and dispersed camping finder for comparing campsite options, regions, access, and trip planning details.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Campground &amp; Dispersed Finder">
+  <meta property="og:description" content="Campground and dispersed camping finder for comparing campsite options, regions, access, and trip planning details.">
+  <meta property="og:url" content="https://follincraft.com/repo/campgrounds.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Campground &amp; Dispersed Finder">
+  <meta name="twitter:description" content="Campground and dispersed camping finder for comparing campsite options, regions, access, and trip planning details.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/campgrounds.html">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --bg:#000;
+      --card:#0b0c0f;
+      --ink:#fff;
+      --muted:#c7c7c7;
+      --accent:#ff6600;
+      --line:#2a2b30;
+    }
+    html{
+      background:var(--bg);
+      scrollbar-width:thin;
+      scrollbar-color:var(--accent) var(--card);
+    }
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-track{ background:var(--card); }
+    ::-webkit-scrollbar-thumb{ background:var(--accent); border-radius:6px; }
+    ::-webkit-scrollbar-thumb:hover{ filter:brightness(1.15); }
+
+    body{
+      margin:0;
+      font-family: "Inter","Open Sans",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    .finder-app .tool-page{ padding:94px 0 40px; }
+    .finder-app .wrap{ max-width:1100px; margin:0 auto; padding:16px; }
+    .finder-app .tool-intro{ max-width:1100px; margin:0 auto; padding:0 16px 18px; }
+    .finder-app .eyebrow{ margin:0 0 6px; color:#fff; font-size:14px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .finder-app .page-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .finder-app .page-head h2{ margin:0; font-size:18px; color:var(--accent); letter-spacing:.2px; }
+    .finder-app .tool-intro h1{ font-size:42px; line-height:1.05; margin:0; color:var(--accent); letter-spacing:0; }
+    .finder-app .tool-intro p{ margin:12px 0 0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55; }
+    .finder-app .openwin{ margin-left:auto; }
+    .finder-app .openwin a{
+      display:inline-block; text-decoration:none; color:#fff; background:#111318;
+      border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:12px;
+    }
+    .finder-app .openwin a:hover{ border-color:var(--accent); color:var(--accent); }
+
+    .finder-app .grid{ display:grid; gap:12px; }
+    @media (min-width:980px){ .finder-app .grid{ grid-template-columns:360px 1fr; } }
+
+    .finder-app .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+      padding:12px;
+    }
+
+    .finder-app label{ font-size:12px; color:var(--muted); display:block; margin:0 0 6px; }
+    .finder-app input[type="text"], .finder-app select{
+      width:100%; box-sizing:border-box;
+      background:#0f1115; color:#fff; border:1px solid var(--line); border-radius:10px;
+      padding:10px 12px; font-size:14px; outline:none;
+    }
+    .finder-app input[type="text"]:focus, .finder-app select:focus{
+      border-color:#ff9a4d; box-shadow:0 0 0 3px rgba(255,102,0,.25);
+    }
+    .finder-app .row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .finder-app .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .finder-app .chip{
+      border:1px solid var(--line); background:#111318; color:#fff; font-size:12px;
+      padding:6px 9px; border-radius:999px; cursor:pointer; user-select:none; transition:.15s ease;
+    }
+    .finder-app .chip.active{ background:var(--accent); border-color:var(--accent); }
+
+    .finder-app .btns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .finder-app button{
+      appearance:none; cursor:pointer; border-radius:10px; font-weight:700;
+      border:1px solid var(--accent); color:#fff; background:var(--accent);
+      padding:10px 12px; font-size:14px;
+    }
+    .finder-app button.ghost{ background:#0f1115; border-color:var(--line); }
+    .finder-app button.ghost:hover{ background:#171922; }
+
+    .finder-app .pill{
+      display:inline-block; border:1px solid var(--line); background:#101218; color:#fff;
+      border-radius:999px; padding:6px 10px; font-size:12px; margin-right:8px;
+    }
+
+    .finder-app .mapWrap{
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .finder-app iframe{
+      width:100%; height:65vh; min-height:420px; border:0; border-radius:10px;
+      background:#0f1115;
+    }
+    .finder-app .muted{ color:var(--muted); font-size:12px; }
+    @media (max-width:700px){
+      .finder-app .tool-page{ padding-top:86px; }
+      .finder-app .tool-intro h1{ font-size:34px; }
+      .finder-app .tool-intro p{ font-size:15px; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Campground & Dispersed Finder",
+  "description": "Campground and dispersed camping finder for comparing campsite options, regions, access, and trip planning details.",
+  "url": "https://follincraft.com/repo/campgrounds.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Campground & Dispersed Finder",
+      "item": "https://follincraft.com/repo/campgrounds.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+  <div class="finder-app">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Campground &amp; Dispersed Finder</span></p>
+      <p class="eyebrow">Camp Tools</p>
+      <h1>Campground & Dispersed Finder</h1>
+      <p>Search campgrounds, state parks, and dispersed options across Arizona with a simpler layout that matches the rest of the site.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="page-head">
+        <div class="openwin">
+          <a href="#" id="openExternal">Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="grid">
+      <!-- Controls -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <label for="scope">Area</label>
+            <select id="scope" aria-label="Scope">
+              <option value="Arizona">Arizona (statewide)</option>
+              <option value="Maricopa County, Arizona">Maricopa County</option>
+              <option value="Pinal County, Arizona">Pinal County</option>
+              <option value="Pima County, Arizona">Pima County</option>
+              <option value="Yavapai County, Arizona">Yavapai County</option>
+              <option value="Coconino County, Arizona">Coconino County</option>
+              <option value="Gila County, Arizona">Gila County</option>
+              <option value="La Paz County, Arizona">La Paz County</option>
+              <option value="Mohave County, Arizona">Mohave County</option>
+              <option value="Yuma County, Arizona">Yuma County</option>
+              <option value="Graham County, Arizona">Graham County</option>
+              <option value="Greenlee County, Arizona">Greenlee County</option>
+              <option value="Santa Cruz County, Arizona">Santa Cruz County</option>
+              <option value="Navajo County, Arizona">Navajo County</option>
+              <option value="Apache County, Arizona">Apache County</option>
+            </select>
+          </div>
+          <div>
+            <label for="type">Type</label>
+            <select id="type" aria-label="Type">
+              <option value="campground">Campground</option>
+              <option value="dispersed camping">Dispersed camping</option>
+              <option value="RV park">RV park</option>
+              <option value="primitive camping">Primitive camping</option>
+              <option value="group campground">Group campground</option>
+              <option value="state park camping">State park camping</option>
+              <option value="national forest camping">National forest camping</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <label for="q">Optional keyword(s)</label>
+          <input id="q" type="text" placeholder="e.g. showers, hookups, lake, OHV, dump, shaded" aria-label="E.g. showers, hookups, lake, OHV, dump, shaded"/>
+        </div>
+
+        <label style="margin-top:10px;">Quick filters (toggle)</label>
+        <div class="chips" id="chipBar"></div>
+
+        <div class="btns">
+          <button id="searchBtn">Search</button>
+          <button id="copyMapBtn" class="ghost" type="button">Copy map link</button>
+          <button id="resetBtn" class="ghost">Reset</button>
+        </div>
+
+        <p class="muted" style="margin-top:8px;">
+          This builds a Google Maps search and shows it inline (no API key). Click “Open in Google Maps” for full-screen.
+        </p>
+      </section>
+
+      <!-- Map -->
+      <section class="card mapWrap">
+        <div id="info" class="pill">Ready</div>
+        <iframe id="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                src="https://www.google.com/maps?q=campground+near+Arizona&output=embed"></iframe>
+      </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const TAGS = ['showers','hookups','water','dump','lake','river','shade','OHV','4x4','pet friendly','reservations','first come','fire ring','ADA'];
+
+    const $ = s => document.querySelector(s);
+    const map = $('#map');
+    const info = $('#info');
+    const scope = $('#scope');
+    const type = $('#type');
+    const q = $('#q');
+
+    // build chip bar
+    (function(){
+      const bar = $('#chipBar');
+      TAGS.forEach(t=>{
+        const el = document.createElement('span');
+        el.className = 'chip';
+        el.textContent = t;
+        el.dataset.tag = t;
+        el.addEventListener('click', ()=> el.classList.toggle('active'));
+        bar.appendChild(el);
+      });
+    })();
+
+    function activeTags(){
+      return [...document.querySelectorAll('.chip.active')].map(ch => ch.dataset.tag);
+    }
+
+    function buildQuery(){
+      const base = type.value.trim();
+      const area = scope.value;
+      const extra = q.value.trim();
+      const chips = activeTags().join(' ');
+      const terms = [base, extra, chips].filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
+      // Example: "dispersed camping showers hookups near Pinal County, Arizona"
+      const full = `${terms} near ${area}`;
+      return full;
+    }
+
+    function toEmbedURL(query){
+      const enc = encodeURIComponent(query);
+      // output=embed keeps it iframe-friendly without API key
+      return `https://www.google.com/maps?q=${enc}&output=embed`;
+    }
+
+    function toFullURL(query){
+      const enc = encodeURIComponent(query);
+      return `https://www.google.com/maps/search/?api=1&query=${enc}`;
+    }
+
+    function runSearch(){
+      const qstr = buildQuery();
+      map.src = toEmbedURL(qstr);
+      info.textContent = `Searching: ${qstr}`;
+    }
+
+    $('#searchBtn').addEventListener('click', runSearch);
+    $('#copyMapBtn').addEventListener('click', async ()=>{
+      const qstr = buildQuery();
+      try{
+        await navigator.clipboard.writeText(toFullURL(qstr));
+        $('#copyMapBtn').textContent = 'Copied';
+        setTimeout(()=>$('#copyMapBtn').textContent = 'Copy map link', 900);
+      }catch(_){}
+    });
+    $('#resetBtn').addEventListener('click', ()=>{
+      type.value = 'campground';
+      scope.value = 'Arizona';
+      q.value = '';
+      document.querySelectorAll('.chip.active').forEach(ch=>ch.classList.remove('active'));
+      runSearch();
+    });
+
+    $('#openExternal').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const qstr = buildQuery();
+      window.open(toFullURL(qstr), '_blank', 'noopener');
+    });
+
+    // allow Enter in text to trigger search
+    q.addEventListener('keydown', (e)=>{ if(e.key==='Enter') runSearch(); });
+
+    // initial search
+    runSearch();
+  </script>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+  <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3>
+      <div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap">
+        <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+        <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+        <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+      </div>
+      <p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px">
+    <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+  </p>
+  <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+</script>
+</div>
+</body>
+</html>

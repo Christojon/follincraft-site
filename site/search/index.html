@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search - Follincraft</title>
+  <meta name="description" content="Search across projects, camp notes, camp basics, gear, and tools.">
+  <link rel="canonical" href="https://follincraft.com/search/">
+  <meta name="robots" content="noindex,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+</head>
+<body data-page-id="category" data-index-type="search">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html" style="text-decoration:none;color:inherit"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true"><nav class="mobile-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a href="../search/index.html">Search</a>
+      </nav></div>
+
+  <main class="index-page">
+    <section class="category-section">
+      <div class="wrap">
+        <p class="breadcrumbs"><a href="../index.html">Home</a> / <span>Search</span></p>
+        <div class="section-headline category-headline">
+          <div>
+            <p class="section-kicker">FIND THE USEFUL STUFF FASTER</p>
+            <h1 class="title">Search Everything</h1>
+            <p class="lead section-intro">Search across projects, camp notes, camp basics, gear, and tools.</p>
+          </div>
+          <div class="category-tools">
+            <input class="input" type="search" data-index-search placeholder="Search everything" aria-label="Search everything">
+            <span class="index-count" data-index-count></span>
+          </div>
+        </div>
+        <hr class="section-divider">
+        <div class="search-section-stack" data-index-grid></div>
+        <p class="lead index-empty" data-index-empty hidden>No matching results for this search.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../data-projects.js?v=project-copy-1"></script>
+  <script src="../data-camp.js?v=camp-search-bars-1"></script>
+  <script src="../data-gear.js?v=gear-categories-1"></script>
+  <script src="../category-index.js?v=site-audit-1"></script>
+  <script src="../category-shell.js?v=hub-consistency-2"></script>
+</body>
+</html>

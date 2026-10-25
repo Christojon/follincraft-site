@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Trucker's hitch tutorial diagram</title>
+  <desc id="desc">Four step diagram showing a trucker's hitch tension system with fixed end, midline loop, return through loop, and lock-off half hitches.</desc>
+  <defs>
+    <style>
+      .bg{fill:#080b0f}.panel{fill:#11151b;stroke:#2b333d;stroke-width:2}.anchor{fill:#5a3826}.rope{fill:none;stroke:#6ec7ff;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}.rope-edge{fill:none;stroke:#16202a;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}.arrow{fill:none;stroke:#f97316;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.txt{fill:#f6f7f8;font:700 34px Inter,Arial,sans-serif}.cap{fill:#b9c0ca;font:600 22px Inter,Arial,sans-serif}.num{fill:#f97316;font:800 28px Inter,Arial,sans-serif}.label{fill:#f8d5c0;font:700 19px Inter,Arial,sans-serif}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#f97316"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="52" y="62" class="txt">Trucker's hitch</text>
+  <text x="52" y="98" class="cap">A fixed end, one midline loop, the free end returned through the loop, then locked off.</text>
+
+  <g transform="translate(50 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">1</text><text x="66" y="45" class="cap">Tie one end to the first anchor</text>
+    <rect x="58" y="70" width="34" height="145" rx="12" class="anchor"/>
+    <path class="rope-edge" d="M75 130c55-38 82-38 118 0c-35 33-64 33-102 0h350"/>
+    <path class="rope" d="M75 130c55-38 82-38 118 0c-35 33-64 33-102 0h350"/>
+    <text x="110" y="195" class="label">fixed end</text>
+  </g>
+
+  <g transform="translate(630 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">2</text><text x="66" y="45" class="cap">Make one midline loop</text>
+    <path class="rope-edge" d="M55 138h170c42-72 118-72 160 0h82"/>
+    <path class="rope" d="M55 138h170c42-72 118-72 160 0h82"/>
+    <path class="rope-edge" d="M225 138c34 64 126 64 160 0"/>
+    <path class="rope" d="M225 138c34 64 126 64 160 0"/>
+    <text x="250" y="210" class="label">single loop</text>
+  </g>
+
+  <g transform="translate(50 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">3</text><text x="66" y="45" class="cap">Return the free end through the loop</text>
+    <rect x="440" y="70" width="34" height="145" rx="12" class="anchor"/>
+    <path class="rope-edge" d="M45 136h160c34-62 104-62 138 0h92"/>
+    <path class="rope" d="M45 136h160c34-62 104-62 138 0h92"/>
+    <path class="rope-edge" d="M435 136c52 0 52 70 0 70h-132"/>
+    <path class="rope" d="M435 136c52 0 52 70 0 70h-132"/>
+    <path class="rope-edge" d="M205 136c30 54 108 54 138 0"/>
+    <path class="rope" d="M205 136c30 54 108 54 138 0"/>
+    <path class="arrow" marker-end="url(#arrow)" d="M376 213c-44 22-89 22-128 4"/>
+  </g>
+
+  <g transform="translate(630 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">4</text><text x="66" y="45" class="cap">Pull tight, then lock with half hitches</text>
+    <path class="rope-edge" d="M50 138h168c32-58 100-58 132 0h100"/>
+    <path class="rope" d="M50 138h168c32-58 100-58 132 0h100"/>
+    <path class="rope-edge" d="M218 138c28 50 104 50 132 0"/>
+    <path class="rope" d="M218 138c28 50 104 50 132 0"/>
+    <path class="rope-edge" d="M450 138c-48 0-56 44-10 52c44 7 44-46 0-39c-42 8-32 55 22 55"/>
+    <path class="rope" d="M450 138c-48 0-56 44-10 52c44 7 44-46 0-39c-42 8-32 55 22 55"/>
+    <text x="370" y="224" class="label">half hitches</text>
+  </g>
+</svg>

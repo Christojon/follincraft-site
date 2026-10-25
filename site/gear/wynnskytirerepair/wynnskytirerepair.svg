@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="WYNNsky Heavy Duty Tire Repair Kit">
+  <rect width="1200" height="900" fill="#090b10"/>
+  <rect x="70" y="70" width="1060" height="760" rx="36" fill="#11141b" stroke="#ea580c" stroke-width="6"/>
+  <rect x="300" y="250" width="600" height="320" rx="28" fill="#161a22" stroke="#ea580c" stroke-width="8"/>
+  <rect x="430" y="315" width="340" height="28" rx="12" fill="#ea580c"/>
+  <rect x="430" y="380" width="260" height="28" rx="12" fill="#ffffff"/>
+  <rect x="430" y="445" width="300" height="28" rx="12" fill="#9aa3b2"/>
+  <path d="M760 330 L900 210" stroke="#ea580c" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="915" cy="195" r="20" fill="#ea580c"/>
+  <text x="120" y="165" fill="#ea580c" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800">RECOVERY BASICS</text>
+  <text x="120" y="690" fill="#ffffff" font-size="62" font-family="Inter, Arial, sans-serif" font-weight="800">WYNNsky Tire Repair Kit</text>
+  <text x="120" y="755" fill="#9aa3b2" font-size="34" font-family="Inter, Arial, sans-serif">A plug kit for punctures that should not end the trip.</text>
+</svg>

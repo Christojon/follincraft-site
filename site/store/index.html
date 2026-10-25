@@ -1,0 +1,2883 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head><base href="../">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://follincraft.com/store/">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.jpg">
+
+    <title>Store - Follincraft</title>
+    <meta
+      name="description"
+      content="Bring the build, website, setup, trip, or project decision. Follincraft is Chris Follin's field-tested home for making the next move clearer."
+    />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Store - Follincraft">
+  <meta property="og:description" content="Bring the build, website, setup, trip, or project decision. Follincraft is Chris Follin's field-tested home for making the next move clearer.">
+  <meta property="og:url" content="https://follincraft.com/store/">
+  <meta property="og:image" content="https://follincraft.com/assets/people/chris-follin-portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Store - Follincraft">
+  <meta name="twitter:description" content="Bring the build, website, setup, trip, or project decision. Follincraft is Chris Follin's field-tested home for making the next move clearer.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/people/chris-follin-portrait.jpg">
+    <style>
+      @media (max-width:1100px), (hover:none) and (pointer:coarse){
+        .carousel-arrows{display:none !important;}
+      }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css?v=mobile-hero-center-1" />
+    <style>
+      @media (max-width:700px), (hover:none) and (pointer:coarse){
+        body[data-page-id="home"] #campGuideGrid.collection-grid,
+        body[data-page-id="home"] #gearGuideGrid.collection-grid{
+          display:grid !important;
+          grid-auto-flow:column !important;
+          grid-template-columns:none !important;
+          grid-auto-columns:100% !important;
+          gap:0 !important;
+          margin:0 0 24px !important;
+          padding:18px 0 22px !important;
+          scroll-padding-inline:0 !important;
+        }
+
+        body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card,
+        body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card{
+          width:100% !important;
+          min-width:100% !important;
+          max-width:none !important;
+          min-height:206px !important;
+          margin:0 !important;
+          padding:24px 28px 20px !important;
+          border:0 !important;
+          border-radius:10px !important;
+          box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,.065),
+            0 14px 34px rgba(0,0,0,.22) !important;
+        }
+
+        body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card .section-kicker,
+        body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card .section-kicker{
+          margin:0 !important;
+        }
+
+        body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card h3,
+        body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card h3{
+          margin:0 !important;
+          max-width:88% !important;
+          min-height:2.15em !important;
+          font-size:21px !important;
+          line-height:1.08 !important;
+        }
+
+        body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card h3 + p,
+        body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card h3 + p{
+          margin:0 !important;
+          max-width:88% !important;
+          min-height:3em !important;
+          font-size:14px !important;
+          line-height:1.45 !important;
+        }
+      }
+    </style>
+
+    <!-- Icons (Lucide - UMD) -->
+    <script src="https://unpkg.com/lucide@0.446.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/favicon.jpg" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.jpg" />
+    <meta name="theme-color" content="#0a0c0f" />
+    <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+    <!-- Desktop-only modals: CSS guard -->
+ <style>
+/* =========================================================
+   CAMP MODAL: hide header + add floating close
+   ========================================================= */
+#campModal .modal-head,
+#campModal .modal-header,
+#campModal .modal-title,
+#campModal [data-modal-title] {
+  display: none !important;
+}
+#campModal .modal-body { padding-top: 0 !important; }
+
+#campModal .modal-card { position: relative; }
+#campModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+}
+#campModal .modal-close:hover {
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.82);
+  color: var(--accent);
+}
+
+/* =========================================================
+   DESKTOP-ONLY MODALS
+   ========================================================= */
+@media (max-width: 899px), (hover: none), (pointer: coarse) {
+  .modal { display: none !important; }
+  body.modal-open { overflow: auto !important; }
+}
+
+/* =========================================================
+   CAMP UI: selects + NEW badge
+   ========================================================= */
+.camp-select {
+  background: rgba(234, 88, 12, 0.08);
+  color: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.camp-select:hover {
+  border-color: var(--accent);
+  background: rgba(234, 88, 12, 0.18);
+}
+.camp-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.35);
+}
+
+.camp-badge-new {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;                /* stays above image */
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #000;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(234, 88, 12, 0.55);
+  opacity: 1 !important;     /* defeat any hover-only rules */
+  visibility: visible !important;
+  pointer-events: none;
+}
+
+/* =========================================================
+   CAMP GRID (desktop/tablet)
+   ========================================================= */
+#campGrid.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  #campGrid.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* =========================================================
+   SWIPE HINT
+   ========================================================= */
+.camp-swipe-hint {
+  display: none;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 6px 0 10px;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 700px) {
+  .camp-swipe-hint { display: block; }
+}
+
+/* =========================================================
+   MOBILE SWIPE GRIDS (Camp + Projects + Code + Gear + Store)
+   + SQUARE THUMBS (and badge always on top)
+   ========================================================= */
+@media (max-width: 700px) {
+
+  /* Swipe grids */
+  #campGrid.grid,
+  #projectGrid.grid,
+  #codeGrid.grid,
+  #gearGrid.grid,
+  #store .grid {
+    display: grid !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: 100% !important;
+    grid-template-columns: none !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+
+    gap: 0 !important;
+    padding: 0 0 14px !important;
+  }
+
+  #campGrid.grid > *,
+  #projectGrid.grid > *,
+  #codeGrid.grid > *,
+  #gearGrid.grid > *,
+  #store .grid > * {
+    scroll-snap-align: start !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 12px !important;
+  }
+
+  #campGrid.grid > *,
+  #projectGrid.grid > *,
+  #codeGrid.grid > *,
+  #gearGrid.grid > *,
+  #store .grid > * {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #campGrid.grid::-webkit-scrollbar,
+  #projectGrid.grid::-webkit-scrollbar,
+  #codeGrid.grid::-webkit-scrollbar,
+  #gearGrid.grid::-webkit-scrollbar,
+  #store .grid::-webkit-scrollbar {
+    height: 0;
+  }
+
+  /* Clamp */
+  #campGrid .card h4,
+  #projectGrid .card h4,
+  #codeGrid .card h4,
+  #gearGrid .card h4,
+  #store .card h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #campGrid .card p,
+  #campGrid .card .lead,
+  #projectGrid .card p,
+  #projectGrid .card .lead,
+  #codeGrid .card p,
+  #codeGrid .card .lead,
+  #gearGrid .card p,
+  #gearGrid .card .lead,
+  #store .card p,
+  #store .card .lead {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #campGrid .card-tags,
+  #projectGrid .card-tags,
+  #codeGrid .card-tags,
+  #gearGrid .card-tags,
+  #store .card-tags {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .pill { display: inline-block; margin-right: 6px; }
+
+  /* Square thumbs (reliable) */
+  #campGrid .thumb,
+  #projectGrid .thumb,
+  #codeGrid .thumb,
+  #gearGrid .thumb,
+  #store .thumb {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--line) !important;
+    background: #0d1015 !important;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.04) !important;
+    width: 100% !important;
+
+    aspect-ratio: 1 / 1 !important;
+
+    /* fallback square */
+    height: 0 !important;
+    padding-top: 100% !important;
+  }
+
+  /* Image fills square - keep it BELOW badge */
+  #campGrid .thumb img,
+  #projectGrid .thumb img,
+  #codeGrid .thumb img,
+  #gearGrid .thumb img,
+  #store .thumb img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    z-index: 1 !important;
+    border-radius: inherit !important;
+  }
+
+  /* Badge above image in all grids */
+  #campGrid .thumb .camp-badge-new,
+  #projectGrid .thumb .camp-badge-new,
+  #codeGrid .thumb .camp-badge-new,
+  #gearGrid .thumb .camp-badge-new {
+    z-index: 5 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Any thumb overlay stays under badge */
+  #campGrid .thumb::after,
+  #projectGrid .thumb::after,
+  #codeGrid .thumb::after,
+  #gearGrid .thumb::after {
+    z-index: 2;
+  }
+
+  /* Hard override: one big card at a time on phone */
+  #projectGrid.grid,
+  #codeGrid.grid,
+  #campGrid.grid,
+  #gearGrid.grid,
+  #store .grid{
+    grid-auto-columns: 100% !important;
+    gap: 0 !important;
+    padding: 4px 0 14px !important;
+  }
+
+  #projectGrid.grid > *,
+  #codeGrid.grid > *,
+  #campGrid.grid > *,
+  #gearGrid.grid > *,
+  #store .grid > *{
+    width: 100% !important;
+    min-width: 100% !important;
+    justify-content: stretch !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+
+
+  #projectGrid.grid > *,
+  #codeGrid.grid > *{
+    width: 94% !important;
+    min-width: 94% !important;
+    justify-content: center !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+  }
+
+  #projectGrid.grid > * > .card,
+  #codeGrid.grid > * > .card,
+  #campGrid.grid > * > .card,
+  #gearGrid.grid > * > .card,
+  #store .grid > * > .card,
+  #projectGrid.grid > .card,
+  #codeGrid.grid > .card,
+  #campGrid.grid > .card,
+  #gearGrid.grid > .card,
+  #store .grid > .card{
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #projectGrid .thumb img{
+    object-position: center top !important;
+    transform: scale(1.08) !important;
+    transform-origin: center top !important;
+  }
+
+  #codeGrid .thumb img{
+    object-position: center center !important;
+  }
+}
+
+/* ===== targeted polish ===== */
+.hero-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.hero-actions .btn{
+  min-width:170px;
+  text-align:center;
+}
+.home-callout{
+  max-width:820px;
+  margin:18px auto 0;
+  border:1px solid var(--accent);
+  background:rgba(234, 88, 12, 0.06);
+}
+.section-kicker{
+  color:white;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 8px;
+}
+.section-intro{
+  max-width:860px;
+}
+.section-intro strong{
+  color:#fff;
+}
+.section-divider{
+  height:1px;
+  border:0;
+  margin:10px 0 18px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.section-note{
+  color:var(--muted);
+  max-width:860px;
+}
+.store-kicker{
+  color:var(--accent);
+  font-weight:700;
+  margin:0 0 10px;
+}
+.camp-swipe-hint{
+  text-align:center;
+  font-weight:700;
+  letter-spacing:.04em;
+  opacity:.9;
+}
+@media (max-width:700px){
+  .hero-actions .btn{
+    width:100%;
+    max-width:320px;
+  }
+}
+.camp-sort-row{
+  margin-bottom: 18px;
+}
+.camp-sort-row{
+  margin-bottom: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.camp-card{
+  padding-bottom: 4px;
+}
+
+.camp-card h4{
+  margin-bottom: 8px;
+}
+
+.camp-card .lead{
+  color: var(--muted);
+  line-height: 1.4;
+}
+.section-divider{
+  margin: 14px 0 20px;
+}
+.camp-badge-new{
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,.6),
+    0 0 10px rgba(234, 88, 12, .4);
+}
+.camp-swipe-hint{
+  text-align:center;
+  font-weight:600;
+  opacity:.75;
+  margin-bottom: 8px;
+}
+.camp-card{
+  transition: transform .15s ease, border-color .15s ease;
+}
+
+.camp-card:hover{
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+/* ===== unify all cards to camp style ===== */
+
+.grid .card{
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 6px;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+/* breathing room */
+.grid .card .card-body{
+  padding: 10px 12px 12px;
+}
+
+/* hover effect */
+.grid .card:hover{
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+.grid .thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, transparent 55%, rgba(0,0,0,.6));
+  pointer-events:none;
+}
+@media (max-width: 700px){
+  .grid{
+    scroll-snap-type: x mandatory;
+  }
+
+  .grid .card{
+    scroll-snap-align: start;
+  }
+}
+section:not(:first-of-type){
+  border-top: 1px solid rgba(255,255,255,.04);
+}
+.btn{
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+.store-badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  font-size:11px;
+  font-weight:800;
+  background:rgba(0,0,0,.72);
+  padding:4px 7px;
+  border-radius:6px;
+  color:#fff;
+  z-index:6;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+/* ===== cart drawer polish ===== */
+.fc-cart{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+}
+
+.fc-cart-toggle{
+  min-width: 132px;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  border: 1px solid var(--accent);
+  background: rgba(10,12,15,.92);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.fc-cart-toggle:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.42);
+  border-color: var(--accent);
+}
+
+.fc-cart-panel{
+  width: min(380px, calc(100vw - 24px));
+  max-height: min(78vh, 760px);
+  margin-top: 10px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(10,12,15,.98);
+  box-shadow: 0 18px 45px rgba(0,0,0,.5);
+  backdrop-filter: blur(12px);
+}
+
+.fc-cart-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+
+.fc-cart-head strong{
+  font-size: 15px;
+  letter-spacing: .02em;
+}
+
+.fc-cart-close{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: #fff;
+  cursor: pointer;
+}
+
+.fc-cart-close:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.fc-cart-items{
+  padding: 10px 12px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100px;
+}
+
+.fc-cart-items:empty::before{
+  content: "Your cart is empty. Add a hat or a few stickers and they'll show up here.";
+  display: block;
+  padding: 18px 14px;
+  border: 1px dashed rgba(255,255,255,.12);
+  border-radius: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+  background: rgba(255,255,255,.02);
+}
+
+.fc-cart-item{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+}
+
+.fc-cart-item:hover{
+  border-color: rgba(234,88,12,.4);
+}
+
+.fc-cart-item-title{
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.fc-cart-item-meta{
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.fc-cart-item-right{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.fc-cart-item-price{
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.fc-cart-item-remove{
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.fc-cart-item-remove:hover{
+  color: var(--accent);
+}
+
+.fc-cart-summary{
+  padding: 12px 14px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.025);
+}
+
+.fc-cart-summary .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  color: #d7dde7;
+}
+
+.fc-cart-summary .row.total{
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  font-weight: 800;
+  color: #fff;
+}
+
+.fc-paypal{
+  padding: 12px 14px 8px;
+  background: rgba(255,255,255,.015);
+}
+
+#fc-clear{
+  margin: 0 14px 14px !important;
+  width: calc(100% - 28px) !important;
+}
+
+@media (max-width: 700px){
+  .fc-cart{
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .fc-cart-toggle{
+    width: 100%;
+  }
+
+  .fc-cart-panel{
+    width: 100%;
+    max-height: 72vh;
+  }
+}
+/* ==========================================
+   CODE SECTION - MATCH CARD HEIGHTS
+   ========================================== */
+
+#codeGrid.grid{
+  align-items: stretch !important;
+}
+
+#codeGrid.grid > a{
+  display:block !important;
+}
+
+#codeGrid.grid > a > .card{
+  display:flex !important;
+  flex-direction:column !important;
+  height:100% !important;
+  min-height:430px !important;   /* adjust 420-450 if needed */
+}
+
+#codeGrid.grid > a > .card .thumb{
+  flex:0 0 auto !important;
+}
+
+#codeGrid.grid > a > .card h4{
+  min-height:2.5em !important;
+}
+
+#codeGrid.grid > a > .card .lead,
+#codeGrid.grid > a > .card p{
+  min-height:4.4em !important;
+}
+
+#codeGrid.grid > a > .card .card-tags{
+  margin-top:auto !important;
+}
+.camp-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:10px 12px 12px;
+}
+
+.camp-card .card-meta{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin:0 0 6px;
+}
+
+.camp-card h4{
+  margin:0 0 6px;
+}
+
+.camp-card .desc{
+  margin:0;
+}
+
+.camp-card .card-tags{
+  margin-top:auto;
+}
+/* Camp cards - make them match project/code cards */
+#campGrid .camp-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+#campGrid .camp-card .thumb{
+  position:relative;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+
+#campGrid .camp-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+#campGrid .camp-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:10px 12px 12px;
+}
+
+#campGrid .camp-card .card-meta{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin:0 0 6px;
+}
+
+#campGrid .camp-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:10px 12px 12px;
+  gap:4px;
+}
+
+#campGrid .camp-card .card-meta{
+  margin:0;
+}
+
+#campGrid .camp-card h4{
+  margin:0;
+}
+
+#campGrid .camp-card .camp-rating{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0;
+  line-height:1;
+}
+
+#campGrid .camp-card .camp-rating .stars,
+#campGrid .camp-card .camp-rating .score{
+  line-height:1;
+}
+
+#campGrid .camp-card .desc{
+  margin:0;
+  color:var(--muted);
+}
+
+#campGrid .camp-card .card-tags{
+  margin-top:auto;
+}
+/* CAMP STAR SPACING - HARD OVERRIDE */
+#campGrid .camp-card .card-body{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:2px !important;
+}
+
+#campGrid .camp-card .card-meta{
+  margin:0 !important;
+}
+
+#campGrid .camp-card h4{
+  margin:0 !important;
+  line-height:1.2 !important;
+}
+
+#campGrid .camp-card .camp-rating{
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1 !important;
+}
+
+#campGrid .camp-card .camp-rating .stars,
+#campGrid .camp-card .camp-rating .score{
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1 !important;
+}
+
+#campGrid .camp-card .desc{
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1.4 !important;
+}
+/* CAMP STAR SPACING - HARD OVERRIDE */
+#campGrid .camp-card .card-body{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:2px !important;
+}
+
+#campGrid .camp-card .card-meta{
+  margin:0 !important;
+}
+
+#campGrid .camp-card h4{
+  margin:0 !important;
+  line-height:1.2 !important;
+}
+
+#campGrid .camp-card .camp-rating{
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1 !important;
+}
+
+#campGrid .camp-card .camp-rating .stars,
+#campGrid .camp-card .camp-rating .score{
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1 !important;
+}
+
+#campGrid .camp-card .desc{
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1.4 !important;
+}
+.camp-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:0 0 14px;
+}
+
+.camp-view-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.03);
+}
+
+.camp-view-btn{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:800;
+  font-size:14px;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.camp-view-btn:hover{
+  color:#fff;
+  background:rgba(255,255,255,.05);
+}
+
+.camp-view-btn.is-active{
+  background:var(--accent);
+  color:#000;
+}
+
+.camp-view-panel{
+  display:none;
+}
+
+.camp-view-panel.is-active{
+  display:block;
+}
+
+.camp-map-shell{
+  padding:14px;
+}
+
+.camp-map-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 12px;
+}
+
+.camp-map-head h4{
+  margin:0 0 4px;
+  font-size:18px;
+}
+
+.camp-map-head .lead{
+  margin:0;
+  color:var(--muted);
+}
+
+.camp-map-canvas{
+  min-height:520px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:#0d1117;
+}
+
+.camp-map-section p{
+  margin-bottom:10px;
+}
+
+/* Leaflet dark-ish polish */
+.leaflet-container{
+  font-family:Inter,system-ui,sans-serif;
+  background:#0d1117;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip{
+  background:#11151b;
+  color:#fff;
+  border:1px solid var(--line);
+}
+
+.leaflet-popup-content{
+  margin:12px 14px;
+  line-height:1.4;
+}
+
+.leaflet-popup-content a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.leaflet-popup-content a:hover{
+  text-decoration:underline;
+}
+
+.camp-map-popup-title{
+  font-weight:800;
+  margin:0 0 4px;
+}
+
+.camp-map-popup-meta{
+  color:var(--muted);
+  font-size:12px;
+  margin:0 0 6px;
+}
+
+.camp-map-popup-rating{
+  color:#fff;
+  font-size:13px;
+  margin:0 0 8px;
+}
+
+@media (max-width:700px){
+  .camp-topbar{
+    align-items:stretch;
+  }
+
+  .camp-view-toggle{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .camp-view-btn{
+    flex:1;
+    text-align:center;
+  }
+
+  .camp-map-canvas{
+    min-height:340px;
+  }
+}
+.camp-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:0 0 14px;
+}
+
+.camp-sort-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin:0;
+}
+
+.camp-map-popup-title{
+  font-weight:800;
+  margin:0 0 4px;
+  color:#fff;
+}
+
+.camp-map-popup-meta{
+  color:var(--muted);
+  font-size:12px;
+  margin:0 0 8px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.camp-map-popup-rating{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0 0 8px;
+}
+
+.camp-map-popup-rating .stars{
+  color:var(--accent);
+  font-size:13px;
+  letter-spacing:1px;
+  line-height:1;
+}
+
+.camp-map-popup-rating .score{
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+}
+
+.camp-map-popup-notes{
+  color:#d7dde7;
+  font-size:13px;
+  line-height:1.45;
+  margin:0 0 10px;
+}
+
+/* FIX MAP POPUP READABILITY */
+.leaflet-popup-content-wrapper {
+  background: #11151b !important;
+  color: #ffffff !important;
+  border: 1px solid var(--line);
+}
+
+.leaflet-popup-tip {
+  background: #11151b !important;
+}
+
+.leaflet-popup-content {
+  color: #ffffff !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* make all text inside popup readable */
+.leaflet-popup-content * {
+  color: #ffffff !important;
+}
+
+/* secondary/meta text */
+.camp-map-popup-meta {
+  color: #9aa4b2 !important;
+}
+
+/* notes text */
+.camp-map-popup-notes {
+  color: #d7dde7 !important;
+}
+
+/* link */
+.leaflet-popup-content a {
+  color: var(--accent) !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+/* MAP POPUP MINI CARD */
+.leaflet-popup-content-wrapper{
+  background:#11151b !important;
+  color:#fff !important;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 14px 30px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+
+.leaflet-popup-tip{
+  background:#11151b !important;
+}
+
+.leaflet-popup-content{
+  margin:0 !important;
+  width:280px !important;
+  color:#fff !important;
+  line-height:1.4;
+}
+
+.camp-map-popup-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.camp-map-popup-thumb-link{
+  display:block;
+  text-decoration:none;
+}
+
+.camp-map-popup-thumb{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.camp-map-popup-body{
+  padding:12px 14px 14px;
+}
+
+.camp-map-popup-title{
+  font-weight:800;
+  font-size:15px;
+  line-height:1.25;
+  margin:0 0 4px;
+  color:#fff !important;
+}
+
+.camp-map-popup-meta{
+  color:var(--muted) !important;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 8px;
+}
+
+.camp-map-popup-rating{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0 0 8px;
+}
+
+.camp-map-popup-rating .stars{
+  color:var(--accent) !important;
+  font-size:13px;
+  letter-spacing:1px;
+  line-height:1;
+}
+
+.camp-map-popup-rating .score{
+  color:#fff !important;
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+}
+
+.camp-map-popup-notes{
+  color:#d7dde7 !important;
+  font-size:13px;
+  line-height:1.45;
+  margin:0 0 10px;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.camp-map-popup-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:0 0 10px;
+}
+
+.camp-map-popup-tags .pill{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+}
+
+.camp-map-popup-link{
+  color:var(--accent) !important;
+  font-weight:800;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.camp-map-popup-link:hover{
+  text-decoration:underline;
+}
+
+.camp-map-popup-thumb{
+  transition:.2s ease;
+}
+
+.camp-map-popup-thumb:hover{
+  transform:scale(1.03);
+}
+
+/* CUSTOM DROPDOWNS */
+.fc-select{
+  position:relative;
+  min-width:180px;
+}
+
+.fc-select-sm{
+  min-width:140px;
+}
+
+.fc-select-trigger{
+  width:100%;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:0 14px;
+  border:1px solid var(--accent);
+  border-radius:12px;
+  background:#11151b;
+  color:#fff;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  transition:border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.fc-select-trigger:hover{
+  background:#151b23;
+}
+
+.fc-select.is-open .fc-select-trigger,
+.fc-select-trigger:focus{
+  outline:none;
+  box-shadow:0 0 0 2px rgba(234,88,12,.22);
+}
+
+.fc-select-caret{
+  color:var(--accent);
+  font-size:14px;
+  line-height:1;
+  transform:translateY(-1px);
+}
+
+.fc-select-menu{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;
+  right:0;
+  z-index:200;
+  display:none;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#0f141b;
+  box-shadow:0 16px 34px rgba(0,0,0,.45);
+}
+
+.fc-select.is-open .fc-select-menu{
+  display:block;
+}
+
+.fc-select-option{
+  width:100%;
+  display:block;
+  text-align:left;
+  border:0;
+  background:transparent;
+  color:#fff;
+  padding:10px 12px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.fc-select-option:hover{
+  background:rgba(234,88,12,.12);
+  color:#fff;
+}
+
+.fc-select-option.is-selected{
+  background:rgba(234,88,12,.18);
+  color:#fff;
+}
+
+#gearSortRow{
+  margin-bottom:16px;
+}
+
+@media (max-width:700px){
+  .fc-select,
+  .fc-select-sm{
+    min-width:unset;
+    flex:1 1 0;
+  }
+
+  .camp-sort-row{
+    width:100%;
+  }
+}
+.camp-topbar,
+.camp-sort-row{
+  position: relative;
+  z-index: 500;
+}
+
+.fc-select{
+  position: relative;
+  z-index: 600;
+}
+
+.fc-select.is-open{
+  z-index: 1000;
+}
+
+.fc-select-menu{
+  z-index: 1100;
+}
+
+.camp-map-shell,
+.camp-map-canvas,
+.leaflet-container{
+  z-index: 1;
+}
+@media (max-width: 700px){
+  #campMap{
+    height: 460px;
+  }
+}
+@media (max-width: 700px){
+
+  .leaflet-popup-content{
+    width: 260px !important;
+    margin: 0;
+  }
+
+  .leaflet-popup-content-wrapper{
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .map-card{
+    max-height: 340px;
+    overflow-y: auto;
+  }
+
+}
+#gearGrid .gear-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+#gearGrid .gear-card .thumb{
+  position:relative;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+
+#gearGrid .gear-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+#gearGrid .gear-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:10px 12px 12px;
+  gap:6px;
+}
+
+#gearGrid .gear-card h4{
+  margin:0;
+  line-height:1.2;
+}
+
+#gearGrid .gear-card .desc{
+  margin:0;
+  color:var(--muted);
+  line-height:1.42;
+}
+
+#gearGrid .gear-card .gear-take{
+  margin:0;
+  color:#d7dde7;
+  font-size:13px;
+  line-height:1.42;
+}
+
+#gearGrid .gear-card .gear-meta-row{
+  margin:0 0 2px;
+}
+
+#gearGrid .gear-card .gear-card-bottom{
+  margin-top:auto;
+  padding-top:6px;
+}
+
+#gearGrid .gear-card .gear-buy-note{
+  color:var(--muted);
+  font-size:12px;
+}
+#gearGrid .gear-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+#gearGrid .gear-card .thumb{
+  position:relative;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+
+#gearGrid .gear-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+#gearGrid .gear-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:10px 12px 12px;
+  gap:4px;
+}
+
+#gearGrid .gear-card h4{
+  margin:0;
+  line-height:1.2;
+}
+
+#gearGrid .gear-card .desc{
+  margin:0;
+  color:var(--muted);
+  line-height:1.4;
+}
+
+#gearGrid .gear-card .card-tags{
+  margin-top:auto;
+}
+
+@media (max-width:700px){
+  body[data-page-id="home"] #projectGrid.grid,
+  body[data-page-id="home"] #codeGrid.grid,
+  body[data-page-id="home"] #campGrid.grid,
+  body[data-page-id="home"] #gearGrid.grid,
+  body[data-page-id="home"] #store .grid{
+    grid-auto-columns:100% !important;
+    gap:0 !important;
+    padding:2px 0 14px !important;
+    scroll-padding-inline:0 !important;
+  }
+
+  body[data-page-id="home"] #projectGrid.grid > *,
+  body[data-page-id="home"] #codeGrid.grid > *,
+  body[data-page-id="home"] #campGrid.grid > *,
+  body[data-page-id="home"] #gearGrid.grid > *,
+  body[data-page-id="home"] #store .grid > *{
+    width:min(340px, calc(100% - 48px)) !important;
+    min-width:min(340px, calc(100% - 48px)) !important;
+    max-width:340px !important;
+    margin:0 auto !important;
+    box-sizing:border-box !important;
+  }
+
+  body[data-page-id="home"] #projectGrid.grid > *,
+  body[data-page-id="home"] #codeGrid.grid > *,
+  body[data-page-id="home"] #campGrid.grid > *,
+  body[data-page-id="home"] #gearGrid.grid > *,
+  body[data-page-id="home"] #store .grid > *{
+    padding:0 !important;
+  }
+
+  body[data-page-id="home"] #projectGrid.grid > * > .card,
+  body[data-page-id="home"] #codeGrid.grid > * > .card,
+  body[data-page-id="home"] #campGrid.grid > * > .card,
+  body[data-page-id="home"] #gearGrid.grid > * > .card,
+  body[data-page-id="home"] #store .grid > * > .card,
+  body[data-page-id="home"] #projectGrid.grid > .card,
+  body[data-page-id="home"] #codeGrid.grid > .card,
+  body[data-page-id="home"] #campGrid.grid > .card,
+  body[data-page-id="home"] #gearGrid.grid > .card,
+  body[data-page-id="home"] #store .grid > .card{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  body[data-page-id="home"] #store .store-badge{
+    display:none !important;
+  }
+
+  body[data-page-id="home"] #store .store-card .desc{
+    -webkit-line-clamp:3 !important;
+  }
+
+  body[data-page-id="home"] #store .store-card .card-tags{
+    margin-top:auto !important;
+  }
+
+  body[data-page-id="home"] #store .store-card .buy-row{
+    margin:8px 0 0 !important;
+  }
+
+  body[data-page-id="home"] #store .store-card .buy-row .btn{
+    min-height:0 !important;
+    padding:6px 10px !important;
+    border-radius:8px !important;
+    font-size:12px !important;
+    line-height:1 !important;
+  }
+
+  body[data-page-id="home"] #store .grid{
+    grid-auto-columns:100% !important;
+    scroll-padding-inline:0 !important;
+  }
+
+  body[data-page-id="home"] #store .grid > .store-item{
+    width:100% !important;
+    min-width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 12px !important;
+    box-sizing:border-box !important;
+    display:flex !important;
+    justify-content:stretch !important;
+  }
+
+  body[data-page-id="home"] #store .grid > .store-item > .store-card{
+    width:100% !important;
+    max-width:none !important;
+  }
+
+}
+</style>
+<style>
+  @media (max-width:700px), (hover:none) and (pointer:coarse){
+    body[data-page-id="home"] section#camp #campGuideGrid.collection-grid,
+    body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid{
+      display:grid !important;
+      grid-auto-flow:column !important;
+      grid-template-columns:none !important;
+      grid-auto-columns:100% !important;
+      gap:0 !important;
+      margin:0 0 24px !important;
+      padding:18px 0 22px !important;
+      overflow-x:auto !important;
+      overflow-y:visible !important;
+      scroll-padding-inline:0 !important;
+    }
+
+    body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card,
+    body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card{
+      width:100% !important;
+      min-width:100% !important;
+      max-width:none !important;
+      min-height:206px !important;
+      margin:0 !important;
+      padding:24px 28px 20px !important;
+      border:0 !important;
+      border-radius:10px !important;
+      box-sizing:border-box !important;
+      scroll-snap-align:start !important;
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,255,255,.08), rgba(255,255,255,0) 34%),
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.012)),
+        var(--panel) !important;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.065),
+        0 14px 34px rgba(0,0,0,.22) !important;
+    }
+
+    body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card .section-kicker,
+    body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card .section-kicker,
+    body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card h3,
+    body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card h3,
+    body[data-page-id="home"] section#camp #campGuideGrid.collection-grid > a.collection-card h3 + p,
+    body[data-page-id="home"] section#gear #gearGuideGrid.collection-grid > a.collection-card h3 + p{
+      margin-left:0 !important;
+      margin-right:0 !important;
+    }
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Follincraft",
+      "url": "https://follincraft.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://follincraft.com/search/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Chris Follin",
+      "url": "https://follincraft.com/",
+      "image": "https://follincraft.com/assets/people/chris-follin-portrait.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+  <body data-page-id="home">
+    <header>
+      <div class="wrap nav">
+        <div class="brand">
+          <div class="logo">
+            <a href="index.html" style="text-decoration: none">
+              <span class="pair"
+                ><span class="f">F</span><span class="c">C</span></span
+              >
+            </a>
+          </div>
+          <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+        </div>
+
+                          <nav id="topNav">
+        <a href="projects/index.html">Projects</a>
+        <a href="camp/index.html">Camp</a>
+        <a href="gear/index.html">Gear</a>
+        
+        <a href="repo/index.html">Tools</a>
+        <a href="contact/index.html">Contact</a>
+        <a class="nav-search-link" href="search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+
+        <button
+          id="menuBtn"
+          class="menu-btn"
+          aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >&#9776;</button>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                  <nav class="mobile-links">
+      <a href="projects/index.html">Projects</a>
+      <a href="camp/index.html">Camp</a>
+      <a href="gear/index.html">Gear</a>
+      
+      <a href="repo/index.html">Tools</a>
+      <a href="contact/index.html">Contact</a>
+      <a href="search/index.html">Search</a>
+    </nav>
+    </div>
+
+    <main style="padding-top:80px"><section id="store">
+  <div class="wrap">
+    <p class="section-kicker">Small batch</p>
+    <h1 class="title">Store</h1>
+    <p class="store-kicker">When they're gone, they're gone.</p>
+    <p class="lead">
+      Small runs from the Follincraft bench: hats, stickers, and odd little things I wanted enough to make.
+    </p>
+    <p class="lead store-ship-note">
+      Ships from Phoenix. Packed by hand.
+    </p>
+
+    <div class="grid">
+
+      <!-- FEATURED: FLEXFIT HAT -->
+      <div class="store-item">
+      <article class="card store-card featured">
+        <div class="thumb">
+          <img src="assets/home-thumbs/assets/hat2.jpg" alt="Black Flexfit Hat"  width="640" height="640"/>
+          <div class="store-badge">Featured</div>
+        </div>
+        <div class="card-body">
+          <h4>Black Flexfit Hat</h4>
+          <p class="desc">
+            $30.00 - Clean Flexfit hat with a solid feel and an easy everyday fit. Built to look good without trying too hard.
+          </p>
+          <div class="card-tags">
+            <span class="pill">Hat</span>
+            <span class="pill">Flexfit</span>
+            <span class="pill">Black</span>
+          </div>
+          <div class="buy-row">
+            <button
+              class="btn solid add-to-cart"
+              data-sku="HAT_BLACK_FLEXFIT"
+              data-name="Black Flexfit Hat"
+              data-price="30.00"
+              data-kind="hat"
+            >
+              Get One
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+
+      <!-- VAN LOGO STICKER -->
+      <div class="store-item">
+      <article class="card store-card sticker-card">
+        <div class="thumb">
+          <img src="assets/home-thumbs/assets/vanlogo-square.jpg" alt="Van Logo Sticker"  width="640" height="640"/>
+          <div class="store-badge">New</div>
+        </div>
+        <div class="card-body">
+          <h4>Van Logo Sticker</h4>
+          <p class="desc">
+            $5.00 - Matte die-cut vinyl of the Follincraft van. Clean, bold, and built to hold up on coolers, bins, trucks, and whatever else earns it.
+          </p>
+          <div class="card-tags">
+            <span class="pill">Sticker</span>
+            <span class="pill">Vinyl</span>
+            <span class="pill">Follincraft</span>
+          </div>
+          <div class="buy-row">
+            <button
+              class="btn solid add-to-cart"
+              data-sku="STICKER_VAN"
+              data-name="Van Logo Sticker"
+              data-price="5.00"
+              data-kind="sticker"
+            >
+              Add Sticker
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+    <!-- CONTACT -->
+    
+
+    <footer style="padding: 40px 0; background: var(--panel); border-top: 1px solid var(--accent)">
+      <div
+        class="wrap"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left"
+      >
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">About Follincraft</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">
+            Twenty-plus years of fabrication, design, code, and field notes in one place. Shop builds, camp-tested gear,
+            and useful tools for making the next decision faster.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Location</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">Based in Phoenix, Arizona.</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+            width="100%"
+            height="200"
+            style="border: 1px solid var(--line); border-radius: 10px; margin-top: 10px"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Connect</h3>
+      <div class="footer-links" style="display: flex; gap: 10px; justify-content: left">
+            <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+            <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+            <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+          </div>
+          <p class="lead" style="margin-top: 16px; font-size: 14px; color: var(--muted)">
+            Fabrication, code, camp systems, or the half-formed idea you want to make useful.
+          </p>
+        </div>
+      </div>
+
+      <p
+        style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px"
+      >
+        <span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span>
+      </p>
+      <p class="footer-legal"><a href="privacy/index.html">Privacy</a> &middot; <a href="disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+ 
+
+    <!-- ICON SPRITE -->
+    <svg width="0" height="0" style="position: absolute; left: -9999px; top: -9999px" aria-hidden="true">
+      <symbol id="i-gauge" viewBox="0 0 24 24">
+        <path d="M12 4a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V4z" />
+        <path d="M12 13l4.5-4.5 1.4 1.4L13.4 14.9A2.5 2.5 0 1 1 12 13z" />
+      </symbol>
+      <symbol id="i-pipe" viewBox="0 0 24 24">
+        <path d="M4 8a4 4 0 1 1 8 0v8a4 4 0 1 1-4 0V8zM12 8h8v8h-8" />
+      </symbol>
+      <symbol id="i-cut" viewBox="0 0 24 24">
+        <path d="M3 6h9M3 12h9M3 18h9" />
+        <circle cx="18" cy="8" r="2" />
+        <circle cx="18" cy="16" r="2" />
+      </symbol>
+      <symbol id="i-panel" viewBox="0 0 24 24">
+        <path d="M3 4h18v16H3zM8 4v16M16 10H8" />
+      </symbol>
+      <symbol id="i-map" viewBox="0 0 24 24">
+        <path d="M9 4l6 2 6-2v16l-6 2-6-2-6 2V6z" />
+        <path d="M9 4v16M15 6v16" />
+      </symbol>
+      <symbol id="i-fire" viewBox="0 0 24 24">
+        <path d="M12 3c2 3-1 4 1 7 2-1 3-3 3-5 4 4 4 9 0 13a6 6 0 0 1-10-4c0-3 2-5 4-7-.5 2 .5 3 2 3z" />
+      </symbol>
+      <symbol id="i-bug" viewBox="0 0 24 24">
+        <path d="M12 7a5 5 0 0 1 5 5v4a5 5 0 1 1-10 0v-4a5 5 0 0 1 5-5z" />
+        <path d="M12 2v3M4 12h3M17 12h3M5 7l2 2M19 7l-2 2M5 17l2-2M19 17l-2-2" />
+      </symbol>
+    </svg>
+
+<!-- Floating Cart -->
+<div id="fc-cart" class="fc-cart">
+  <button
+    id="fc-cart-toggle"
+    class="fc-cart-toggle"
+    aria-expanded="false"
+    aria-controls="fc-cart-panel"
+    aria-label="Open cart"
+    type="button"
+  >
+    <span class="fc-cart-toggle-label">Cart</span>
+    <span class="fc-cart-toggle-icon" aria-hidden="true">Cart</span>
+    <span id="fc-cart-count" class="fc-cart-toggle-count">0</span>
+  </button>
+
+  <div id="fc-cart-panel" class="fc-cart-panel" aria-hidden="true">
+    <div class="fc-cart-head">
+      <div class="fc-cart-head-copy">
+        <strong>Your Cart</strong>
+        <span class="fc-cart-head-sub">Ships from Phoenix</span>
+      </div>
+      <button
+        id="fc-cart-close"
+        class="fc-cart-close"
+        aria-label="Close cart"
+        type="button"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div id="fc-cart-items" class="fc-cart-items">
+      <!-- JS renders cart rows here -->
+    </div>
+
+    <div class="fc-cart-summary">
+      <div class="row">
+        <span>Subtotal</span>
+        <span id="fc-subtotal">$0.00</span>
+      </div>
+      <div class="row">
+        <span>Shipping</span>
+        <span id="fc-shipping">$0.00</span>
+      </div>
+      <div class="row">
+        <span id="fc-tax-label">Tax</span>
+        <span id="fc-tax">Calculated at checkout</span>
+      </div>
+      <div class="row total">
+        <span>Total</span>
+        <span id="fc-total">$0.00</span>
+      </div>
+    </div>
+
+    <div id="paypal-checkout" class="fc-paypal"></div>
+
+    <div class="fc-cart-actions">
+      <button id="fc-clear" class="btn" type="button">Clear Cart</button>
+    </div>
+  </div>
+</div>
+
+    <!-- One-time camp modal header hider (kept; harmless if not used) -->
+    <script>
+      (function () {
+        const $ = (list) => {
+          for (const s of list) {
+            const el = document.querySelector(s);
+            if (el) return el;
+          }
+          return null;
+        };
+
+        const getModalHeader = () =>
+          $(
+            [
+              '#campModal .modal-header',
+              '#campModal [data-modal-title]',
+              '#campModal #modalTitle',
+              '.el-dialog__header',
+              '.MuiDialogTitle-root',
+              '.ant-modal-header',
+              '.modal-header',
+            ]
+          );
+
+        const getModalBody = () =>
+          $(
+            [
+              '#campModal .modal-body',
+              '.el-dialog__body',
+              '.MuiDialogContent-root',
+              '.ant-modal-body',
+              '.modal-body',
+            ]
+          );
+
+        window.addEventListener('message', (e) => {
+          const data = e?.data || {};
+          if (data.type === 'hideModalHeader') {
+            const head = getModalHeader();
+            if (head) head.style.setProperty('display', 'none', 'important');
+            const body = getModalBody();
+            if (body) {
+              body.style.setProperty('padding-top', '0', 'important');
+              body.style.setProperty('margin-top', '0', 'important');
+            }
+          }
+          if (data.type === 'setTitle') {
+            const headTitle = document.querySelector(
+              '#campModal [data-modal-title], #modalTitle'
+            );
+            if (headTitle && data.title) headTitle.textContent = data.title;
+          }
+        });
+      })();
+
+      // Fallback: delegate [data-close] to close its parent .modal.
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-close]');
+        if (!btn) return;
+        const modal = btn.closest('.modal');
+        if (modal) modal.classList.remove('open');
+      });
+
+      // Year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+<!-- DATA (must load before script.js) -->
+    <script src="data-projects.js?v=project-copy-1"></script>
+    <script src="data-camp.js?v=clean-camp-filters-15"></script>
+    <script src="data-gear.js?v=gear-campervan-1"></script>
+
+    <!-- APP -->
+    <script>
+
+(function(){
+  function wireCustomSelect(selectName, onChange){
+    const root = document.querySelector(`.fc-select[data-select="${selectName}"]`);
+    if (!root) return null;
+
+    const trigger = root.querySelector(".fc-select-trigger");
+    const label = root.querySelector(".fc-select-label");
+    const options = Array.from(root.querySelectorAll(".fc-select-option"));
+
+    function close(){
+      root.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+
+    function open(){
+      document.querySelectorAll(".fc-select.is-open").forEach(el => {
+        if (el !== root) {
+          el.classList.remove("is-open");
+          const btn = el.querySelector(".fc-select-trigger");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        }
+      });
+      root.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+
+    function setValue(value, fire = true){
+      const match = options.find(opt => opt.dataset.value === value) || options[0];
+      options.forEach(opt => opt.classList.toggle("is-selected", opt === match));
+      label.textContent = match.textContent.trim();
+      root.dataset.value = match.dataset.value;
+
+      if (fire && typeof onChange === "function"){
+        onChange(match.dataset.value);
+      }
+    }
+
+    trigger.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (root.classList.contains("is-open")) close();
+      else open();
+    });
+
+    options.forEach(opt => {
+      opt.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        setValue(opt.dataset.value, true);
+        close();
+      });
+    });
+
+    return {
+      setValue(value, fire = false){
+        setValue(value, fire);
+      },
+      getValue(){
+        return root.dataset.value || "";
+      }
+    };
+  }
+
+  document.addEventListener("click", function(e){
+    if (!e.target.closest(".fc-select")) {
+      document.querySelectorAll(".fc-select.is-open").forEach(el => {
+        el.classList.remove("is-open");
+        const btn = el.querySelector(".fc-select-trigger");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function(){
+    window.fcCustomSelects = {
+      campLocale: wireCustomSelect("campLocale", value => {
+        window.dispatchEvent(new CustomEvent("fc:campLocaleChange", { detail: value }));
+      }),
+      campSort: wireCustomSelect("campSort", value => {
+        window.dispatchEvent(new CustomEvent("fc:campSortChange", { detail: value }));
+      }),
+      gearCategory: wireCustomSelect("gearCategory", value => {
+        window.dispatchEvent(new CustomEvent("fc:gearCategoryChange", { detail: value }));
+      }),
+      gearSort: wireCustomSelect("gearSort", value => {
+        window.dispatchEvent(new CustomEvent("fc:gearSortChange", { detail: value }));
+      })
+    };
+  });
+})();
+
+</script>
+
+    <script>
+  // Option A: disable modals - always navigate to the real page.
+  // This runs BEFORE script.js so it can stop any modal click handlers.
+  (function () {
+    // Tools section links use data-url; make them real links immediately.
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a.open-tool[data-url]').forEach(a => {
+        const url = a.getAttribute('data-url');
+        if (url) a.setAttribute('href', url);
+      });
+    });
+
+    // Stop any modal interceptors and allow normal navigation.
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+
+      // Any card/link that previously opened a modal should just navigate.
+      if (a.matches('[data-modal], [data-modal="camp"], [data-modal="gear"], [data-modal="project"]')) {
+        // If href is missing for some reason, try to use data-url.
+        if ((!a.getAttribute('href') || a.getAttribute('href') === 'javascript:void(0)') && a.getAttribute('data-url')) {
+          a.setAttribute('href', a.getAttribute('data-url'));
+        }
+        // Kill other click handlers that might preventDefault/open modals.
+        e.stopImmediatePropagation();
+        return; // let default happen
+      }
+
+      // Tools (in case href is still javascript:void(0) at click time)
+      if (a.classList.contains('open-tool') && a.getAttribute('data-url')) {
+        const url = a.getAttribute('data-url');
+        if (url) {
+          e.stopImmediatePropagation();
+          // Navigate
+          window.location.href = url;
+        }
+      }
+    }, true); // capture phase
+  })();
+</script>
+    <script src="script.js?v=howto-campsite-title-sync-1"></script>
+    
+  <script>
+(function () {
+  function applyProjectBadges() {
+    const grid = document.getElementById("projectGrid");
+    const DATA = window.PROJECT_DATA || {};
+    if (!grid || !Object.keys(DATA).length) return;
+
+    const links = grid.querySelectorAll("a");
+
+    links.forEach((link) => {
+      const id = link.dataset.projectId || link.querySelector("[data-id]")?.dataset.id || "";
+      const project = DATA[id];
+      const rawLabel = (project && (project.badge || (Array.isArray(project.meta) && project.meta.includes("NEW") ? "New" : ""))) || "";
+      const label = String(rawLabel).trim().toLowerCase() === "new" ? "New" : rawLabel;
+      if (!label) return;
+
+      const thumb = link.querySelector(".thumb");
+      if (!thumb || thumb.querySelector(".fc-card-badge, .camp-badge-new")) return;
+
+      const badge = document.createElement("div");
+      badge.className = "fc-card-badge camp-badge-new";
+      badge.textContent = label;
+      thumb.prepend(badge);
+    });
+  }
+
+  window.addEventListener("load", () => {
+    applyProjectBadges();
+    setTimeout(applyProjectBadges, 150);
+    setTimeout(applyProjectBadges, 600);
+
+    const grid = document.getElementById("projectGrid");
+    if (!grid) return;
+
+    const obs = new MutationObserver(applyProjectBadges);
+    obs.observe(grid, { childList: true, subtree: true });
+  });
+})();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const grid = document.getElementById("campGrid");
+  const DATA = window.CAMP_DATA || {};
+
+  if (!grid || !DATA) return;
+
+  const items = Object.entries(DATA).map(([id, it]) => ({ id, ...it }));
+  const HOME_CARD_LIMIT = 12;
+
+  function homeThumbPath(value){
+    if (!value) return "";
+    const raw = String(value);
+    if (/^(https?:)?\/\//i.test(raw) || /\.svg(?:$|[?#])/i.test(raw)) return raw;
+    const clean = raw.replace(/^\/+/, "").split("#")[0].split("?")[0];
+    if (!/\.(png|jpe?g)$/i.test(clean)) return raw;
+    return `assets/home-thumbs/${clean.replace(/\.[^.]+$/, ".jpg")}`;
+  }
+
+  let activeLocale = "";
+  let activeSort = "featured";
+
+  function regionLabel(key){
+    const map = {
+      flagstaff:"Flagstaff",
+      payson:"Mogollon Rim",
+      prescott:"Prescott",
+      "white-mountains":"White Mountains",
+      "southern-az":"Southern AZ",
+      "new-mexico":"New Mexico",
+      "southern-california":"Southern California",
+      oahu:"Oahu",
+      hawaii:"Hawaii",
+      utah:"Utah"
+    };
+    return map[key] || key || "";
+  }
+
+  function stateLabel(it){
+    if (it.state) return String(it.state).toUpperCase();
+    if (it.region === "oahu" || it.region === "hawaii") return "HI";
+    if (it.region === "utah") return "UT";
+    if (it.region === "new-mexico") return "NM";
+    return "AZ";
+  }
+
+  function isNewCamp(it){
+    if (!it) return false;
+    if (it.isNew === true || it.new === true || it.is_new === true) return true;
+    const badge = (it.badge || it.status || it.flag || "").toString().trim().toLowerCase();
+    if (badge === "new") return true;
+    if (Array.isArray(it.tags)) {
+      return it.tags.some(t => String(t).trim().toLowerCase() === "new");
+    }
+    return false;
+  }
+
+  function matches(it){
+    if (activeSort === "featured") return true;
+    if (activeLocale && (it.region || "") !== activeLocale) return false;
+    return true;
+  }
+
+  function sortList(list){
+    const byTitle = (a,b) => (a.title || "").localeCompare(b.title || "");
+
+    const byStateThenTitle = (a,b) =>
+      stateLabel(a).localeCompare(stateLabel(b)) || byTitle(a,b);
+
+    const byLocaleThenTitle = (a,b) =>
+      regionLabel(a.region).localeCompare(regionLabel(b.region)) || byTitle(a,b);
+
+    if (activeSort === "az") return [...list].sort(byTitle);
+
+    if (activeSort === "rating") {
+      return [...list].sort((a,b) => {
+        const ar = Number(a.rating?.overall || 0);
+        const br = Number(b.rating?.overall || 0);
+        if (br !== ar) return br - ar;
+        return byTitle(a,b);
+      });
+    }
+
+    if (activeSort === "state") return [...list].sort(byStateThenTitle);
+    if (activeSort === "locale") return [...list].sort(byLocaleThenTitle);
+
+    return [...list]
+      .map((item, index) => ({ ...item, __index: index }))
+      .sort((a,b) => {
+        const an = isNewCamp(a) ? 1 : 0;
+        const bn = isNewCamp(b) ? 1 : 0;
+        if (bn !== an) return bn - an;
+        return a.__index - b.__index;
+      });
+  }
+
+  function getStars(rating){
+    const rounded = Math.max(0, Math.min(5, Math.round(Number(rating || 0))));
+    return "\u2605".repeat(rounded) + "\u2606".repeat(5 - rounded);
+  }
+
+  function cardHTML(it){
+    const href = (typeof toSiteHref === "function")
+      ? toSiteHref(it.page || `/camp/${it.id}/index.html`)
+      : (it.page || `/camp/${it.id}/index.html`);
+    const thumb = homeThumbPath(it.thumb || "");
+    const badge = isNewCamp(it) ? `<div class="fc-card-badge camp-badge-new">New</div>` : "";
+    const meta = regionLabel(it.region).toUpperCase();
+    const score = it.rating?.overall ? Number(it.rating.overall).toFixed(1) : "";
+
+    return `
+      <a href="${href}" data-modal="camp" data-camp-id="${it.id}" style="text-decoration:none;color:inherit;">
+        <article class="card camp-card">
+          <div class="thumb">
+            ${badge}
+            ${thumb ? `<img src="${thumb}" alt="${it.title || "Camp"}" loading="lazy">` : ""}
+          </div>
+          <div class="card-body">
+            ${meta ? `<div class="card-meta">${meta}</div>` : ""}
+            <h4>${it.title || ""}</h4>
+            ${
+              score
+                ? `<div class="camp-rating">
+                    <span class="stars">${getStars(it.rating.overall)}</span>
+                    <span class="score">${score}</span>
+                  </div>`
+                : ""
+            }
+            ${it.notes ? `<p class="desc">${it.notes}</p>` : ""}
+            ${
+              Array.isArray(it.tags) && it.tags.length
+                ? `<div class="card-tags">
+                    ${it.tags.map(tag => `<span class="pill">${tag}</span>`).join("")}
+                  </div>`
+                : ""
+            }
+          </div>
+        </article>
+      </a>
+    `;
+  }
+
+  function render(){
+    let list = items.filter(matches);
+    list = sortList(list);
+    list = list.slice(0, HOME_CARD_LIMIT);
+    grid.innerHTML = list.map(cardHTML).join("");
+    requestAnimationFrame(() => { grid.scrollLeft = 0; });
+  }
+
+  window.addEventListener("fc:campLocaleChange", (e) => {
+    activeLocale = e.detail || "";
+    render();
+  });
+
+  window.addEventListener("fc:campSortChange", (e) => {
+    activeSort = e.detail || "featured";
+
+    if (activeSort === "featured") {
+      activeLocale = "";
+      window.fcCustomSelects?.campLocale?.setValue("", false);
+    }
+
+    render();
+
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      grid.scrollLeft = 0;
+    }
+  });
+
+  activeLocale = "";
+  activeSort = "featured";
+  window.fcCustomSelects?.campLocale?.setValue("", false);
+  window.fcCustomSelects?.campSort?.setValue("featured", false);
+
+  render();
+});
+</script>
+    <script>
+      // This lets gear pages close the lightbox from the inside
+      window.closeGearLightbox = function () {
+        const lb = document.getElementById('lightbox');
+        if (lb) lb.style.display = 'none';
+      };
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const grid = document.getElementById("gearGrid");
+  const DATA = window.GEAR_DATA || {};
+
+  if (!grid || !DATA) return;
+
+  const items = Object.entries(DATA).map(([id, it]) => ({ id, ...it }));
+  const HOME_CARD_LIMIT = 12;
+
+  function homeThumbPath(value){
+    if (!value) return "";
+    const raw = String(value);
+    if (/^(https?:)?\/\//i.test(raw) || /\.svg(?:$|[?#])/i.test(raw)) return raw;
+    const clean = raw.replace(/^\/+/, "").split("#")[0].split("?")[0];
+    if (!/\.(png|jpe?g)$/i.test(clean)) return raw;
+    return `assets/home-thumbs/${clean.replace(/\.[^.]+$/, ".jpg")}`;
+  }
+
+  let activeCat = "all";
+  let activeSort = "featured";
+
+  function byTitle(a, b){
+    return (a.title || "").localeCompare(b.title || "");
+  }
+
+  function sortList(list){
+    if (activeSort === "az") return [...list].sort(byTitle);
+    return [...list];
+  }
+
+  function matches(it){
+    if (activeCat === "all") return true;
+    const c = it.cat || it.category || "";
+    return String(c) === activeCat;
+  }
+
+function cardHTML(it, index){
+  const href  = (typeof toSiteHref === "function")
+    ? toSiteHref(it.page || it.url || "#")
+    : (it.page || it.url || "#");
+  const thumb = homeThumbPath(it.thumb || "");
+  const title = it.title || "";
+  const desc  = it.review || it.notes || it.desc || "";
+  const pills = Array.isArray(it.meta) ? it.meta : [];
+
+  return `
+    <a href="${href}" data-modal="gear" data-gear-id="${it.id}" style="text-decoration:none;color:inherit;">
+      <article class="card gear-card">
+        <div class="thumb">
+          ${index < 3 ? `<div class="fc-card-badge camp-badge-new">Featured</div>` : ""}
+          ${thumb ? `<img src="${thumb}" alt="${title}" loading="lazy">` : ""}
+        </div>
+
+        <div class="card-body">
+          <h4>${title}</h4>
+          ${desc ? `<p class="desc">${desc}</p>` : ""}
+          ${
+            pills.length
+              ? `<div class="card-tags">
+                  ${pills.map(t => `<span class="pill">${t}</span>`).join("")}
+                </div>`
+              : ""
+          }
+        </div>
+      </article>
+    </a>
+  `;
+}
+
+  function render(){
+    let list = items.filter(matches);
+    list = sortList(list);
+    list = list.slice(0, HOME_CARD_LIMIT);
+    grid.innerHTML = list.map((item, index) => cardHTML(item, index)).join("");
+    requestAnimationFrame(() => { grid.scrollLeft = 0; });
+  }
+
+  window.addEventListener("fc:gearCategoryChange", function(e){
+    activeCat = e.detail || "all";
+    render();
+  });
+
+  window.addEventListener("fc:gearSortChange", function(e){
+    activeSort = e.detail || "featured";
+    render();
+  });
+
+  activeCat = "all";
+  activeSort = "featured";
+  window.fcCustomSelects?.gearCategory?.setValue("all", false);
+  window.fcCustomSelects?.gearSort?.setValue("featured", false);
+
+  render();
+});
+</script>
+<!-- Modal content normalizer: remove page-level header offsets inside modals -->
+<script>
+(function(){
+  const MODAL_IDS = ["projectModal","codeModal","gearModal","toolModal"]; // camp modal has its own tight layout
+
+  function normalizeModal(modal){
+    if (!modal || !modal.classList.contains('open')) return;
+
+    // remove embedded headers/nav that sometimes come with injected pages
+    modal.querySelectorAll('header, nav, .mobile-menu, #mobileMenu').forEach(el => el.remove());
+
+    // kill common "push down under fixed header" wrappers
+    modal.querySelectorAll('.proj-wrap, .gear-wrap, .code-wrap, .tools-wrap, .wrap.proj-wrap, .wrap.gear-wrap, .wrap.code-wrap').forEach(el => {
+      el.style.marginTop = '0px';
+      el.style.paddingTop = '0px';
+    });
+
+    // If the first visible block still has a big top margin, zero it.
+    const body = modal.querySelector('.modal-body');
+    if (!body) return;
+    const first = Array.from(body.children).find(el => {
+      const cs = getComputedStyle(el);
+      return cs.display !== 'none' && cs.visibility !== 'hidden';
+    });
+    if (first){
+      const mt = parseFloat(getComputedStyle(first).marginTop || '0');
+      if (mt > 24) first.style.marginTop = '0px';
+    }
+  }
+
+  function wire(modal){
+    if (!modal) return;
+    const obs = new MutationObserver(() => normalizeModal(modal));
+    obs.observe(modal, {subtree:true, childList:true, attributes:true, attributeFilter:['class']});
+  }
+
+  MODAL_IDS.forEach(id => wire(document.getElementById(id)));
+})();
+</script>
+
+
+<script>
+  // Restore scroll position when returning to the homepage
+  (function(){
+    window.addEventListener("beforeunload", () => {
+      try { sessionStorage.setItem("fc_home_scroll", String(window.scrollY || 0)); } catch(e){}
+    });
+    window.addEventListener("load", () => {
+      try {
+        if (window.location.hash) return;
+        const y = parseInt(sessionStorage.getItem("fc_home_scroll") || "0", 10);
+        if (y > 0) window.scrollTo(0, y);
+      } catch(e){}
+    });
+  })();
+</script>
+
+<script>
+(function(){
+  const tabs = document.querySelectorAll(".camp-view-btn");
+  const cardsView = document.getElementById("campCardsView");
+  const mapView = document.getElementById("campMapView");
+
+  if (!tabs.length || !cardsView || !mapView) return;
+
+  function setView(view){
+    const showCards = view === "cards";
+
+    tabs.forEach(btn => {
+      const active = btn.dataset.view === view;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    cardsView.classList.toggle("is-active", showCards);
+    cardsView.hidden = !showCards;
+
+    mapView.classList.toggle("is-active", !showCards);
+    mapView.hidden = showCards;
+
+    if (!showCards && window.fcCampMap) {
+      setTimeout(() => {
+        window.fcCampMap.invalidateSize();
+      }, 200);
+    }
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      setView(btn.dataset.view);
+    });
+  });
+
+  // keep cards as default on load
+  setView("cards");
+})();
+</script>
+
+<script>
+(function(){
+const mapEl = document.getElementById("campMap");
+const DATA = window.CAMP_DATA || {};
+
+  if (!mapEl || !window.L || !DATA) return;
+
+  const camps = Object.entries(DATA).map(([id, it]) => ({ id, ...it }));
+
+const map = L.map("campMap", {
+  zoomControl: true,
+  scrollWheelZoom: true
+});
+
+// DELAY INITIAL VIEW UNTIL VISIBLE
+setTimeout(() => {
+  map.setView([34.25, -111.7], 5);
+  map.invalidateSize();
+}, 300);
+
+  window.fcCampMap = map;
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  const markersLayer = L.layerGroup().addTo(map);
+
+  function regionLabel(key){
+    const map = {
+      flagstaff:"Flagstaff",
+      payson:"Mogollon Rim",
+      prescott:"Prescott",
+      "white-mountains":"White Mountains",
+      "southern-az":"Southern AZ",
+      "new-mexico":"New Mexico",
+      "southern-california":"Southern California",
+      oahu:"Oahu",
+      hawaii:"Hawaii",
+      utah:"Utah"
+    };
+    return map[key] || key || "";
+  }
+
+  function getStars(rating){
+    const rounded = Math.max(0, Math.min(5, Math.round(Number(rating || 0))));
+    return "\u2605".repeat(rounded) + "\u2606".repeat(5 - rounded);
+  }
+
+  function makeIcon(){
+    return L.divIcon({
+      className: "fc-camp-marker-wrap",
+      html: `<div style="
+        width:16px;
+        height:16px;
+        border-radius:999px;
+        background:var(--accent);
+        border:2px solid #000;
+        box-shadow:0 0 0 6px rgba(234,88,12,.15);
+      "></div>`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+      popupAnchor: [0, -8]
+    });
+  }
+
+  function matchesLocale(camp){
+    const activeLocale = window.fcCustomSelects?.campLocale?.getValue?.() || "";
+const activeSort = window.fcCustomSelects?.campSort?.getValue?.() || "locale";
+
+    if (activeSort === "featured") return true;
+    if (!activeLocale) return true;
+
+    return (camp.region || "") === activeLocale;
+  }
+
+function popupHTML(camp){
+  const href = camp.page || `/camp/${camp.id}/index.html`;
+  const rating = camp.rating?.overall ? Number(camp.rating.overall).toFixed(1) : "";
+  const stars = camp.rating?.overall ? getStars(camp.rating.overall) : "";
+  const notes = camp.notes ? String(camp.notes) : "";
+  const thumb = camp.thumb || "";
+
+  return `
+    <div class="camp-map-popup-card">
+      ${thumb ? `
+        <a href="${href}" class="camp-map-popup-thumb-link">
+          <img class="camp-map-popup-thumb" src="${thumb}" alt="${camp.title || "Camp"}">
+        </a>
+      ` : ""}
+
+      <div class="camp-map-popup-body">
+        <div class="camp-map-popup-title">${camp.title || "Camp"}</div>
+        <div class="camp-map-popup-meta">${regionLabel(camp.region)}</div>
+
+        ${
+          rating
+            ? `<div class="camp-map-popup-rating">
+                 <span class="stars">${stars}</span>
+                 <span class="score">${rating}</span>
+               </div>`
+            : ""
+        }
+
+        ${
+          notes
+            ? `<div class="camp-map-popup-notes">${notes}</div>`
+            : ""
+        }
+
+        ${
+          Array.isArray(camp.tags) && camp.tags.length
+            ? `<div class="camp-map-popup-tags">
+                 ${camp.tags.slice(0,3).map(tag => `<span class="pill">${tag}</span>`).join("")}
+               </div>`
+            : ""
+        }
+
+        <a href="${href}" class="camp-map-popup-link">Open camp</a>
+      </div>
+    </div>
+  `;
+}
+
+  function renderMarkers(){
+    markersLayer.clearLayers();
+
+const visible = camps.filter(camp =>
+  !isNaN(parseFloat(camp.lat)) &&
+  !isNaN(parseFloat(camp.lng)) &&
+  matchesLocale(camp)
+);
+
+    if (!visible.length) return;
+
+    const bounds = [];
+
+    visible.forEach(camp => {
+const lat = parseFloat(camp.lat);
+const lng = parseFloat(camp.lng);
+
+const marker = L.marker([lat, lng], {
+  icon: makeIcon()
+});
+
+      marker.bindPopup(popupHTML(camp));
+      marker.addTo(markersLayer);
+      bounds.push([lat, lng]);
+    });
+
+    if (bounds.length === 1) {
+      map.setView(bounds[0], 9);
+    } else {
+      map.fitBounds(bounds, { padding: [30, 30] });
+    }
+  }
+
+  renderMarkers();
+
+window.addEventListener("fc:campLocaleChange", () => {
+  renderMarkers();
+});
+
+window.addEventListener("fc:campSortChange", () => {
+  renderMarkers();
+});
+})();
+</script>
+
+
+</body>
+</html>

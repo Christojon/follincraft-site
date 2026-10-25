@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Caframo Sirocco II Fan">
+  <rect width="1200" height="900" fill="#090b10"/>
+  <rect x="70" y="70" width="1060" height="760" rx="36" fill="#11141b" stroke="#ea580c" stroke-width="6"/>
+  <circle cx="600" cy="410" r="210" fill="#151922" stroke="#ea580c" stroke-width="10"/>
+  <circle cx="600" cy="410" r="40" fill="#ea580c"/>
+  <path d="M600 410 L500 300 C560 250 650 250 710 300 Z" fill="#ffffff" opacity=".92"/>
+  <path d="M600 410 L760 440 C750 530 690 600 610 620 Z" fill="#ffffff" opacity=".92"/>
+  <path d="M600 410 L470 560 C395 510 360 430 380 345 Z" fill="#ffffff" opacity=".92"/>
+  <text x="120" y="165" fill="#ea580c" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800">VEHICLE COMFORT</text>
+  <text x="120" y="690" fill="#ffffff" font-size="66" font-family="Inter, Arial, sans-serif" font-weight="800">Caframo Sirocco II Fan</text>
+  <text x="120" y="755" fill="#9aa3b2" font-size="34" font-family="Inter, Arial, sans-serif">Premium 12V airflow for vans, cabins, and hot nights.</text>
+</svg>

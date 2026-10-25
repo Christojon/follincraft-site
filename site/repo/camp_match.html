@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campground Match Tool - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Find the right camp faster with a practical shortlist based on drive time, comfort needs, and the kind of trip you actually want." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Camp Match">
+  <meta property="og:description" content="Find the right camp faster with a practical shortlist based on drive time, comfort needs, and the kind of trip you actually want.">
+  <meta property="og:url" content="https://follincraft.com/repo/camp_match.html">
+  <meta property="og:image" content="https://follincraft.com/repo/${thumb}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Camp Match">
+  <meta name="twitter:description" content="Find the right camp faster with a practical shortlist based on drive time, comfort needs, and the kind of trip you actually want.">
+  <meta name="twitter:image" content="https://follincraft.com/repo/${thumb}">
+  <link rel="canonical" href="https://follincraft.com/repo/camp_match.html" />
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --tool-bg:#000;
+      --tool-card:#0d0f14;
+      --tool-card-soft:#12151c;
+      --tool-line:#262b36;
+      --tool-muted:#9aa3b2;
+      --tool-ink:#f3f4f6;
+      --tool-accent:#ff6600;
+    }
+
+    body{
+      margin:0;
+      background:var(--tool-bg);
+      color:var(--tool-ink);
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .tool-page{
+      padding:94px 0 40px;
+    }
+
+    .tool-intro,
+    .tool-wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .tool-intro{
+      padding-bottom:22px;
+    }
+
+    .eyebrow{
+      margin:0 0 8px;
+      color:#fff;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .tool-intro h1{
+      margin:0;
+      color:var(--tool-accent);
+      font-size:42px;
+      line-height:1.04;
+    }
+
+    .tool-intro p{
+      margin:14px 0 0;
+      max-width:760px;
+      color:var(--tool-muted);
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .tool-layout{
+      display:grid;
+      grid-template-columns:360px minmax(0, 1fr);
+      gap:22px;
+      align-items:start;
+    }
+
+    .panel{
+      background:var(--tool-card);
+      border:1px solid var(--tool-line);
+      border-radius:18px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+    }
+
+    .panel-inner{
+      padding:22px;
+    }
+
+    .panel h2{
+      margin:0;
+      font-size:22px;
+      color:#fff;
+    }
+
+    .panel p{
+      color:var(--tool-muted);
+      line-height:1.55;
+    }
+
+    .control-stack{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .field{
+      display:grid;
+      gap:8px;
+    }
+
+    .field label{
+      font-size:13px;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:.02em;
+    }
+
+    .field select{
+      width:100%;
+      appearance:none;
+      border:1px solid var(--tool-line);
+      border-radius:14px;
+      background:var(--tool-card-soft);
+      color:#fff;
+      padding:14px 16px;
+      font:inherit;
+    }
+
+    .field select:focus{
+      outline:none;
+      border-color:var(--tool-accent);
+      box-shadow:0 0 0 3px rgba(255,102,0,.15);
+    }
+
+    .toggle-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .toggle{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 13px;
+      border:1px solid var(--tool-line);
+      border-radius:14px;
+      background:var(--tool-card-soft);
+    }
+
+    .toggle input{
+      width:16px;
+      height:16px;
+      accent-color:var(--tool-accent);
+      margin:0;
+      flex:0 0 auto;
+    }
+
+    .toggle span{
+      font-size:14px;
+      color:#fff;
+      line-height:1.35;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .match-btn{
+      border:1px solid var(--tool-accent);
+      border-radius:14px;
+      background:var(--tool-accent);
+      color:#000;
+      padding:13px 16px;
+      font:inherit;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .match-btn.secondary{
+      background:transparent;
+      color:#fff;
+      border-color:var(--tool-line);
+    }
+
+    .helper-note{
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--tool-line);
+      font-size:13px;
+      color:var(--tool-muted);
+    }
+
+    .results-head{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:end;
+      margin-bottom:18px;
+    }
+
+    .results-head p{
+      margin:8px 0 0;
+      max-width:620px;
+    }
+
+    .results-count{
+      color:var(--tool-muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .results-grid{
+      display:grid;
+      gap:16px;
+    }
+
+    .match-card{
+      display:grid;
+      grid-template-columns:200px minmax(0, 1fr);
+      gap:16px;
+      padding:16px;
+      border:1px solid var(--tool-line);
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .match-thumb{
+      aspect-ratio:4/3;
+      border-radius:12px;
+      overflow:hidden;
+      background:#090b10;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .match-thumb img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .match-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      margin-bottom:8px;
+    }
+
+    .match-region,
+    .match-trip{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--tool-line);
+      background:rgba(255,255,255,.03);
+      color:var(--tool-muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+
+    .match-score{
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .match-card h3{
+      margin:0;
+      font-size:28px;
+      line-height:1.05;
+      color:var(--tool-accent);
+    }
+
+    .match-summary{
+      margin:10px 0 0;
+      color:var(--tool-muted);
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .match-detail-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .match-detail{
+      background:var(--tool-card-soft);
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:14px;
+      padding:12px 13px;
+    }
+
+    .match-detail strong{
+      display:block;
+      margin-bottom:6px;
+      color:#fff;
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .match-detail p{
+      margin:0;
+      font-size:14px;
+      color:var(--tool-muted);
+      line-height:1.5;
+    }
+
+    .match-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+
+    .match-tags span{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 10px;
+      border:1px solid var(--tool-line);
+      border-radius:999px;
+      background:#10131a;
+      color:#d8dde5;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .match-actions{
+      margin-top:15px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .open-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 14px;
+      border-radius:12px;
+      border:1px solid var(--tool-accent);
+      background:transparent;
+      color:var(--tool-accent);
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .empty-state{
+      padding:28px;
+      border:1px dashed var(--tool-line);
+      border-radius:16px;
+      color:var(--tool-muted);
+      background:rgba(255,255,255,.02);
+    }
+
+    .empty-state h3{
+      margin:0 0 8px;
+      color:#fff;
+      font-size:20px;
+    }
+
+    @media (max-width:980px){
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .tool-page{padding-top:86px}
+      .tool-intro,
+      .tool-wrap{padding:0 16px}
+      .tool-intro h1{font-size:36px}
+      .tool-intro p{font-size:15px}
+      .panel-inner{padding:18px}
+      .toggle-grid{grid-template-columns:1fr}
+      .results-head{display:block}
+      .match-card{
+        grid-template-columns:1fr;
+        padding:14px;
+      }
+      .match-card h3{
+        font-size:24px;
+      }
+      .match-detail-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Camp Match",
+  "headline": "Camp Match",
+  "description": "Find the right camp faster with a practical shortlist based on drive time, comfort needs, and the kind of trip you actually want.",
+  "url": "https://follincraft.com/repo/camp_match.html",
+  "image": "https://follincraft.com/repo/${thumb}",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://follincraft.com/repo/camp_match.html"
+  },
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web"
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Camp Match",
+      "item": "https://follincraft.com/repo/camp_match.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Camp Match</span></p>
+      <p class="eyebrow">Camp tool</p>
+      <h1>Camp Match</h1>
+      <p>Tell it what kind of trip you want, what comfort you need, and how far you are willing to drive. It will give you the short list I would actually start with, plus the tradeoffs worth knowing before you commit.</p>
+    </section>
+
+    <div class="tool-wrap">
+      <div class="tool-layout">
+        <aside class="panel">
+          <div class="panel-inner">
+            <h2>Find the right camp faster</h2>
+            <p>Keep the inputs simple. This is supposed to narrow the field, not feel like filing taxes.</p>
+
+            <form class="control-stack" id="campMatchForm">
+              <div class="field">
+                <label for="startCity">Starting from</label>
+                <select id="startCity" name="startCity" aria-label="Start City">
+                  <option value="phoenix" selected>Phoenix</option>
+                  <option value="tucson">Tucson</option>
+                  <option value="flagstaff">Flagstaff</option>
+                  <option value="prescott">Prescott</option>
+                  <option value="payson">Payson</option>
+                  <option value="show-low">Show Low</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="maxDrive">Max drive</label>
+                <select id="maxDrive" name="maxDrive" aria-label="Max Drive">
+                  <option value="2">About 2 hours</option>
+                  <option value="3" selected>About 3 hours</option>
+                  <option value="4">About 4 hours</option>
+                  <option value="6">About 6 hours</option>
+                  <option value="99">Anything worth it</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="tripStyle">What kind of trip is this?</label>
+                <select id="tripStyle" name="tripStyle" aria-label="Trip Style">
+                  <option value="easy" selected>Easy weekend</option>
+                  <option value="quiet">Quiet reset</option>
+                  <option value="water">Water-focused</option>
+                  <option value="cool">Cooler weather</option>
+                  <option value="scenic">Big views / memorable spot</option>
+                  <option value="dispersed">More rugged / less structured</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>What matters most?</label>
+                <div class="toggle-grid">
+                  <label class="toggle"><input type="checkbox" name="need" value="showers" aria-label="Need"><span>Need showers</span></label>
+                  <label class="toggle"><input type="checkbox" name="need" value="water" aria-label="Need"><span>Want water nearby</span></label>
+                  <label class="toggle"><input type="checkbox" name="need" value="quiet" aria-label="Need"><span>Prefer quiet</span></label>
+                  <label class="toggle"><input type="checkbox" name="need" value="shade" aria-label="Need"><span>Need shade</span></label>
+                  <label class="toggle"><input type="checkbox" name="need" value="beginner" aria-label="Need"><span>Beginner-friendly</span></label>
+                  <label class="toggle"><input type="checkbox" name="need" value="developed" aria-label="Need"><span>Developed campground</span></label>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button type="submit" class="match-btn">Show matches</button>
+                <button type="button" class="match-btn secondary" id="resetMatch">Reset</button>
+              </div>
+            </form>
+
+            <div class="helper-note">
+              This is a judgment tool, not a perfect database. It weights your trip style, your comfort needs, and the notes already on the site so the results feel like actual advice.
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="results-head">
+              <div>
+                <h2>Your shortlist</h2>
+                <p id="resultsIntro">A good first pass for an easy weekend out of Phoenix.</p>
+              </div>
+              <div class="results-count" id="resultsCount">Top 5 matches</div>
+              <button type="button" class="match-btn secondary" id="copyShortlist">Copy shortlist</button>
+            </div>
+            <div class="results-grid" id="resultsGrid"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <script src="../data-camp.js"></script>
+  <script>
+    const DRIVE_BY_REGION = {
+      phoenix: {
+        flagstaff: 2.5,
+        payson: 2.0,
+        prescott: 2.1,
+        "white-mountains": 4.0,
+        "southern-az": 3.5,
+        "new-mexico": 6.0,
+        "southern-california": 5.5,
+        "west-clear-creek": 2.4,
+        oahu: 99,
+        hawaii: 99,
+        utah: 6.5
+      },
+      tucson: {
+        flagstaff: 4.1,
+        payson: 3.5,
+        prescott: 4.2,
+        "white-mountains": 4.3,
+        "southern-az": 1.8,
+        "new-mexico": 4.8,
+        "southern-california": 6.8,
+        "west-clear-creek": 4.0,
+        oahu: 99,
+        hawaii: 99,
+        utah: 8.0
+      },
+      flagstaff: {
+        flagstaff: 0.7,
+        payson: 1.8,
+        prescott: 1.7,
+        "white-mountains": 3.0,
+        "southern-az": 4.5,
+        "new-mexico": 5.5,
+        "southern-california": 8.0,
+        "west-clear-creek": 1.1,
+        oahu: 99,
+        hawaii: 99,
+        utah: 4.5
+      },
+      prescott: {
+        flagstaff: 1.8,
+        payson: 2.3,
+        prescott: 0.6,
+        "white-mountains": 4.2,
+        "southern-az": 4.6,
+        "new-mexico": 6.1,
+        "southern-california": 7.2,
+        "west-clear-creek": 2.0,
+        oahu: 99,
+        hawaii: 99,
+        utah: 5.6
+      },
+      payson: {
+        flagstaff: 1.7,
+        payson: 0.4,
+        prescott: 2.0,
+        "white-mountains": 2.5,
+        "southern-az": 3.8,
+        "new-mexico": 5.6,
+        "southern-california": 6.8,
+        "west-clear-creek": 1.7,
+        oahu: 99,
+        hawaii: 99,
+        utah: 5.9
+      },
+      "show-low": {
+        flagstaff: 3.0,
+        payson: 2.5,
+        prescott: 4.1,
+        "white-mountains": 0.8,
+        "southern-az": 4.8,
+        "new-mexico": 3.6,
+        "southern-california": 8.5,
+        "west-clear-creek": 3.2,
+        oahu: 99,
+        hawaii: 99,
+        utah: 7.1
+      }
+    };
+
+    const REGION_LABELS = {
+      flagstaff: "Flagstaff",
+      payson: "Mogollon Rim",
+      prescott: "Prescott",
+      "white-mountains": "White Mountains",
+      "southern-az": "Southern AZ",
+      "new-mexico": "New Mexico",
+      "southern-california": "Southern California",
+      "west-clear-creek": "West Clear Creek",
+      oahu: "Oahu",
+      hawaii: "Hawaii",
+      utah: "Utah"
+    };
+
+    const FORM = document.getElementById("campMatchForm");
+    const RESULTS_GRID = document.getElementById("resultsGrid");
+    const RESULTS_COUNT = document.getElementById("resultsCount");
+    const RESULTS_INTRO = document.getElementById("resultsIntro");
+    const RESET = document.getElementById("resetMatch");
+    const COPY_SHORTLIST = document.getElementById("copyShortlist");
+    let lastRanked = [];
+
+    function cleanHref(value) {
+      if (!value) return "#";
+      return String(value).replace(/\/index\.html(?=$|[?#])/, "/");
+    }
+
+    function localAwarePath(value) {
+      if (!value) return "";
+      const path = String(value);
+      if (/^(https?:)?\/\//.test(path)) return path;
+      if (location.protocol === "file:" && path.startsWith("/")) {
+        return `..${path}`;
+      }
+      return path;
+    }
+
+    function regionLabel(key) {
+      return REGION_LABELS[key] || key || "";
+    }
+
+    function textBlob(item) {
+      return [item.title, item.notes, ...(item.tags || []), item.region].join(" ").toLowerCase();
+    }
+
+    function hasAny(item, terms) {
+      const blob = textBlob(item);
+      return terms.some((term) => blob.includes(term));
+    }
+
+    function driveHours(startCity, region) {
+      return DRIVE_BY_REGION[startCity]?.[region] ?? 99;
+    }
+
+    function regionIsCool(region) {
+      return ["flagstaff", "payson", "prescott", "white-mountains", "west-clear-creek", "utah"].includes(region);
+    }
+
+    function scoreCamp(item, formState) {
+      let score = 0;
+      const reasons = [];
+      const cautions = [];
+      const blob = textBlob(item);
+      const drive = driveHours(formState.startCity, item.region);
+      const rating = Number(item.rating?.overall || 0);
+      const developed = hasAny(item, ["developed", "showers", "flush toilets", "vault toilets", "reservations", "state park", "campground"]);
+      const quiet = hasAny(item, ["quiet", "tucked-away", "relaxed", "mid-week", "space", "breathing room"]);
+      const water = hasAny(item, ["lake", "creek", "beach", "ocean", "reservoir", "water", "marina", "river"]);
+      const shade = hasAny(item, ["shade", "shady", "pine", "ponderosa"]);
+      const beginner = developed || hasAny(item, ["easy", "simple", "family-friendly", "state park", "quick trip", "convenient"]);
+      const showers = hasAny(item, ["showers"]);
+      const rugged = hasAny(item, ["dispersed", "rougher", "toilet kit", "no real services", "exposure"]);
+      const windy = hasAny(item, ["windy", "gusts", "exposed", "wind"]);
+
+      score += rating * 12;
+
+      if (drive <= formState.maxDrive) {
+        score += 20;
+        reasons.push(`reasonable drive from ${formState.startCity.replace("-", " ")}`);
+      } else if (drive <= formState.maxDrive + 1.5) {
+        score += 6;
+        cautions.push(`longer drive than you asked for`);
+      } else {
+        score -= 18;
+        cautions.push(`really stretches the drive`);
+      }
+
+      if (formState.tripStyle === "easy" && beginner) {
+        score += 16;
+        reasons.push("easy trip without much setup drama");
+      }
+      if (formState.tripStyle === "quiet" && quiet) {
+        score += 18;
+        reasons.push("more likely to feel calm and less hectic");
+      }
+      if (formState.tripStyle === "water" && water) {
+        score += 20;
+        reasons.push("water is actually part of the trip");
+      }
+      if (formState.tripStyle === "cool" && regionIsCool(item.region)) {
+        score += 16;
+        reasons.push("better shot at cooler weather");
+      }
+      if (formState.tripStyle === "scenic" && hasAny(item, ["views", "dramatic", "cliff-edge", "sunrise", "red rock", "ocean", "big sky", "blufftop"])) {
+        score += 18;
+        reasons.push("more memorable setting");
+      }
+      if (formState.tripStyle === "dispersed" && (rugged || !developed)) {
+        score += 14;
+        reasons.push("less structured and more DIY");
+      }
+
+      if (formState.needs.includes("showers")) {
+        if (showers) {
+          score += 18;
+          reasons.push("has actual showers");
+        } else {
+          score -= 14;
+          cautions.push("no showers called out");
+        }
+      }
+
+      if (formState.needs.includes("water")) {
+        if (water) {
+          score += 16;
+          reasons.push("water nearby");
+        } else {
+          score -= 12;
+        }
+      }
+
+      if (formState.needs.includes("quiet")) {
+        if (quiet) {
+          score += 14;
+          reasons.push("more likely to stay quiet");
+        } else {
+          score -= 6;
+        }
+      }
+
+      if (formState.needs.includes("shade")) {
+        if (shade) {
+          score += 12;
+          reasons.push("better shade coverage");
+        } else {
+          score -= 7;
+          cautions.push("may feel more exposed than you want");
+        }
+      }
+
+      if (formState.needs.includes("beginner")) {
+        if (beginner) {
+          score += 14;
+          reasons.push("easier first-timer fit");
+        } else {
+          score -= 10;
+          cautions.push("less forgiving if you want easy");
+        }
+      }
+
+      if (formState.needs.includes("developed")) {
+        if (developed) {
+          score += 14;
+          reasons.push("developed campground structure");
+        } else {
+          score -= 16;
+          cautions.push("more rustic than you asked for");
+        }
+      }
+
+      if (windy) {
+        score -= 4;
+        cautions.push("wind can be part of the experience");
+      }
+
+      if (rugged && formState.tripStyle !== "dispersed" && formState.needs.includes("beginner")) {
+        score -= 8;
+      }
+
+      const watchFor = cautions[0] || (windy ? "watch the weather and exposure" : rugged ? "more rustic setup than a developed campground" : "weekends can change the noise level fast");
+      const why = reasons.slice(0, 3);
+      if (!why.length) {
+        why.push("strong overall camp with enough upside to make the list");
+      }
+
+      return {
+        item,
+        score,
+        drive,
+        why,
+        watchFor
+      };
+    }
+
+    function readState() {
+      return {
+        startCity: FORM.startCity.value,
+        maxDrive: Number(FORM.maxDrive.value),
+        tripStyle: FORM.tripStyle.value,
+        needs: Array.from(FORM.querySelectorAll('input[name="need"]:checked')).map((input) => input.value)
+      };
+    }
+
+    function stateSummary(state) {
+      const labels = {
+        easy: "an easy weekend",
+        quiet: "a quiet reset",
+        water: "a water-focused trip",
+        cool: "cooler weather",
+        scenic: "a memorable scenic spot",
+        dispersed: "a more rugged camp"
+      };
+      return `A good first pass for ${labels[state.tripStyle] || "your trip"} out of ${state.startCity.replace("-", " ")}.`;
+    }
+
+    function cardHtml(match, index) {
+      const item = match.item;
+      const driveText = match.drive >= 90 ? "long-haul / destination trip" : `about ${match.drive.toFixed(1).replace(".0", "")} hr drive`;
+      const thumb = localAwarePath(item.thumb || "");
+      const href = localAwarePath(cleanHref(item.page || `/camp/${item.id}/`));
+      const tags = (item.tags || []).filter((tag) => !String(tag).toLowerCase().includes("new")).slice(0, 4);
+
+      return `
+        <article class="match-card">
+          <div class="match-thumb">${thumb ? `<img src="${thumb}" alt="${item.title}">` : ""}</div>
+          <div>
+            <div class="match-meta">
+              <span class="match-region">${index + 1}. ${regionLabel(item.region)}</span>
+              <span class="match-trip">${driveText}</span>
+              <span class="match-score">${Number(item.rating?.overall || 0).toFixed(1)} overall</span>
+            </div>
+            <h3>${item.title}</h3>
+            <p class="match-summary">${item.notes}</p>
+            <div class="match-detail-grid">
+              <div class="match-detail">
+                <strong>Why it matched</strong>
+                <p>${match.why.join(", ")}</p>
+              </div>
+              <div class="match-detail">
+                <strong>Watch for</strong>
+                <p>${match.watchFor}</p>
+              </div>
+            </div>
+            ${tags.length ? `<div class="match-tags">${tags.map((tag) => `<span>${tag}</span>`).join("")}</div>` : ""}
+            <div class="match-actions">
+              <a class="open-link" href="${href}">Open camp page</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderResults() {
+      const state = readState();
+      RESULTS_INTRO.textContent = stateSummary(state);
+      const camps = Object.entries(window.CAMP_DATA || {}).map(([id, item]) => ({ id, ...item }));
+      const ranked = camps
+        .map((item) => scoreCamp(item, state))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 5);
+      lastRanked = ranked;
+
+      RESULTS_COUNT.textContent = `Top ${ranked.length} matches`;
+
+      if (!ranked.length) {
+        RESULTS_GRID.innerHTML = `
+          <div class="empty-state">
+            <h3>No useful matches yet</h3>
+            <p>Try easing the drive limit or turning off one of the stricter comfort filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      RESULTS_GRID.innerHTML = ranked.map(cardHtml).join("");
+    }
+
+    FORM.addEventListener("submit", (event) => {
+      event.preventDefault();
+      renderResults();
+    });
+
+    RESET.addEventListener("click", () => {
+      FORM.reset();
+      FORM.startCity.value = "phoenix";
+      FORM.maxDrive.value = "3";
+      FORM.tripStyle.value = "easy";
+      renderResults();
+    });
+
+    COPY_SHORTLIST.addEventListener("click", async () => {
+      const lines = lastRanked.map((match, index) => {
+        const item = match.item;
+        return `${index + 1}. ${item.title} - ${regionLabel(item.region)} - ${match.why.join(", ")}`;
+      });
+      if (!lines.length) return;
+      try{
+        await navigator.clipboard.writeText(lines.join("\n"));
+        COPY_SHORTLIST.textContent = "Copied";
+        setTimeout(() => COPY_SHORTLIST.textContent = "Copy shortlist", 900);
+      }catch(_){}
+    });
+
+    renderResults();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

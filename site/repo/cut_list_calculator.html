@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cut List Estimator - Follincraft</title>
+<meta name="description" content="Cut list calculator for planning material cuts, quantities, kerf, total length, and scrap before shop work starts.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cut List Estimator">
+  <meta property="og:description" content="Cut list calculator for planning material cuts, quantities, kerf, total length, and scrap before shop work starts.">
+  <meta property="og:url" content="https://follincraft.com/repo/cut_list_calculator.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cut List Estimator">
+  <meta name="twitter:description" content="Cut list calculator for planning material cuts, quantities, kerf, total length, and scrap before shop work starts.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/cut_list_calculator.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root{
+  --bg:#000000;
+  --card:#0b0c10;
+  --ink:#ffffff;
+  --muted:#d6d6d6;
+  --accent:#ff6600;
+  --good:#22c55e;
+  --bad:#ef4444;
+
+  --line:#2a2a2d;
+  --input-bg:#0e1115;
+  --input-border:#2f3237;
+}
+
+html, body{
+  height:100%;
+  margin:0;
+  font-family:'Roboto', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  background:var(--bg);
+  color:var(--ink);
+}
+
+.tool-page{ padding:94px 0 40px; }
+.tool-intro{ max-width:980px; margin:0 auto; padding:0 24px 18px; }
+.eyebrow{ margin:0 0 6px; color:#fff; font-size:14px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.tool-intro h1{ margin:0; font-size:42px; line-height:1.05; color:var(--accent); }
+.tool-intro p{ margin:12px 0 0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55; }
+.tool-wrap{ max-width:980px; margin:0 auto; padding:24px; }
+
+.page-head{ margin-bottom:16px; }
+.title{ margin:0; font-size:20px; color:var(--accent); }
+.blurb{ margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+}
+
+.grid{ display:grid; gap:16px; }
+@media (min-width:900px){
+  .grid{ grid-template-columns:360px 1fr; }
+}
+
+label{ font-size:13px; color:var(--muted); display:block; margin-bottom:6px; }
+input[type="number"], textarea{
+  width:100%; box-sizing:border-box;
+  background:var(--input-bg);
+  color:var(--ink);
+  border:1px solid var(--input-border);
+  border-radius:10px;
+  padding:10px 12px; font-size:14px; outline:none;
+}
+input[type="number"]::placeholder, textarea::placeholder{ color:#9aa0a6; }
+input[type="number"]:focus, textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(255,102,0,.25);
+}
+textarea{ min-height:96px; resize:vertical; }
+input[type="text"]{
+  width:100%; box-sizing:border-box;
+  background:var(--input-bg);
+  color:var(--ink);
+  border:1px solid var(--input-border);
+  border-radius:10px;
+  padding:10px 12px; font-size:14px; outline:none;
+}
+input[type="text"]::placeholder{ color:#9aa0a6; }
+input[type="text"]:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(255,102,0,.25);
+}
+
+.row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+.btns{ display:flex; gap:10px; flex-wrap:wrap; }
+button{
+  appearance:none; border:1px solid transparent;
+  border-radius:10px; padding:10px 14px;
+  font-weight:700; cursor:pointer;
+  background:var(--accent); color:#000;
+  transition: filter .15s ease, transform .02s ease;
+}
+button:hover{ filter:brightness(1.05); }
+button:active{ transform:translateY(1px); }
+
+button.secondary{
+  background:#121418; color:var(--ink);
+  border-color:var(--line);
+}
+button.secondary:hover{ border-color:var(--accent); }
+
+.muted{ color:var(--muted); font-size:13px; }
+
+.table-wrap{ overflow:auto; border-radius:10px; }
+table{ width:100%; border-collapse:collapse; }
+th, td{
+  text-align:left; padding:10px 12px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top; color:var(--ink);
+}
+thead th{
+  color:#cfcfcf; font-weight:700; font-size:12.5px;
+  background:#121418; position:sticky; top:0; z-index:1;
+}
+tbody tr:nth-child(odd){ background:#0e1014; }
+tbody tr:nth-child(even){ background:#101317; }
+tbody tr:hover{ background:#171b22; }
+
+.pill{
+  display:inline-block; font-size:12px; padding:4px 8px;
+  border-radius:999px; border:1px solid var(--line);
+  background:#0f1116; color:var(--ink);
+}
+.ok{ color:var(--good); border-color:rgba(34,197,94,.35); background:rgba(34,197,94,.08); }
+.warn{ color:var(--bad); border-color:rgba(239,68,68,.35); background:rgba(239,68,68,.08); }
+
+.totals{ display:flex; gap:12px; flex-wrap:wrap; }
+.totals .pill{ background:#121418; }
+.cut-parts-table input{ min-width:72px; }
+.part-letter{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:34px;
+  height:34px;
+  border-radius:8px;
+  background:rgba(255,102,0,.12);
+  border:1px solid rgba(255,102,0,.45);
+  color:#ff8a3d;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.cut-diagrams{ display:grid; gap:14px; margin-top:14px; }
+.cut-stop-list{ margin:10px 0 14px; }
+.cut-stop-list h3{ margin:0 0 8px; font-size:15px; }
+.cut-stop-table{ width:100%; border-collapse:collapse; font-size:13px; }
+.cut-stop-table th,
+.cut-stop-table td{ border-bottom:1px solid var(--line); padding:8px; text-align:left; }
+.cut-stop-table th{ color:var(--muted); background:#111317; }
+.cut-ticket{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#0e1115;
+  padding:12px;
+}
+.cut-ticket h3{ margin:0 0 8px; font-size:15px; }
+.cut-ticket svg{ width:100%; height:auto; display:block; overflow:visible; }
+.cut-piece-label{ font-size:8px; font-weight:700; fill:#fff; }
+.cut-dim-label{ font-size:7px; fill:#cfd6e6; }
+.print-report{ display:none; }
+
+.footer-note{ margin-top:10px; }
+.code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+label { font-size:14px; font-weight:500; }
+button { font-size:14px; letter-spacing:.2px; }
+th, td { font-size:14px; }
+@media (max-width:700px){
+  .tool-page{padding-top:86px}
+  .tool-intro{padding:0 16px 16px}
+  .tool-intro h1{font-size:34px}
+  .tool-intro p{font-size:15px}
+  .tool-wrap{padding:16px}
+}
+@media print{
+  @page{ size:letter; margin:.45in; }
+  body{ background:#fff; color:#111; font-family:Arial, sans-serif; }
+  body > header,
+  .tool-page,
+  #contact,
+  footer{ display:none !important; }
+  .print-report{
+    display:block !important;
+    color:#111;
+  }
+  .print-report h1{ margin:0 0 4px; font-size:24px; color:#111; }
+  .print-report h2{ margin:18px 0 8px; font-size:15px; color:#111; }
+  .print-meta{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:8px;
+    margin:12px 0 16px;
+    font-size:11px;
+  }
+  .print-meta div{ border:1px solid #bbb; padding:6px; border-radius:4px; }
+  .print-report table{ width:100%; border-collapse:collapse; font-size:11px; }
+  .print-report th,
+  .print-report td{ color:#111; border:1px solid #bbb; padding:5px; }
+  .print-report thead th{ background:#eee; color:#111; position:static; }
+  .print-ticket{
+    break-inside:avoid;
+    page-break-inside:avoid;
+    margin:0 0 14px;
+    border:1px solid #999;
+    border-radius:6px;
+    padding:8px;
+  }
+  .print-ticket h3{ margin:0 0 6px; font-size:13px; color:#111; }
+  .print-ticket svg{ width:100%; height:auto; }
+}
+</style>
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cut List Estimator",
+  "description": "Cut list calculator for planning material cuts, quantities, kerf, total length, and scrap before shop work starts.",
+  "url": "https://follincraft.com/repo/cut_list_calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cut List Estimator",
+      "item": "https://follincraft.com/repo/cut_list_calculator.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Cut List Estimator</span></p>
+      <p class="eyebrow">Shop Tool</p>
+      <h1>Cut List Estimator</h1>
+      <p>Stick count, cut sequence, and scrap in one pass. Fast enough for shop use, without turning into a bloated quoting tool.</p>
+    </section>
+  <div class="tool-wrap">
+
+    <div class="grid">
+      <section class="card">
+        <div class="row">
+          <div>
+            <label for="stockLen">Stock length (in)</label>
+            <input id="stockLen" type="number" step="0.001" value="240"  aria-label="Stock Len"/>
+          </div>
+          <div>
+            <label for="kerf">Kerf (in)</label>
+            <input id="kerf" type="number" step="0.001" value="0.125"  aria-label="Kerf"/>
+          </div>
+        </div>
+        <div class="row" style="margin-top:12px;">
+          <div>
+            <label for="reusableDrop">Reusable drop min (in)</label>
+            <input id="reusableDrop" type="number" step="0.001" value="24"  aria-label="Reusable Drop"/>
+          </div>
+          <div>
+            <label for="sortMode">Cut priority</label>
+            <input id="sortMode" type="text" value="Longest first" disabled  aria-label="Sort Mode"/>
+          </div>
+        </div>
+        <h3 style="margin:18px 0 8px; font-size:14px; color:var(--muted);">Parts</h3>
+        <div class="table-wrap">
+          <table class="cut-parts-table" id="cutPartsTable">
+            <thead>
+              <tr>
+                <th>Part</th>
+                <th>Length</th>
+                <th>Qty</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cutPartsBody"></tbody>
+          </table>
+        </div>
+        <div class="btns" style="margin-top:10px;">
+          <button id="addRowBtn" class="secondary" type="button">+ Add part</button>
+        </div>
+        <details style="margin-top:12px;">
+          <summary class="muted" style="cursor:pointer;">Quick paste list</summary>
+          <div style="margin-top:10px;">
+            <label for="cuts">Cuts (comma separated - use x for qty)</label>
+            <textarea id="cuts" placeholder="72x2, 60, 36x3, 18" aria-label="72x2, 60, 36x3, 18"></textarea>
+            <div class="btns" style="margin-top:10px;">
+              <button id="pasteBtn" type="button" class="secondary">Add pasted cuts</button>
+            </div>
+          </div>
+        </details>
+        <div class="btns" style="margin-top:12px;">
+          <button id="runBtn">Estimate</button>
+          <button id="clearBtn" class="secondary" title="Clear inputs">Clear</button>
+          <button id="sampleBtn" class="secondary" title="Load example">Load example</button>
+        </div>
+        <p class="muted footer-note">Enter cuts in inches. Use <span class="code">72x3</span> for three pieces of 72". Decimal or whole numbers are both valid.</p>
+      </section>
+
+      <section class="card">
+        <div class="btns" style="justify-content:flex-end; margin-bottom:10px;">
+          <button id="copyResultsBtn" class="secondary" type="button">Copy results</button>
+          <button id="printResultsBtn" class="secondary" type="button">Print cut tickets</button>
+        </div>
+        <div id="summary" class="totals" style="margin-bottom:8px;"></div>
+        <div class="muted" id="notes" style="margin-bottom:10px;"></div>
+        <div id="cutStops" class="cut-stop-list"></div>
+        <div id="cutDiagrams" class="cut-diagrams"></div>
+        <div class="table-wrap">
+          <table id="resultTable" aria-label="Packing results">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Cut sequence</th>
+                <th>Used (in)</th>
+                <th>Scrap (in)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4" class="muted">Run an estimate to see results.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    let lastResult=null;
+
+    function parseCuts(text){
+      const cuts=[];
+      if(!text||!text.trim()) return cuts;
+      const parts=text.replace(/\n/g,',').split(',').map(s=>s.trim()).filter(Boolean);
+      for(const p of parts){
+        const x=p.toLowerCase();
+        if(x.includes('x')){
+          const [lenStr,qtyStr]=x.split('x');
+          const length=parseFloat(lenStr);
+          const qty=parseInt(qtyStr,10);
+          if(!isFinite(length)||!isFinite(qty)||qty<=0) throw new Error('Bad cut entry: '+p);
+          for(let i=0;i<qty;i++) cuts.push({ mark:`P${cuts.length+1}`, length });
+        }else{
+          const length=parseFloat(x);
+          if(!isFinite(length)) throw new Error('Bad cut entry: '+p);
+          cuts.push({ mark:`P${cuts.length+1}`, length });
+        }
+      }
+      return cuts;
+    }
+
+    function packCuts(stockLen,kerf,cuts){
+      const pieces=[...cuts].sort((a,b)=>b.length-a.length);
+      const bars=[]; const remaining=[];
+      for(const piece of pieces){
+        if(piece.length>stockLen) throw new Error(`Piece ${piece.length} in is longer than stock length ${stockLen} in.`);
+        let placed=false;
+        for(let i=0;i<remaining.length;i++){
+          const need=piece.length+(bars[i].length?kerf:0);
+          if(remaining[i]>=need){
+            if(bars[i].length) remaining[i]-=kerf;
+            bars[i].push(piece);
+            remaining[i]-=piece.length;
+            placed=true; break;
+          }
+        }
+        if(!placed){ bars.push([piece]); remaining.push(stockLen-piece.length); }
+      }
+      return { bars, remaining };
+    }
+
+    const $=sel=>document.querySelector(sel);
+    const runBtn=$('#runBtn');
+    const clearBtn=$('#clearBtn');
+    const sampleBtn=$('#sampleBtn');
+    const addRowBtn=$('#addRowBtn');
+    const pasteBtn=$('#pasteBtn');
+    const copyResultsBtn=$('#copyResultsBtn');
+    const printResultsBtn=$('#printResultsBtn');
+    const cutPartsBody=$('#cutPartsBody');
+
+    function addPartRow(length='', qty=''){
+      const tr=document.createElement('tr');
+      const letter=partLetter(cutPartsBody.children.length);
+      tr.innerHTML=`
+        <td><span class="part-letter">${letter}</span></td>
+        <td><input type="number" step="0.001" value="${escapeAttr(length)}" placeholder="72"  aria-label="72"/></td>
+        <td><input type="number" step="1" value="${escapeAttr(qty)}" placeholder="2"  aria-label="2"/></td>
+        <td><button type="button" class="secondary del">Remove</button></td>
+      `;
+      tr.querySelector('.del').addEventListener('click',()=>{
+        tr.remove();
+        refreshPartLetters();
+      });
+      cutPartsBody.appendChild(tr);
+      refreshPartLetters();
+    }
+
+    function refreshPartLetters(){
+      cutPartsBody.querySelectorAll('tr').forEach((tr,index)=>{
+        const badge=tr.querySelector('.part-letter');
+        if(badge) badge.textContent=partLetter(index);
+      });
+    }
+
+    function collectCuts(){
+      const cuts=[];
+      cutPartsBody.querySelectorAll('tr').forEach((tr,index)=>{
+        const inputs=tr.querySelectorAll('input');
+        const mark=partLetter(index);
+        const length=parseFloat(inputs[0].value);
+        const qty=parseInt(inputs[1].value,10)||0;
+        if(qty>0 && length>0){
+          for(let i=0;i<qty;i++) cuts.push({ mark, length });
+        }
+      });
+      return cuts;
+    }
+
+    runBtn.addEventListener('click',()=>{
+      const stockLen=parseFloat($('#stockLen').value);
+      const kerf=parseFloat($('#kerf').value);
+      try{
+        if(!isFinite(stockLen)||stockLen<=0) throw new Error('Stock length must be a positive number.');
+        if(!isFinite(kerf)||kerf<0) throw new Error('Kerf must be zero or greater.');
+        const cuts=collectCuts();
+        if(!cuts.length) throw new Error('Enter at least one cut.');
+        const { bars, remaining }=packCuts(stockLen,kerf,cuts);
+        renderResults(stockLen,kerf,cuts,bars,remaining);
+      }catch(err){ alert(err.message||String(err)); }
+    });
+
+    addRowBtn.addEventListener('click',()=>addPartRow());
+
+    pasteBtn.addEventListener('click',()=>{
+      try{
+        const cuts=parseCuts($('#cuts').value);
+        cuts.forEach(c=>addPartRow(fmtInput(c.length), 1));
+        $('#cuts').value='';
+      }catch(err){ alert(err.message||String(err)); }
+    });
+
+    clearBtn.addEventListener('click',()=>{
+      cutPartsBody.innerHTML='';
+      addPartRow();
+      $('#cuts').value='';
+      $('#resultTable tbody').innerHTML='<tr><td colspan="4" class="muted">Cleared. Enter cuts to begin.</td></tr>';
+      $('#summary').innerHTML='';
+      $('#notes').textContent='';
+      $('#cutDiagrams').innerHTML='';
+      lastResult=null;
+    });
+
+    sampleBtn.addEventListener('click',()=>{
+      $('#stockLen').value='240';
+      $('#kerf').value='0.125';
+      $('#reusableDrop').value='24';
+      cutPartsBody.innerHTML='';
+      addPartRow(96,2);
+      addPartRow(72,4);
+      addPartRow(48,6);
+      addPartRow(36,4);
+    });
+
+    copyResultsBtn.addEventListener('click', async ()=>{
+      const rows=[...document.querySelectorAll('#resultTable tbody tr')].map(tr=>[...tr.children].map(td=>td.textContent.trim()).join(' | '));
+      const summary=$('#summary').textContent.trim().replace(/\s+/g,' ');
+      const notes=$('#notes').textContent.trim();
+      const text=[summary, notes, ...rows].filter(Boolean).join('\n');
+      if(!text || text.includes('Run an estimate')) return;
+      try{
+        await navigator.clipboard.writeText(text);
+        copyResultsBtn.textContent='Copied';
+        setTimeout(()=>copyResultsBtn.textContent='Copy results',900);
+      }catch(_){}
+    });
+
+    printResultsBtn.addEventListener('click',()=>{
+      if(!lastResult){
+        runBtn.click();
+        if(!lastResult) return;
+      }
+      buildPrintReport(lastResult);
+      window.print();
+    });
+
+    function fmt(n){ return Number(n).toFixed(3); }
+    function fmtInput(n){ return Number(n).toFixed(3).replace(/\.?0+$/,''); }
+    function escapeHTML(value){
+      return String(value ?? '').replace(/[&<>"']/g, ch=>({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[ch]));
+    }
+    function escapeAttr(value){ return escapeHTML(value); }
+    function partLetter(index){
+      let n=index;
+      let out='';
+      do{
+        out=String.fromCharCode(65+(n%26))+out;
+        n=Math.floor(n/26)-1;
+      }while(n>=0);
+      return out;
+    }
+
+    function renderResults(stockLen,kerf,cuts,bars,remaining){
+      lastResult={
+        stockLen, kerf, cuts, bars, remaining
+      };
+      const usedBars=bars.length;
+      const totalScrap=remaining.reduce((a,b)=>a+b,0);
+      const reusableDrop=parseFloat($('#reusableDrop').value || '0');
+      const reusableCount=remaining.filter(n=>n>=reusableDrop).length;
+      const tbody=$('#resultTable tbody');
+      tbody.innerHTML='';
+      bars.forEach((barCuts,i)=>{
+        const scrap=remaining[i];
+        const used=stockLen-scrap;
+        const seq=barCuts.map(c=>`${escapeHTML(c.mark)}: ${fmt(c.length)}`).join(' + ');
+        const tr=document.createElement('tr');
+        tr.innerHTML=`
+          <td>${i+1}</td>
+          <td>${seq}</td>
+          <td>${fmt(used)}</td>
+          <td><span class="pill ${scrap<=kerf?'ok':'warn'}">${fmt(scrap)}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      const summary=$('#summary');
+      summary.innerHTML=`
+        <span class="pill">Stock length: <strong style="margin-left:6px;">${fmt(stockLen)} in</strong></span>
+        <span class="pill">Kerf: <strong style="margin-left:6px;">${fmt(kerf)} in</strong></span>
+        <span class="pill">Total pieces: <strong style="margin-left:6px;">${cuts.length}</strong></span>
+        <span class="pill">Bars used: <strong style="margin-left:6px;">${usedBars}</strong></span>
+        <span class="pill">Total scrap: <strong style="margin-left:6px;">${fmt(totalScrap)} in</strong></span>
+        <span class="pill">Reusable drops: <strong style="margin-left:6px;">${reusableCount}</strong></span>
+      `;
+
+      const note=`Best-fit packing, longest pieces first. Kerf is applied between cuts on the same stick. Drops at ${fmt(reusableDrop)} in or longer are flagged as reusable.`;
+      $('#notes').textContent=note;
+      renderCutStops(cuts);
+      renderCutDiagrams(stockLen,kerf,bars,remaining);
+    }
+
+    function renderCutStops(cuts){
+      const grouped=new Map();
+      cuts.forEach(c=>{
+        const key=fmt(c.length);
+        if(!grouped.has(key)) grouped.set(key,{ length:c.length, qty:0, marks:new Map() });
+        const row=grouped.get(key);
+        row.qty++;
+        row.marks.set(c.mark,(row.marks.get(c.mark)||0)+1);
+      });
+      const rows=[...grouped.values()].sort((a,b)=>b.length-a.length).map(row=>{
+        const marks=[...row.marks.entries()].map(([mark,qty])=>`${escapeHTML(mark)} x${qty}`).join(', ');
+        return `<tr><td>${fmt(row.length)}</td><td>${row.qty}</td><td>${marks}</td><td></td></tr>`;
+      }).join('');
+      $('#cutStops').innerHTML=`
+        <h3>Cut by length</h3>
+        <table class="cut-stop-table">
+          <thead><tr><th>Stop</th><th>Total qty</th><th>Parts</th><th>Done</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    }
+
+    function renderCutDiagrams(stockLen,kerf,bars,remaining){
+      const container=$('#cutDiagrams');
+      container.innerHTML='';
+      bars.forEach((barCuts,i)=>{
+        const ticket=document.createElement('div');
+        ticket.className='cut-ticket';
+        ticket.innerHTML=`<h3>Stick ${i+1} <span class="muted">Scrap ${fmt(remaining[i])} in</span></h3>`;
+        ticket.appendChild(makeCutSvg(stockLen,kerf,barCuts,remaining[i]));
+        container.appendChild(ticket);
+      });
+    }
+
+    function makeCutSvg(stockLen,kerf,barCuts,scrap){
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox',`0 0 ${stockLen} 54`);
+      svg.setAttribute('role','img');
+      const bg=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      bg.setAttribute('x',0); bg.setAttribute('y',16);
+      bg.setAttribute('width',stockLen); bg.setAttribute('height',18);
+      bg.setAttribute('fill','#111827'); bg.setAttribute('stroke','#475569'); bg.setAttribute('stroke-width','0.6');
+      svg.appendChild(bg);
+      let x=0;
+      barCuts.forEach((piece,index)=>{
+        if(index && kerf>0){
+          const gap=document.createElementNS('http://www.w3.org/2000/svg','rect');
+          gap.setAttribute('x',x); gap.setAttribute('y',14);
+          gap.setAttribute('width',Math.max(kerf,0.25)); gap.setAttribute('height',22);
+          gap.setAttribute('fill','#ff6600');
+          svg.appendChild(gap);
+          x+=kerf;
+        }
+        const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+        rect.setAttribute('x',x); rect.setAttribute('y',16);
+        rect.setAttribute('width',piece.length); rect.setAttribute('height',18);
+        rect.setAttribute('fill',index%2?'#1f6feb':'#0ea5e9');
+        rect.setAttribute('fill-opacity','0.42');
+        rect.setAttribute('stroke','#bfdbfe');
+        rect.setAttribute('stroke-width','0.5');
+        svg.appendChild(rect);
+        const mark=document.createElementNS('http://www.w3.org/2000/svg','text');
+        mark.setAttribute('x',x+Math.min(piece.length/2, piece.length-1));
+        mark.setAttribute('y',27);
+        mark.setAttribute('text-anchor','middle');
+        mark.setAttribute('class','cut-piece-label');
+        mark.textContent=piece.mark;
+        svg.appendChild(mark);
+        const dim=document.createElementNS('http://www.w3.org/2000/svg','text');
+        dim.setAttribute('x',x+piece.length/2);
+        dim.setAttribute('y',46);
+        dim.setAttribute('text-anchor','middle');
+        dim.setAttribute('class','cut-dim-label');
+        dim.textContent=`${fmtInput(piece.length)}"`;
+        svg.appendChild(dim);
+        x+=piece.length;
+      });
+      if(scrap>0){
+        const scrapRect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+        scrapRect.setAttribute('x',stockLen-scrap); scrapRect.setAttribute('y',16);
+        scrapRect.setAttribute('width',scrap); scrapRect.setAttribute('height',18);
+        scrapRect.setAttribute('fill','#ef4444');
+        scrapRect.setAttribute('fill-opacity','0.16');
+        scrapRect.setAttribute('stroke','#fca5a5');
+        scrapRect.setAttribute('stroke-width','0.5');
+        svg.appendChild(scrapRect);
+      }
+      return svg;
+    }
+
+    function svgToString(svg){
+      return new XMLSerializer().serializeToString(svg);
+    }
+
+    function buildPrintReport(result){
+      const totalScrap=result.remaining.reduce((a,b)=>a+b,0);
+      const reusableDrop=parseFloat($('#reusableDrop').value || '0');
+      const stopRows=[...new Map(result.cuts.map(c=>[fmt(c.length),null])).keys()].map(length=>{
+        const matching=result.cuts.filter(c=>fmt(c.length)===length);
+        const marks=new Map();
+        matching.forEach(c=>marks.set(c.mark,(marks.get(c.mark)||0)+1));
+        return `<tr><td>${length}</td><td>${matching.length}</td><td>${[...marks.entries()].map(([m,q])=>`${escapeHTML(m)} x${q}`).join(', ')}</td><td></td></tr>`;
+      }).join('');
+      const rows=result.bars.map((barCuts,i)=>`
+        <tr>
+          <td>${i+1}</td>
+          <td>${barCuts.map(c=>`${escapeHTML(c.mark)} - ${fmt(c.length)}"`).join('<br>')}</td>
+          <td>${fmt(result.stockLen-result.remaining[i])}</td>
+          <td>${fmt(result.remaining[i])}</td>
+          <td></td>
+        </tr>
+      `).join('');
+      const tickets=result.bars.map((barCuts,i)=>{
+        const svg=makeCutSvg(result.stockLen,result.kerf,barCuts,result.remaining[i]);
+        return `<div class="print-ticket"><h3>Stick ${i+1} - Scrap ${fmt(result.remaining[i])} in</h3>${svgToString(svg)}</div>`;
+      }).join('');
+      $('#printReport').innerHTML=`
+        <h1>Cut List</h1>
+        <p>Printable cut tickets generated by Follincraft.</p>
+        <div class="print-meta">
+          <div><strong>Stock length</strong><br>${fmt(result.stockLen)} in</div>
+          <div><strong>Kerf</strong><br>${fmt(result.kerf)} in</div>
+          <div><strong>Sticks / scrap</strong><br>${result.bars.length} / ${fmt(totalScrap)} in<br>Drop min ${fmt(reusableDrop)} in</div>
+          <div><strong>Pieces</strong><br>${result.cuts.length}</div>
+        </div>
+        <h2>Cut by Length</h2>
+        <table>
+          <thead><tr><th>Stop</th><th>Total qty</th><th>Parts</th><th>Done</th></tr></thead>
+          <tbody>${stopRows}</tbody>
+        </table>
+        <h2>Cut Tickets</h2>
+        ${tickets}
+        <h2>Cut Sequence</h2>
+        <table>
+          <thead><tr><th>Stick</th><th>Pieces</th><th>Used</th><th>Scrap</th><th>Done</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    }
+
+    sampleBtn.click();
+    runBtn.click();
+  </script>
+  </div>
+  </main>
+
+  <section id="printReport" class="print-report" aria-hidden="true"></section>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

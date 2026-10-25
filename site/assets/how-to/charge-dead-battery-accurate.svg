@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Industrial battery charger connected to a car battery</title>
+  <desc id="desc">A heavy shop-style battery charger with red and black clamps connected directly to the positive and negative posts of a 12 volt battery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#080b0e"/>
+      <stop offset=".55" stop-color="#151a1e"/>
+      <stop offset="1" stop-color="#060709"/>
+    </linearGradient>
+    <linearGradient id="charger" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#3b4349"/>
+      <stop offset="1" stop-color="#171d22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".48"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <path d="M80 760h1376" stroke="#262d32" stroke-width="8"/>
+  <ellipse cx="768" cy="812" rx="600" ry="86" fill="#000" opacity=".36"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(184 310)">
+      <rect x="0" y="70" width="418" height="420" rx="32" fill="url(#charger)" stroke="#6b747b" stroke-width="9"/>
+      <path d="M76 70C86 20 132 0 210 0s124 20 134 70" fill="none" stroke="#6b747b" stroke-width="18" stroke-linecap="round"/>
+      <rect x="52" y="118" width="314" height="118" rx="16" fill="#0f1418" stroke="#89939b" stroke-width="7"/>
+      <circle cx="104" cy="292" r="30" fill="#1c242a" stroke="#9aa4ab" stroke-width="6"/>
+      <circle cx="210" cy="292" r="30" fill="#1c242a" stroke="#9aa4ab" stroke-width="6"/>
+      <circle cx="316" cy="292" r="30" fill="#1c242a" stroke="#9aa4ab" stroke-width="6"/>
+      <path d="M76 392h266" stroke="#ff5b14" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="72" cy="508" r="28" fill="#0c0f12" stroke="#667078" stroke-width="8"/>
+      <circle cx="346" cy="508" r="28" fill="#0c0f12" stroke="#667078" stroke-width="8"/>
+      <path d="M92 156h110M92 198h222" stroke="#c5cbd0" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(760 400)">
+      <rect x="0" y="80" width="500" height="240" rx="28" fill="#222a2f" stroke="#8b949b" stroke-width="10"/>
+      <rect x="42" y="126" width="416" height="110" rx="16" fill="#2e383f" stroke="#566169" stroke-width="6"/>
+      <rect x="78" y="34" width="94" height="58" rx="14" fill="#b52a1d" stroke="#e6b0a7" stroke-width="7"/>
+      <rect x="328" y="34" width="94" height="58" rx="14" fill="#111517" stroke="#aab2b8" stroke-width="7"/>
+      <path d="M82 260h88M212 260h78M330 260h88" stroke="#3d474e" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="104" cy="350" r="24" fill="#111"/>
+      <circle cx="396" cy="350" r="24" fill="#111"/>
+    </g>
+    <path d="M516 650 C650 610 764 548 860 454" fill="none" stroke="#d43a28" stroke-width="18" stroke-linecap="round"/>
+    <path d="M488 706 C642 742 846 670 1118 456" fill="none" stroke="#15191c" stroke-width="18" stroke-linecap="round"/>
+    <g transform="translate(828 402) rotate(-18)">
+      <rect x="0" y="0" width="102" height="34" rx="12" fill="#d43a28" stroke="#ffb4a8" stroke-width="5"/>
+      <path d="M78 17l76-38" stroke="#d43a28" stroke-width="16" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1088 404) rotate(-18)">
+      <rect x="0" y="0" width="104" height="34" rx="12" fill="#111517" stroke="#c2cad0" stroke-width="5"/>
+      <path d="M78 17l82-44" stroke="#111517" stroke-width="16" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

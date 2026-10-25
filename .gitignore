@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.log
+error_log
+__pycache__/
+*.pyc
+backups/
+private/

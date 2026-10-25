@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sheet Metal Weight Calculator – Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sheet metal weight calculator project notes with material-density logic and a direct link to the live browser tool." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sheet Metal Weight Calculator – Follincraft">
+  <meta property="og:description" content="Material-weight calculator project notes with a direct link to the live browser tool.">
+  <meta property="og:url" content="https://follincraft.com/code/metal_weight/">
+  <meta property="og:image" content="https://follincraft.com/code/metal_weight/metal_weight.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sheet Metal Weight Calculator – Follincraft">
+  <meta name="twitter:description" content="Material-weight calculator project notes with a direct link to the live browser tool.">
+  <meta name="twitter:image" content="https://follincraft.com/code/metal_weight/metal_weight.jpg">
+  <!-- Fonts + GLOBAL styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+  <!-- Social -->
+  <link rel="canonical" href="https://follincraft.com/code/metal_weight/">
+
+
+
+
+
+<!-- Favicons -->
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="alternate icon" type="image/png" href="../../assets/favicon-32x32.jpg" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" sizes="180x180" />
+<link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+  <style>
+    /* Page frame to mirror Project layout */
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ margin:2px 0 2px; }
+    /* Grid: media + overview then full-width below */
+    .project-grid{
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:start; margin-top:-2px;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left { grid-area: media; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.right { grid-area: side; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.below { grid-area: below; display:grid; grid-template-columns:1fr; gap:20px; }
+    .below-two-up { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+      .below-two-up{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+    /* Hero + arrows + blur */
+    .hero-frame{
+      position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+      aspect-ratio:1/1; isolation:isolate; background:#000;
+    }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(18px) saturate(1.2); transform:scale(1.06); opacity:1;
+    }
+    .hero-frame img{
+      position:relative; z-index:1; display:block; width:100%; height:100%;
+      object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+      background:rgba(0,0,0,.55); color:#fff; font-size:22px; line-height:1; display:grid; place-items:center;
+      cursor:pointer; z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.82); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+    .thumbs{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thumbs a{ display:block; border-radius:10px; padding:3px; border:2px solid transparent; background:var(--panel); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ display:block; width:96px; height:68px; object-fit:cover; border-radius:8px; }
+    @media (max-width:480px){ .thumbs img{ width:74px; height:52px; } }
+    /* Chips + cards (accent) */
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip-row .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+    .card h5.section-title{ color:var(--accent); font-size:13px; margin:0 0 6px; letter-spacing:.06em; text-transform:uppercase; }
+    .project .card{ width:100%; max-width:none; height:auto !important; overflow:visible !important; border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:12px; }
+    .project .card *{ overflow:visible !important; }
+    .project .lead, .project p, .project li{ color:#fff; line-height:1.6; white-space:normal !important; text-overflow:clip !important; }
+    .project .card p + p{ margin-top:8px; }
+    .project .card ul{ list-style:disc outside; padding-left:22px; margin:0; display:block; }
+    .project .card li{ display:list-item !important; margin:8px 0; line-height:1.6; }
+    .project .card li::marker{ color:var(--accent); }
+    /* Overview formatting */
+    .card.overview .lede{ font-size:1.02rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .card.overview .keyline{ height:1px; background:linear-gradient(90deg,var(--accent),transparent); border:0; margin:10px 0; }
+    .card.overview .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:8px 0 6px; }
+    @media (max-width:620px){ .card.overview .quick-grid{ grid-template-columns:1fr; } }
+    .card.overview .q{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 10px; line-height:1.5; }
+    .card.overview .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    .card.overview .pull{ margin:10px 0 6px; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:600; }
+    /* Info grid */
+    .info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{ border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 12px; }
+    .info .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info .v{ color:#fff; font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:8px; }
+    .copy-btn{ margin-left:auto; font-size:.8rem; padding:4px 8px; border-radius:8px; background:rgba(234,88,12,.12); border:1px solid var(--accent); color:#fff; cursor:pointer; }
+    /* Utilities */
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+    /* Two-up feature cards */
+    .two-up{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:820px){ .two-up{ grid-template-columns:1fr; } }
+    /* Accents */
+    .accent-border{ border:1.5px solid var(--accent) !important; border-radius:12px; }
+    /* Only this project URL should look like body text, not blue */
+    .plain-link:link,
+    .plain-link:visited{
+      color:#fff;
+      text-decoration:none;
+    }
+    .plain-link:hover,
+    .plain-link:focus{
+      color:var(--accent);
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+      outline:none;
+    }
+    /* --- Bottom CTA band (blend with page bg) --- */
+    .cta-band{
+      margin: 18px 0 0;
+      border-top: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      background: var(--panel); /* fill the whole section */
+    }
+    .cta-band .inner{
+      background: transparent; /* no inner panel */
+      border: 0; /* no inner border */
+      border-radius: 0;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      padding: 0;
+    }
+    @media (max-width: 900px){
+      .cta-band .inner{ grid-template-columns: 1fr; }
+    }
+    .cta-band .wrap{
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+    .cta-eyebrow{
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+    .cta-title{ margin: 0 0 8px; }
+    .cta-text{ color:#fff; margin:0; line-height:1.6; }
+    .cta-actions{ display:flex; gap:10px; align-items:center; }
+    .cta-actions .btn{ text-decoration:none; }
+    .cta-actions .ghost{ background:transparent; border:1px solid var(--accent); }
+    /* Make CTA "Start a project" (ghost) stay visible on hover/focus */
+    .cta-actions .btn.ghost{
+      transition: background .16s ease, color .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .cta-actions .btn.ghost:hover,
+    .cta-actions .btn.ghost:focus{
+      background: var(--accent); /* accent fill */
+      color: #0a0c0f; /* dark text for contrast */
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(234,88,12,.35) inset; /* subtle ring */
+      text-decoration: none;
+      outline: none;
+    }
+    .cta-actions .btn.ghost:active{
+      filter: brightness(0.95);
+    }
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Code",
+      "item": "https://follincraft.com/code/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sheet Metal Weight Calculator – Follincraft",
+      "item": "https://follincraft.com/code/metal_weight/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+      <nav id="topNav">
+        <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </header>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-links">
+      <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <!-- Breadcrumbs + Title -->
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead"><a href="../../index.html">Home</a> / <a href="../index.html">Code</a> / <span>Sheet Metal Weight Calculator</span></div>
+    <h1 class="title proj-title">Sheet Metal Weight Calculator</h1>
+  </div>
+  <!-- MAIN -->
+  <main class="project">
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+          <!-- LEFT - hero + thumbs -->
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('metal_weight.jpg')">
+              <button class="hero-nav prev" aria-label="Previous image">‹</button>
+              <img id="heroImg" src="metal_weight.jpg" alt="Sheet Metal Weight Calculator interface" width="600" height="600">
+              <button class="hero-nav next" aria-label="Next image">›</button>
+            </div>
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="metal_weight.jpg" aria-label="Hero image"><img src="metal_weight.jpg" alt="Calculator screenshot" loading="lazy" width="600" height="600"></a>
+            </div>
+          </div>
+          <!-- RIGHT - chips + overview -->
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">HTML</span><span class="chip">JavaScript</span><span class="chip">Google Sheets</span>
+            </div>
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">Accurately calculate sheet metal weight for planning.</p>
+              <p class="lead">
+                This project started as a faster way to estimate sheet weight from dimensions, thickness, quantity, and material density. The current browser version keeps the calculation immediate and avoids making someone open a spreadsheet for a single shop-floor answer.
+              </p>
+              <p class="lead">
+                It is useful for material planning, shipping estimates, load checks, and catching an unrealistic handling assumption before a sheet is ordered or moved.
+              </p>
+              <p><a class="btn solid" href="../../repo/sheet_metal_weight.html">Open the live calculator &rarr;</a></p>
+              <hr class="keyline">
+              <div class="quick-grid">
+                <div class="q"><div class="sub">Goal</div>Provide accurate weight estimates for planning.</div>
+                <div class="q"><div class="sub">Approach</div>Interactive calculator with material-specific data.</div>
+              </div>
+              <p class="pull">Update material densities regularly to maintain calculation accuracy!</p>
+            </article>
+          </div>
+          <!-- BELOW - full width content -->
+          <div class="below">
+            <!-- AT A GLANCE -->
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="info-grid">
+                <div class="info"><div class="k">Tool Type</div><div class="v">Weight Calculation Tool</div></div>
+                <div class="info"><div class="k">Platform</div><div class="v">Browser tool with a spreadsheet-based first version</div></div>
+                <div class="info"><div class="k">Developed</div><div class="v">2023</div></div>
+                <div class="info"><div class="k">Features</div><div class="v">Material selection, thickness lookup, dimensions, quantity, and instant totals</div></div>
+                <div class="info"><div class="k">Status</div><div class="v">Active in Production</div></div>
+              </div>
+            </article>
+            <!-- MY TAKE + WHAT I’D DO NEXT (side by side) -->
+            <div class="below-two-up">
+              <article class="card rib tint accent-border">
+                <h5 class="section-title">My Take</h5>
+                <p class="lead">
+                  This calculator has been a game-changer for estimating weights. The material selection makes it versatile, and the Sheets integration keeps our records current. It’s a must-have tool.
+                </p>
+                <ul class="lead">
+                  <li>Quick weight checks speed up planning.</li>
+                  <li>Material variety covers all our needs.</li>
+                  <li>Seamless data flow to Sheets is a bonus.</li>
+                </ul>
+              </article>
+              <article class="card rib tint">
+                <h5 class="section-title">What I’d Do Next</h5>
+                <ul class="lead">
+                  <li>Add support for custom material densities.</li>
+                  <li>Include a volume calculation option.</li>
+                  <li>Integrate with shipping cost estimators.</li>
+                </ul>
+              </article>
+            </div>
+            <!-- HIGHLIGHTS -->
+            <article class="card rib tint span-2">
+              <h5 class="section-title">Highlights</h5>
+              <div class="two-up">
+                <div class="bygo-card">
+                  <h6>Key Features</h6>
+                  <ul class="lead">
+                    <li>Material-specific weight calculations</li>
+                    <li>Real-time result updates</li>
+                    <li>Export to Google Sheets</li>
+                  </ul>
+                </div>
+                <div class="bygo-card">
+                  <h6>Benefits</h6>
+                  <ul class="lead">
+                    <li>Accurate shipping cost estimates</li>
+                    <li>Improved project planning</li>
+                    <li>Reduced material overestimation</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- /below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="inner">
+          <div>
+            <div class="cta-eyebrow">Need a custom script?</div>
+            <h3 id="ctaTitle" class="title cta-title">Let’s build a tool to power your workflow.</h3>
+            <p class="lead cta-text">
+              I craft practical scripts for real-world challenges. If you’re managing a shop or team, I can tailor a solution like this for you.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn solid" href="#contact" aria-label="Contact Form">Contact Me ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <h3 class="title">Contact</h3>
+        <p class="lead">Interested in a custom script? Send me a message, and I’ll get back to you promptly.</p>
+        <div style="margin-bottom: 10px;"></div>
+        <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+          <div class="row">
+            <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+            <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+          </div>
+          <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+          <button class="btn solid" type="submit">Send Message</button>
+          <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+          <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0; background: var(--panel); border-top: 1px solid var(--accent);">
+    <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
+      <div>
+        <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px;">About Follincraft</h3>
+        <p class="lead" style="font-size: 14px; color: var(--muted);">Metal fabrication, design, code, and camp reports. Tools and insights for real-world challenges.</p>
+      </div>
+      <div>
+        <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px;">Location</h3>
+        <p class="lead" style="font-size: 14px; color: var(--muted);">Based in Phoenix, AZ.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border: 1px solid var(--line); border-radius: 10px; margin-top: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div>
+        <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px;">Connect</h3>
+        <div style="display: flex; gap: 10px; justify-content: left;">
+          <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+        </div>
+        <p class="lead" style="margin-top: 16px; font-size: 14px; color: var(--muted);">Got a script idea? Share your thoughts!</p>
+      </div>
+    </div>
+    <p style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px;">
+      <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+    </p>
+    <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">‹</button>
+    <img id="lbImg" src="metal_weight.jpg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;" width="600" height="600">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">›</button>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Slider + blur + thumbs + arrows + keys + swipe + lightbox
+    (function(){
+      const hero = document.getElementById('heroImg');
+      const frame = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose = document.getElementById('lbClose');
+      if(!hero || !frame || !thumbs) return;
+      // blur on first paint
+      frame.style.setProperty('--hero', `url('${hero.currentSrc || hero.src}')`);
+      // collect images from hero thumbs
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        const url = imgs[i];
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+      // thumbs
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const idx = imgs.indexOf(a.getAttribute('href'));
+        if(idx >= 0) show(idx);
+      });
+      // arrows
+      frame.querySelector('.hero-nav.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.hero-nav.next')?.addEventListener('click', () => show(i+1));
+      // keyboard
+      window.addEventListener('keydown', e => {
+        if (lb.style.display === 'flex') {
+          if (e.key === 'Escape') lb.style.display='none';
+          if (e.key === 'ArrowLeft') show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        } else {
+          if (e.key === 'ArrowLeft') show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        }
+      });
+      // swipe
+      let sx=0, sy=0, dx=0, dy=0, touching=false;
+      function start(t){ touching=true; sx=t.touches[0].clientX; sy=t.touches[0].clientY; dx=dy=0; }
+      function move(t){ if(!touching) return; dx=t.touches[0].clientX - sx; dy=t.touches[0].clientY - sy; }
+      function end(){ if(!touching) return; touching=false; if (Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)) { dx<0?show(i+1):show(i-1); } }
+      frame.addEventListener('touchstart', start, {passive:true});
+      frame.addEventListener('touchmove', move, {passive:true});
+      frame.addEventListener('touchend', end, {passive:true});
+      // lightbox
+      hero.addEventListener('click', () => { lbImg.src = links.length ? imgs[i] : hero.src; lb.style.display='flex'; });
+      lbClose.addEventListener('click', () => lb.style.display='none');
+      lb.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev.addEventListener('click', () => show(i-1));
+      lbNext.addEventListener('click', () => show(i+1));
+    })();
+  </script>
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Code", "item":"https://follincraft.com/#code" },
+          { "@type":"ListItem", "position":3, "name":"Sheet Metal Weight Calculator", "item":"https://follincraft.com/code/metal_weight/" }
+        ]
+      },
+      {
+        "@type":"Article",
+        "headline":"Sheet Metal Weight Calculator",
+        "description":"Calculates sheet metal weight accurately with an interactive tool and Google Sheets integration for fabrication planning.",
+        "image":"https://follincraft.com/code/metal_weight/metal_weight.jpg",
+        "author":{"@type":"Person","name":"Chris Follin"},
+        "publisher": {"@type":"Organization", "name":"Follincraft"},
+        "datePublished":"2025-10-19"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

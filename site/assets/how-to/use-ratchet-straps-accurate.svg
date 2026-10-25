@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Correct ratchet strap routing over cargo</title>
+  <desc id="desc">Two ratchet straps running straight over cargo in a trailer bed and hooked to tie-down points on opposite sides.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#080c0f"/>
+      <stop offset="0.52" stop-color="#11161a"/>
+      <stop offset="1" stop-color="#06080a"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#242a2f"/>
+      <stop offset="1" stop-color="#11161a"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <ellipse cx="768" cy="876" rx="620" ry="90" fill="#000" opacity=".35"/>
+
+  <g filter="url(#soft)">
+    <path d="M220 224h1096c44 0 80 36 80 80v458c0 44-36 80-80 80H220c-44 0-80-36-80-80V304c0-44 36-80 80-80z" fill="#0d1114" stroke="#313942" stroke-width="10"/>
+    <path d="M198 284h1140v496H198z" fill="url(#deck)" stroke="#232b32" stroke-width="6"/>
+    <path d="M230 318h1076M230 412h1076M230 506h1076M230 600h1076M230 694h1076" stroke="#303840" stroke-width="3" opacity=".45"/>
+
+    <g fill="#2c343b" stroke="#6d767e" stroke-width="7">
+      <circle cx="286" cy="362" r="22"/>
+      <circle cx="286" cy="660" r="22"/>
+      <circle cx="1250" cy="362" r="22"/>
+      <circle cx="1250" cy="660" r="22"/>
+    </g>
+
+    <g>
+      <rect x="450" y="350" width="360" height="276" rx="24" fill="#324139" stroke="#6f836c" stroke-width="8"/>
+      <path d="M472 398h316M472 454h316M472 510h316M472 566h316" stroke="#44564b" stroke-width="5" opacity=".75"/>
+      <rect x="846" y="392" width="270" height="190" rx="24" fill="#1e2529" stroke="#59636d" stroke-width="8"/>
+      <path d="M884 436h194M884 492h194M884 548h128" stroke="#323c43" stroke-width="6"/>
+    </g>
+
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M286 362 C395 356 470 356 560 362 C672 371 797 370 918 362 C1052 354 1144 354 1250 362" fill="none" stroke="#ff5b14" stroke-width="28"/>
+      <path d="M286 660 C412 648 526 648 642 658 C760 668 901 668 1012 658 C1112 649 1186 649 1250 660" fill="none" stroke="#ff5b14" stroke-width="28"/>
+      <path d="M286 362 C395 356 470 356 560 362 C672 371 797 370 918 362 C1052 354 1144 354 1250 362" fill="none" stroke="#ffb08a" stroke-width="5" opacity=".6"/>
+      <path d="M286 660 C412 648 526 648 642 658 C760 668 901 668 1012 658 C1112 649 1186 649 1250 660" fill="none" stroke="#ffb08a" stroke-width="5" opacity=".6"/>
+    </g>
+
+    <g>
+      <rect x="1154" y="323" width="82" height="70" rx="12" fill="#333b42" stroke="#ff6a1a" stroke-width="7"/>
+      <rect x="1144" y="621" width="86" height="70" rx="12" fill="#333b42" stroke="#ff6a1a" stroke-width="7"/>
+      <path d="M1192 336l-30 42M1192 634l-32 44" stroke="#aeb6bd" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <path d="M328 740c104 38 254 62 440 62 184 0 342-24 450-62" fill="none" stroke="#ff5b14" stroke-width="4" opacity=".45"/>
+  </g>
+</svg>

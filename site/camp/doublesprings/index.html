@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- EMBED MARKER ASAP (so CSS can apply before first paint) -->
+  <script>
+  (function(){
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embed');
+    }
+  })();
+  </script>
+
+  <!-- ZERO-FLASH + VEIL CSS -->
+  <style>
+    :root { color-scheme: dark; }
+    .is-embed body{ opacity:0; transition:opacity .001s linear; }
+    .is-embed body.embed-ready{ opacity:1; }
+
+    .veil{
+      position:fixed; inset:0; background:#000;
+      opacity:0; pointer-events:none; z-index:99999;
+      transition:opacity .18s ease;
+    }
+    .veil.show{ opacity:1; }
+
+    .proj-wrap .breadcrumbs{ display:block; }
+    .is-embed .proj-wrap .breadcrumbs{ display:block !important; }
+
+    .is-embed header{ display:none !important; }
+    .is-embed .proj-wrap{ margin-top:8px !important; }
+    .is-embed .project-page{ padding-top:0 !important; }
+  </style>
+
+  <!-- UNIFIED ROUTER + REVEAL/VEIL CONTROL -->
+  <script>
+  (function () {
+    const embedded = (window.self !== window.top);
+    const isInternal = (u) => {
+      try { const x = new URL(u, location.href); return x.origin === location.origin; }
+      catch { return !/^\w+:\/\//.test(u); }
+    };
+
+    let veil;
+    function showVeil() { veil?.classList.add('show'); }
+    function hideVeil() { veil?.classList.remove('show'); }
+
+    function markThumbAnchors() {
+      document.querySelectorAll('#thumbs a').forEach(a => a.setAttribute('data-gallery','1'));
+    }
+
+    function revealWhenHeroReady() {
+      const hero = document.getElementById('heroImg');
+      const doReveal = () => {
+        document.body.classList.add('embed-ready');
+        setTimeout(hideVeil, 80);
+        try {
+          window.parent.postMessage({ type:'hideModalHeader', value:true }, '*');
+          window.parent.postMessage({ type:'campReady' }, '*');
+          window.parent.postMessage({ type:'setTitle', title:'Camps', generic:true }, '*');
+        } catch (_) {}
+      };
+
+      showVeil();
+      if (hero && !hero.complete) {
+        const onload = () => { hero.removeEventListener('load', onload); requestAnimationFrame(doReveal); };
+        hero.addEventListener('load', onload, { once:true });
+        setTimeout(() => requestAnimationFrame(doReveal), 600);
+      } else {
+        requestAnimationFrame(doReveal);
+      }
+    }
+
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a'); if (!a) return;
+      if (a.closest('.thumbs') || a.hasAttribute('data-gallery')) return;
+      const href = a.getAttribute('href') || ''; if (!href || !isInternal(href)) return;
+      e.preventDefault();
+      showVeil();
+      setTimeout(() => { location.assign(href); }, 40);
+    }, true);
+
+    const _open = window.open.bind(window);
+    window.open = (u,t,opts) => (u && isInternal(u) ? (showVeil(), setTimeout(()=>location.assign(u),40), null) : _open(u,t,opts));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      veil = document.getElementById('veil');
+      markThumbAnchors();
+      if (embedded) {
+        const siteHeader = document.querySelector('header');
+        if (siteHeader) siteHeader.style.display = 'none';
+        const projWrap = document.querySelector('.proj-wrap');
+        if (projWrap) projWrap.style.marginTop = '12px';
+        revealWhenHeroReady();
+      }
+      document.querySelectorAll('a[href]').forEach(a => {
+        if (isInternal(a.getAttribute('href') || '')) a.removeAttribute('target');
+      });
+    });
+
+    window.addEventListener('beforeunload', () => { showVeil(); });
+  })();
+  </script>
+
+  <meta charset="utf-8" />
+  <title>Double Springs Campground - Camping Guide - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Double Springs is the quieter-feeling Mormon Lake corridor campground: shaded, developed, and better when you want a tucked-in base instead of lake access.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Double Springs Campground - Camping Guide - Follincraft">
+  <meta property="og:description" content="Double Springs is the quieter-feeling Mormon Lake corridor campground: shaded, developed, and better when you want a tucked-in base instead of lake access.">
+  <meta property="og:url" content="https://follincraft.com/camp/doublesprings/">
+  <meta property="og:image" content="https://follincraft.com/camp/doublesprings/doublesprings1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Double Springs Campground - Camping Guide - Follincraft">
+  <meta name="twitter:description" content="Double Springs is the quieter-feeling Mormon Lake corridor campground: shaded, developed, and better when you want a tucked-in base instead of lake access.">
+  <meta name="twitter:image" content="https://follincraft.com/camp/doublesprings/doublesprings1.jpg">
+
+  <base target="_self">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <link rel="canonical" href="https://follincraft.com/camp/doublesprings/">
+
+
+
+
+
+<link rel="icon" type="image/jpeg" href="../../assets/favicon-16.jpg" sizes="16x16" />
+  <link rel="icon" type="image/jpeg" href="../../assets/favicon-32.jpg" sizes="32x32" />
+  <link rel="icon" type="image/jpeg" href="../../assets/favicon-48.jpg" sizes="48x48" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" sizes="180x180" />
+  <link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ margin:2px 0 2px; }
+
+    .project-grid{
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:start; margin-top:-2px;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left{ grid-area:media; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.right{ grid-area:side; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.below{ grid-area:below; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    @media (max-width:900px){ .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; } .project-grid>.below{ grid-template-columns:1fr; } }
+    .span-2{ grid-column:1 / -1; }
+
+    .hero-frame{ position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line); aspect-ratio:1/1; isolation:isolate; background:#000; }
+    .hero-frame::before{ content:""; position:absolute; inset:0; z-index:0; background-image:var(--hero); background-size:cover; background-position:center; filter:blur(18px) saturate(1.2); transform:scale(1.06); opacity:1; }
+    .hero-frame img{ position:relative; z-index:1; display:block; width:100%; height:100%; object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in; }
+    .hero-nav{ position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:22px; display:grid; place-items:center; cursor:pointer; z-index:2; }
+    .hero-nav:hover{ background:rgba(0,0,0,.82); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+
+    .thumbs{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thumbs a{ display:block; border-radius:10px; padding:3px; border:2px solid transparent; background:var(--panel); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ display:block; width:88px; height:64px; object-fit:cover; border-radius:8px; }
+    @media (max-width:480px){ .thumbs img{ width:74px; height:52px; } }
+
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip-row .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+
+    .section-title{
+      color:var(--accent);
+      font-size:13px;
+      margin:0 0 6px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .card h5.section-title{ color:var(--accent); font-size:13px; margin:0 0 6px; letter-spacing:.06em; text-transform:uppercase; }
+
+    .project .card{ width:100%; max-width:none; height:auto !important; overflow:visible !important; }
+    .project .card *{ overflow:visible !important; }
+    .project .lead, .project p, .project li{ color:#fff; line-height:1.6; }
+    .project .card ul{ list-style:disc outside; padding-left:22px; margin:0; display:block; }
+    .project .card li{ display:list-item !important; margin:8px 0; }
+    .project .card li::marker{ color:var(--accent); }
+
+    .card.overview .lede{ font-weight:700; margin-bottom:8px; }
+    .card.overview .keyline{ height:1px; background:linear-gradient(90deg,var(--accent),transparent); border:0; margin:10px 0; }
+    .card.overview .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:8px 0 6px; }
+    @media (max-width:620px){ .card.overview .quick-grid{ grid-template-columns:1fr; } }
+    .card.overview .q{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 10px; }
+    .card.overview .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    .card.overview .pull{ margin:10px 0 6px; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:600; }
+
+    .info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{ border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 12px; }
+    .info .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info .v{ color:#fff; font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:8px; }
+    .copy-btn{ margin-left:auto; font-size:.8rem; padding:4px 8px; border-radius:8px; background:rgba(234,88,12,.12); border:1px solid var(--accent); color:#fff; cursor:pointer; }
+
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+
+    ol.steps{ counter-reset:step; list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+    ol.steps li{ position:relative; padding:10px 12px 10px 44px; border:1px solid var(--line); background:var(--panel); border-radius:10px; }
+    ol.steps li::before{ counter-increment:step; content:counter(step); position:absolute; left:10px; top:50%; transform:translateY(-50%); width:24px; height:24px; border-radius:50%; display:grid; place-items:center; background:rgba(234,88,12,.18); border:1px solid var(--accent); font-weight:700; color:#fff; }
+
+    .bygo{ border:1px solid var(--line); background:rgba(255,255,255,.03); border-radius:12px; padding:12px; }
+    .bygo-grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
+    .bygo-card{ border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:12px; }
+    .bygo-card h6{ margin:0 0 8px; font-size:.9rem; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; }
+    .bygo-card ul{ margin:0; padding-left:22px; }
+    .bygo-card a:link,.bygo-card a:visited{ color:#fff; text-decoration:none; }
+    .bygo-card a:hover,.bygo-card a:focus{ color:#fff; border-bottom:1px dotted var(--accent); outline:none; }
+
+    /* Gear grid: 4 items / 2 columns */
+    .gear-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    @media (max-width:680px){ .gear-grid{ grid-template-columns:1fr; } }
+    .gear-item a{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px; border-radius:10px;
+      border:1px solid var(--line); background:var(--panel);
+      text-decoration:none; color:#fff;
+      transition:transform .14s ease, border-color .14s ease;
+    }
+    .gear-item a:hover{ border-color:var(--accent); transform:translateY(-1px); }
+    .gear-title{ font-weight:700; }
+    .gear-note{ color:var(--muted); font-size:.86rem; }
+    .gear-arrow{ transition:transform .14s ease; }
+    .gear-item a:hover .gear-arrow{ transform:translateX(3px); }
+
+    /* CTA band &ndash; same structure as updated camp template */
+    .cta-band{
+      margin:18px 0 0;
+      border-top:2px solid var(--accent);
+      border-bottom:2px solid var(--accent);
+      background:var(--panel);
+    }
+    .cta-band .wrap{
+      padding-top:18px;
+      padding-bottom:18px;
+    }
+    .cta-inner{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    @media (max-width:900px){
+      .cta-inner{ grid-template-columns:1fr; }
+    }
+    .cta-actions{
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+    }
+    .cta-actions .btn{ text-decoration:none; }
+
+    /* Second CTA line forced grey */
+    .cta-gear-text{
+      color:var(--muted) !important;
+    }
+    .cta-gear-text a{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+    }
+    .cta-gear-text a:hover{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+    }
+
+    .card.my-notes{ border:2px solid var(--accent) !important; border-radius:12px; background:rgba(234,88,12,.06) !important; }
+    .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;}
+/* FORCE center the thumbnail strip */
+#thumbs{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  max-width:640px !important;
+  margin:0 auto !important;
+}
+
+#thumbs a{
+  flex:0 0 auto !important;
+}
+
+#thumbs img{
+  width:88px !important;
+  height:64px !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Camp",
+      "item": "https://follincraft.com/camp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Double Springs Campground &ndash; Follincraft",
+      "item": "https://follincraft.com/camp/doublesprings/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json" data-camp-seo>
+{
+    "@context":  "https://schema.org",
+    "@type":  "Article",
+    "headline":  "Double Springs Campground camping guide",
+    "description":  "Double Springs is the quieter-feeling Mormon Lake corridor campground: shaded, developed, and better when you want a tucked-in base instead of lake access.",
+    "image":  "https://follincraft.com/camp/doublesprings/doublesprings1.jpg",
+    "url":  "https://follincraft.com/camp/doublesprings/",
+    "author":  {
+                   "@type":  "Person",
+                   "name":  "Chris Follin",
+                   "url":  "https://follincraft.com/contact/"
+               },
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "Follincraft",
+                      "url":  "https://follincraft.com/"
+                  },
+    "mainEntity":  {
+                       "@type":  "Place",
+                       "name":  "Double Springs Campground",
+                       "description":  "Double Springs is the quieter-feeling Mormon Lake corridor campground: shaded, developed, and better when you want a tucked-in base instead of lake access.",
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressRegion":  "Flagstaff",
+                                       "addressCountry":  "US"
+                                   },
+                       "geo":  {
+                                   "@type":  "GeoCoordinates",
+                                   "latitude":  35.0822,
+                                   "longitude":  -111.5356
+                               }
+                   }
+}
+  </script>
+</head>
+<body>
+  <div id="veil" class="veil" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="wrap proj-wrap">
+      <div class="breadcrumbs lead"><a href="../../index.html">Home</a> / <a href="../../camp/index.html">Camp</a> / <span>Double Springs Campground</span></div>
+      <div class="camp-header">
+  <h1 class="title proj-title" id="campTitle">Double Springs Campground</h1>
+
+  <div class="camp-rating">
+    <span class="stars" id="campRatingStars"></span>
+    <span class="score" id="campRatingScore"></span>
+  </div>
+</div>
+    </div>
+
+    <div class="project">
+      <section class="project-page">
+        <div class="wrap">
+          <div class="project-grid">
+            <div class="left">
+              <div class="hero-frame" id="heroFrame" style="--hero:url('doublesprings1.jpg')">
+                <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+                <img id="heroImg" src="doublesprings1.jpg" alt="Double Springs Campground under tall pines near Mormon Lake" width="900" height="600">
+                <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+              </div>
+              <div class="thumbs" id="thumbs">
+                <a class="active" href="doublesprings1.jpg" aria-label="Hero image"><img src="doublesprings1.jpg" alt="Shaded loop" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings2.jpg"><img src="doublesprings2.jpg" alt="Site w/ table and ring" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings3.jpg"><img src="doublesprings3.jpg" alt="Ponderosa stand" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings4.jpg"><img src="doublesprings4.jpg" alt="Trail nearby" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings5.jpg"><img src="doublesprings5.jpg" alt="Evening light" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings7.jpg"><img src="doublesprings7.jpg" alt="Camp setup" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings8.jpg"><img src="doublesprings8.jpg" alt="Camp setup" loading="lazy" width="900" height="600"></a>
+                <a href="doublesprings9.jpg"><img src="doublesprings9.jpg" alt="Camp setup" loading="lazy" width="900" height="600"></a>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="chip-row">
+                <span class="chip">Reservable</span><span class="chip">Family Friendly</span><span class="chip">Lake Mary Corridor</span><span class="chip">Vault Toilets</span><span class="chip">Water (Seasonal)</span>
+              </div>
+
+              <article class="card overview">
+                <h5 class="section-title">Overview</h5>
+                <p class="lede">A tucked-in Mormon Lake corridor campground where the selling point is shade, structure, and a calmer loop.</p>
+                <p class="lead">Double Springs is the one I would choose when I want the campground to fade into the background. It has the developed basics, but it feels less like a launch point and more like a place to park, cook, and let the pines do most of the work.</p>
+                <p class="lead">Pick Dairy Springs if you are coordinating a bigger crew. Pick Pine Grove if Upper Lake Mary is the focus. Pick Double Springs when you want the quieter middle option and do not need the lake to carry the trip.</p>
+                <hr class="keyline">
+                <div class="quick-grid">
+                  <div class="q"><div class="sub">Best for</div>Quiet dinners, shaded sites, simple routines, and campers who want less corridor energy.</div>
+                  <div class="q"><div class="sub">Watch out for</div>Seasonal water, subtle site differences, and expecting a big scenic centerpiece.</div>
+                </div>
+                <p class="pull">Best version of the trip: choose a perimeter site, keep the setup simple, and use the campground for a quiet reset instead of a packed itinerary.</p>
+              </article>
+            </div>
+
+            <div class="below">
+              <article class="card span-2">
+                <h5 class="section-title">At a Glance</h5>
+                <div class="info-grid">
+                  <div class="info"><div class="k">Region</div><div class="v">SE of Flagstaff &mdash; near Mormon Lake</div></div>
+                  <div class="info"><div class="k">Elevation</div><div class="v">~7,100 ft</div></div>
+                  <div class="info"><div class="k">Access</div><div class="v">Paved to campground; short, well-graded spur</div></div>
+                  <div class="info"><div class="k">Season</div><div class="v">Typically late spring&ndash;fall</div></div>
+                  <div class="info"><div class="k">Sites</div><div class="v">Tent/RV; no hookups</div></div>
+                  <div class="info"><div class="k">Facilities</div><div class="v">Tables, rings, vault toilets, water (seasonal)</div></div>
+                  <div class="info"><div class="k">Reservations</div><div class="v">Recreation.gov recommended</div></div>
+                  <div class="info"><div class="k">Cell</div><div class="v">Spotty to decent along corridor</div></div>
+                  <div class="info">
+                    <div class="k">Coordinates (area)</div>
+                    <div class="v" id="coordVal" data-lat="34.9395" data-lon="-111.4890">
+                      34.9395&deg; N, 111.4890&deg; W
+                      <button class="copy-btn" id="copyCoords" type="button" aria-describedby="copyMsg">Copy</button>
+                      <span id="copyMsg" class="sr-only" aria-live="polite"></span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card rib tint">
+                <h5 class="section-title">Getting There</h5>
+                <p class="lead">From Flagstaff, take Lake Mary Road (FH 3) toward Mormon Lake. Double Springs is signed; follow the spur to the loop.</p>
+                <ol class="steps lead">
+                  <li>Top off water and ice before leaving Flagstaff; do not build the trip around campground spigots.</li>
+                  <li>Watch for the signed spur and slow down before the campground turnoff.</li>
+                  <li>Loop once before unloading; the difference between a plain site and a good shaded edge is worth two minutes.</li>
+                </ol>
+                <p class="lead" style="margin-top:8px;border-left:3px solid var(--accent);padding:10px 12px;background:rgba(234,88,12,.06);border-radius:0;">This is the pick when you want shaded camp time more than a lake agenda.</p>
+              </article>
+
+              <article class="card rib tint">
+                <h5 class="section-title">Before You Go</h5>
+                <div class="bygo">
+                  <div class="bygo-grid-2">
+                    <div class="bygo-card">
+                      <h6>Essential Links</h6>
+                      <ul class="lead">
+                        <li><a href="https://www.recreation.gov/" target="_blank" rel="noopener">Reserve (Recreation.gov)</a></li>
+                        <li><a href="https://www.fs.usda.gov/alerts/coconino/alerts-notices" target="_blank" rel="noopener">Coconino alerts & fire restrictions</a></li>
+                        <li><a href="https://www.fs.usda.gov/main/coconino/maps-pubs" target="_blank" rel="noopener">MVUM maps</a></li>
+                        <li><a href="https://forecast.weather.gov/MapClick.php?lon=-111.4890&lat=34.9395" target="_blank" rel="noopener">NOAA point forecast</a></li>
+                      </ul>
+                    </div>
+                    <div class="bygo-card">
+                      <h6>Reminders</h6>
+                      <ul class="lead">
+                        <li>Bring your own water and treat any working spigot as a bonus.</li>
+                        <li>Choose shade first, then worry about how photogenic the site is.</li>
+                        <li>Keep the site compact; this campground is better when it stays quiet.</li>
+                        <li>Put food and trash away before dusk, not after animals start checking tables.</li>
+                        <li>Pack a real evening layer; the quiet part of the night is also the cold part.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card rib tint">
+                <h5 class="section-title">Camping Info</h5>
+                <ul class="lead">
+                  <li><strong>Site feel:</strong> Developed but more tucked-in than the bigger corridor choices.</li>
+                  <li><strong>Best sites:</strong> Perimeter and shaded spots are worth a full loop before unloading.</li>
+                  <li><strong>Hookups:</strong> None; keep generator use inside posted rules and neighbor tolerance.</li>
+                  <li><strong>Fires:</strong> Legal only when restrictions allow; use the ring and leave it cold.</li>
+                  <li><strong>Restrooms:</strong> Vault toilets; bring sanitizer and a small light for night trips.</li>
+                  <li><strong>Pets:</strong> Leash in camp and check paws for burrs after wandering the edges.</li>
+                  <li><strong>Nearby:</strong> Mormon Lake viewpoints, Lake Mary day-use, and short forest wandering rather than a single must-do feature.</li>
+                </ul>
+              </article>
+
+              <article class="card rib tint my-notes">
+                <h5 class="section-title">My Notes</h5>
+                <p class="lead">I would not oversell Double Springs. Its value is that it does not ask much from you. If the goal is a low-noise evening in the trees with a table, ring, and enough shade, it works.</p>
+                <ul class="lead">
+                  <li><strong>Choose over Dairy Springs:</strong> when you want a quieter-feeling site more than a larger crew base.</li>
+                  <li><strong>Choose over Pine Grove:</strong> when Lake Mary access is less important than shade and a slower evening.</li>
+                  <li><strong>Setup:</strong> a small rug and a low kitchen table are enough; this is not a gear-sprawl campground.</li>
+                </ul>
+              </article>
+              <article class="card rib tint camp-decision-card">
+                <h5 class="section-title">Choose It / Skip It</h5>
+                <div class="quick-grid camp-decision-grid">
+                  <div class="q"><div class="sub">Good fit</div>Quiet dinners, shaded sites, simple routines, and campers who want less corridor energy.</div>
+                  <div class="q"><div class="sub">Bad fit</div>Seasonal water, subtle site differences, and expecting a big scenic centerpiece.</div>
+                </div>
+              </article>
+
+              <!-- Gear I Used &ndash; dynamic 4-item grid -->
+              <article class="card span-2" id="gearCard">
+                <h5 class="section-title">Gear I Used</h5>
+                <div class="gear-grid" id="gearGrid">
+                  <p class="lead">Gear that actually helped on this trip.</p>
+                </div>
+              </article>
+
+              <article class="card span-2" id="mapCard">
+                <h5 class="section-title">Map</h5>
+                <div style="border:1px solid var(--line); border-radius:10px; overflow:hidden;">
+                  <iframe
+                    src="https://www.google.com/maps?q=Double+Springs+Campground+Arizona&output=embed"
+                    width="100%" height="400" style="border:0;"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Map &mdash; Double Springs Campground">
+                  </iframe>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA &ndash; matched to updated template -->
+      <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+        <div class="wrap">
+          <div class="cta-inner">
+            <div>
+              <div class="section-title" style="margin:0; color:var(--accent);">
+                FIND THE NEXT GREAT CAMPSITE
+              </div>
+              <h3 id="ctaTagline" class="title" style="margin:6px 0 8px; color:#fff;">
+                Good camps make the whole weekend run smoother.
+              </h3>
+              <p class="lead cta-gear-text" style="margin:0;">
+                <span id="ctaCampLine">
+                  Pick one that fits how you actually like to camp.
+                </span>
+                <br>
+                <a href="../../camp/index.html" aria-label="See all camp locations">
+                  See all camp locations &rarr;
+                </a>
+              </p>
+            </div>
+
+            <div class="cta-actions" id="campActions">
+              <a class="btn ghost" id="ctaPrevCamp" href="#">&larr; Previous camp</a>
+              <a class="btn solid" id="ctaNextCamp" href="#">Next camp &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <article class="card span-2" id="contact">
+            <h5 class="section-title">Contact</h5>
+            <p class="lead">Tell me what you're building, fixing, or trying to figure out. I'll read it and get back to you.</p>
+            <div style="margin-bottom: 10px;"></div>
+            <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+              <div class="row">
+                <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+                <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+              </div>
+              <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+              <button class="btn solid" type="submit">Send Message</button>
+              <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+              <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer style="padding: 40px 0; background: var(--panel); border-top: 1px solid var(--accent)">
+      <div
+        class="wrap"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left"
+      >
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">About Follincraft</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">
+            A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean
+            welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline
+            workflows. It's all about making things work better.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Location</h3>
+          <p class="lead" style="font-size: 14px; color: var(--muted)">Based in Phoenix, Arizona.</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+            width="100%"
+            height="200"
+            style="border: 1px solid var(--line); border-radius: 10px; margin-top: 10px"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: 16px; font-size: 20px">Connect</h3>
+          <div style="display: flex; gap: 10px; justify-content: left">
+            <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+            <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+            <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+          </div>
+          <p class="lead" style="margin-top: 16px; font-size: 14px; color: var(--muted)">
+            Fabrication, code, camp systems, or the half-formed idea you want to make real.
+          </p>
+        </div>
+      </div>
+
+      <p
+        style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px"
+      >
+        <span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span>
+      </p>
+      <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&lsaquo;</button>
+    <img id="lbImg" src="doublesprings1.jpg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;" width="900" height="600">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&rsaquo;</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    (function(){
+      const hero   = document.getElementById('heroImg');
+      const frame  = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb     = document.getElementById('lightbox');
+      const lbImg  = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+      frame.style.setProperty('--hero', `url('${hero.currentSrc || hero.src}')`);
+
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+
+      links.forEach(a => a.setAttribute('data-gallery','1'));
+
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        const url = imgs[i];
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        links.forEach(el => el.classList.remove('active'));
+        links[i].classList.add('active');
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        e.stopPropagation();
+        const idx = links.indexOf(a);
+        if(idx >= 0) show(idx);
+      }, { capture: true });
+
+      frame.querySelector('.hero-nav.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.hero-nav.next')?.addEventListener('click', () => show(i+1));
+
+      let sx=0, sy=0, dx=0, dy=0, touching=false;
+      function start(t){ touching=true; sx=t.touches[0].clientX; sy=t.touches[0].clientY; dx=dy=0; }
+      function move(t){ if(!touching) return; dx=t.touches[0].clientX - sx; dy=t.touches[0].clientY - sy; }
+      function end(){ if(!touching) return; touching=false; if (Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)) { dx<0?show(i+1):show(i-1); } }
+      frame.addEventListener('touchstart', start, {passive:true});
+      frame.addEventListener('touchmove',  move,  {passive:true});
+      frame.addEventListener('touchend',   end,   {passive:true});
+
+      hero.addEventListener('click', () => { lbImg.src = imgs[i]; lb.style.display='flex'; });
+      lbClose.addEventListener('click', () => lb.style.display='none');
+      lb.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev.addEventListener('click', () => show(i-1));
+      lbNext.addEventListener('click', () => show(i+1));
+
+      const coord = document.getElementById('coordVal');
+      const copy  = document.getElementById('copyCoords');
+      const live  = document.getElementById('copyMsg');
+      copy?.addEventListener('click', async () => {
+        const lat = coord?.dataset.lat, lon = coord?.dataset.lon;
+        try {
+          await navigator.clipboard.writeText(`${lat}, ${lon}`);
+          copy.textContent='Copied';
+          if(live) live.textContent='Coordinates copied';
+          setTimeout(()=>{
+            copy.textContent='Copy';
+            if(live) live.textContent='';
+          },1200);
+        } catch(_) {}
+      });
+    })();
+  </script>
+
+  <!-- CTA quotes (title + grey line) -->
+  <script>
+    (function () {
+      const titleEl = document.getElementById('ctaTagline');
+      const lineEl  = document.getElementById('ctaCampLine');
+      if (!titleEl || !lineEl) return;
+
+      const QUOTES = [
+        {
+          title: "Pick camps that are easy to win with.",
+          line:  "Short drives, simple parking, and flat ground beat a dramatic mess."
+        },
+        {
+          title: "Good camps make the whole weekend run smoother.",
+          line:  "Pick one that fits how you actually like to camp."
+        },
+        {
+          title: "Start local before you chase far away spots.",
+          line:  "Dial your kit in close to home, then push miles later."
+        },
+        {
+          title: "Match the camp to the crew you are bringing.",
+          line:  "Kids, dogs, and first timers all like simple, predictable sites."
+        },
+        {
+          title: "Plan for shade, wind, and bathrooms first.",
+          line:  "Views are nice, but comfort is what keeps people happy."
+        },
+        {
+          title: "Keep a few go to camps on rotation.",
+          line:  "You can relax more when you already know the drill."
+        },
+        {
+          title: "Pick the camp that fits the weather, not the fantasy.",
+          line:  "Wind, temps, and bugs decide more than the name on the map."
+        },
+        {
+          title: "Give yourself one easy win each trip.",
+          line:  "Maybe that is a short walk in, soft ground, or close water."
+        },
+        {
+          title: "Choose camps that forgive small mistakes.",
+          line:  "Good drainage and a bit of cover hide a lot of learning curve."
+        },
+        {
+          title: "Do not make every trip a giant experiment.",
+          line:  "Swap one new thing at a time - camp, route, or gear."
+        },
+        {
+          title: "Treat camps like tools, not trophies.",
+          line:  "Use the ones that work, not just the ones that sound impressive."
+        },
+        {
+          title: "Pick camps that leave you energy for the fun part.",
+          line:  "Less thrash on setup means more time to actually be outside."
+        }
+      ];
+
+      const pick = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+      titleEl.textContent = pick.title;
+      lineEl.textContent  = pick.line;
+    })();
+  </script>
+
+  <!-- Prev / next camp links using /camp/index.json -->
+  <script>
+    (async () => {
+      const prevEl = document.getElementById('ctaPrevCamp');
+      const nextEl = document.getElementById('ctaNextCamp');
+      if (!prevEl && !nextEl) return;
+
+      const thisPath = location.pathname
+        .replace(/\/index\.html?$/i, "")
+        .replace(/\/+$/,"");
+
+      let items = [];
+      try {
+        const res = await fetch("/camp/index.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        items = await res.json();
+      } catch (err) {
+        console.warn("[camp-cta] Failed to load /camp/index.json", err);
+        return;
+      }
+
+      const norm = s => String(s || "")
+        .replace(/\/index\.html?$/i,"")
+        .replace(/\/+$/,"");
+
+      const idx = items.findIndex(it => norm(it.slug) === thisPath);
+      if (idx === -1) {
+        console.warn("[camp-cta] Current slug not found in index.json", thisPath);
+        return;
+      }
+
+      const prev = items[(idx - 1 + items.length) % items.length];
+      const next = items[(idx + 1) % items.length];
+
+      if (prev && prevEl) {
+        prevEl.href = prev.slug;
+        prevEl.textContent = "\u2190 " + (prev.title || "Previous camp");
+      }
+      if (next && nextEl) {
+        nextEl.href = next.slug;
+        nextEl.textContent = (next.title || "Next camp") + " \u2192";
+      }
+    })();
+  </script>
+
+  <!-- Random gear suggestions for camp pages (4 items) -->
+  <script type="module">
+    (async () => {
+      const grid = document.getElementById('gearGrid');
+      if (!grid) return;
+
+      let raw = null;
+
+      try {
+        const mod = await import('/data-gear.js');
+        raw = mod.GEAR_DATA || mod.default || mod.items || mod.data || null;
+      } catch (err) {
+        console.warn('Gear module import failed, trying global GEAR_DATA', err);
+      }
+
+      if (!raw) {
+        if (typeof window !== 'undefined' && window.GEAR_DATA) {
+          raw = window.GEAR_DATA;
+        } else if (typeof GEAR_DATA !== 'undefined') {
+          raw = GEAR_DATA;
+        }
+      }
+
+      if (!raw) {
+        grid.innerHTML = '<p class="lead">See the gear section for all the items I use.</p>';
+        return;
+      }
+
+      let allItems = [];
+
+      if (Array.isArray(raw)) {
+        allItems = raw.map(it => ({ ...it }));
+      } else if (raw && typeof raw === 'object') {
+        allItems = Object.entries(raw).map(([id, it]) => ({ id, ...it }));
+      }
+
+      allItems = allItems
+        .map(it => {
+          const href = it.page || it.url || it.slug || it.href || '';
+          return { ...it, href };
+        })
+        .filter(it => it && it.title && it.href);
+
+      if (!allItems.length) {
+        grid.innerHTML = '<p class="lead">See the gear section for all the items I use.</p>';
+        return;
+      }
+
+      const pinsAttr = (document.body.dataset.campGear || '').trim();
+      const pinnedIds = pinsAttr
+        ? pinsAttr.split(',').map(s => s.trim()).filter(Boolean)
+        : [];
+
+      const picked = [];
+      const used = new Set();
+
+      pinnedIds.forEach(id => {
+        const match = allItems.find(it => it.id === id || it.slug === id || it.href === id);
+        if (match && !used.has(match.href)) {
+          used.add(match.href);
+          picked.push(match);
+        }
+      });
+
+      const target = Math.min(4, allItems.length);
+      while (picked.length < target) {
+        const candidate = allItems[Math.floor(Math.random() * allItems.length)];
+        if (!candidate || used.has(candidate.href)) continue;
+        used.add(candidate.href);
+        picked.push(candidate);
+      }
+
+      grid.innerHTML = '';
+      picked.forEach(item => {
+        const note =
+          item.gearNote ||
+          item.review ||
+          item.myTake ||
+          item.subtitle ||
+          (Array.isArray(item.meta) ? item.meta.join(' &bull; ') : '');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'gear-item';
+        wrap.innerHTML = `
+          <a href="${item.href}">
+            <div>
+              <div class="gear-title">${item.title}</div>
+              ${note ? `<div class="gear-note">${note}</div>` : ''}
+            </div>
+            <div class="gear-arrow">&rarr;</div>
+          </a>
+        `;
+        grid.appendChild(wrap);
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Camp", "item":"https://follincraft.com/#camp" },
+          { "@type":"ListItem", "position":3, "name":"Double Springs Campground", "item":"https://follincraft.com/camp/doublesprings/" }
+        ]
+      },
+      {
+        "@type":"Campground",
+        "name":"Double Springs Campground",
+        "description":"Shaded, family-friendly campsites near Mormon Lake in the Coconino National Forest.",
+        "url":"https://follincraft.com/camp/doublesprings/",
+        "image":[
+          "https://follincraft.com/camp/doublesprings/doublesprings1.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings2.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings3.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings4.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings5.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings7.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings8.jpg",
+          "https://follincraft.com/camp/doublesprings/doublesprings9.jpg"
+        ],
+        "geo": { "@type":"GeoCoordinates", "latitude": 34.9395, "longitude": -111.4890 }
+      }
+    ]
+  }
+  </script>
+  <script src="../../data-camp.js"></script>
+<script>
+(function(){
+
+  function getStars(rating){
+    const rounded = Math.max(0, Math.min(5, Math.round(Number(rating || 0))));
+    return "\u2605".repeat(rounded) + "\u2606".repeat(5 - rounded);
+  }
+
+  // Auto get camp ID from URL
+  const parts = location.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  const campId = parts[parts.length - 1]?.replace(/index\.html?$/i, "") || parts[parts.length - 2];
+
+  const camp = window.CAMP_DATA?.[campId];
+  if (!camp) return;
+
+  //  TITLE
+  const titleEl = document.getElementById("campTitle");
+  if (titleEl && camp.title){
+    titleEl.textContent = camp.title;
+  }
+
+  //  RATING
+  if (camp.rating?.overall){
+    const starsEl = document.getElementById("campRatingStars");
+    const scoreEl = document.getElementById("campRatingScore");
+
+    if (starsEl) starsEl.textContent = getStars(camp.rating.overall);
+    if (scoreEl) scoreEl.textContent = camp.rating.overall.toFixed(1);
+  }
+
+})();
+</script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=clean-camp-filters-17"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=camp-breadcrumb-row-1"></script>
+</body>
+</html>

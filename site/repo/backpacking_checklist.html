@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Backpacking Checklist - Follincraft</title>
+<meta name="description" content="A focused backpacking checklist for overnight and weekend trail trips, covering shelter, sleep, cooking, water, clothing, repair, and safety gear.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Backpacking Checklist">
+  <meta property="og:description" content="A focused backpacking checklist for overnight and weekend trail trips, covering shelter, sleep, cooking, water, clothing, repair, and safety gear.">
+  <meta property="og:url" content="https://follincraft.com/repo/backpacking_checklist.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Backpacking Checklist">
+  <meta name="twitter:description" content="A focused backpacking checklist for overnight and weekend trail trips, covering shelter, sleep, cooking, water, clothing, repair, and safety gear.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/backpacking_checklist.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+<link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<style>
+  :root{
+    --bg:#0c0f13;
+    --card:#11151c;
+    --ink:#e7eaee;
+    --muted:#9aa5b1;
+    --line:#1b2430;
+    --orange:#ea580c;
+  }
+  html,body{height:100%;margin:0;background:#0c0f13;color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+  .checklist-app{background:#0c0f13;color:var(--ink)}
+  .checklist-app .wrap{max-width:960px;margin:0 auto;padding:20px}
+  .checklist-app .tool-page{padding:94px 0 40px}
+  .checklist-app .tool-intro{max-width:960px;margin:0 auto;padding:0 20px 10px}
+  .checklist-app .eyebrow{margin:0 0 6px;color:#fff;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .checklist-app .tool-intro h1{margin:0;color:var(--orange);font-size:42px;line-height:1.02}
+  .checklist-app .tool-intro p{margin:12px 0 0;color:var(--muted);font-size:16px;line-height:1.55;max-width:760px}
+  .checklist-app .tool-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+  .checklist-app .btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 10px;border-radius:10px;cursor:pointer}
+  .checklist-app .btn:hover{border-color:#2a3342}
+  .checklist-app .btn.primary{background:var(--orange);color:#0b0f15;border-color:#000;font-weight:700}
+
+  /* Grid */
+  .checklist-app .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+  @media(min-width:760px){ .checklist-app .grid{grid-template-columns:1fr 1fr} }
+
+  /* Card */
+  .checklist-app .card{border:1px solid var(--line);background:#11151c;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #0007;transition:transform .15s,border-color .15s}
+  .checklist-app .card:hover{transform:translateY(-2px);border-color:#2a3342}
+  .checklist-app .head{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--line)}
+  .checklist-app .ic svg{width:36px;height:36px;fill:var(--orange)}
+  .checklist-app .title{font-weight:800;font-size:16px;color:var(--orange)}
+  .checklist-app .sub{font-size:12px;color:var(--muted);margin-top:2px}
+  .checklist-app .items{padding:12px 16px}
+  .checklist-app .item{display:flex;align-items:center;gap:10px;padding:10px;border:1px dashed #1a2230;border-radius:12px;margin:10px 0;background:#0c1117;cursor:pointer}
+  .checklist-app .item input[type="checkbox"]{width:18px;height:18px;cursor:pointer;-webkit-appearance:none;appearance:none;border:2px solid var(--orange);border-radius:4px;background:none;position:relative}
+  .checklist-app .item input[type="checkbox"]:checked{background:var(--orange);border-color:var(--orange)}
+  .checklist-app .item input[type="checkbox"]:checked::after{content:"";position:absolute;left:4px;top:0;width:4px;height:9px;border:solid #0b0f15;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .checklist-app .lbl{font-weight:600}
+  .checklist-app .hint{font-size:12px;color:var(--muted)}
+
+  /* Footer */
+  .checklist-app .footer{display:flex;gap:8px;justify-content:flex-end;margin:24px 0 10px}
+  @media (max-width:700px){
+    .checklist-app .tool-page{padding-top:86px}
+    .checklist-app .tool-intro h1{font-size:34px}
+    .checklist-app .tool-intro p{font-size:15px}
+  }
+  body[data-tool-style="site"] .checklist-app .tool-intro{
+    max-width:1100px !important;
+    padding:0 24px 0 !important;
+  }
+  body[data-tool-style="site"] .checklist-app .tool-intro h1{
+    font-size:1.8rem !important;
+    line-height:1.08 !important;
+  }
+  body[data-tool-style="site"] .checklist-app .tool-intro::after{
+    content:none !important;
+  }
+  body[data-tool-style="site"] .checklist-app .tool-intro-divider{
+    display:block;
+    width:100%;
+    max-width:760px;
+    height:1px;
+    margin:18px 0 0;
+    background:linear-gradient(90deg, var(--accent), rgba(234,88,12,.42), rgba(234,88,12,0));
+  }
+  body[data-tool-style="site"] .checklist-app .tool-actions{
+    justify-content:flex-start !important;
+    margin-top:14px !important;
+    margin-bottom:22px !important;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Backpacking Checklist",
+  "description": "A focused backpacking checklist for overnight and weekend trail trips, covering shelter, sleep, cooking, water, clothing, repair, and safety gear.",
+  "url": "https://follincraft.com/repo/backpacking_checklist.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Backpacking Checklist",
+      "item": "https://follincraft.com/repo/backpacking_checklist.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+<div class="checklist-app">
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">
+        <a href="../index.html#about" style="text-decoration:none">
+          <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+        </a>
+      </div>
+      <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+    </div>
+                      <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </div>
+</header>
+
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+              <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+</div>
+
+<main class="tool-page">
+  <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Backpacking Checklist</span></p>
+    <p class="eyebrow">Camp Tools</p>
+    <h1>Backpacking Checklist</h1>
+    <p>A clean pack list for fast overnight planning. This keeps the essentials visible without turning the whole page into a popup app.</p>
+    <span class="tool-intro-divider" aria-hidden="true"></span>
+  </section>
+  <div class="tool-actions">
+    <button class="btn" id="printBtn">Print</button>
+    <button class="btn" id="clearBtn">Clear</button>
+    <button class="btn primary" id="copyBtn">Copy packed list</button>
+    <span class="checklist-progress" id="progress">0 packed</span>
+  </div>
+
+  <div class="wrap">
+    <div class="grid" id="grid"><!-- sections injected here --></div>
+  </div>
+</main>
+
+<script>
+/* Sections */
+const SECTIONS = [
+  {id:'shelter', title:'Shelter', sub:'Tent + sleep system', icon:'tent',
+   items:[['Tent or tarp',''],['Footprint',''],['Sleeping bag / quilt',''],['Sleeping pad',''],['Pillow / stuff sack','']]},
+  {id:'cook', title:'Cooking & Water', sub:'Cook + hydrate', icon:'pot',
+   items:[['Stove',''],['Fuel',''],['Pot + lid',''],['Spoon',''],['Lighter',''],['Filter',''],['Bottles/bladder',''],['Trash bag','']]},
+  {id:'clothes', title:'Clothing', sub:'Layer smart', icon:'shirt',
+   items:[['Base top',''],['Base bottom',''],['Mid layer',''],['Puffy jacket',''],['Rain jacket',''],['Rain pants',''],['Wool socks',''],['Hat/beanie',''],['Gloves','']]},
+  {id:'nav', title:'Navigation & Tools', sub:'Find + fix', icon:'compass',
+   items:[['Phone/maps',''],['Paper map',''],['Compass',''],['Knife / multi-tool',''],['Repair kit',''],['Cord','']]},
+  {id:'safety', title:'Health & Safety', sub:'Prevent problems', icon:'firstaid',
+   items:[['First-aid kit',''],['Sunscreen',''],['Bug repellent',''],['Whistle',''],['Emergency blanket',''],['Toiletries',''],['Trowel + TP',''],['Sanitizer','']]},
+  {id:'food', title:'Food & Extras', sub:'Fuel the miles', icon:'boot',
+   items:[['Breakfasts',''],['Dinners',''],['Snacks',''],['Coffee/tea',''],['Electrolytes',''],['Bear bag/can',''],['Trekking poles',''],['Camp shoes',''],['Sit pad',''],['Permits/ID/cash','']]},
+  {id:'light', title:'Lighting', sub:'Night kit', icon:'headlamp',
+   items:[['Headlamp',''],['Spare batteries','']]}
+];
+
+/* Orange SVGs */
+function iconSvg(name){
+  switch(name){
+    case 'tent': return '<path d="M3 20h18l-9-16-9 16z"/>';
+    case 'pot': return '<path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-6zm-2-2h20v2H2z"/>';
+    case 'shirt': return '<path d="M8 4l4 2 4-2 4 3v5h-3v10H7V12H4V7l4-3z"/>';
+    case 'compass': return '<circle cx="12" cy="12" r="10"/><path d="M10 14l2-6 6-2-2 6-6 2z"/>';
+    case 'firstaid': return '<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M12 9v6m-3-3h6"/>';
+    case 'boot': return '<path d="M4 4h6v6l6 2v4H4z"/>';
+    case 'headlamp': return '<circle cx="12" cy="12" r="6"/><path d="M2 12h4m12 0h4"/>';
+    default: return '<circle cx="12" cy="12" r="9"/>';
+  }
+}
+
+/* Build UI */
+const grid=document.getElementById('grid');const KEY='fc_backpack_orange_v2';let state=load()||{};
+SECTIONS.forEach(sec=>{
+  const card=document.createElement('section');card.className='card';
+  card.innerHTML=`<div class="head"><div class="ic"><svg viewBox="0 0 24 24">${iconSvg(sec.icon)}</svg></div><div><div class="title">${sec.title}</div><div class="sub">${sec.sub}</div></div></div><div class="items"></div>`;
+  const box=card.querySelector('.items');
+  sec.items.forEach(([name,hint])=>{
+    const id=`${sec.id}:${name}`;
+    const row=document.createElement('label');row.className='item';
+    row.innerHTML=`<input type="checkbox" ${state[id]?'checked':''} data-id="${id}" aria-label="${id}"><div><div class="lbl">${name}</div>${hint?`<div class="hint">${hint}</div>`:''}</div>`;
+    box.appendChild(row);
+  });
+  grid.appendChild(card);
+});
+grid.addEventListener('change',e=>{const id=e.target.dataset.id;if(!id)return;state[id]=e.target.checked;save();updateProgress();});
+
+/* Buttons */
+document.getElementById('printBtn').onclick=()=>window.print();
+document.getElementById('clearBtn').onclick=()=>{if(!confirm('Clear all?'))return;state={};[...grid.querySelectorAll('input[type="checkbox"]')].forEach(cb=>cb.checked=false);save();updateProgress();};
+document.getElementById('copyBtn').onclick=()=>{const names=[...grid.querySelectorAll('input[type="checkbox"]:checked')].map(cb=>cb.closest('.item').querySelector('.lbl').textContent.trim());navigator.clipboard.writeText(names.join('\n'));};
+
+/* Storage */
+function save(){localStorage.setItem(KEY,JSON.stringify(state));}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'')}catch(_){return null;}}
+function updateProgress(){
+  const total=grid.querySelectorAll('input[type="checkbox"]').length;
+  const packed=grid.querySelectorAll('input[type="checkbox"]:checked').length;
+  document.getElementById('progress').textContent=`${packed}/${total} packed`;
+}
+updateProgress();
+</script>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+  <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3>
+      <div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap">
+        <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+        <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+        <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+      </div>
+      <p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px">
+    <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+  </p>
+  <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+</script>
+</div>
+</body>
+</html>

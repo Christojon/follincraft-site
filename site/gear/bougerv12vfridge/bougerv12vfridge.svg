@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="BougeRV 12V Fridge">
+  <rect width="1200" height="900" fill="#090b10"/>
+  <rect x="70" y="70" width="1060" height="760" rx="36" fill="#11141b" stroke="#ea580c" stroke-width="6"/>
+  <rect x="250" y="250" width="700" height="330" rx="28" fill="#171b23" stroke="#2a3140" stroke-width="6"/>
+  <rect x="290" y="300" width="260" height="230" rx="18" fill="#0b0d12" stroke="#ea580c" stroke-width="6"/>
+  <rect x="590" y="300" width="320" height="230" rx="18" fill="#0f1218" stroke="#4b5563" stroke-width="5"/>
+  <rect x="900" y="345" width="34" height="140" rx="12" fill="#ea580c"/>
+  <text x="120" y="165" fill="#ea580c" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800">VEHICLE CAMP GEAR</text>
+  <text x="120" y="690" fill="#ffffff" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">BougeRV 12V Fridge</text>
+  <text x="120" y="755" fill="#9aa3b2" font-size="34" font-family="Inter, Arial, sans-serif">Low noise fridge / freezer for road trips and desert camp.</text>
+</svg>

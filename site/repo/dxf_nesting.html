@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DXF Nesting Layout - Follincraft</title>
+  <meta name="description" content="Upload simple 2D DXF profiles, set quantities, nest parts onto sheet stock, and print a fabrication layout.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DXF Nesting Layout">
+  <meta property="og:description" content="Upload simple 2D DXF profiles, set quantities, nest parts onto sheet stock, and print a fabrication layout.">
+  <meta property="og:url" content="https://follincraft.com/repo/dxf_nesting.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DXF Nesting Layout">
+  <meta name="twitter:description" content="Upload simple 2D DXF profiles, set quantities, nest parts onto sheet stock, and print a fabrication layout.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+  <link rel="canonical" href="https://follincraft.com/repo/dxf_nesting.html">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --bg:#0a0c0f;
+      --card:#0b0c10;
+      --ink:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#ea580c;
+      --blue:#8abfff;
+      --teal:#66d1c7;
+      --gold:#f4c957;
+      --line:#2a2f36;
+      --input:#0e1115;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--ink)}
+    body{font-family:Inter,Roboto,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+    html{scrollbar-width:thin;scrollbar-color:var(--accent) #0b0c10}
+    ::-webkit-scrollbar{width:10px;height:10px}
+    ::-webkit-scrollbar-track{background:#0b0c10}
+    ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:6px}
+    .tool-page{
+      padding:94px 0 40px;
+      background:
+        radial-gradient(circle at 82px 120px,rgba(234,88,12,.075),transparent 300px),
+        var(--bg);
+    }
+    .tool-intro{max-width:1100px;margin:0 auto;padding:0 20px}
+    .breadcrumbs{margin:0 0 16px;color:var(--muted);font-size:16px}
+    .breadcrumbs a{color:inherit;text-decoration:none}
+    .breadcrumbs a:hover{color:var(--accent)}
+    .tool-intro .section-kicker{
+      margin:0 0 6px;
+      color:#fff;
+      font-size:14px;
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .tool-intro .title{margin:0 0 8px;color:var(--accent);font-size:1.8rem;line-height:1.08;letter-spacing:0}
+    .tool-intro p.section-intro{margin:0;max-width:760px;color:#aeb7c3;font-size:17px;line-height:1.55}
+    .tool-heading-rule{max-width:1100px;margin:20px auto 0;padding:0 20px}
+    .tool-heading-rule .section-divider{
+      height:1px;
+      border:0;
+      background:linear-gradient(90deg,var(--accent),rgba(234,88,12,.45) 42%,rgba(234,88,12,0));
+    }
+    .tool-wrap{max-width:1100px;margin:0 auto;padding:24px 20px}
+    .grid{display:grid;gap:16px;grid-template-columns:390px 1fr}
+    .tool-results{padding:0}
+    .card{background:linear-gradient(145deg,#13161b,#0b0c10);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 22px 60px rgba(0,0,0,.34)}
+    h2,h3{margin:0;color:#fff;line-height:1.1}
+    h2{font-size:19px}
+    h3{font-size:16px}
+    .note{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+    label{display:block;margin:0 0 6px;color:var(--muted);font-size:13px;font-weight:800}
+    input[type="number"],input[type="text"],select{
+      width:100%;box-sizing:border-box;border:1px solid #30343c;border-radius:8px;background:var(--input);color:#fff;padding:10px 11px;font:inherit;outline:none
+    }
+    input[type="file"]{width:100%;box-sizing:border-box;border:1px dashed rgba(255,102,0,.5);border-radius:8px;background:rgba(255,102,0,.08);padding:14px;color:#fff}
+    input[type="file"].drop-active{border-color:var(--blue);background:rgba(138,191,255,.16);box-shadow:0 0 0 3px rgba(138,191,255,.14)}
+    input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,102,0,.18)}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .full{grid-column:1/-1}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    button{appearance:none;border:1px solid transparent;border-radius:8px;background:var(--accent);color:#000;padding:10px 14px;font-weight:900;cursor:pointer}
+    button.secondary{background:#14171d;color:#fff;border-color:var(--line)}
+    button.icon-btn{display:inline-grid;place-items:center;width:28px;height:28px;padding:0;background:#211315;color:#ffb4a5;border-color:#5b2b21;font-size:18px;line-height:1}
+    button.sheet-export-btn,
+    a.sheet-export-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#14171d;color:#fff;font-size:12px;font-weight:900;text-decoration:none}
+    button:hover{filter:brightness(1.06)}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 14px}
+    .stat{border:1px solid var(--line);border-radius:8px;background:#101319;padding:10px}
+    .stat span{display:block;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .stat strong{display:block;margin-top:3px;color:#fff;font-size:19px}
+    .part-list{display:grid;gap:10px;margin-top:14px}
+    .part-row{display:grid;grid-template-columns:minmax(0,1fr) auto 82px auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:8px;background:#101319;padding:10px}
+    .part-name{min-width:0}
+    .part-name strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#ff7a22}
+    .part-name span{display:block;color:var(--muted);font-size:12px}
+    .part-rotation{display:grid;place-items:center;min-width:66px;min-height:42px;padding:7px 9px;background:#12161c;color:#fff;border:1px solid #30343c;border-radius:8px}
+    .part-rotation:hover,.part-rotation:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,102,0,.18);filter:none}
+    .part-rotation strong{display:block;font-size:14px;line-height:1}
+    .part-rotation span{display:block;margin-top:3px;color:#aeb7c3;font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+    .part-row input{padding:8px 9px}
+    .status{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.45}
+    .status strong{color:#fff}
+    .warn{color:#ffd3c3}
+    .preview-area{display:grid;gap:16px}
+    .sheet-card{break-inside:avoid;border:1px solid var(--line);border-radius:8px;background:#0e1115;padding:12px}
+    .sheet-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}
+    .sheet-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .sheet-head p{margin:0;color:var(--muted);font-size:13px}
+    .svg-wrap{border:1px dashed #343945;border-radius:8px;background:#07090c;padding:8px;overflow:hidden}
+    svg{display:block;width:100%;height:auto;border-radius:6px}
+    .sheet-bg{fill:#101721;stroke:#526071;stroke-width:.65}
+    .sheet-margin{fill:none;stroke:#ff9b54;stroke-width:.5;stroke-dasharray:4 3;opacity:.75}
+    .part-shape{fill:rgba(255,102,0,.12);stroke:#ff8b3d;stroke-width:.75;vector-effect:non-scaling-stroke}
+    .part-feature{fill:none;stroke:#ffd3b0;stroke-width:.45;vector-effect:non-scaling-stroke;opacity:.95}
+    .dim-text{font-size:5.5px;fill:#d9e3ef}
+    .empty{border:1px dashed var(--line);border-radius:8px;padding:28px;text-align:center;color:var(--muted)}
+    .layout-table-wrap{margin-top:12px;overflow:auto;border-radius:8px}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;color:#fff}
+    th{background:#12161c;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+    .table-part{display:inline-flex;align-items:center;gap:8px;min-width:0}
+    .table-dot{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);flex:0 0 auto}
+    .table-name{display:inline-block;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+    .print-report{display:none}
+    @media (max-width:960px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:620px){.tool-page{padding-top:86px}.tool-intro,.tool-wrap,.tool-heading-rule{padding-left:16px;padding-right:16px}.field-row{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.part-row{grid-template-columns:auto 1fr auto}.part-row .qty-cell{grid-column:1/-1}}
+    @media print{
+      @page{size:letter;margin:.45in}
+      body{background:#fff;color:#111;font-family:Arial,sans-serif}
+      header,.tool-page,#contact,footer{display:none!important}
+      .print-report{display:block!important;color:#111}
+      .print-report h1{margin:0 0 4px;font-size:24px}
+      .print-report .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 16px;font-size:11px}
+      .print-report .meta div{border:1px solid #999;padding:6px;border-radius:4px}
+      .print-report .sheet-card{border:1px solid #999;margin:0 0 14px;padding:8px;box-shadow:none;background:#fff}
+      .print-report .svg-wrap{border:0;padding:0;background:#fff}
+      .print-report table{font-size:10px}
+      .print-report th,.print-report td{color:#111;border:1px solid #aaa;padding:4px}
+      .print-report th{background:#eee}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html" style="text-decoration:none;color:inherit"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+      <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true"><nav class="mobile-links">
+    <a href="../projects/index.html">Projects</a>
+    <a href="../camp/index.html">Camp</a>
+    <a href="../gear/index.html">Gear</a>
+    
+    <a href="../repo/index.html">Tools</a>
+    <a href="#contact">Contact</a>
+    <a href="../search/index.html">Search</a>
+  </nav></div>
+
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>DXF Nesting Layout</span></p>
+      <p class="section-kicker">SHOP LAYOUT</p>
+      <h1 class="title">DXF Nesting Layout</h1>
+      <p class="lead section-intro">Upload simple 2D DXF profiles, set quantities, choose sheet size and spacing, and print a clean nesting layout before cutting material.</p>
+    </section>
+    <div class="tool-heading-rule"><hr class="section-divider"></div>
+
+    <section class="tool-wrap">
+      <div class="grid">
+        <aside class="card">
+          <h2>Import parts</h2>
+          <p class="note">Add your DXF parts, set how many of each you need, then choose the sheet size, spacing, and rotation rules before printing the layout.</p>
+          <div class="field-row">
+            <div class="full">
+              <label for="fileInput">DXF files</label>
+              <input id="fileInput" type="file" accept=".dxf" multiple aria-label="File Input">
+            </div>
+            <div>
+              <label for="sheetW">Sheet width</label>
+              <input id="sheetW" type="number" min="1" step="0.125" value="60" aria-label="Sheet W">
+            </div>
+            <div>
+              <label for="sheetH">Sheet height</label>
+              <input id="sheetH" type="number" min="1" step="0.125" value="120" aria-label="Sheet H">
+            </div>
+            <div>
+              <label for="spacing">Part spacing</label>
+              <input id="spacing" type="number" min="0" step="0.0625" value="0.25" aria-label="Spacing">
+            </div>
+            <div>
+              <label for="margin">Sheet margin</label>
+              <input id="margin" type="number" min="0" step="0.0625" value="0.25" aria-label="Margin">
+            </div>
+          </div>
+          <div id="status" class="status">Upload one or more DXF files to start.</div>
+          <div id="partList" class="part-list"></div>
+        </aside>
+
+        <section class="tool-results" aria-label="Nesting results">
+          <div id="stats" class="stats" aria-label="Layout stats">
+            <div class="stat"><span>Parts</span><strong>0</strong></div>
+            <div class="stat"><span>Sheets</span><strong>0</strong></div>
+            <div class="stat"><span>Yield</span><strong>0%</strong></div>
+          </div>
+          <div id="preview" class="preview-area">
+            <div class="empty">DXF sheets will show here after nesting.</div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div id="printReport" class="print-report"></div>
+
+  <script>
+    const els = {
+      file: document.getElementById("fileInput"),
+      sheetW: document.getElementById("sheetW"),
+      sheetH: document.getElementById("sheetH"),
+      spacing: document.getElementById("spacing"),
+      margin: document.getElementById("margin"),
+      partList: document.getElementById("partList"),
+      preview: document.getElementById("preview"),
+      stats: document.getElementById("stats"),
+      status: document.getElementById("status"),
+      printReport: document.getElementById("printReport")
+    };
+    let parts = [];
+    let sheets = [];
+    let sheetDownloadUrls = [];
+    const palette = ["#ff7a22","#8abfff","#f4c957","#66d1c7","#d875f0","#9ccf57","#f36b4f","#c7d2fe"];
+    const SAMPLE_DXF = `0
+SECTION
+2
+ENTITIES
+0
+LWPOLYLINE
+90
+4
+70
+1
+10
+0
+20
+0
+10
+12
+20
+0
+10
+12
+20
+6
+10
+0
+20
+6
+0
+LWPOLYLINE
+90
+6
+70
+1
+10
+0
+20
+0
+10
+8
+20
+0
+10
+10
+20
+3
+10
+8
+20
+6
+10
+0
+20
+6
+10
+-2
+20
+3
+0
+CIRCLE
+10
+0
+20
+0
+40
+3
+0
+ENDSEC
+0
+EOF`;
+
+    function partLetter(index){
+      let n = index + 1;
+      let s = "";
+      while(n > 0){
+        const r = (n - 1) % 26;
+        s = String.fromCharCode(65 + r) + s;
+        n = Math.floor((n - 1) / 26);
+      }
+      return s;
+    }
+    function num(v){return Number.isFinite(+v) ? +v : 0}
+    function fmt(v){return Math.abs(v) >= 100 ? v.toFixed(1) : v.toFixed(2).replace(/\.?0+$/,"")}
+    function escapeHtml(s){return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    const rotationModes = [
+      {value:"90", main:"90°", sub:"turn", label:"Allow 90 degree rotation"},
+      {value:"5", main:"ANY", sub:"angle", label:"Allow any angle"},
+      {value:"none", main:"NO", sub:"rotation", label:"No rotation"}
+    ];
+    function rotationModeInfo(value){
+      return rotationModes.find(mode => mode.value === value) || rotationModes[0];
+    }
+    function nextRotationMode(value){
+      const index = rotationModes.findIndex(mode => mode.value === value);
+      return rotationModes[(index + 1) % rotationModes.length].value;
+    }
+    function rotationAngles(part){
+      const mode = part?.rotationMode || "90";
+      if(mode === "none") return [0];
+      if(mode === "90") return [0, 90];
+      const step = Number(mode) || 15;
+      const angles = [];
+      for(let a = 0; a < 180; a += step) angles.push(a);
+      return angles;
+    }
+    function rotateGeometry(contours, angle){
+      const rad = angle * Math.PI / 180;
+      const cos = Math.cos(rad);
+      const sin = Math.sin(rad);
+      const rotatedContours = contours.map(contour => ({
+        ...contour,
+        points: contour.points.map(p => ({x:p.x * cos - p.y * sin, y:p.x * sin + p.y * cos}))
+      }));
+      const raw = rotatedContours.flatMap(contour => contour.points);
+      const minX = Math.min(...raw.map(p => p.x));
+      const minY = Math.min(...raw.map(p => p.y));
+      const maxX = Math.max(...raw.map(p => p.x));
+      const maxY = Math.max(...raw.map(p => p.y));
+      return {
+        contours: rotatedContours.map(contour => ({
+          ...contour,
+          points: contour.points.map(p => ({x:p.x - minX, y:p.y - minY}))
+        })),
+        w: maxX - minX,
+        h: maxY - minY
+      };
+    }
+
+    function dxfPairs(text){
+      const lines = text.replace(/\r/g, "").split("\n");
+      const pairs = [];
+      for(let i = 0; i < lines.length - 1; i += 2){
+        pairs.push({ code: lines[i].trim(), value: lines[i + 1].trim() });
+      }
+      return pairs;
+    }
+    function entitiesFromPairs(pairs){
+      const entities = [];
+      let inEntities = false;
+      let current = null;
+      for(let i = 0; i < pairs.length; i++){
+        const p = pairs[i];
+        const value = p.value.toUpperCase();
+        const nextValue = pairs[i+1]?.value?.toUpperCase();
+        if(p.code === "0" && value === "SECTION" && pairs[i+1]?.code === "2" && nextValue === "ENTITIES"){
+          inEntities = true;
+          i++;
+          continue;
+        }
+        if(inEntities && p.code === "0" && value === "ENDSEC"){
+          if(current) entities.push(current);
+          current = null;
+          break;
+        }
+        if(!inEntities) continue;
+        if(p.code === "0"){
+          if(current) entities.push(current);
+          current = { type:value, pairs:[] };
+        } else if(current){
+          current.pairs.push(p);
+        }
+      }
+      return entities;
+    }
+    function values(entity, code){
+      return entity.pairs.filter(p => p.code === code).map(p => p.value);
+    }
+    function parsePolyline(entity){
+      const xs = values(entity, "10").map(Number);
+      const ys = values(entity, "20").map(Number);
+      const flags = Number(values(entity, "70")[0] || 0);
+      const points = xs.map((x, i) => ({ x, y: ys[i] || 0 })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
+      if(points.length < 3) return null;
+      return { points, closed: (flags & 1) === 1 };
+    }
+    function classicPolylinesFromPairs(pairs){
+      const shapes = [];
+      let inEntities = false;
+      let active = null;
+      let inVertex = false;
+      let vx = null;
+      let vy = null;
+      const finishVertex = () => {
+        if(active && inVertex && Number.isFinite(vx) && Number.isFinite(vy)) active.points.push({x:vx,y:vy});
+        inVertex = false;
+        vx = null;
+        vy = null;
+      };
+      const finishPolyline = () => {
+        finishVertex();
+        if(active && active.points.length >= 3) shapes.push({points:active.points, closed:(active.flags & 1) === 1});
+        active = null;
+      };
+      for(let i = 0; i < pairs.length; i++){
+        const p = pairs[i];
+        const value = p.value.toUpperCase();
+        const nextValue = pairs[i+1]?.value?.toUpperCase();
+        if(p.code === "0" && value === "SECTION" && pairs[i+1]?.code === "2" && nextValue === "ENTITIES"){ inEntities = true; i++; continue; }
+        if(inEntities && p.code === "0" && value === "ENDSEC"){ finishPolyline(); break; }
+        if(!inEntities) continue;
+        if(p.code === "0" && value === "POLYLINE"){
+          finishPolyline();
+          active = {points:[], flags:0};
+          continue;
+        }
+        if(!active) continue;
+        if(p.code === "70" && !inVertex) active.flags = Number(p.value) || 0;
+        if(p.code === "0" && value === "VERTEX"){
+          finishVertex();
+          inVertex = true;
+          continue;
+        }
+        if(p.code === "0" && value === "SEQEND"){
+          finishPolyline();
+          continue;
+        }
+        if(inVertex && p.code === "10") vx = Number(p.value);
+        if(inVertex && p.code === "20") vy = Number(p.value);
+      }
+      return shapes;
+    }
+    function parseCircle(entity){
+      const cx = Number(values(entity, "10")[0] || 0);
+      const cy = Number(values(entity, "20")[0] || 0);
+      const r = Number(values(entity, "40")[0] || 0);
+      if(!r) return null;
+      const points = Array.from({length:64}, (_, i) => {
+        const a = (Math.PI * 2 * i) / 64;
+        return { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r };
+      });
+      return { points, closed:true };
+    }
+    function parseArc(entity){
+      const cx = Number(values(entity, "10")[0] || 0);
+      const cy = Number(values(entity, "20")[0] || 0);
+      const r = Number(values(entity, "40")[0] || 0);
+      const start = Number(values(entity, "50")[0] || 0);
+      const end = Number(values(entity, "51")[0] || 0);
+      if(!r) return null;
+      let sweep = end - start;
+      if(sweep <= 0) sweep += 360;
+      const steps = Math.max(8, Math.ceil(sweep / 10));
+      const points = [];
+      for(let i = 0; i <= steps; i++){
+        const a = (start + sweep * (i / steps)) * Math.PI / 180;
+        points.push({x:cx + Math.cos(a) * r, y:cy + Math.sin(a) * r});
+      }
+      return points;
+    }
+    function pathSegmentsFromEntities(entities){
+      const segments = [];
+      entities.forEach(e => {
+        if(e.type === "LINE"){
+          const a = {x:Number(values(e,"10")[0] || 0), y:Number(values(e,"20")[0] || 0)};
+          const b = {x:Number(values(e,"11")[0] || 0), y:Number(values(e,"21")[0] || 0)};
+          if(Number.isFinite(a.x) && Number.isFinite(a.y) && Number.isFinite(b.x) && Number.isFinite(b.y)) segments.push([a,b]);
+        }
+        if(e.type === "ARC"){
+          const pts = parseArc(e);
+          if(pts?.length > 1) segments.push(pts);
+        }
+      });
+      return segments;
+    }
+    function parseLines(entities){
+      const unused = pathSegmentsFromEntities(entities).map(points => ({points}));
+      const shapes = [];
+      const close = (a,b) => Math.hypot(a.x-b.x, a.y-b.y) < 0.001;
+      while(unused.length){
+        const first = unused.shift();
+        const chain = [...first.points];
+        let changed = true;
+        while(changed){
+          changed = false;
+          for(let i = 0; i < unused.length; i++){
+            const l = unused[i].points;
+            const head = chain[0], tail = chain[chain.length - 1];
+            const a = l[0], b = l[l.length - 1];
+            if(close(a, tail)){ chain.push(...l.slice(1)); unused.splice(i,1); changed = true; break; }
+            if(close(b, tail)){ chain.push(...l.slice(0,-1).reverse()); unused.splice(i,1); changed = true; break; }
+            if(close(b, head)){ chain.unshift(...l.slice(0,-1)); unused.splice(i,1); changed = true; break; }
+            if(close(a, head)){ chain.unshift(...l.slice(1).reverse()); unused.splice(i,1); changed = true; break; }
+          }
+        }
+        if(chain.length > 3 && close(chain[0], chain[chain.length - 1])) shapes.push(chain.slice(0, -1));
+      }
+      return shapes;
+    }
+    function pointBounds(points){
+      const minX = Math.min(...points.map(p => p.x));
+      const minY = Math.min(...points.map(p => p.y));
+      const maxX = Math.max(...points.map(p => p.x));
+      const maxY = Math.max(...points.map(p => p.y));
+      return {minX,minY,maxX,maxY,w:maxX-minX,h:maxY-minY};
+    }
+    function normalizeToBounds(points, bounds){
+      return points.map(p => ({x:p.x - bounds.minX, y:bounds.maxY - p.y}));
+    }
+    function normalize(points){
+      const bounds = pointBounds(points);
+      const normalized = normalizeToBounds(points, bounds);
+      const w = bounds.w;
+      const h = bounds.h;
+      return {points: normalized, w, h, area: polygonArea(points), bounds};
+    }
+    function withinBounds(points, bounds, tolerance = .01){
+      const b = pointBounds(points);
+      return b.minX >= bounds.minX - tolerance
+        && b.maxX <= bounds.maxX + tolerance
+        && b.minY >= bounds.minY - tolerance
+        && b.maxY <= bounds.maxY + tolerance;
+    }
+    function sameContour(a, b){
+      if(!a || !b || a.length !== b.length) return false;
+      return a.every((p, i) => Math.abs(p.x - b[i].x) < .001 && Math.abs(p.y - b[i].y) < .001);
+    }
+    function polygonArea(points){
+      let sum = 0;
+      for(let i = 0; i < points.length; i++){
+        const a = points[i], b = points[(i + 1) % points.length];
+        sum += a.x * b.y - b.x * a.y;
+      }
+      return Math.abs(sum / 2);
+    }
+    function allEntityPoints(entities){
+      const points = [];
+      entities.forEach(e => {
+        if(e.type === "LINE"){
+          points.push({x:Number(values(e,"10")[0] || 0), y:Number(values(e,"20")[0] || 0)});
+          points.push({x:Number(values(e,"11")[0] || 0), y:Number(values(e,"21")[0] || 0)});
+        }
+        if(e.type === "LWPOLYLINE"){
+          const parsed = parsePolyline(e);
+          if(parsed) points.push(...parsed.points);
+        }
+        if(e.type === "POLYLINE" || e.type === "VERTEX") return;
+        if(e.type === "CIRCLE"){
+          const parsed = parseCircle(e);
+          if(parsed) points.push(...parsed.points);
+        }
+        if(e.type === "ARC"){
+          const parsed = parseArc(e);
+          if(parsed) points.push(...parsed);
+        }
+      });
+      return points.filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
+    }
+    function boundingProfile(points){
+      if(points.length < 2) return null;
+      const minX = Math.min(...points.map(p => p.x));
+      const minY = Math.min(...points.map(p => p.y));
+      const maxX = Math.max(...points.map(p => p.x));
+      const maxY = Math.max(...points.map(p => p.y));
+      if(maxX <= minX || maxY <= minY) return null;
+      return [
+        {x:minX,y:minY},
+        {x:maxX,y:minY},
+        {x:maxX,y:maxY},
+        {x:minX,y:maxY}
+      ];
+    }
+    function convexHull(points){
+      const unique = Array.from(
+        new Map(points.map(p => [`${Math.round(p.x * 1000)}:${Math.round(p.y * 1000)}`, p])).values()
+      ).sort((a,b) => a.x === b.x ? a.y - b.y : a.x - b.x);
+      if(unique.length < 3) return null;
+      const cross = (o,a,b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+      const lower = [];
+      for(const p of unique){
+        while(lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop();
+        lower.push(p);
+      }
+      const upper = [];
+      for(let i = unique.length - 1; i >= 0; i--){
+        const p = unique[i];
+        while(upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop();
+        upper.push(p);
+      }
+      const hull = lower.slice(0, -1).concat(upper.slice(0, -1));
+      return hull.length >= 3 ? hull : null;
+    }
+    function readDxf(text, fileName){
+      const pairs = dxfPairs(text);
+      const entities = entitiesFromPairs(pairs);
+      const shapes = [];
+      let ignored = 0;
+      entities.forEach(e => {
+        let parsed = null;
+        if(e.type === "LWPOLYLINE") parsed = parsePolyline(e);
+        if(e.type === "CIRCLE") parsed = parseCircle(e);
+        if(parsed?.closed) shapes.push(parsed.points);
+        else if(["LWPOLYLINE","ARC","SPLINE","ELLIPSE","POLYLINE"].includes(e.type)) ignored++;
+      });
+      classicPolylinesFromPairs(pairs).forEach(parsed => {
+        if(parsed.closed) shapes.push(parsed.points);
+        else ignored++;
+      });
+      const joinedLineProfiles = parseLines(entities);
+      joinedLineProfiles.forEach(points => shapes.push(points));
+      const drawingPoints = allEntityPoints(entities);
+      const drawingProfile = convexHull(drawingPoints) || boundingProfile(drawingPoints);
+      let usedFallback = false;
+      let fallbackType = "";
+      if(!shapes.length){
+        if(drawingProfile){
+          shapes.push(drawingProfile);
+          usedFallback = true;
+          fallbackType = "drawing";
+        }
+      }
+      if(!shapes.length) return [];
+      const profiles = shapes.map(shape => ({raw:shape, normalized:normalize(shape)})).sort((a,b) => b.normalized.area - a.normalized.area);
+      let chosen = profiles[0];
+      if(drawingProfile && profiles.length > 1){
+        const drawing = normalize(drawingProfile);
+        const drawingBoxArea = drawing.w * drawing.h;
+        const chosenBoxArea = chosen.normalized.w * chosen.normalized.h;
+        if(drawingBoxArea && chosenBoxArea / drawingBoxArea < .25){
+          chosen = {raw:drawingProfile, normalized:drawing};
+          usedFallback = true;
+          fallbackType = "drawing";
+        }
+      }
+      const renderBounds = chosen.normalized.bounds || pointBounds(chosen.raw);
+      const rawFeatures = [
+        ...shapes.map(points => ({points, closed:true})),
+        ...pathSegmentsFromEntities(entities).map(points => ({points, closed:false}))
+      ];
+      const featureContours = rawFeatures
+        .filter(feature => feature.points.length > 1 && withinBounds(feature.points, renderBounds, .05) && !sameContour(feature.points, chosen.raw))
+        .slice(0, 500)
+        .map(feature => ({
+          closed: feature.closed,
+          points: normalizeToBounds(feature.points, renderBounds)
+        }));
+      const contours = [
+        {closed:true, outer:true, points:chosen.normalized.points},
+        ...featureContours
+      ];
+      return [{
+        id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
+        name: fileName.replace(/\.dxf$/i,""),
+        qty: 1,
+        rotationMode: "90",
+        ignored,
+        fallback: usedFallback,
+        fallbackType,
+        sourceProfiles: profiles.length,
+        featureCount: featureContours.length,
+        contours,
+        ...chosen.normalized
+      }];
+    }
+    async function handleFiles(files){
+      const loaded = [];
+      const warnings = [];
+      for(const file of files){
+        const text = await file.text();
+        const found = readDxf(text, file.name);
+        if(found.length) loaded.push(...found);
+        else warnings.push(`${file.name}: I could not find usable 2D geometry in that DXF.`);
+      }
+      parts = [...parts, ...loaded];
+      refreshPartLabels();
+      renderParts();
+      nest();
+      els.status.innerHTML = warnings.length
+        ? `<strong>${loaded.length} part profile${loaded.length === 1 ? "" : "s"} added. ${parts.length} total.</strong><br><span class="warn">${warnings.map(escapeHtml).join("<br>")}</span>`
+        : `<strong>${loaded.length} part profile${loaded.length === 1 ? "" : "s"} added. ${parts.length} total.</strong> Set quantities and nest again as needed.`;
+      els.file.value = "";
+    }
+    function refreshPartLabels(){
+      parts = parts.map((p, i) => ({...p, label:partLetter(i), color:palette[i % palette.length]}));
+    }
+    function removePart(id){
+      parts = parts.filter(p => p.id !== id);
+      refreshPartLabels();
+      renderParts();
+      nest();
+      els.status.textContent = parts.length ? "Part removed. Nest updated." : "All parts removed.";
+    }
+    function loadParts(loaded, message){
+      parts = loaded;
+      refreshPartLabels();
+      renderParts();
+      nest();
+      els.status.innerHTML = message || `<strong>${parts.length} part profile${parts.length === 1 ? "" : "s"} loaded.</strong> Set quantities and nest again as needed.`;
+    }
+    function renderParts(){
+      els.partList.innerHTML = "";
+      parts.forEach((part, i) => {
+        const row = document.createElement("div");
+        row.className = "part-row";
+        const rotation = rotationModeInfo(part.rotationMode);
+        row.innerHTML = `
+          <div class="part-name"><strong>${escapeHtml(part.name)}</strong><span>${fmt(part.w)} x ${fmt(part.h)} in</span></div>
+          <button class="part-rotation" type="button" aria-label="Rotation for ${escapeHtml(part.name)}: ${rotation.label}" title="${rotation.label}">
+            <strong>${rotation.main}</strong><span>${rotation.sub}</span>
+          </button>
+          <div class="qty-cell"><input id="qty-${i}" aria-label="Quantity for ${escapeHtml(part.name)}" type="number" min="0" step="1" value="${part.qty}"></div>
+          <button class="icon-btn" type="button" aria-label="Remove ${escapeHtml(part.name)}" title="Remove part">&times;</button>
+        `;
+        row.querySelector("input").addEventListener("input", e => { part.qty = Math.max(0, Math.floor(num(e.target.value))); nest(); });
+        row.querySelector(".part-rotation").addEventListener("click", () => {
+          part.rotationMode = nextRotationMode(part.rotationMode);
+          renderParts();
+          nest();
+        });
+        row.querySelector(".icon-btn").addEventListener("click", () => removePart(part.id));
+        els.partList.appendChild(row);
+      });
+    }
+    function orientations(part){
+      const seen = new Set();
+      const sourceContours = part.contours?.length ? part.contours : [{closed:true, outer:true, points:part.points}];
+      return rotationAngles(part).map(angle => {
+        const rotated = rotateGeometry(sourceContours, angle);
+        return {angle, points:rotated.contours[0].points, contours:rotated.contours, w:rotated.w, h:rotated.h};
+      }).filter(o => {
+        const key = `${Math.round(o.w * 1000)}:${Math.round(o.h * 1000)}`;
+        if(seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+    function rectsOverlap(a,b){
+      return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    }
+    function containsRect(a,b){
+      return b.x >= a.x - .001 && b.y >= a.y - .001 && b.x + b.w <= a.x + a.w + .001 && b.y + b.h <= a.y + a.h + .001;
+    }
+    function pruneFreeRects(rects){
+      return rects
+        .filter(r => r.w > .01 && r.h > .01)
+        .filter((r, i, arr) => !arr.some((other, j) => i !== j && containsRect(other, r)));
+    }
+    function splitFreeRects(rects, used){
+      const next = [];
+      rects.forEach(rect => {
+        if(!rectsOverlap(rect, used)){
+          next.push(rect);
+          return;
+        }
+        const rectRight = rect.x + rect.w;
+        const rectBottom = rect.y + rect.h;
+        const usedRight = used.x + used.w;
+        const usedBottom = used.y + used.h;
+        if(used.x > rect.x) next.push({x:rect.x,y:rect.y,w:used.x - rect.x,h:rect.h});
+        if(usedRight < rectRight) next.push({x:usedRight,y:rect.y,w:rectRight - usedRight,h:rect.h});
+        if(used.y > rect.y) next.push({x:rect.x,y:rect.y,w:rect.w,h:used.y - rect.y});
+        if(usedBottom < rectBottom) next.push({x:rect.x,y:usedBottom,w:rect.w,h:rectBottom - usedBottom});
+      });
+      return pruneFreeRects(next);
+    }
+    function placementScore(rect, o, strategy){
+      const leftoverW = rect.w - o.w;
+      const leftoverH = rect.h - o.h;
+      const areaWaste = rect.w * rect.h - o.w * o.h;
+      if(strategy === "row"){
+        return rect.y * 100000000 + rect.x * 1000000 + leftoverH * 1000 + leftoverW;
+      }
+      if(strategy === "column"){
+        return rect.x * 100000000 + rect.y * 1000000 + leftoverW * 1000 + leftoverH;
+      }
+      const shortSide = Math.min(leftoverW, leftoverH);
+      return shortSide * 100000 + areaWaste;
+    }
+    function sortedOrientations(part, strategy){
+      const options = orientations(part);
+      if(strategy === "wide") return options.sort((a,b) => b.w - a.w || a.h - b.h);
+      if(strategy === "low") return options.sort((a,b) => a.h - b.h || b.w - a.w);
+      if(strategy === "tall") return options.sort((a,b) => b.h - a.h || a.w - b.w);
+      return options.sort((a,b) => (b.w*b.h) - (a.w*a.h));
+    }
+    function placeOnSheet(sheet, item, settings, strategy){
+      const options = sortedOrientations(item.part, strategy.orientation);
+      let best = null;
+      sheet.freeRects.forEach((rect, rectIndex) => {
+        options.forEach(o => {
+          if(o.w <= rect.w && o.h <= rect.h){
+            const score = placementScore(rect, o, strategy.placement);
+            if(!best || score < best.score) best = {rect, rectIndex, o, score};
+          }
+        });
+      });
+      if(!best) return false;
+      const {rect, o} = best;
+      const p = {...item, x:rect.x, y:rect.y, w:o.w, h:o.h, angle:o.angle, points:o.points, contours:o.contours};
+      sheet.placements.push(p);
+      const used = {
+        x: rect.x,
+        y: rect.y,
+        w: Math.min(rect.w, o.w + settings.spacing),
+        h: Math.min(rect.h, o.h + settings.spacing)
+      };
+      sheet.freeRects = splitFreeRects(sheet.freeRects, used);
+      return true;
+    }
+    function makeSheet(settings){
+      const usableW = Math.max(0, settings.sheetW - settings.margin * 2);
+      const usableH = Math.max(0, settings.sheetH - settings.margin * 2);
+      return {
+        placements:[],
+        freeRects:[{x:settings.margin,y:settings.margin,w:usableW,h:usableH}]
+      };
+    }
+    function sortItemsForNest(items, sortMode){
+      const sorted = [...items];
+      if(sortMode === "height") sorted.sort((a,b) => b.part.h - a.part.h || b.part.w - a.part.w);
+      else if(sortMode === "width") sorted.sort((a,b) => b.part.w - a.part.w || b.part.h - a.part.h);
+      else if(sortMode === "long") sorted.sort((a,b) => Math.max(b.part.w,b.part.h) - Math.max(a.part.w,a.part.h));
+      else sorted.sort((a,b) => (b.part.w*b.part.h) - (a.part.w*a.part.h));
+      return sorted;
+    }
+    function packItems(items, settings, strategy = {sort:"area", placement:"best", orientation:"area"}){
+      const packedSheets = [];
+      const oversize = [];
+      sortItemsForNest(items, strategy.sort).forEach(item => {
+        const fitsAny = orientations(item.part).some(o => o.w <= settings.sheetW - settings.margin * 2 && o.h <= settings.sheetH - settings.margin * 2);
+        if(!fitsAny){
+          oversize.push(item);
+          return;
+        }
+        let placed = false;
+        for(const sheet of packedSheets){
+          if(placeOnSheet(sheet, item, settings, strategy)){
+            placed = true;
+            break;
+          }
+        }
+        if(!placed){
+          const sheet = makeSheet(settings);
+          placeOnSheet(sheet, item, settings, strategy);
+          packedSheets.push(sheet);
+        }
+      });
+      return {packedSheets, oversize};
+    }
+    function packedArea(result){
+      return result.packedSheets.reduce((sum, sheet) => sum + sheet.placements.reduce((a,p) => a + p.part.area, 0), 0);
+    }
+    function sheetPlacedArea(sheet){
+      return sheet?.placements.reduce((sum,p) => sum + p.part.area, 0) || 0;
+    }
+    function resultScore(result, settings){
+      const sheetArea = settings.sheetW * settings.sheetH || 1;
+      const sheetCount = result.packedSheets.length || 999;
+      const oversizePenalty = result.oversize.length * 1000000000;
+      const sheetPenalty = sheetCount * 1000000;
+      const firstSheet = result.packedSheets[0];
+      const firstSheetCountBonus = (firstSheet?.placements.length || 0) * 10000;
+      const firstSheetAreaBonus = sheetPlacedArea(firstSheet) / sheetArea * 1000;
+      const totalYieldBonus = packedArea(result) / Math.max(1, sheetCount * sheetArea) * 100;
+      return oversizePenalty + sheetPenalty - firstSheetCountBonus - firstSheetAreaBonus - totalYieldBonus;
+    }
+    function bestPackItems(items, settings){
+      const strategies = [
+        {sort:"area", placement:"best", orientation:"area"},
+        {sort:"area", placement:"row", orientation:"wide"},
+        {sort:"area", placement:"row", orientation:"low"},
+        {sort:"height", placement:"row", orientation:"wide"},
+        {sort:"width", placement:"column", orientation:"tall"},
+        {sort:"long", placement:"best", orientation:"low"}
+      ];
+      return strategies
+        .map(strategy => ({strategy, result:packItems(items, settings, strategy)}))
+        .sort((a,b) => resultScore(a.result, settings) - resultScore(b.result, settings))[0].result;
+    }
+    function nest(){
+      const settings = {
+        sheetW: Math.max(1, num(els.sheetW.value)),
+        sheetH: Math.max(1, num(els.sheetH.value)),
+        spacing: Math.max(0, num(els.spacing.value)),
+        margin: Math.max(0, num(els.margin.value))
+      };
+      const items = [];
+      parts.forEach(part => {
+        for(let i = 0; i < Math.max(0, part.qty); i++) items.push({part, copy:i + 1});
+      });
+      const result = bestPackItems(items, settings);
+      sheets = result.packedSheets;
+      const oversize = result.oversize;
+      renderLayout(settings, oversize);
+    }
+    function transformedPoints(p, contour){
+      const pts = contour?.points || p.points || p.part.points;
+      return pts.map(pt => `${fmt(p.x + pt.x)},${fmt(p.y + pt.y)}`).join(" ");
+    }
+    function placedContourPoints(p, contour){
+      const pts = contour?.points || p.points || p.part.points;
+      return pts.map(pt => ({x:p.x + pt.x, y:p.y + pt.y}));
+    }
+    function partSvg(p){
+      const contours = p.contours?.length ? p.contours : [{closed:true, outer:true, points:p.points || p.part.points}];
+      return contours.map((contour, i) => {
+        const pts = transformedPoints(p, contour);
+        if(i === 0 || contour.outer) return `<polygon class="part-shape" points="${pts}" style="stroke:${p.part.color};fill:${p.part.color}22"></polygon>`;
+        if(contour.closed) return `<polygon class="part-feature" points="${pts}"></polygon>`;
+        return `<polyline class="part-feature" points="${pts}"></polyline>`;
+      }).join("");
+    }
+    function sheetSvg(sheet, index, settings){
+      const {sheetW, sheetH, margin} = settings;
+      const scaleMax = 620;
+      const vb = `0 0 ${sheetW} ${sheetH}`;
+      const rows = sheet.placements.map(p => partSvg(p)).join("");
+      return `<svg viewBox="${vb}" role="img" aria-label="Nested sheet ${index + 1}" style="max-height:${scaleMax}px">
+        <rect class="sheet-bg" x="0" y="0" width="${sheetW}" height="${sheetH}" rx=".5"></rect>
+        <rect class="sheet-margin" x="${margin}" y="${margin}" width="${Math.max(0,sheetW-margin*2)}" height="${Math.max(0,sheetH-margin*2)}"></rect>
+        ${rows}
+      </svg>`;
+    }
+    function dxfNum(value){
+      return Number(value).toFixed(4).replace(/\.?0+$/,"");
+    }
+    function cleanLayerName(value){
+      return String(value || "PART").replace(/[^A-Za-z0-9_-]+/g, "_").slice(0, 48) || "PART";
+    }
+    function dxfPolyline(points, closed, layer, sheetH){
+      const rows = ["0","LWPOLYLINE","8",layer,"90",String(points.length),"70",closed ? "1" : "0"];
+      points.forEach(pt => {
+        rows.push("10", dxfNum(pt.x), "20", dxfNum(sheetH - pt.y));
+      });
+      return rows;
+    }
+    function sheetRectPoints(x,y,w,h){
+      return [{x,y},{x:x+w,y},{x:x+w,y:y+h},{x,y:y+h}];
+    }
+    function sheetDxf(sheet, index, settings){
+      const lines = [
+        "0","SECTION","2","HEADER",
+        "9","$INSUNITS","70","1",
+        "0","ENDSEC",
+        "0","SECTION","2","ENTITIES"
+      ];
+      lines.push(...dxfPolyline(sheetRectPoints(0,0,settings.sheetW,settings.sheetH), true, "SHEET", settings.sheetH));
+      lines.push(...dxfPolyline(sheetRectPoints(settings.margin,settings.margin,Math.max(0,settings.sheetW-settings.margin*2),Math.max(0,settings.sheetH-settings.margin*2)), true, "MARGIN", settings.sheetH));
+      sheet.placements.forEach(p => {
+        const contours = p.contours?.length ? p.contours : [{closed:true, outer:true, points:p.points || p.part.points}];
+        contours.forEach((contour, contourIndex) => {
+          const layer = contour.outer || contourIndex === 0
+            ? `PART_${p.part.label}_${cleanLayerName(p.part.name)}`
+            : `FEATURE_${p.part.label}_${cleanLayerName(p.part.name)}`;
+          lines.push(...dxfPolyline(placedContourPoints(p, contour), !!contour.closed, layer, settings.sheetH));
+        });
+      });
+      lines.push("0","ENDSEC","0","EOF","");
+      return lines.join("\n");
+    }
+    function revokeSheetDownloadUrls(){
+      sheetDownloadUrls.forEach(url => URL.revokeObjectURL(url));
+      sheetDownloadUrls = [];
+    }
+    function sheetDownloadLink(sheet, index, settings){
+      const blob = new Blob([sheetDxf(sheet, index, settings)], {type:"text/plain;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      sheetDownloadUrls.push(url);
+      return url;
+    }
+    function renderLayout(settings, oversize){
+      revokeSheetDownloadUrls();
+      const totalItems = sheets.reduce((sum, s) => sum + s.placements.length, 0);
+      const usedArea = sheets.reduce((sum, s) => sum + s.placements.reduce((a,p) => a + p.part.area, 0), 0);
+      const sheetArea = sheets.length * settings.sheetW * settings.sheetH;
+      const yieldPct = sheetArea ? Math.round((usedArea / sheetArea) * 100) : 0;
+      els.stats.innerHTML = `
+        <div class="stat"><span>Parts</span><strong>${totalItems}</strong></div>
+        <div class="stat"><span>Sheets</span><strong>${sheets.length}</strong></div>
+        <div class="stat"><span>Yield</span><strong>${yieldPct}%</strong></div>`;
+      if(!sheets.length){
+        els.preview.innerHTML = `<div class="empty">${parts.length ? "No parts fit this sheet size." : "DXF sheets will show here after nesting."}</div>`;
+        buildPrint(settings, oversize);
+        return;
+      }
+      els.preview.innerHTML = sheets.map((sheet, i) => {
+        const placedArea = sheet.placements.reduce((sum,p) => sum + p.part.area, 0);
+        const pct = Math.round((placedArea / (settings.sheetW * settings.sheetH)) * 100);
+        const downloadUrl = sheetDownloadLink(sheet, i, settings);
+        return `<article class="sheet-card">
+          <div class="sheet-head"><div><h3>Sheet ${i + 1}</h3><p>${sheet.placements.length} part${sheet.placements.length === 1 ? "" : "s"} | approx ${pct}% profile area</p></div><div class="sheet-actions"><p>${fmt(settings.sheetW)} x ${fmt(settings.sheetH)} in</p><a class="sheet-export-btn" href="${downloadUrl}" download="dxf-nest-sheet-${i + 1}.dxf" target="_blank" rel="noopener" data-sheet-download="${i}">Save DXF</a></div></div>
+          <div class="svg-wrap">${sheetSvg(sheet, i, settings)}</div>
+        </article>`;
+      }).join("") + (oversize.length ? `<p class="status warn">${oversize.length} part instance${oversize.length === 1 ? "" : "s"} did not fit the selected sheet.</p>` : "");
+      document.querySelectorAll("[data-sheet-download]").forEach(link => link.addEventListener("click", () => {
+        els.status.textContent = `Sheet ${Number(link.dataset.sheetDownload) + 1} DXF ready. If your browser blocks downloads, the file will open in a new tab.`;
+      }));
+      buildPrint(settings, oversize);
+    }
+    function placementTable(sheet, sheetIndex){
+      return `<table><thead><tr><th>Part</th><th>Copy</th><th>X</th><th>Y</th><th>Size</th><th>Rotation</th></tr></thead><tbody>
+        ${sheet.placements.map(p => `<tr><td><span class="table-part"><span class="table-dot" style="background:${p.part.color}"></span><span class="table-name">${escapeHtml(p.part.name)}</span></span></td><td>${p.copy}</td><td>${fmt(p.x)}</td><td>${fmt(p.y)}</td><td>${fmt(p.w)} x ${fmt(p.h)}</td><td>${p.angle ? `${fmt(p.angle)} deg` : "No"}</td></tr>`).join("")}
+      </tbody></table>`;
+    }
+    function partSummaryTable(){
+      return `<table><thead><tr><th>Part</th><th>Quantity</th><th>Size</th><th>Profile area</th></tr></thead><tbody>
+        ${parts.map(p => `<tr><td><span class="table-part"><span class="table-dot" style="background:${p.color}"></span><span class="table-name">${escapeHtml(p.name)}</span></span></td><td>${p.qty}</td><td>${fmt(p.w)} x ${fmt(p.h)} in</td><td>${fmt(p.area)} sq in</td></tr>`).join("")}
+      </tbody></table>`;
+    }
+    function buildPrint(settings, oversize){
+      const date = new Date().toLocaleDateString();
+      els.printReport.innerHTML = `
+        <h1>DXF Nesting Layout</h1>
+        <p>Generated ${date}</p>
+        <div class="meta">
+          <div><strong>Sheet</strong><br>${fmt(settings.sheetW)} x ${fmt(settings.sheetH)} in</div>
+          <div><strong>Spacing</strong><br>${fmt(settings.spacing)} in</div>
+          <div><strong>Rotation</strong><br>Per part</div>
+          <div><strong>Sheets</strong><br>${sheets.length}</div>
+        </div>
+        ${parts.length ? `<h2>Parts</h2>${partSummaryTable()}` : ""}
+        ${sheets.map((sheet,i) => `<article class="sheet-card"><h2>Sheet ${i+1}</h2><div class="svg-wrap">${sheetSvg(sheet,i,settings)}</div></article>`).join("")}
+        ${oversize.length ? `<p><strong>Not nested:</strong> ${oversize.map(x => x.part.label).join(", ")}</p>` : ""}`;
+    }
+
+    function dxfFiles(files){
+      return Array.from(files || []).filter(file => /\.dxf$/i.test(file.name));
+    }
+    function setDropActive(active){
+      els.file.classList.toggle("drop-active", active);
+    }
+    els.file.addEventListener("change", e => handleFiles(e.target.files));
+    ["dragenter","dragover"].forEach(type => els.file.addEventListener(type, e => {
+      e.preventDefault();
+      setDropActive(true);
+    }));
+    ["dragleave","dragend"].forEach(type => els.file.addEventListener(type, () => setDropActive(false)));
+    els.file.addEventListener("drop", e => {
+      e.preventDefault();
+      setDropActive(false);
+      const dropped = dxfFiles(e.dataTransfer?.files);
+      if(!dropped.length){
+        els.status.textContent = "Drop one or more DXF files here.";
+        return;
+      }
+      handleFiles(dropped);
+    });
+    [els.sheetW, els.sheetH, els.spacing, els.margin].forEach(el => el.addEventListener("input", nest));
+    window.addEventListener("beforeunload", revokeSheetDownloadUrls);
+    nest();
+  </script>
+  <script src="../category-shell.js?v=hub-consistency-2"></script>
+</body>
+</html>

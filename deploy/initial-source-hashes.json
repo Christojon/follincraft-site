@@ -1,0 +1,5650 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "404.html",
+      "sha256": "9ed701943ccecbea8de1f351bc1ae57e7de2a3424f9a0aab83c7a83b6fa58391",
+      "bytes": 2235
+    },
+    {
+      "path": "about/index.html",
+      "sha256": "73ebf070c17be1f5b7c332c20a54cf6ff3ad9f86eb69ed78ed5a1cbda93f6277",
+      "bytes": 12271
+    },
+    {
+      "path": "assets/android-chrome-192x192.jpg",
+      "sha256": "9ea9206ddc12575f70c6c44f36f7558e3045ff3a12e25df4df68e0281573acef",
+      "bytes": 3422
+    },
+    {
+      "path": "assets/android-chrome-512x512.jpg",
+      "sha256": "b7ef7f3ccabe61beea8b162e2492057c5de862139c3ebc6eb32c39d4c45032df",
+      "bytes": 9684
+    },
+    {
+      "path": "assets/apple-touch-icon.jpg",
+      "sha256": "0911e27a9faf4005fc79a387a3bcf1d77e96a1a59fdb440ee10138a8c58dc319",
+      "bytes": 3172
+    },
+    {
+      "path": "assets/bear.jpg",
+      "sha256": "7aa13e14fdf7f9ace9931ffd6084231504528028e731c49f5d2b5f19b731eaa2",
+      "bytes": 51602
+    },
+    {
+      "path": "assets/clearcreek0.jpg",
+      "sha256": "5a4b06e9972346fcd3f8bb0df425771c9ab7da223ca53efd9a2437e17db88ef7",
+      "bytes": 359545
+    },
+    {
+      "path": "assets/clearcreek00.jpg",
+      "sha256": "5b251659e861f92ab94821a03369a575453344fcc648db467661f8f64fc71d15",
+      "bytes": 171786
+    },
+    {
+      "path": "assets/clearcreek1.jpg",
+      "sha256": "b5d0f4295657f541244c70eb0026c647189d0c47c268d367fabdb29643c29856",
+      "bytes": 282664
+    },
+    {
+      "path": "assets/clearcreek2.jpg",
+      "sha256": "c5c2323ec2a6b285cbb006d81ae317074cac0ad99e34cd1dbb36cae5646bc348",
+      "bytes": 338830
+    },
+    {
+      "path": "assets/empire_site1.jpg",
+      "sha256": "95f0ace22f357195d91dc8caeedbf3897bcfcc77397115600bed567115b89423",
+      "bytes": 61190
+    },
+    {
+      "path": "assets/fab_status.jpg",
+      "sha256": "0b49ebdb1bbf604b777e44be982e323c250039dd2aa4a5b2f50081c2d2cb8b6f",
+      "bytes": 41292
+    },
+    {
+      "path": "assets/favicon-16.jpg",
+      "sha256": "65dd3b1dd1ed2d8b40a6cc647f5a3adabed9f18b2722a8190c1d539d537b5e2b",
+      "bytes": 548
+    },
+    {
+      "path": "assets/favicon-16x16.jpg",
+      "sha256": "65dd3b1dd1ed2d8b40a6cc647f5a3adabed9f18b2722a8190c1d539d537b5e2b",
+      "bytes": 548
+    },
+    {
+      "path": "assets/favicon-32.jpg",
+      "sha256": "9947d92bcb813e907eaca735cbf9ba85cbefa3bf268ad7db40f7f161337062f1",
+      "bytes": 795
+    },
+    {
+      "path": "assets/favicon-32x32.jpg",
+      "sha256": "9947d92bcb813e907eaca735cbf9ba85cbefa3bf268ad7db40f7f161337062f1",
+      "bytes": 795
+    },
+    {
+      "path": "assets/favicon-48.jpg",
+      "sha256": "7fe2d34f915e0e6cb58ffad79fc4a08ecd2f838d1a63970e9c84078512ebdb02",
+      "bytes": 576
+    },
+    {
+      "path": "assets/favicon.jpg",
+      "sha256": "7fe2d34f915e0e6cb58ffad79fc4a08ecd2f838d1a63970e9c84078512ebdb02",
+      "bytes": 576
+    },
+    {
+      "path": "assets/follincraft.png",
+      "sha256": "087f356242789e85abde35cd487cbfc3a6469c9f2b15d9bbb07b341b12f86fcd",
+      "bytes": 54021
+    },
+    {
+      "path": "assets/forest-web.mp4",
+      "sha256": "1c554035b72e6b7f5d46c7481769bbba575c3f1633282e24ccb5159537e58f9f",
+      "bytes": 2559594
+    },
+    {
+      "path": "assets/hat.jpg",
+      "sha256": "e23ca42303fb61ae84fcd0594d28f62d2cd8b6a97686598c95b359422080daa9",
+      "bytes": 23850
+    },
+    {
+      "path": "assets/hat2.jpg",
+      "sha256": "2e48556e268eed195f0153107d0d6e3b5a9dc648da774c6b21823d442fba7b92",
+      "bytes": 28285
+    },
+    {
+      "path": "assets/home-compact.css",
+      "sha256": "f1305354d7f0347d5523831d9af10c58f9d5ec2ced22b5a1721258a93bb8d52c",
+      "bytes": 2929
+    },
+    {
+      "path": "assets/home-compact.js",
+      "sha256": "a1acd8827759f94fe9a35315f81f404de2e191cbf6d994e4a22fee72c04f3fd1",
+      "bytes": 1419
+    },
+    {
+      "path": "assets/home-thumbs/assets/hat2.jpg",
+      "sha256": "368d27022efe4829716f61c72debd73f3ae3a56cde25d1db7f57c6b54dd1aa03",
+      "bytes": 36894
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/choose-campsite.jpg",
+      "sha256": "8b182244e81734199719cf194521b6521fd8c3af35becc44700a4f3fea4e3479",
+      "bytes": 98689
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/keep-camp-organized.jpg",
+      "sha256": "6f4dfebd407073e30f1532b30d2e7471b35d8f87853f856b3975d09104304b82",
+      "bytes": 95527
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/pack-car-camping.jpg",
+      "sha256": "9d197aa75b3960b6abae2ddc16d111aac047f0ba70d69d4792c8b45125311e45",
+      "bytes": 95154
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/read-tape-measure.jpg",
+      "sha256": "6749b84fab76479492b8a4614315798bfca34d643463ad880ec23f932dccd73b",
+      "bytes": 34242
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/set-up-camp-fast.jpg",
+      "sha256": "74adf70aa9cfa796ac152544927b25c27d78cecfd9d9a190bb54cc7717c32cb4",
+      "bytes": 105534
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/sharpen-knife.jpg",
+      "sha256": "d4f3298dd2a34cb80020e46540c82c4dea3c009d97bebda0d543520d3da39667",
+      "bytes": 63181
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/sleep-better-tent.jpg",
+      "sha256": "841f2467aaf8ab856f0716dc2a048ae3140114842bbeebe5e616356d057365e2",
+      "bytes": 61747
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/start-campfire.jpg",
+      "sha256": "a9b4721a2991cf331e3deee943a2a158d878a9f3d6b02d86c90fa3f9124e38fc",
+      "bytes": 83652
+    },
+    {
+      "path": "assets/home-thumbs/assets/how-to/weather-turns.jpg",
+      "sha256": "acddf91f1c7f3a725c399bf131d9aae01061d29781d4f6a50f7aadfb3f72e625",
+      "bytes": 91301
+    },
+    {
+      "path": "assets/home-thumbs/assets/jeep1.jpg",
+      "sha256": "7954cf4a9fc9bec370672cc731983e0332c241de4cd70b87482b6c0470af8f20",
+      "bytes": 59355
+    },
+    {
+      "path": "assets/home-thumbs/assets/mailbox.jpg",
+      "sha256": "44b151c52891f4a8c8bfc2fcee4735f693dfafed64831a18c3b728b839df776a",
+      "bytes": 121828
+    },
+    {
+      "path": "assets/home-thumbs/assets/router1.jpg",
+      "sha256": "dd111c7fef44464e6ab94cc760eb286e1f30243c3db1d68c7c2ec0bcb24619ef",
+      "bytes": 110849
+    },
+    {
+      "path": "assets/home-thumbs/assets/solar0.jpg",
+      "sha256": "3b1d17eccc66cbc2485bf07747cc92cd19b4b27bcf398eb0d56288a02c574c72",
+      "bytes": 106255
+    },
+    {
+      "path": "assets/home-thumbs/assets/truck0.jpg",
+      "sha256": "984c9666c5b7703f8c5576a41e9493c6e10ccc9e269a6738410a1592802f0687",
+      "bytes": 60091
+    },
+    {
+      "path": "assets/home-thumbs/assets/van_rack.jpg",
+      "sha256": "f61f1f3059c04b73793c26523bf0200f876fd58c9f23f42a07dc161da9790bee",
+      "bytes": 68169
+    },
+    {
+      "path": "assets/home-thumbs/assets/vanlogo-square.jpg",
+      "sha256": "12b9ab2525433c51fbe376ef771bb70d33519b5256e51e53cfb2602ba202314a",
+      "bytes": 65647
+    },
+    {
+      "path": "assets/home-thumbs/assets/xj_battery.jpg",
+      "sha256": "22485966511c9616f5c9e9638244934cc18f2a8caa419fbb2db74e09f966ba7c",
+      "bytes": 85897
+    },
+    {
+      "path": "assets/home-thumbs/camp/ahupua/ahupua1.jpg",
+      "sha256": "b3baa76b258828c8ad0760b26e4de825fe626fde87af1c6973ca8612d4236dce",
+      "bytes": 128520
+    },
+    {
+      "path": "assets/home-thumbs/camp/ashurst/ashurst1.jpg",
+      "sha256": "23e55812afbece407b44f4d014fac7483023a4c7d32e41cb7ee768c33f7efc00",
+      "bytes": 112060
+    },
+    {
+      "path": "assets/home-thumbs/camp/bearcanyon/bearcanyon1.jpg",
+      "sha256": "f63caa14237a711f8754af560d5730ed44e554c6222d18d7be224fdf991289f4",
+      "bytes": 93302
+    },
+    {
+      "path": "assets/home-thumbs/camp/bellowsfield/bellowsfield1.jpg",
+      "sha256": "5bf6f14726d79c129cc985a8ced6f36a66bc000075104d1276920d4b30f9f355",
+      "bytes": 68334
+    },
+    {
+      "path": "assets/home-thumbs/camp/blackcanyonrim/blackcanyonrim1.jpg",
+      "sha256": "6b595b4ac4816ad42cf5fbf757caaace131c4445c84d8989361771e0ebeb0f78",
+      "bytes": 143009
+    },
+    {
+      "path": "assets/home-thumbs/camp/blueridge/blueridge1.jpg",
+      "sha256": "1bd5586375a5f1cabd47c0742ffeaed4041cd340334e5cd9404335c8117e5f5b",
+      "bytes": 54057
+    },
+    {
+      "path": "assets/home-thumbs/camp/caballolake/caballolake1.jpg",
+      "sha256": "ad267669a149551daa8961fd0e1cff39a69a5ab5765ee6d14680f223459b2d70",
+      "bytes": 112445
+    },
+    {
+      "path": "assets/home-thumbs/camp/canyonpoint/canyonpoint1.jpg",
+      "sha256": "7f9bbdb43f5e0ac8ab1c4322d5c883cd4edbf7614fac6237c6f7a74715abba26",
+      "bytes": 114158
+    },
+    {
+      "path": "assets/home-thumbs/camp/canyonvista/canyonvista1.jpg",
+      "sha256": "e9c3154d62592fbf2e1282475ece13405b1a0956d8fd2dd0e7dac36a1cf87370",
+      "bytes": 127055
+    },
+    {
+      "path": "assets/home-thumbs/camp/christophercreek/christophercreek1.jpg",
+      "sha256": "d40c24f813a18e8488abe63524fe287169caaf3203ab5816c23795a226a73959",
+      "bytes": 143467
+    },
+    {
+      "path": "assets/home-thumbs/camp/cinders/cinders1.jpg",
+      "sha256": "53a0dc28e0131908c73da10a9f518e751f744c3433a48fd58915bc7cce64953f",
+      "bytes": 101007
+    },
+    {
+      "path": "assets/home-thumbs/camp/crook/crook1.jpg",
+      "sha256": "8fc81f04a8d49d43f8123ca46a3c507d17e2c842f7fb11e0197f6682eb07c168",
+      "bytes": 132219
+    },
+    {
+      "path": "assets/home-thumbs/camp/dairysprings/dairysprings1.jpg",
+      "sha256": "e19032acad119e16dfebd29238e0b3577af7c279168cbb2c8dd6def0838b3df4",
+      "bytes": 125051
+    },
+    {
+      "path": "assets/home-thumbs/camp/deadhorseranch/deadhorse1.jpg",
+      "sha256": "03e0919e540a1f282da6b8891faca537509dbe79d47f18c0c84ec33ff7dc3be4",
+      "bytes": 81919
+    },
+    {
+      "path": "assets/home-thumbs/camp/doublesprings/doublesprings1.jpg",
+      "sha256": "cb6ae6226df73a63481021256d604b397efc71d637f7ecb75d53b38dc5633037",
+      "bytes": 123827
+    },
+    {
+      "path": "assets/home-thumbs/camp/endoftheworld/eotw1.jpg",
+      "sha256": "86022b59a1c21153f13bbbc8364ced4c538483386c403ffb55aed1859ea3b8e5",
+      "bytes": 96356
+    },
+    {
+      "path": "assets/home-thumbs/camp/foolshollow/foolshollow1.jpg",
+      "sha256": "f870fe65ca72a37310ddcfd31e865499e04c752e6e22cac917e1a4d9a80cfc52",
+      "bytes": 123810
+    },
+    {
+      "path": "assets/home-thumbs/camp/fr171/fr171-1.jpg",
+      "sha256": "405edf5f2dfd3b37c6c6fc0ec52b942c179bf5299d8a857f1af908f5900e04c1",
+      "bytes": 104091
+    },
+    {
+      "path": "assets/home-thumbs/camp/havilandlake/havilandlake1.jpg",
+      "sha256": "3051058456e6e050bea2991872673e70602bba8b020d0a68a4d4aea7dd9da0bc",
+      "bytes": 991363
+    },
+    {
+      "path": "assets/home-thumbs/camp/hookena/hookena1.jpg",
+      "sha256": "6e8557724b110ec8f29ed1db3e1fd6e27c7b35e9a50619506e799077a35d5fb6",
+      "bytes": 123060
+    },
+    {
+      "path": "assets/home-thumbs/camp/houstonmesa/houstonmesa1.jpg",
+      "sha256": "6bec41f4cc3c77859bc8c85cfe0ba7d97ba9a8ea0d3d7dda53e595ed3075371b",
+      "bytes": 149762
+    },
+    {
+      "path": "assets/home-thumbs/camp/keaiwa/keaiwa1.jpg",
+      "sha256": "7e9e332b677532c3521d5dbe155b8b2ac85173d1671a568fd9926b46877ad94c",
+      "bytes": 132313
+    },
+    {
+      "path": "assets/home-thumbs/camp/lakecuyamaca/lakecuyamaca1.jpg",
+      "sha256": "9ab25488cf1bd51108508c34309894d4a814ae3166f664204d9a64a865fb31a3",
+      "bytes": 110441
+    },
+    {
+      "path": "assets/home-thumbs/camp/lakemary/lakemary1.jpg",
+      "sha256": "5743cdcbffd5a0782b2c3bc2de9fc77ea59d4320853febb63f44e3f072624fbf",
+      "bytes": 83262
+    },
+    {
+      "path": "assets/home-thumbs/camp/lakeview/lakeview1.jpg",
+      "sha256": "1e84cf312402dc6789481cb17a8c0cfcf7d02969ac49574e8d062cc04b38bd9a",
+      "bytes": 113107
+    },
+    {
+      "path": "assets/home-thumbs/camp/lakeview2/lakeview2-1.jpg",
+      "sha256": "21fd034745c1e8111bdac5a982dd26cc06508e10a4d6c6b4ceaf21676ed46fd3",
+      "bytes": 81124
+    },
+    {
+      "path": "assets/home-thumbs/camp/lowerwolfcreek/lowerwolfcreek1.jpg",
+      "sha256": "143b034ba898a0bef073b1fc877554922566474fab8dbc8512f825fb4d0a95dc",
+      "bytes": 90306
+    },
+    {
+      "path": "assets/home-thumbs/camp/marshall/marshall1.jpg",
+      "sha256": "cd2283ea0a2c8ec710474712dcaf9fab72e5a743459aa4a7151fe65e588c85c2",
+      "bytes": 89833
+    },
+    {
+      "path": "assets/home-thumbs/camp/minguslake/mingus1.jpg",
+      "sha256": "4b49554ac98807fe1f55cdc6e5f66d4a17569eeb89d36a1de3639d3802bed3b3",
+      "bytes": 108303
+    },
+    {
+      "path": "assets/home-thumbs/camp/mogollon/mogollon4.jpg",
+      "sha256": "be0d863b26f02cef26e3ad8164074047b43a40e2de38e2d31da0980386b04043",
+      "bytes": 144706
+    },
+    {
+      "path": "assets/home-thumbs/camp/pacheta/pacheta1.jpg",
+      "sha256": "4396da2c95ad8a1b8f14a9edc88210cfa215020aae1307aff796c3a149b7f831",
+      "bytes": 86370
+    },
+    {
+      "path": "assets/home-thumbs/camp/pinegrove/pinegrove1.jpg",
+      "sha256": "3726c45a9850acbf64f3928430f53d013107608464d2e92e7ceaeec64ddfc71d",
+      "bytes": 106019
+    },
+    {
+      "path": "assets/home-thumbs/camp/potatopatch/potatopatch1.jpg",
+      "sha256": "f31f8f081d59c45a5b0c99108ec86aa63739d6954cad8fdd497d222908c05c30",
+      "bytes": 111331
+    },
+    {
+      "path": "assets/home-thumbs/camp/powellsprings/powellsprings1.jpg",
+      "sha256": "64bc14619d9f8c3ee7d1488a03185b69d17c4ddb220a19a2fd06cc9c952f6a81",
+      "bytes": 148537
+    },
+    {
+      "path": "assets/home-thumbs/camp/redrockpark/redrockpark1.jpg",
+      "sha256": "63247f99eba8a46d9292e490a269d25671f57cb4b8bae7f528cc2721ba81f610",
+      "bytes": 116161
+    },
+    {
+      "path": "assets/home-thumbs/camp/rim/rim1.jpg",
+      "sha256": "26982165f37c2a07b83db40dae936cf9cfc517c5f4fbfcbd10dbb8be4a393cd3",
+      "bytes": 107620
+    },
+    {
+      "path": "assets/home-thumbs/camp/sanclementebeach/sanclementebeach1.jpg",
+      "sha256": "a3c376b71a814ff228db820fa99c7c65a879a44fb2b64ff33d8cbba3950d83fb",
+      "bytes": 90981
+    },
+    {
+      "path": "assets/home-thumbs/camp/sharpcreek/sharpcreek1.jpg",
+      "sha256": "508f4be0f6c58243834111374d2792900afa94e070cb6e0fa9ddb963074d42d4",
+      "bytes": 135817
+    },
+    {
+      "path": "assets/home-thumbs/camp/showlowlake/showlowlake1.jpg",
+      "sha256": "a80f78a991685f1bb7dc05dc1dbd0ccf0ddb9b8b59da2bb3d3f4d031d7554ec7",
+      "bytes": 120125
+    },
+    {
+      "path": "assets/home-thumbs/camp/sinkhole/sinkhole3.jpg",
+      "sha256": "0b6ca891cb8501d7bb164b6bb90679badc6f7ddfc716b1a3df1c00117ebc93a8",
+      "bytes": 122032
+    },
+    {
+      "path": "assets/home-thumbs/camp/spillway/spillway1.jpg",
+      "sha256": "06f188037fbbd4454f54e348d5aacb71bcf7b0586515b92395046f6971b30982",
+      "bytes": 158052
+    },
+    {
+      "path": "assets/home-thumbs/camp/volcanoes/volcanoes1.jpg",
+      "sha256": "1cb51cfca1d28314cfb6af9a9af5ffc622d33c2bca745f311b86ca5710722570",
+      "bytes": 79552
+    },
+    {
+      "path": "assets/home-thumbs/camp/westclearcreek/westclearcreek1.jpg",
+      "sha256": "86d05a83b1d139ac719f58b57447003fd640455c3cdf0d2072cbd23ddb842307",
+      "bytes": 124778
+    },
+    {
+      "path": "assets/home-thumbs/camp/woodscanyon/woodscanyon1.jpg",
+      "sha256": "e979b827f5e7935488df09ef126a637f399ad7fea6625bc0a78bd04dcb5acecf",
+      "bytes": 141476
+    },
+    {
+      "path": "assets/home-thumbs/camp/zion/zion1.jpg",
+      "sha256": "e5120a9b13f1fcc6cc0448e58f040be9b98cf62cb7ecfc53d22d0a01719afbb0",
+      "bytes": 96762
+    },
+    {
+      "path": "assets/home-thumbs/gear/3000wpuresineinverter/3000wpuresineinverter.jpg",
+      "sha256": "7f02845d468989ad876faeafe6b4a8a3bd56430ac2d89e8eca0bd94f6901d2f5",
+      "bytes": 55756
+    },
+    {
+      "path": "assets/home-thumbs/gear/anker737powerbank/anker737powerbank.jpg",
+      "sha256": "68f3e75645cab830bb9816709a200c4611f5ea19737a021add3e986361074b7d",
+      "bytes": 43864
+    },
+    {
+      "path": "assets/home-thumbs/gear/arcturuswoolblanket/arcturuswoolblanket.jpg",
+      "sha256": "538889c62370937e4409306e7ccb3f29c0228d64525b83792a4bd32debbde704",
+      "bytes": 77503
+    },
+    {
+      "path": "assets/home-thumbs/gear/blackdiamondstorm/blackdiamond.jpg",
+      "sha256": "4c67d2aa319c4c367cc40cbe7ce28172abcb0d63beb9be59b86f689bd74f7f9b",
+      "bytes": 123979
+    },
+    {
+      "path": "assets/home-thumbs/gear/bougerv12vfridge/bougerv12vfridge.jpg",
+      "sha256": "63b0f87878071a64f68dd2c04e17aa68b6469cd110625de5d2513200fd8622c3",
+      "bytes": 52376
+    },
+    {
+      "path": "assets/home-thumbs/gear/colemanvintage/colemanvintage.jpg",
+      "sha256": "231e4bcec072acd83ba70260c86bf7bff5c1e04fff48db14e61106896ae69b66",
+      "bytes": 42163
+    },
+    {
+      "path": "assets/home-thumbs/gear/columbiarainjacket/columbiarainjacket-forest.jpg",
+      "sha256": "2bb673070941ee14431bfe38dd0684c8c77cc2f89287b214556904ec7afb5f7e",
+      "bytes": 162518
+    },
+    {
+      "path": "assets/home-thumbs/gear/condorprimitive/condorprimitive-camp.jpg",
+      "sha256": "de8e0cead2c1f1a26d1c48fa2caa6893101aba53188d985b45c254a170db5373",
+      "bytes": 191171
+    },
+    {
+      "path": "assets/home-thumbs/gear/enohammock/enohammock.jpg",
+      "sha256": "071568c8a078b91cbde67f6c944a7d4f7b994119072773e577ac072c697ff4ea",
+      "bytes": 43357
+    },
+    {
+      "path": "assets/home-thumbs/gear/eunzelcampingtowel/eunzelcampingtowel-dark.jpg",
+      "sha256": "296587490dcad09d42e443e50c8e46da2c70429e02c51f3cb104bde35145f653",
+      "bytes": 64570
+    },
+    {
+      "path": "assets/home-thumbs/gear/garmininreachmini2/garmininreachmini2-dark.jpg",
+      "sha256": "ec38e30d8a0e0010502d9c729ffa15e23df15a34bf441ca5b38e0798777936f5",
+      "bytes": 59416
+    },
+    {
+      "path": "assets/home-thumbs/gear/gciwildernessrecliner/gciwilderness-camp.jpg",
+      "sha256": "34a3f5f0ddfa27e42d667c04854b9d5a4c0101730706751951d32151176cdef5",
+      "bytes": 147305
+    },
+    {
+      "path": "assets/home-thumbs/gear/gransforshatchet/gransforshatchet.jpg",
+      "sha256": "e5014c2f641adf9bdb9399c56f119d2ddb2b9dc074bd9f674f6d51cda0c4af71",
+      "bytes": 47744
+    },
+    {
+      "path": "assets/home-thumbs/gear/helinoxcampchair/helinoxcampchair.jpg",
+      "sha256": "8e5b4016efe0140ea886394a5f62712dfab77bab876a74d868e94bfc2994fc72",
+      "bytes": 51063
+    },
+    {
+      "path": "assets/home-thumbs/gear/hultsbrukaneby/hultsbrukaneby-dark.jpg",
+      "sha256": "4bd1bdf5945a1ee9e61055dbd188728564d9b41905e9824cb38b23ce97cc8fb0",
+      "bytes": 45061
+    },
+    {
+      "path": "assets/home-thumbs/gear/katadynbefree/katadynfilter.jpg",
+      "sha256": "80c2ede23482e24af13111b7229fd1f1220c6680843d689addac0c579dfe6927",
+      "bytes": 109873
+    },
+    {
+      "path": "assets/home-thumbs/gear/lfbrosdieselheater/lfbrosdieselheater.jpg",
+      "sha256": "9ad170dcf464d096ec03a783bc48b3fccaf1f871f37466c5eb611aacfac5632b",
+      "bytes": 63376
+    },
+    {
+      "path": "assets/home-thumbs/gear/lifepo4200ah/lifepo4200ah-dark.jpg",
+      "sha256": "09e22f450b0c749640ba242a9809c323803af865162eb289cdd285f08ea02a59",
+      "bytes": 62236
+    },
+    {
+      "path": "assets/home-thumbs/gear/litime40adcdc/litime40adcdc.jpg",
+      "sha256": "8c7c86ee9d953efa072f94ff9720aee7cef749c8f81c62ca9b5ada80e3099628",
+      "bytes": 75912
+    },
+    {
+      "path": "assets/home-thumbs/gear/maxxfandeluxe/maxxfandeluxe-dark.jpg",
+      "sha256": "971b081db2a160536e5f3b139ab3f510c9b8b1e5b5dadf4edfd5c3eb96f74728",
+      "bytes": 43895
+    },
+    {
+      "path": "assets/home-thumbs/gear/mrbuddyheater/mrbuddyheater.jpg",
+      "sha256": "b993924387da4b090728578c136f8cb15ec608dc398d054c6ce96b87aad178b5",
+      "bytes": 73844
+    },
+    {
+      "path": "assets/home-thumbs/gear/msralpinedeluxe/msralpinedeluxe.jpg",
+      "sha256": "feae67631c2ec1e8e8243e6848d6e55a39ec7bf5831641304549e59fcc9ed3aa",
+      "bytes": 75811
+    },
+    {
+      "path": "assets/home-thumbs/gear/msrpocketrocket/msrpocketrocket.jpg",
+      "sha256": "60f5d884653751be9abd3a7f028b4a258ec89b6b60fa027af982f8905fd66ba4",
+      "bytes": 54960
+    },
+    {
+      "path": "assets/home-thumbs/gear/nemopillow/nemopillow.jpg",
+      "sha256": "db396cca3dd2dc54efb1ed71ea647bc23a6323be17d42c599b17d4f04d6b5701",
+      "bytes": 116662
+    },
+    {
+      "path": "assets/home-thumbs/gear/nocoboostplus/nocoboostplus.jpg",
+      "sha256": "7fe3db94e9e23c42ef319984702401b72bb23c5551c3be3a25155ad12379bfbb",
+      "bytes": 61630
+    },
+    {
+      "path": "assets/home-thumbs/gear/noico80mil/noico80mil-dark.jpg",
+      "sha256": "fa33eaa458eefc5436e540cd306dbb25f7149ed79e1536427d213541d5f01e64",
+      "bytes": 95093
+    },
+    {
+      "path": "assets/home-thumbs/gear/odolandgrill/odolandgrill1.jpg",
+      "sha256": "c8039ff15a974bf64838f89d68740b3f69edff41f439df055ae3caaa11d16324",
+      "bytes": 104980
+    },
+    {
+      "path": "assets/home-thumbs/gear/odolandstove/odolandstove.jpg",
+      "sha256": "98017a92a009b91b4607c53a0e3c3c102c3308a6bfeb42a850124dd50acf55b0",
+      "bytes": 91564
+    },
+    {
+      "path": "assets/home-thumbs/gear/ospreytoiletry/ospreytoiletry.jpg",
+      "sha256": "ce133ec6aa4ed567f02bff48d44a36bf3614e356fd2a0ba48e01f7c1b4467bbe",
+      "bytes": 109994
+    },
+    {
+      "path": "assets/home-thumbs/gear/outlandfirepit/outlandfirepit-camp.jpg",
+      "sha256": "b0aabae327f7d65fe50a72d20ac8b481acaae498c0d12a2faa344ff881cb3517",
+      "bytes": 151240
+    },
+    {
+      "path": "assets/home-thumbs/gear/passagedinnerware/passagedinnerware.jpg",
+      "sha256": "5963350054762d2fca7758e8afe714aed4d653ee9939b459359dc9b7e171e7a0",
+      "bytes": 70639
+    },
+    {
+      "path": "assets/home-thumbs/gear/recprohoughtonac/recprohoughtonac-dark.jpg",
+      "sha256": "4c64718339741af889fd2ac540346334d62b19a4ec3e689768981ba8e325fa8b",
+      "bytes": 33701
+    },
+    {
+      "path": "assets/home-thumbs/gear/redwing44/redwing44-1.jpg",
+      "sha256": "1216cc2c6097bfc4f1aea82024ec38aa79a254a2ac936c58ff312e4d9cf607f8",
+      "bytes": 52993
+    },
+    {
+      "path": "assets/home-thumbs/gear/rotopax2galdiesel/rotopax2galdiesel-dark.jpg",
+      "sha256": "21e8d4edd618d6615c2f6afdda7b00d09ad0f3ecf5c5a1b9e030fc659c964f92",
+      "bytes": 44507
+    },
+    {
+      "path": "assets/home-thumbs/gear/scepterwatercan/scepterwatercan-dark.jpg",
+      "sha256": "0469fc5f714fbf435c48db6ba7874f8514cf81308b6c26b3e8bc1014e85b3420",
+      "bytes": 50811
+    },
+    {
+      "path": "assets/home-thumbs/gear/shurflo4008/shurflo4008-dark.jpg",
+      "sha256": "e858ea32c982eedc990383667a1132d3bc9409354a9dc7765b64174e8cf1f469",
+      "bytes": 66151
+    },
+    {
+      "path": "assets/home-thumbs/gear/sigma18-50lens/sigma1850.jpg",
+      "sha256": "6729761bdf4d28b55a0b1a94baea946a8f6529f92d5c775acb7e420c9e32bc35",
+      "bytes": 51803
+    },
+    {
+      "path": "assets/home-thumbs/gear/silkygomboy240/silkygomboy240-dark.jpg",
+      "sha256": "cf440aa347f05d53afb82ea76a3469171b7de5b4ecbf6d5ac4ea542156fd1e83",
+      "bytes": 45311
+    },
+    {
+      "path": "assets/home-thumbs/gear/siroccofan/siroccofan.jpg",
+      "sha256": "82e87cea0c4ecd75e5e3933b41af6ab19b4966f77fdaf502b1fd85fe184113cb",
+      "bytes": 57775
+    },
+    {
+      "path": "assets/home-thumbs/gear/smallrigtripod/smallrig.jpg",
+      "sha256": "bafd01bac620fc03279d5c79feb734c4321a96e72aecd7ceb240560ee7c5dd4f",
+      "bytes": 39740
+    },
+    {
+      "path": "assets/home-thumbs/gear/snugpakjungleblanket/snugpakjungleblanket.jpg",
+      "sha256": "e072e7f2c71f88e0d6c01b2e54dc69467f7bc91e98d8be0dc61b4ab34c02de53",
+      "bytes": 86853
+    },
+    {
+      "path": "assets/home-thumbs/gear/solostove/solostove-camp.jpg",
+      "sha256": "46da078bbad7d89d2a437435e3a78ac402c7ea1d67b6750cf924337db07a9360",
+      "bytes": 123611
+    },
+    {
+      "path": "assets/home-thumbs/gear/sony15glens/sony15g.jpg",
+      "sha256": "4dadc7c0f7bd83b380556f805d991748784eb0bf4d3191d2bd01b6a3976a3ee2",
+      "bytes": 61681
+    },
+    {
+      "path": "assets/home-thumbs/gear/sonyzve10/zve10.jpg",
+      "sha256": "5459cb11000fe0b9e7d7a8aa68d7b11bec5041cd24d9e5a9fc7ea7d1a79648e9",
+      "bytes": 61946
+    },
+    {
+      "path": "assets/home-thumbs/gear/starlinkmini/starlinkmini-dark.jpg",
+      "sha256": "9c070171e2fffb8feedd3134cb54688f803a863f228f00d3c8002f35694ae1fc",
+      "bytes": 33813
+    },
+    {
+      "path": "assets/home-thumbs/gear/staundeflators/staundeflators.jpg",
+      "sha256": "8730edd1c2a88c3ec564e0fa927e31245f7c7ce80294a2bde72ea0f2f63f47ab",
+      "bytes": 93912
+    },
+    {
+      "path": "assets/home-thumbs/gear/stsultralight0/stsultralight0.jpg",
+      "sha256": "f3aab7dda148a64df459107ca5eb4c4fa3b63cc90424e804792385c7c351976b",
+      "bytes": 38987
+    },
+    {
+      "path": "assets/home-thumbs/gear/viair88p/viair88p.jpg",
+      "sha256": "3dfa9dd51225623cb125f13eccfebf94efd1ddb8587dbe803ec0fe6cdcd922e8",
+      "bytes": 77482
+    },
+    {
+      "path": "assets/home-thumbs/gear/westinghouseheatedblanket/westinghouseheatedblanket.jpg",
+      "sha256": "f5bc73a3846182353346bc4f0c6685371443ecf505e20c5934e6ff9bad704c08",
+      "bytes": 72472
+    },
+    {
+      "path": "assets/home-thumbs/gear/wildpeaktitaniumcookset/wildpeaktitaniumcookset-dark.jpg",
+      "sha256": "4dba7932270af3a4d4516006ff629517b100ca2f11b8aeaa2251bdaef61fb11d",
+      "bytes": 42684
+    },
+    {
+      "path": "assets/home-thumbs/gear/wynnskytirerepair/wynnskytirerepair.jpg",
+      "sha256": "1aa0672a4b7067ec68d1ffc847af86f32b9727ed9f15d8c6071926113ab6f9ed",
+      "bytes": 94678
+    },
+    {
+      "path": "assets/home-thumbs/gear/xbullrecoveryboards/xbullrecoveryboards.jpg",
+      "sha256": "290b5aaf08ebbfb65f9a75047817d1ac57bda84d6326c6568311d54d6a117658",
+      "bytes": 48350
+    },
+    {
+      "path": "assets/home-thumbs/projects/empire-site/empire_site1.jpg",
+      "sha256": "30e7080b9ba8762c7c0b7fb785cdd6c89537fd886aab196a5d0031ef47d9f6ab",
+      "bytes": 49521
+    },
+    {
+      "path": "assets/home-thumbs/projects/steel-pergola/pergola.jpg",
+      "sha256": "21ec8511071876df13da8cfcf934fa97e855c5d43c51a7893e249e790cca48a0",
+      "bytes": 93918
+    },
+    {
+      "path": "assets/how-to/air-down-tires.png",
+      "sha256": "091485c09c548c0ca45cb57704dcd457c0d8b770297b73247d75207d88740c95",
+      "bytes": 1877523
+    },
+    {
+      "path": "assets/how-to/arizona-heat-detail-opt.jpg",
+      "sha256": "f40c5b3b272fefa53dfd107825df4ecda1b28d0ae2add3fbf4616f5c7dcd06b6",
+      "bytes": 779986
+    },
+    {
+      "path": "assets/how-to/arizona-heat-detail.png",
+      "sha256": "8d3f83256f24ee11f7ddc93fc9572ccf9a3ab2bd1f9bdff46bc52ce4f6cc966d",
+      "bytes": 2372099
+    },
+    {
+      "path": "assets/how-to/arizona-heat.png",
+      "sha256": "3b3ca3381174238bab8f04240dfa33e93117bb0fc9fcdfe28bbbe69f3a9829d2",
+      "bytes": 1879377
+    },
+    {
+      "path": "assets/how-to/back-into-campsite-accurate.svg",
+      "sha256": "91f506ecc8dad487b7fabddafdfeb11737371bb58cc3dc419367d5fbd48cffc4",
+      "bytes": 3776
+    },
+    {
+      "path": "assets/how-to/back-into-campsite.png",
+      "sha256": "f2176c031a1e460dca9fb93d4a3c9f3324f131427d3b5a2d89795cd333016090",
+      "bytes": 1966229
+    },
+    {
+      "path": "assets/how-to/back-up-trailer-detail-opt.jpg",
+      "sha256": "a5df326c9a8ff6b73f5d8d272388439e09d2702f5ab4bc02c4b193a3b33f3941",
+      "bytes": 513665
+    },
+    {
+      "path": "assets/how-to/back-up-trailer-detail.png",
+      "sha256": "e9b39c9ecb9574cc0c4b4fada1d1c91acd215eb1dfe44da95406de37cc490d9f",
+      "bytes": 3490458
+    },
+    {
+      "path": "assets/how-to/back-up-trailer.png",
+      "sha256": "5a2e332ff3185096e6a01fdfd1538d6d445b18b76c2f0aa4026f5fee4ae61181",
+      "bytes": 1897990
+    },
+    {
+      "path": "assets/how-to/bowline-commons.svg",
+      "sha256": "68b91aa4d193ee4ee573a541609bdbf2165a81d6e8f5767ca3ff4f9b0584d61c",
+      "bytes": 22395
+    },
+    {
+      "path": "assets/how-to/bowline-knot-diagram.svg",
+      "sha256": "c88d5e70244036edab0aafab1046723c7a195f14bfefb30259422f19f5001dff",
+      "bytes": 3486
+    },
+    {
+      "path": "assets/how-to/bowline-knot.png",
+      "sha256": "b416a842f6035a54200f11e28e9ca816a85e9475092d5c75440ac9c0f08d0986",
+      "bytes": 1460969
+    },
+    {
+      "path": "assets/how-to/camp-dishes-gray-water.png",
+      "sha256": "c05dabb0cd9e5cacb6c0353c842b3001ff8bcfbffa6c9cd9dee939b6bbc5cd30",
+      "bytes": 1933876
+    },
+    {
+      "path": "assets/how-to/camp-guides.css",
+      "sha256": "fe662013502b4ce3989696931605394756b7389b72fd8f517f6d8f46798d1eae",
+      "bytes": 8893
+    },
+    {
+      "path": "assets/how-to/camp-handwashing-station.png",
+      "sha256": "872e3fc68f59597575a13f733edfa0b9f59b699c61071c905dc0641ab90602ff",
+      "bytes": 1538610
+    },
+    {
+      "path": "assets/how-to/camp-kitchen-detail-opt.jpg",
+      "sha256": "1254b8765f3079fcf177c39b445bda79554df44723a479d5c9523a09a5fae30a",
+      "bytes": 1009537
+    },
+    {
+      "path": "assets/how-to/camp-kitchen-detail.png",
+      "sha256": "c7f694fd89652121eac9887b63244338ba04969c405707db8d2e76a514ca9cb0",
+      "bytes": 2849410
+    },
+    {
+      "path": "assets/how-to/camp-kitchen.png",
+      "sha256": "da552b312a8c2e05466cb062c06a2104bcd4d5b3d748d26c281ead24492601bc",
+      "bytes": 1642800
+    },
+    {
+      "path": "assets/how-to/charge-dead-battery-accurate.svg",
+      "sha256": "880c11d00374d9052c0c572ad7a30c544e0e64d234889641ae01dae5223d8d95",
+      "bytes": 3662
+    },
+    {
+      "path": "assets/how-to/charge-dead-battery.png",
+      "sha256": "7257ac900f1b58487bc55a842c22ecad1f6e197ecf90942da38cd3c767208a23",
+      "bytes": 1342621
+    },
+    {
+      "path": "assets/how-to/choose-campsite-detail-opt.jpg",
+      "sha256": "51b039b0321b5b617155aa517c55b0d004608389d56d6231e0a47de72f3fa546",
+      "bytes": 1477346
+    },
+    {
+      "path": "assets/how-to/choose-campsite-detail.png",
+      "sha256": "3ede68e2d187839fdb8f8bd2bf38ae6d09d99cc621ab80cde16d9438fa0ac0a1",
+      "bytes": 3356910
+    },
+    {
+      "path": "assets/how-to/choose-campsite.png",
+      "sha256": "f09b417bbbf7aa5e9813645e5b47c3697e95f5eece6bf6a905ced5318e197cb1",
+      "bytes": 846247
+    },
+    {
+      "path": "assets/how-to/clove-hitch-commons.svg",
+      "sha256": "0aa0c59642cd9f9b2901c4883892b047d9cda97e83c484bcabe1c91636062610",
+      "bytes": 6194
+    },
+    {
+      "path": "assets/how-to/clove-hitch-diagram.svg",
+      "sha256": "1e4a67ed0ff2820a3f932f1804e7431755553fb54e2f027fc2be4b0bddb94135",
+      "bytes": 4155
+    },
+    {
+      "path": "assets/how-to/clove-hitch.png",
+      "sha256": "cb1f037a2f37611c8bd4757fa895f51511f5c9eb322cfa1e06cf8960fb2b9f90",
+      "bytes": 1354143
+    },
+    {
+      "path": "assets/how-to/cook-over-coals.png",
+      "sha256": "2c2fa822a302b17b29970f4d7113f85d98aa773be222fe6cf3294718fc4c7874",
+      "bytes": 1746429
+    },
+    {
+      "path": "assets/how-to/dial-caliper-reading-diagram.png",
+      "sha256": "63f033acf707b82debd554f72c9bbb7a0cbca9c8fb039a2896f243133a7ad1bb",
+      "bytes": 400722
+    },
+    {
+      "path": "assets/how-to/filter-water.png",
+      "sha256": "2c4599faf65a6b0e353d9a7530f3a5a9959aeeb410033c6bc9a95366a2ef1aa4",
+      "bytes": 1496082
+    },
+    {
+      "path": "assets/how-to/fix-stuck-zipper.png",
+      "sha256": "6158b54d21802880d8eb6a094945a4a6037ed848bc4eb15d30114357f7c492b2",
+      "bytes": 1625245
+    },
+    {
+      "path": "assets/how-to/get-unstuck.png",
+      "sha256": "d275a96c25fd5931e29f4e58216168b6a2ea08abc9767f6039bdb8423154cc57",
+      "bytes": 1791308
+    },
+    {
+      "path": "assets/how-to/guy-out-tent.png",
+      "sha256": "73b9103d2181aff24f38ae29cd17827a264a289e4506a53ad35026b23500cf50",
+      "bytes": 1859809
+    },
+    {
+      "path": "assets/how-to/hook-up-trailer-accurate.svg",
+      "sha256": "1ba71e7f27d2ef7a596c700e57ef716ee3aa3c851923f91940eb4273ab7aa001",
+      "bytes": 2751
+    },
+    {
+      "path": "assets/how-to/hook-up-trailer.png",
+      "sha256": "8bfdc6246dd29707f4194b8dff1d703e613b15465aaac9fb1315bd70c1dcf4cb",
+      "bytes": 1853535
+    },
+    {
+      "path": "assets/how-to/how-to-guide.css",
+      "sha256": "d43fa96c977d07f17e74fb0f0ba62e30a4f59a904e2a345f2ea697d7840afa96",
+      "bytes": 1351
+    },
+    {
+      "path": "assets/how-to/jump-start-car.png",
+      "sha256": "cb60a094cb0ea69dcd2e8c6108586c8d4b350d382b95a72f1cc548dd476532f7",
+      "bytes": 1354263
+    },
+    {
+      "path": "assets/how-to/keep-camp-organized-detail-opt.jpg",
+      "sha256": "484f43745ca36385d519726c2cc804e16606443ab38179ef0b5d063a584a0341",
+      "bytes": 891252
+    },
+    {
+      "path": "assets/how-to/keep-camp-organized-detail.png",
+      "sha256": "812664f17ae7ac3b92c4e94e7f5be95e5e21d903a8823e4b069f16657cae6b0c",
+      "bytes": 2605564
+    },
+    {
+      "path": "assets/how-to/keep-camp-organized.png",
+      "sha256": "676819a26e5478894b4ebeaa28ab4a8effc1dca72eb660efc47c58bf7a594e5b",
+      "bytes": 1696595
+    },
+    {
+      "path": "assets/how-to/keep-cooler-cold.png",
+      "sha256": "302779fa6c7410f29c0fd72d1c0044120a4bf2f769635a94e2f4bce535e02dee",
+      "bytes": 1507026
+    },
+    {
+      "path": "assets/how-to/pack-car-camping-detail-opt.jpg",
+      "sha256": "b61b80a76a18e4a48d7f287180a37400541d279c9a0e30341248272bed0ab28a",
+      "bytes": 825639
+    },
+    {
+      "path": "assets/how-to/pack-car-camping-detail.png",
+      "sha256": "c905f1a42a76a758c4c2cf0f72630dd5920638905e1239f139a32da7592014c5",
+      "bytes": 2403063
+    },
+    {
+      "path": "assets/how-to/pack-car-camping.png",
+      "sha256": "91687402156480e053073237ea8c876d9b885b80d856f0d45896d1a66d24b791",
+      "bytes": 1297085
+    },
+    {
+      "path": "assets/how-to/patch-air-mattress.png",
+      "sha256": "0c2aa3540239893277d7bde81b8f52c2adfb9dedbb62ff93dd194199ef87ae9a",
+      "bytes": 1308612
+    },
+    {
+      "path": "assets/how-to/pitch-tarp-wind.png",
+      "sha256": "5a65a74a9f3f77fb6088a77d00a4ea433ba3efa5fe6841ad5a818b0706b371cd",
+      "bytes": 1740323
+    },
+    {
+      "path": "assets/how-to/plug-tire-detail-opt.jpg",
+      "sha256": "b7254efaf5f87fa8c2efd340fc0e22416deb77ae00619de0ce3486c787cef65d",
+      "bytes": 649921
+    },
+    {
+      "path": "assets/how-to/plug-tire-detail.png",
+      "sha256": "16fae1b43aec5d8d63a097b263d6566462faceb9d435637ad6a3806ab1856104",
+      "bytes": 2948426
+    },
+    {
+      "path": "assets/how-to/plug-tire-opt.jpg",
+      "sha256": "f3ed9d59ea9415ac672fe323cdf0f303a4e95682a75e61a582b6fa9460773c68",
+      "bytes": 927908
+    },
+    {
+      "path": "assets/how-to/plug-tire.png",
+      "sha256": "a8d0e4b1dfc1b0529e8de32b2bf49afc0396b2db7eef0193f685c310a893ec82",
+      "bytes": 2123799
+    },
+    {
+      "path": "assets/how-to/put-out-campfire-detail-opt.jpg",
+      "sha256": "de17af41808658778f01955998a4e8e153c7482034f796df12bc660a68fac2f1",
+      "bytes": 675412
+    },
+    {
+      "path": "assets/how-to/put-out-campfire-detail.png",
+      "sha256": "5b0efd7001f3b017440f6a23748ad6dd1c9731aa28650bac62d0431ffb857976",
+      "bytes": 2895687
+    },
+    {
+      "path": "assets/how-to/put-out-campfire-opt.jpg",
+      "sha256": "725534d15a0b81085095b3f5d7bf7f6658c90cced084c242c3ec0bb084f1231e",
+      "bytes": 933878
+    },
+    {
+      "path": "assets/how-to/put-out-campfire.png",
+      "sha256": "e8eca3eeff0c82b2e66c097e676dc018987a0bcba38b5f6322bbb387b4815320",
+      "bytes": 2143861
+    },
+    {
+      "path": "assets/how-to/read-tape-measure-detail.png",
+      "sha256": "f18e2828ac552890d73daeed3b4ca33575b4d66e0c8b0d771bb0424222f860be",
+      "bytes": 86503
+    },
+    {
+      "path": "assets/how-to/read-tape-measure-hero.png",
+      "sha256": "80390b6ebc73f065c021e5961c8b11fc6383f97f1a4c94ddc51210a93e107ec9",
+      "bytes": 2974885
+    },
+    {
+      "path": "assets/how-to/read-tape-measure.png",
+      "sha256": "3e0b6be9dfd798248b459548f5591bc5e1426defcd3e96c29ef55dab5a61c7c7",
+      "bytes": 1507561
+    },
+    {
+      "path": "assets/how-to/read-topo-map.png",
+      "sha256": "cc22348388ed40a5a4b781d0f485fda974d65d0c8c4d7dec0f813019ce8cfbd5",
+      "bytes": 1633925
+    },
+    {
+      "path": "assets/how-to/real/arizona-heat-cinders.jpg",
+      "sha256": "46f0fb532c8f4f49407280a8a3771f279082c56013c9564db576d3a3b7da7e38",
+      "bytes": 211947
+    },
+    {
+      "path": "assets/how-to/real/back-into-campsite-red-rock.jpg",
+      "sha256": "bc039cb19f45d1f92cce5bd9e815f8734dc81c4ec1f6595d2a5a9acb8eeccb6c",
+      "bytes": 458264
+    },
+    {
+      "path": "assets/how-to/real/back-into-campsite-van.jpg",
+      "sha256": "087e32356160cb058b3acc4b140e832cd6aa97c868f08443ad92e8ffb5948ff9",
+      "bytes": 592189
+    },
+    {
+      "path": "assets/how-to/real/camp-kitchen-food-prep.jpg",
+      "sha256": "7989be34c2c1c256579b32192aa99bdf35df6136ddb37f27b46637cd474ed117",
+      "bytes": 366806
+    },
+    {
+      "path": "assets/how-to/real/camp-kitchen-pacheta.jpg",
+      "sha256": "e5d72ba2069287c3461e5d36e075d9855e92e5a461f2deb8f7044cd34c12a34f",
+      "bytes": 304863
+    },
+    {
+      "path": "assets/how-to/real/camp-organization-woods-canyon.jpg",
+      "sha256": "d2331766a76507a8931edede9198eb2dbedb07a0a82b2a01859790320c857a71",
+      "bytes": 281872
+    },
+    {
+      "path": "assets/how-to/real/camp-setup-woods-canyon.jpg",
+      "sha256": "1aefd8d0de859f594b81ff6ed2fdf050e87b0c10360b8bd7979ee51e69e7086b",
+      "bytes": 358502
+    },
+    {
+      "path": "assets/how-to/real/campfire-woods-canyon.jpg",
+      "sha256": "2036df4b5439647798af42e54ac53873018ccf89a2b79a0604d05e9ad64cc0d7",
+      "bytes": 152948
+    },
+    {
+      "path": "assets/how-to/real/choose-campsite-colorado.jpg",
+      "sha256": "6536fa4383ce1f5f5ba996940c739cb530550266ce45c6faceef687e7e021863",
+      "bytes": 443016
+    },
+    {
+      "path": "assets/how-to/real/choose-campsite-layout.jpg",
+      "sha256": "a79bf721ff609fc90e3414d6f190256281fc3bc48c007f8d726b9686c4c56d6a",
+      "bytes": 627289
+    },
+    {
+      "path": "assets/how-to/real/keep-camp-organized-colorado.jpg",
+      "sha256": "9ec79ba276a18f51f8f277ee71bf34e69dca138d89dafabd53a22b43e02b33f6",
+      "bytes": 428141
+    },
+    {
+      "path": "assets/how-to/real/pack-car-camping-colorado.jpg",
+      "sha256": "8c088496e0b817d881e15deb3c6c66f9d4fc0f1c31fdadd838162087d83aa9aa",
+      "bytes": 428355
+    },
+    {
+      "path": "assets/how-to/real/set-up-camp-colorado.jpg",
+      "sha256": "e74dee519e04cd18ece133eecb84caadbcc83aceb338404f181ed7d07ff9ef38",
+      "bytes": 416837
+    },
+    {
+      "path": "assets/how-to/real/set-up-camp-van-canopy.jpg",
+      "sha256": "c226f37fbcec3448b102f449e22545f0bc3d157c57974d8ce5eccc5be8cd7ab6",
+      "bytes": 702585
+    },
+    {
+      "path": "assets/how-to/real/sleep-better-volcanoes.jpg",
+      "sha256": "7785ef334f31d4d1d812227e036e4c0f2cd7030e9f18661f36ef478ff749dd9b",
+      "bytes": 437876
+    },
+    {
+      "path": "assets/how-to/real/start-campfire-colorado.jpg",
+      "sha256": "52a7c58d042c2d39d644411de946dc475822c211311e9659680ae5adfbc653ed",
+      "bytes": 501036
+    },
+    {
+      "path": "assets/how-to/real/weather-turns-colorado.jpg",
+      "sha256": "3b54c076394785df086f2f2d3c2fb31668df0e06e160a726d420c407a0944015",
+      "bytes": 330280
+    },
+    {
+      "path": "assets/how-to/real/weather-turns-volcanoes.jpg",
+      "sha256": "de92e577a0db13ed8cd26597177df777c7eb409502d7a0045c45a55937dd6e79",
+      "bytes": 267108
+    },
+    {
+      "path": "assets/how-to/real/xj-battery-bench-2.jpg",
+      "sha256": "6bcdf186979904488d9cd6a9d2775cfbf12467e65f259f0afd9b8607fdb7bc1a",
+      "bytes": 230661
+    },
+    {
+      "path": "assets/how-to/real/xj-battery-controls-3.jpg",
+      "sha256": "f4509efa11b185fe5917050f1bf668480ba283fec8e9341c0a67d7210a9a3a29",
+      "bytes": 205011
+    },
+    {
+      "path": "assets/how-to/real/xj-battery-install-1.jpg",
+      "sha256": "7d4b0b20529b29b8098b55ac373351686351f5ca62c8081fcd08a11c5b55e6fa",
+      "bytes": 199701
+    },
+    {
+      "path": "assets/how-to/real/xj-battery-installed-4.jpg",
+      "sha256": "b7c080dce9cd8796d0256eacbb94425384be21827ae9e2faa5ad57b35e18e205",
+      "bytes": 289910
+    },
+    {
+      "path": "assets/how-to/review-2026-09/air-pad-leak-v2.jpg",
+      "sha256": "62c0e93d436d6096fc6380e26f79295aa513967f06ec26a8877fa0af61faa300",
+      "bytes": 380083
+    },
+    {
+      "path": "assets/how-to/review-2026-09/caliper-reading.svg",
+      "sha256": "fcf3e6ebd59b6ac8580cb3b9e725947b97b7953cbbb88943d09ea1fd2a0a7160",
+      "bytes": 1833
+    },
+    {
+      "path": "assets/how-to/review-2026-09/cooler-packing-v2.jpg",
+      "sha256": "a42726f9f0da7df50d51bad9ddcb447136edf47c7c8f8a0d551e8f791c86fcba",
+      "bytes": 497669
+    },
+    {
+      "path": "assets/how-to/review-2026-09/kindling-sizes-v2.jpg",
+      "sha256": "335b41578d09151fff903fa16119cf6f05550133989fd377c3b1b4e090452d44",
+      "bytes": 759297
+    },
+    {
+      "path": "assets/how-to/review-2026-09/tape-sixteenths.svg",
+      "sha256": "3a778c0ee3397fbd9547c591a78ca270d7f69f0d9fc7332f4dd295e66db86f91",
+      "bytes": 2405
+    },
+    {
+      "path": "assets/how-to/review-2026-09/topo-intervals.svg",
+      "sha256": "d9a643d81e83daa5296bf898021ac5dbff42553934c1f8f0570632e3d3e2bd73",
+      "bytes": 2020
+    },
+    {
+      "path": "assets/how-to/review-2026-09/water-clean-boundary.svg",
+      "sha256": "ac1e80d3d4d76ae7d1aad18060cf163e9ce1ca96d7d75cf2156cc421e5a6d87f",
+      "bytes": 1789
+    },
+    {
+      "path": "assets/how-to/review-2026-09/zipper-snag-v2.jpg",
+      "sha256": "84749504f989235834827d3eb91741ac1552b1f0fe7a53687293463dc29ace1d",
+      "bytes": 507241
+    },
+    {
+      "path": "assets/how-to/set-up-camp-fast-detail-opt.jpg",
+      "sha256": "5b5b6915298cfc32747ccbab135062014f63d6b0cda9d5e4568600a7e3c0bf73",
+      "bytes": 1104121
+    },
+    {
+      "path": "assets/how-to/set-up-camp-fast-detail.png",
+      "sha256": "344485f0c85d22c6729f053651d6285133131089f6816aa3e74216153c16212e",
+      "bytes": 2824156
+    },
+    {
+      "path": "assets/how-to/set-up-camp-fast.png",
+      "sha256": "7fa2cf2428ecc372c582495beca42402e1cbf8528bb24287a125adc640261681",
+      "bytes": 1870050
+    },
+    {
+      "path": "assets/how-to/sharpen-knife-detail-opt.jpg",
+      "sha256": "2e5ac30c609804dc72acebb96ad3b6d1f665f4d2fd6094cf92ccb6c8341be0e4",
+      "bytes": 497464
+    },
+    {
+      "path": "assets/how-to/sharpen-knife-detail.png",
+      "sha256": "1cfb8a2f2c0a255d426cf585e150c61b3ba7375d1e658aa9bdb12574251704ca",
+      "bytes": 2418981
+    },
+    {
+      "path": "assets/how-to/sharpen-knife.png",
+      "sha256": "f76d201448881ea4c55cf645d8478b5362c257e4cc80508a119493198c8525ca",
+      "bytes": 1772266
+    },
+    {
+      "path": "assets/how-to/sheet-bend.png",
+      "sha256": "10268f54b1d826696fa43881a3fb8255e4f6f9687a3b4b679c5291e9f57bad4d",
+      "bytes": 2469872
+    },
+    {
+      "path": "assets/how-to/sleep-better-tent-detail-opt.jpg",
+      "sha256": "121df71118f58ac83443b0708bbc3a44d823fcb50cb5f002480c44fc7f08f44e",
+      "bytes": 689501
+    },
+    {
+      "path": "assets/how-to/sleep-better-tent-detail.png",
+      "sha256": "721324bc6d6b8f5d8fc2e2d6bc4745998dab4bfa209570dacbcde00db17762f9",
+      "bytes": 2266409
+    },
+    {
+      "path": "assets/how-to/sleep-better-tent.png",
+      "sha256": "e0784fec73d005aab2e3f75b9d666b146048c5d6af5cedc99c8f0f481b11be4c",
+      "bytes": 1373475
+    },
+    {
+      "path": "assets/how-to/split-kindling-detail-opt.jpg",
+      "sha256": "2d37600d1ff8d73df58b970a122542f0a052703f8745aa6ac6ecc78aba7edadf",
+      "bytes": 738954
+    },
+    {
+      "path": "assets/how-to/split-kindling-detail.png",
+      "sha256": "2bbd9407793576a3f937b0a3e1e713d54be158188880db02006936475c5d7c79",
+      "bytes": 3018989
+    },
+    {
+      "path": "assets/how-to/split-kindling.png",
+      "sha256": "9fc2af15c2edda006c9c46e91c2e7588785f6359790f65e8ecf43c1b812610b6",
+      "bytes": 2070369
+    },
+    {
+      "path": "assets/how-to/start-campfire-detail-opt.jpg",
+      "sha256": "8f754df890775a922db5d855a5ea864d8a5ff8da32d2b07fdffbbf6568708324",
+      "bytes": 704699
+    },
+    {
+      "path": "assets/how-to/start-campfire-detail.png",
+      "sha256": "78d075b70612f9be6b014d2b03ee62524919637934f613a66ae5960be1830d46",
+      "bytes": 2882720
+    },
+    {
+      "path": "assets/how-to/start-campfire.png",
+      "sha256": "1f566d23e49555fbef91cd000bf0a7adf6fd6766006e85eea379973ca28adaa8",
+      "bytes": 1603754
+    },
+    {
+      "path": "assets/how-to/tape-measure-inch-breakdown.png",
+      "sha256": "8c627eff59b1920375a2941743be3862116b14cf57772127f647eb4d96dfb50f",
+      "bytes": 377931
+    },
+    {
+      "path": "assets/how-to/taut-line-hitch-commons-opt.jpg",
+      "sha256": "9c41c59c8955bef48eadd38c710e51e2beb815ebd345722269e27ef1600a807d",
+      "bytes": 728802
+    },
+    {
+      "path": "assets/how-to/taut-line-hitch-commons.jpg",
+      "sha256": "985b8dcbea4e68c1892f92ee0368ecfc9396f0854e7c970f303a2b7e234d6c28",
+      "bytes": 3177381
+    },
+    {
+      "path": "assets/how-to/taut-line-hitch-diagram.svg",
+      "sha256": "9b066172c8cab37a7503b17eaeba783718d76017415e8d5cb1b033537941f038",
+      "bytes": 3653
+    },
+    {
+      "path": "assets/how-to/taut-line-hitch.png",
+      "sha256": "f12b2caa3bd1bf8acc480ad4d875076b158567c13d5b35fc843b87e3a727a4f8",
+      "bytes": 1560236
+    },
+    {
+      "path": "assets/how-to/test-car-battery.png",
+      "sha256": "7d6a0371cc42e7ffc85a64f59ca1d73bf0c76205411544316adaaaab5a07720c",
+      "bytes": 1441463
+    },
+    {
+      "path": "assets/how-to/truckers-hitch-commons.jpg",
+      "sha256": "1c2a2ecf265f74d43e8c65ba55d8a35fce3101d9d10fe1047836415e2f46683d",
+      "bytes": 27378
+    },
+    {
+      "path": "assets/how-to/truckers-hitch-diagram.svg",
+      "sha256": "cbb4c1a7f3a67ac8279414791cd5cbd71afddc3d34db421483c2a87b66bf3416",
+      "bytes": 3881
+    },
+    {
+      "path": "assets/how-to/truckers-hitch.png",
+      "sha256": "14ad5142268ec2684ed650a8d481740cf98b6cbcf5f8916547e30b135f780751",
+      "bytes": 1761712
+    },
+    {
+      "path": "assets/how-to/use-dial-caliper-detail-opt.jpg",
+      "sha256": "1753faf8f7524231873bb032e8caad426540e1f565b961e48fa138767c3de937",
+      "bytes": 451331
+    },
+    {
+      "path": "assets/how-to/use-dial-caliper-detail.png",
+      "sha256": "aaa434adef0e4f4a25005e586be14a308a7579e1bc71ef117d578203cdb51591",
+      "bytes": 2348267
+    },
+    {
+      "path": "assets/how-to/use-dial-caliper.png",
+      "sha256": "7a3e7fd1e34e5ba367280ed1d6511714eb24e4f3c4bd1a87a0e03fa9dbf8f6b3",
+      "bytes": 1665799
+    },
+    {
+      "path": "assets/how-to/use-generator-safely-opt.jpg",
+      "sha256": "9e7ce6f0810cebed1d3a98f4c4fdfce9028c4e7cd3bf6b9bcd95d1656688e794",
+      "bytes": 958682
+    },
+    {
+      "path": "assets/how-to/use-generator-safely.png",
+      "sha256": "938e1c43dabe7996be59e4c4b89849c420ee67350e82f9dbd64d3dddbc1e1069",
+      "bytes": 2145345
+    },
+    {
+      "path": "assets/how-to/use-hatchet-safely-detail-opt.jpg",
+      "sha256": "c92eb5e25f342f9f7ac010f1c3935a5ff446ce0a8c1803b314de7d15b64409fc",
+      "bytes": 892520
+    },
+    {
+      "path": "assets/how-to/use-hatchet-safely-detail.png",
+      "sha256": "a52642d65ae45c26bd3f14789e85e3dfbbcb3c4b97f3a246ab3e4705c2339baf",
+      "bytes": 3446232
+    },
+    {
+      "path": "assets/how-to/use-hatchet-safely-opt.jpg",
+      "sha256": "95083123502cfe89df17fade5bb1b714084eef5e26d6725281405fa1595ba7b6",
+      "bytes": 900158
+    },
+    {
+      "path": "assets/how-to/use-hatchet-safely.png",
+      "sha256": "881375c75416e2855ae835e27469b2368354efbec56337e18045c45a64120840",
+      "bytes": 2111596
+    },
+    {
+      "path": "assets/how-to/use-multimeter-detail-opt.jpg",
+      "sha256": "931d9ba2d7e4bd87fdc9a34c8b495538144206a518a94f62604b69e9e6831926",
+      "bytes": 694166
+    },
+    {
+      "path": "assets/how-to/use-multimeter-detail.png",
+      "sha256": "9182fc405b1b87cb4030fc9046387382e9df7420b45f9f8012ceb49bb84425c9",
+      "bytes": 2916015
+    },
+    {
+      "path": "assets/how-to/use-multimeter-hero.png",
+      "sha256": "3e0129b8b587b76198841919e8cdc869424a3d87fb2a17e6861d8da6365de142",
+      "bytes": 4010772
+    },
+    {
+      "path": "assets/how-to/use-multimeter.png",
+      "sha256": "0b6a1e0a572e0272afae17e42e84fbe209381de867a74cc2a8e408e841ab7aec",
+      "bytes": 1463916
+    },
+    {
+      "path": "assets/how-to/use-ratchet-straps-accurate.svg",
+      "sha256": "da3ec5356c0c1b3c345198a37c7f4653029cdc5fb666d7110f5bf8c291648009",
+      "bytes": 3304
+    },
+    {
+      "path": "assets/how-to/use-ratchet-straps.png",
+      "sha256": "e3126063bcf92130a4219354f1a4296cf00b6cb0b071f6c9956b1ff6b2294930",
+      "bytes": 1784680
+    },
+    {
+      "path": "assets/how-to/use-tire-chains.png",
+      "sha256": "ff90a112e5fdad4ad800fb8296bec2d3a131b9db714109f28c3f981cf006bf5d",
+      "bytes": 1886730
+    },
+    {
+      "path": "assets/how-to/use-traction-boards.png",
+      "sha256": "eb84e566082e59751d2f64b31f7407de323dbf6a7298c1c1d9f88f639fa3e6ef",
+      "bytes": 1910451
+    },
+    {
+      "path": "assets/how-to/weather-turns-detail-opt.jpg",
+      "sha256": "4148f0b0e190587e253ffb7026fc57dceaaf20db637b41e402529c5df13387cb",
+      "bytes": 901989
+    },
+    {
+      "path": "assets/how-to/weather-turns-detail.png",
+      "sha256": "622fd505a0962e9d563eb9e1d0fc1167b8efd356a2c3a3c3f479d9c5ec1eb31a",
+      "bytes": 2570986
+    },
+    {
+      "path": "assets/how-to/weather-turns.png",
+      "sha256": "6b177498329612697e3bdaf7f471a2a587599d3ecfb1f5f7eb49a8dbd9d07566",
+      "bytes": 1340628
+    },
+    {
+      "path": "assets/jeep.jpg",
+      "sha256": "52a8d2369ee98bbe58252e2723d20ca7a65d864fbf697f9ee4d73a708506048c",
+      "bytes": 574449
+    },
+    {
+      "path": "assets/jeep1.jpg",
+      "sha256": "9297b8021fbf5e2a03511b4d46f636abfde9f8d3d81909901a22b5564e44da0f",
+      "bytes": 158435
+    },
+    {
+      "path": "assets/jeep2.jpg",
+      "sha256": "f1408ebdcbf9bd673983fb9253bf5c6767e9e5650abca4c9878b72d4084a7199",
+      "bytes": 192422
+    },
+    {
+      "path": "assets/jeep3.jpg",
+      "sha256": "fe4d8c437dbed9107f4cab437b9d8732a0d49e1caed44f7596ce630b91601983",
+      "bytes": 172921
+    },
+    {
+      "path": "assets/jeep4.jpg",
+      "sha256": "73619aa49e09e0ebc3843ece887667fb83c8c73488b89e017df5f46695002618",
+      "bytes": 200723
+    },
+    {
+      "path": "assets/jeep5.jpg",
+      "sha256": "9c4d9c80b402a564f1a29a18b9540e33fff8cd4905713450557f5d88744295d1",
+      "bytes": 52446
+    },
+    {
+      "path": "assets/jeep6.jpg",
+      "sha256": "e8e8836f9459d55de4b0f20802cebf63fab4cf894248a620e1c96ea71a244b8d",
+      "bytes": 153132
+    },
+    {
+      "path": "assets/jeep7.jpg",
+      "sha256": "5a3fecdb6085458262f7ab3c8bca6239c78b0a8120bd1330dc930729c3cf5f1d",
+      "bytes": 169899
+    },
+    {
+      "path": "assets/mailbox.jpg",
+      "sha256": "96ffc4145174b5713ecd9768a542decbf3b31797cdeffb344fd81c89eaabe230",
+      "bytes": 68196
+    },
+    {
+      "path": "assets/mailbox1.jpg",
+      "sha256": "49d386e565795c5b65bb7a9018e43ca6190b245609064c9c99b965f4b9b20a1d",
+      "bytes": 198671
+    },
+    {
+      "path": "assets/metal_weight.jpg",
+      "sha256": "7b3749e08d2afc1d35feb834ba41c7cf258b91d7ed0070cee6777ae0b2253ba1",
+      "bytes": 64755
+    },
+    {
+      "path": "assets/panel_layout.jpg",
+      "sha256": "cf4dfe07f5b042628ad0e00e77c8da8ec71c21c1084442d1bd65cceecddded61",
+      "bytes": 53500
+    },
+    {
+      "path": "assets/people/chris-follin-leading-shop-floor-v2.jpg",
+      "sha256": "3c337c7f7d150da6fe96c9d91bd6ec2b59a2009b91f6749a6e89c4f87b63c864",
+      "bytes": 435846
+    },
+    {
+      "path": "assets/people/chris-follin-leading-shop-floor-v3.jpg",
+      "sha256": "2132c6fcc98694d693ca4366c00bbf2990e573d587ffcedba12e04339d4dc6d8",
+      "bytes": 432217
+    },
+    {
+      "path": "assets/people/chris-follin-leading-shop-floor.jpg",
+      "sha256": "eb91fbde6f625b8f4969ce78a445d05cdb8cb568a273d7e069896480b11812b9",
+      "bytes": 460205
+    },
+    {
+      "path": "assets/people/chris-follin-outdoors-hero.jpg",
+      "sha256": "bcee79e7933524642e393f19861104a0e17767ac423dd4c41f45d07eee316eb8",
+      "bytes": 479065
+    },
+    {
+      "path": "assets/people/chris-follin-outdoors-portrait-v1.jpg",
+      "sha256": "bcee79e7933524642e393f19861104a0e17767ac423dd4c41f45d07eee316eb8",
+      "bytes": 479065
+    },
+    {
+      "path": "assets/people/chris-follin-outdoors-portrait-v2.jpg",
+      "sha256": "0baba7c5fc1c0d98d509aab3222d14e5726440eb241a636de0fe9f34903da489",
+      "bytes": 490093
+    },
+    {
+      "path": "assets/people/chris-follin-outdoors-portrait-v3.jpg",
+      "sha256": "96ec32b4a7167168833c376d52d2d6ce61e1805dea7d1b4936199c70d29d675d",
+      "bytes": 478503
+    },
+    {
+      "path": "assets/people/chris-follin-portrait.jpg",
+      "sha256": "3d9ffc4b72d99be5a0695ded35a969cbaa7a9b5fb60d9de24823dbe5dff18172",
+      "bytes": 135399
+    },
+    {
+      "path": "assets/quote_tool.jpg",
+      "sha256": "927acc6fb5397ed5bcae1f249e548c3a100343120701a66f2aa100b11f35b1ae",
+      "bytes": 40689
+    },
+    {
+      "path": "assets/reference/critters/africanized-honey-bee-killer-bee.jpg",
+      "sha256": "57a5766adcd92b590d8921ee35d99adb6c3e1ccf061514ea4097105702df4cff",
+      "bytes": 39702
+    },
+    {
+      "path": "assets/reference/critters/arizona-bark-scorpion.jpg",
+      "sha256": "7111b58108b11b2dd719448d4f926564fd71dc939a5b2ffd7a6e4d1e2a2a3ddc",
+      "bytes": 31344
+    },
+    {
+      "path": "assets/reference/critters/arizona-recluse.jpg",
+      "sha256": "90bbde6b2ecc39e2cbaf969c9dd3ce1bad036506ba66edeac177b0d4ce7999b1",
+      "bytes": 110347
+    },
+    {
+      "path": "assets/reference/critters/chuckwalla.jpg",
+      "sha256": "675e602c425dc8fabcd0be9118b8894c0fb31d5b9cf7e4b3533c8e8f1aee58a2",
+      "bytes": 57059
+    },
+    {
+      "path": "assets/reference/critters/couch-s-spadefoot.jpg",
+      "sha256": "b43e031ab3b55f843d0c8daf7aa2b763198ff0ff58aa59a3de53ad551a4e60ab",
+      "bytes": 27147
+    },
+    {
+      "path": "assets/reference/critters/desert-iguana.jpg",
+      "sha256": "a42b0e85570f3888524b9c51916c09e39fd528e0de563b3ff56b0c6fc47af78e",
+      "bytes": 35418
+    },
+    {
+      "path": "assets/reference/critters/giant-desert-centipede.jpg",
+      "sha256": "f7d7b8cf36a0a7e553dcf196878771c06881e3744b9ec87d4bb15dfd7c3203f5",
+      "bytes": 34143
+    },
+    {
+      "path": "assets/reference/critters/giant-desert-hairy-scorpion.jpg",
+      "sha256": "09869e3c92ce4b7c1fe0706a902b2d708f4ae3cc89a803ce29bbe667b49b1274",
+      "bytes": 38404
+    },
+    {
+      "path": "assets/reference/critters/gila-monster.jpg",
+      "sha256": "396b3a2108cb5a1b2b53a07f317635517dcf0c9399230019ae6b1547e866ad6d",
+      "bytes": 45322
+    },
+    {
+      "path": "assets/reference/critters/jumping-chain-fruit-cholla.jpg",
+      "sha256": "755c784849490eae38877a2eaac63a441df6c539b4dfe486f8376ca35d5e2c1b",
+      "bytes": 30600
+    },
+    {
+      "path": "assets/reference/critters/kissing-bug-conenose.png",
+      "sha256": "6590bf7e1f23131635623933cd81f5b5ef87949c793f6de77412fb8f63b877ec",
+      "bytes": 97227
+    },
+    {
+      "path": "assets/reference/critters/mojave-rattlesnake.jpg",
+      "sha256": "75583139926be455b19a079ef08c8d8ba3039e8eebb002833d8b524f4b9d2f71",
+      "bytes": 32002
+    },
+    {
+      "path": "assets/reference/critters/oleander-toxic-landscape-plant.jpg",
+      "sha256": "b8e5e9be2737e96ccb42c497ad18f47d5d0983322691cf19723014e120e13380",
+      "bytes": 32952
+    },
+    {
+      "path": "assets/reference/critters/palo-verde-beetle.jpg",
+      "sha256": "73dd4814ba2da3c09cef88c020d685192fa4430e0b9cc28dc4b5ec7a20872b41",
+      "bytes": 30167
+    },
+    {
+      "path": "assets/reference/critters/paper-wasp.jpg",
+      "sha256": "98dc2a1f73372f61b4bdd166bd80064051e0371f1b4d8a1ecd55b84ba924a3a3",
+      "bytes": 24621
+    },
+    {
+      "path": "assets/reference/critters/saguaro-cactus-spines.jpg",
+      "sha256": "f885d581fb5827772c98e6ed42b69271327d463d03f9ed4fd7f66de532259c20",
+      "bytes": 50466
+    },
+    {
+      "path": "assets/reference/critters/sidewinder.jpg",
+      "sha256": "b66fb942016e09f2ced9b6c2df0d18860229f41d9e54de35abcfc9c8443db2c3",
+      "bytes": 43950
+    },
+    {
+      "path": "assets/reference/critters/sonoran-coral-snake.jpg",
+      "sha256": "129f791528eee01476eac60b951a2f0dcb5e98a8c8723cf1d3557ba2c6bc0be2",
+      "bytes": 50265
+    },
+    {
+      "path": "assets/reference/critters/sonoran-desert-toad-colorado-river-toad.jpg",
+      "sha256": "058dd188999df1e965049c35eb650705a6b358914d295ffb91b35f158e59ee6b",
+      "bytes": 28611
+    },
+    {
+      "path": "assets/reference/critters/tarantula-hawk-wasp.jpg",
+      "sha256": "01f06a92b3e8048a62130f2b4e2582996de100c7faea1f68b6e01c3cb5fce0b1",
+      "bytes": 42949
+    },
+    {
+      "path": "assets/reference/critters/western-black-widow.jpg",
+      "sha256": "cbc9c3069f6594228ea3cb9213beb0ea661e055e2751d0e03fa60178b0045664",
+      "bytes": 29940
+    },
+    {
+      "path": "assets/reference/critters/western-diamondback-rattlesnake.jpg",
+      "sha256": "18ca5074e794ccd70ca8c9f84582fbac0f4fdeda0f98b4c7a84fd77e1aa838de",
+      "bytes": 36634
+    },
+    {
+      "path": "assets/reference/plants/agave.jpg",
+      "sha256": "713411bd4d0f08edee489135c399c6d820e04f333451698c40d1213f2b31a3f6",
+      "bytes": 55196
+    },
+    {
+      "path": "assets/reference/plants/brittlebush.jpg",
+      "sha256": "ca8f572de971c579b59e0dd6c3416e68c97b426a1f567c5c76352e439da6eabf",
+      "bytes": 31690
+    },
+    {
+      "path": "assets/reference/plants/catclaw-acacia.jpg",
+      "sha256": "399df628167a4d75bc26443fed5a66d82d117bb7f03a0255f2fd126ea729ce08",
+      "bytes": 40233
+    },
+    {
+      "path": "assets/reference/plants/chuparosa.jpg",
+      "sha256": "4220d3b207ccee7519a3703a90e9f10154106e05bdd5748c9d6cec8f6232cf18",
+      "bytes": 30345
+    },
+    {
+      "path": "assets/reference/plants/compass-barrel-cactus.jpg",
+      "sha256": "393d2204569a142f790a027415f5a49df329b499cfc71166ae3a1b837fe69097",
+      "bytes": 40608
+    },
+    {
+      "path": "assets/reference/plants/creosote-bush.jpg",
+      "sha256": "605a6295eb4e1819400741cffa1290026201080db6acb73300ec37f43fc9c28b",
+      "bytes": 20963
+    },
+    {
+      "path": "assets/reference/plants/desert-marigold.jpg",
+      "sha256": "1ac79f7e8f57f8266f2ed11acf4ca76f3921f4768231f12ab625eed92bb2f6b3",
+      "bytes": 28825
+    },
+    {
+      "path": "assets/reference/plants/desert-willow.jpg",
+      "sha256": "fc5a9099755f48bb5b50060dd213b8ecaca3b9163edb8a8e950249c015d9a593",
+      "bytes": 35623
+    },
+    {
+      "path": "assets/reference/plants/fishhook-barrel-cactus.jpg",
+      "sha256": "8b0c680208366a994d9b43a7f7dd6822de9ab8be4056d13250fdd14f6e45b4e3",
+      "bytes": 28936
+    },
+    {
+      "path": "assets/reference/plants/globe-mallow.jpg",
+      "sha256": "a6bf8ae14912be7100c7725a2fd53a71a46cc45ddcafd58db2d6521e48de52ba",
+      "bytes": 26113
+    },
+    {
+      "path": "assets/reference/plants/ironwood.jpg",
+      "sha256": "54a8e0e2a8906e10d855e8ade2a78b2b1a5df4d582ebc5ac188bf24e4b6f737f",
+      "bytes": 19779
+    },
+    {
+      "path": "assets/reference/plants/jumping-cholla.jpg",
+      "sha256": "755c784849490eae38877a2eaac63a441df6c539b4dfe486f8376ca35d5e2c1b",
+      "bytes": 30600
+    },
+    {
+      "path": "assets/reference/plants/mesquite.jpg",
+      "sha256": "580072fe2a453b47c04bf95f17940624fe7d3bed306ae5a9849e26c7c68ea257",
+      "bytes": 42110
+    },
+    {
+      "path": "assets/reference/plants/ocotillo.jpg",
+      "sha256": "f7206bb23928d3c22fa371591b37a69ecdac487d131f05c29af01ea75f44ff95",
+      "bytes": 67012
+    },
+    {
+      "path": "assets/reference/plants/oleander.jpg",
+      "sha256": "b8e5e9be2737e96ccb42c497ad18f47d5d0983322691cf19723014e120e13380",
+      "bytes": 32952
+    },
+    {
+      "path": "assets/reference/plants/palo-verde.jpg",
+      "sha256": "1b5bce0e5096bc0cb32a3c3165e25da0f4b58ee543c85b5027acb7d84e4933b5",
+      "bytes": 32589
+    },
+    {
+      "path": "assets/reference/plants/prickly-pear.jpg",
+      "sha256": "865a60ed045c8730bef03ead835317aab6b97fe4f02cc18926a4f2b9c31370db",
+      "bytes": 51216
+    },
+    {
+      "path": "assets/reference/plants/saguaro.jpg",
+      "sha256": "f885d581fb5827772c98e6ed42b69271327d463d03f9ed4fd7f66de532259c20",
+      "bytes": 50466
+    },
+    {
+      "path": "assets/reference/plants/soaptree-yucca.jpg",
+      "sha256": "50f4da85137aa5c83ea0f2912a5dc4268b22272b7f526cf7532994b1859b63b7",
+      "bytes": 55026
+    },
+    {
+      "path": "assets/reference/plants/teddy-bear-cholla.jpg",
+      "sha256": "dd3d0252bca0bd5e3325a379307cad21f18d087e1084e14b8e25c3af99e1cf08",
+      "bytes": 70419
+    },
+    {
+      "path": "assets/router1.jpg",
+      "sha256": "205b93c44239581a4b6509a3db5c480733ad68ef4543d0588a5bc1afa43785e5",
+      "bytes": 143934
+    },
+    {
+      "path": "assets/router2.jpg",
+      "sha256": "f9fbc3cac7902cb275652f3f3b252b9548df0890b7c70837ba54db6b2b00e647",
+      "bytes": 145160
+    },
+    {
+      "path": "assets/router3.jpg",
+      "sha256": "2e1a1efc68a5d8d53602fe7e8117760d4b20b2a44ba9cc01c41e8bc03b617fb6",
+      "bytes": 137451
+    },
+    {
+      "path": "assets/router4.jpg",
+      "sha256": "5695a3d6b59fd3c1e7049f4e6775319533ef32687ad1053b2d96ce2c117ffe2d",
+      "bytes": 138751
+    },
+    {
+      "path": "assets/sasquatch.jpg",
+      "sha256": "71994c8853b5f85cbf98dd2683556479521cf6c2988c4eb1ef5456476e5aacbb",
+      "bytes": 624614
+    },
+    {
+      "path": "assets/sawblade.jpg",
+      "sha256": "e5e757b702834bcd9c796faa04b3ee375d264881a571002573575a5e320fed5e",
+      "bytes": 486619
+    },
+    {
+      "path": "assets/sheet_metal_gauge.jpg",
+      "sha256": "7b3749e08d2afc1d35feb834ba41c7cf258b91d7ed0070cee6777ae0b2253ba1",
+      "bytes": 64755
+    },
+    {
+      "path": "assets/solar0.jpg",
+      "sha256": "11297325343e03e08342a65b5d5fb69c65826061de7573f7ecd287d12b0e7444",
+      "bytes": 153725
+    },
+    {
+      "path": "assets/solar1.jpg",
+      "sha256": "a17477f2b0e7e1dce1989d0a39d02e2052f69b9f152e705aa4c4d7e5c4f5f30e",
+      "bytes": 111282
+    },
+    {
+      "path": "assets/solar2.jpg",
+      "sha256": "67c107248582547e7804ee56e93f3fd42dd9e134187495520a7d99e3a338dbf0",
+      "bytes": 55003
+    },
+    {
+      "path": "assets/solar3.jpg",
+      "sha256": "35e15092aec91c443c5e14939dc1eb9864a1704f17790485cdfde55c198db0d6",
+      "bytes": 149704
+    },
+    {
+      "path": "assets/tent.jpg",
+      "sha256": "159389b0d941d4f4829018133ad19fc4128deb695d5afcb366f95161797d3324",
+      "bytes": 553603
+    },
+    {
+      "path": "assets/truck0.jpg",
+      "sha256": "ac42434224ce44b77ff50cce6361c5c96fa5f4876eb782a5822cc67eccab8c3c",
+      "bytes": 78926
+    },
+    {
+      "path": "assets/truck1.jpg",
+      "sha256": "5781a0001a7d735b58a5e1047d8c2a9b44f3c60e2f431cd991f7a838d9c9b495",
+      "bytes": 127333
+    },
+    {
+      "path": "assets/truck2.jpg",
+      "sha256": "50cdf3ec179f62a3d840b0c309678218b84c61a6ba0222e5d5974aee43a8f1cc",
+      "bytes": 132575
+    },
+    {
+      "path": "assets/truck3.jpg",
+      "sha256": "a0244b38fdf5ccf8c2afa55b7620c1cad90e83f420b56712e611a1cbdd0d2d24",
+      "bytes": 131132
+    },
+    {
+      "path": "assets/truck4.jpg",
+      "sha256": "2d66de18f6d784a96e858f6c04a6a932b47891cfd013f277bc110c6b0c5d48b2",
+      "bytes": 81789
+    },
+    {
+      "path": "assets/van_rack.jpg",
+      "sha256": "a75aba373dbaf1c11b85ecc94e21f6a778fb4081d9fce9330645480543347e18",
+      "bytes": 115040
+    },
+    {
+      "path": "assets/van_rack1.jpg",
+      "sha256": "65ac467e84377c4e55206252efacb65255a8d4af875e1b786d3af99e1b9a051b",
+      "bytes": 187884
+    },
+    {
+      "path": "assets/van_rack2.jpg",
+      "sha256": "aa20e3275aa1fbef26acda78fb0cab6526320dca7b4fb40e2b1cf6aa8175141f",
+      "bytes": 34312
+    },
+    {
+      "path": "assets/van_rack3.jpg",
+      "sha256": "33ae0dff8c22c05f7f5566e1821e4e8225be71124094a1d37efd91f9966e30dd",
+      "bytes": 39158
+    },
+    {
+      "path": "assets/vanlogo-square.png",
+      "sha256": "ec5f787328cfe060c0579d9118e0f69e06f86526383a9e63dbd87ce8cefc1730",
+      "bytes": 1205687
+    },
+    {
+      "path": "assets/vanlogo.png",
+      "sha256": "1a42af7133ed18f42b024830579e66fe12f4043fc9f920fb33ed1eb3a0833e38",
+      "bytes": 1025986
+    },
+    {
+      "path": "assets/xj_battery.jpg",
+      "sha256": "23e0379c85b9a1b6bdb18ff40bb0b8a79ab31820556af3d73e5c4da8ba878da2",
+      "bytes": 51486
+    },
+    {
+      "path": "assets/xj_battery1.jpg",
+      "sha256": "361dd9baa3c0c510f034feafc38794013ac5681b9ed82d918e475b074511a314",
+      "bytes": 52939
+    },
+    {
+      "path": "assets/xj_battery2.jpg",
+      "sha256": "eb4663e39a189b9bb8212403091ac485a9660d34ce1d4f4100f017a04558c3c9",
+      "bytes": 70156
+    },
+    {
+      "path": "assets/xj_battery3.jpg",
+      "sha256": "8909befb5b3be2be2d1cdb9eb1504b5f8fa7ac8694e42c20325149a6f047a8c9",
+      "bytes": 57563
+    },
+    {
+      "path": "assets/xj_battery4.jpg",
+      "sha256": "55caed82f8338aca7355f23dbff23c33770964c60c320e8a1ca683e0017199a0",
+      "bytes": 72014
+    },
+    {
+      "path": "camp-index.js",
+      "sha256": "5318cc1bbbad272f03cceefe8ba103b9e65c9f831705c3dd22fe968084d8d5ce",
+      "bytes": 15731
+    },
+    {
+      "path": "camp/ahupua/ahupua1.jpg",
+      "sha256": "1b0208e0a73516a9585cf683421106e52f80ad2b91b33fbfdb41e12f4e62d8a5",
+      "bytes": 184312
+    },
+    {
+      "path": "camp/ahupua/ahupua2.jpg",
+      "sha256": "b5a8264ff096b42671034b0d20e5b63c2fb08469a54f577c1a058f54c3043863",
+      "bytes": 100565
+    },
+    {
+      "path": "camp/ahupua/ahupua3.jpg",
+      "sha256": "1c667e86d88b26f834672550cfdc9ef435bb096604f492d668deee2dfccb7124",
+      "bytes": 126042
+    },
+    {
+      "path": "camp/ahupua/index.html",
+      "sha256": "ffba7243089d8d5fc9068cb05226865ea28b17031fe293ac486296244500e6db",
+      "bytes": 44458
+    },
+    {
+      "path": "camp/ashurst/ashurst1.jpg",
+      "sha256": "47fd7ac969f6cd58964d86b0efc9bed1c072325700da705c597286904b8751c4",
+      "bytes": 222774
+    },
+    {
+      "path": "camp/ashurst/ashurst2.jpg",
+      "sha256": "5018a94d3ffb18d54665cba262181a77bdefcd28a9e2187d54465e132271db64",
+      "bytes": 200291
+    },
+    {
+      "path": "camp/ashurst/ashurst3.jpg",
+      "sha256": "85e91f3fa60a8382980813b67e4280569f5605252f26b4cbeac05f90f174eb58",
+      "bytes": 124488
+    },
+    {
+      "path": "camp/ashurst/ashurst4.jpg",
+      "sha256": "4fdd770d58881c5ec10ae05b7f581130a619fbc3572d22bf54294a9583b40fe1",
+      "bytes": 192601
+    },
+    {
+      "path": "camp/ashurst/ashurst5.jpg",
+      "sha256": "ea9ac6495fd6eb88453d757d53d4cbd4b59abe479edadec4e21079c640801c7d",
+      "bytes": 206217
+    },
+    {
+      "path": "camp/ashurst/ashurst6.jpg",
+      "sha256": "f671d33ff2e6aa22544cd20684726f2e0fa63ceb268e3c23308b7679e1000e5a",
+      "bytes": 159652
+    },
+    {
+      "path": "camp/ashurst/ashurst7.jpg",
+      "sha256": "3a91053450f7b24b45eec362ba911219b60119f3b2c23d65dedc13662736d088",
+      "bytes": 115510
+    },
+    {
+      "path": "camp/ashurst/ashurst8.jpg",
+      "sha256": "91c70aaa9bbf688219d33ae448d0547f2f433a1929dfb1132fc7946dc6ece6c5",
+      "bytes": 106618
+    },
+    {
+      "path": "camp/ashurst/index.html",
+      "sha256": "56666029541655d659f657984cce67657c4c875924ed1b36eb7c4daea026538c",
+      "bytes": 51241
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon1-opt.jpg",
+      "sha256": "a96775fd29d50dbb18a258bd50fd9927b9b70001b0a5b68afa605f03aeef85c3",
+      "bytes": 1095932
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon1.jpg",
+      "sha256": "1b0ede3e4240a3663a9c23074d01a41f65a98f5d0e1c4f9c5fd53b941774347e",
+      "bytes": 213215
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon1.png",
+      "sha256": "2dc45c0b6245a961ea1ca0a5c216552c7b7045d5b0e3b4bb0e0fe4d584681412",
+      "bytes": 3585185
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon2.jpg",
+      "sha256": "5567ff0b5416791230b07955fa66ca8f083e6de78089cbbadf6ecd018c2b05d2",
+      "bytes": 250225
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon2.png",
+      "sha256": "d08063ee458211c9ef5a30aa28e58ffb3e2c8d7564f3b53421d3dbc14934849e",
+      "bytes": 3991697
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon3.jpg",
+      "sha256": "3166bbf04a90af5f7060cc3bbce58038badad4e258f23537185cd72edad9a690",
+      "bytes": 92600
+    },
+    {
+      "path": "camp/bearcanyon/bearcanyon3.png",
+      "sha256": "43c2ac84815b8b76e32a084344b9915843e33098ea016967f0aa7fb135c56082",
+      "bytes": 3654550
+    },
+    {
+      "path": "camp/bearcanyon/index.html",
+      "sha256": "22902f7b5f372ef6d9810e90fb6446cb264a048d5c6dbb486552892ceba7eab6",
+      "bytes": 51074
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield1.jpg",
+      "sha256": "e83f4640556f96618a1d58d44ef0e5c78dd1e8ca8b5bdfbcc52fc31eee795cc6",
+      "bytes": 89052
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield2.jpg",
+      "sha256": "bc5f280552cb86ca38bd6ecee936ccbb9b3913f2dfb257aa13ae0d7c0f06aadf",
+      "bytes": 97648
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield3.jpg",
+      "sha256": "b3787bf211fcd29c0faad335e941ad55e152895a96be9aa52d0f060a69dbee78",
+      "bytes": 167078
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield4.jpg",
+      "sha256": "1b76cc2ab0bc7c335e72b9a89efd19cd6868ad7baf1868befb8ec20d9f7b2bb4",
+      "bytes": 62231
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield5.jpg",
+      "sha256": "97d845050c02d24ba48a490706f3757faea62672cd4850dcbd57c9f4b4f4e20b",
+      "bytes": 163538
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield6.jpg",
+      "sha256": "f12eae58fa01b9cb23ec8f374975614884ab684d670d8bae497c08ec6050d94e",
+      "bytes": 81366
+    },
+    {
+      "path": "camp/bellowsfield/bellowsfield7.jpg",
+      "sha256": "8df22c63ddb70ae7535bf8444eaeb4688720b8a4f1315cab6ace1554e1626901",
+      "bytes": 94685
+    },
+    {
+      "path": "camp/bellowsfield/index.html",
+      "sha256": "9c2bca4ffe5efb6effd347ae28a792574a411404b2a90325821be29523b644e9",
+      "bytes": 47242
+    },
+    {
+      "path": "camp/best-arizona/index.html",
+      "sha256": "99080106f7352c761a1c735c641d41be34d75276c5e8c56e1b5138717b987f60",
+      "bytes": 18522
+    },
+    {
+      "path": "camp/best-beach/index.html",
+      "sha256": "86a6ab6d3e3cf845c94328b3ec2dc14339c237085aad4be80b436e5027ef2235",
+      "bytes": 16761
+    },
+    {
+      "path": "camp/best-beginner/index.html",
+      "sha256": "459fc64b1ade88176e835ef78b1f3f00a03d6304ff3644856699ad71675eb5dc",
+      "bytes": 17138
+    },
+    {
+      "path": "camp/best-cool-weather/index.html",
+      "sha256": "0f912a70b38dcac1bd1e166be3a138f1e595f88bdae40cf9dc0a65058d0d0ce5",
+      "bytes": 21282
+    },
+    {
+      "path": "camp/best-lakeside/index.html",
+      "sha256": "60f8188408f2acadf60cc79573fb79ca90f6e7322e72b8efe582b3dc77245f94",
+      "bytes": 19748
+    },
+    {
+      "path": "camp/best-quiet/index.html",
+      "sha256": "36209ea1005c15035a43020777122d5e2ce9f3eb86d4c364657ccf4d2ff34e3f",
+      "bytes": 20165
+    },
+    {
+      "path": "camp/best-showers/index.html",
+      "sha256": "2e1f44e3219f0d846b9047ed7e12a6b10d4d7b7835bef7c952a1eade010bc554",
+      "bytes": 18065
+    },
+    {
+      "path": "camp/best-summer-escape/index.html",
+      "sha256": "81d7f140794f00b45d06ec5249c8cc718ae56a6256a09e19c73370018daca679",
+      "bytes": 21326
+    },
+    {
+      "path": "camp/blackcanyonrim/blackcanyonrim1.jpg",
+      "sha256": "ce972d7563c428cac059d63ffdd35e0fa14c1ce7ac1b15e422c74b474b513706",
+      "bytes": 871073
+    },
+    {
+      "path": "camp/blackcanyonrim/blackcanyonrim2.jpg",
+      "sha256": "30d41d433d8191ee29ddfe36ecf94be00aa818c6e208bae16a643eda2dd57ab3",
+      "bytes": 791332
+    },
+    {
+      "path": "camp/blackcanyonrim/blackcanyonrim3.jpg",
+      "sha256": "0b345c590ca0877b4c309fb7462063579ab7a9221082582d65e63c590499b204",
+      "bytes": 577299
+    },
+    {
+      "path": "camp/blackcanyonrim/index.html",
+      "sha256": "d7d33d94b06404e3a823094c9501a59e8208367731697de4bdfc288c5a772246",
+      "bytes": 44817
+    },
+    {
+      "path": "camp/blueridge/blueridge1.jpg",
+      "sha256": "0c3bef5e9411901e6ed2ffbcfdc6dd267f31a958ece50dd674eea17d79dd7a1a",
+      "bytes": 158314
+    },
+    {
+      "path": "camp/blueridge/blueridge10.jpg",
+      "sha256": "213865ae145b8e2e8b787c7c2e5d7139cf123e57d4e03416f5bf6c278d2f4dc3",
+      "bytes": 197887
+    },
+    {
+      "path": "camp/blueridge/blueridge2.jpg",
+      "sha256": "8e960ae9878e98847026b4beecc48ac924f4c0d4eb3c64363bbde62641f2706f",
+      "bytes": 354052
+    },
+    {
+      "path": "camp/blueridge/blueridge3.jpg",
+      "sha256": "9eb55d454e135ed4ce36e8d9b96948571f5e5967042f2ec90d61cb93b7a1e3fc",
+      "bytes": 365049
+    },
+    {
+      "path": "camp/blueridge/blueridge4.jpg",
+      "sha256": "de9895bc6d30023cc405c4e0f9ec51125460a934085b634f0fca100cb7a5323c",
+      "bytes": 85311
+    },
+    {
+      "path": "camp/blueridge/blueridge5.jpg",
+      "sha256": "958d2b80b82f43a45be8009b993841bde5f235e28b80ff2dab3b18be817c95b9",
+      "bytes": 89114
+    },
+    {
+      "path": "camp/blueridge/blueridge6.jpg",
+      "sha256": "3afb92f49d4bb0087ed6a697a7c1aac4e94a6e8f32d377f070a9ec5775b4143e",
+      "bytes": 264024
+    },
+    {
+      "path": "camp/blueridge/blueridge7.jpg",
+      "sha256": "22a7d2f4e36ea616b2a1d6464dc2d3eeab0362781707b4d0295fdd1d46037acf",
+      "bytes": 61014
+    },
+    {
+      "path": "camp/blueridge/blueridge8.jpg",
+      "sha256": "73ef721ec4db6f51d20a39b642b9052d0395b8691629c7a5bd9f8ad869a5be55",
+      "bytes": 52252
+    },
+    {
+      "path": "camp/blueridge/blueridge9.jpg",
+      "sha256": "abf5e11074e57cd4e50e094660c37a0c6c63da48cde22a3a819a131cb3334b21",
+      "bytes": 141474
+    },
+    {
+      "path": "camp/blueridge/index.html",
+      "sha256": "19307af63d29d09710fd7f76872997f4bb6b15b7b64267da941ee836823ed985",
+      "bytes": 48022
+    },
+    {
+      "path": "camp/caballolake/caballolake1.jpg",
+      "sha256": "e51cc409041fb371ea92802b9fde80e4d9053c37aacd5dc60c2a8e55d047632d",
+      "bytes": 682970
+    },
+    {
+      "path": "camp/caballolake/caballolake2.jpg",
+      "sha256": "db6eff0c7e7304192dfc046afe7c79ebf17c81a3b3602daa754584a28a9a3373",
+      "bytes": 622694
+    },
+    {
+      "path": "camp/caballolake/caballolake3.jpg",
+      "sha256": "a7dc8f74ab310dda8af1ed3d25af93122e18283fb0746e4c0328e7fb320cc127",
+      "bytes": 654203
+    },
+    {
+      "path": "camp/caballolake/caballolake4.jpg",
+      "sha256": "760041df8adbbabceb3663c1eb233ec5d23f82e5651ff18c731f64d76ff82fd1",
+      "bytes": 655087
+    },
+    {
+      "path": "camp/caballolake/caballolake5.jpg",
+      "sha256": "23cedf532d9534bc84899784c1b6a0475cd0fa74d617aaf8b9b686b3fd3911de",
+      "bytes": 707783
+    },
+    {
+      "path": "camp/caballolake/caballolake6.jpg",
+      "sha256": "0b0faa43a314bb35c30740bec38bfffc6c63fe7a23638d479a86f8f1de189284",
+      "bytes": 696757
+    },
+    {
+      "path": "camp/caballolake/caballolake7.jpg",
+      "sha256": "162093f359fac2e943b52b98365bbd19ce117b70b18c4baf2d32cb5d2523f6c2",
+      "bytes": 732267
+    },
+    {
+      "path": "camp/caballolake/index.html",
+      "sha256": "f953f393c0aec16ca57c69af217f13b05de4aea57adff4a582d8ad8337204431",
+      "bytes": 50247
+    },
+    {
+      "path": "camp/camping-for-people-who-hate-camping/index.html",
+      "sha256": "3864e4d29c367136ad4ac1687b667076a756c3e0cc8ced71a180a69f094dc2f6",
+      "bytes": 23884
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint1.jpg",
+      "sha256": "19e5238646844ef9322e14db9c947810b660310ad2bccc02ba75785f61d03264",
+      "bytes": 678136
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint10.jpg",
+      "sha256": "d3306032eea7df16aa43425ad8348dc1705e9019550be9cf574614a49aaeac32",
+      "bytes": 808496
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint2.jpg",
+      "sha256": "94816dce887d1a2104d37128f7b3926e4754aad772b23475faf6b16438818cf7",
+      "bytes": 828962
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint3.jpg",
+      "sha256": "cac38888ad00ce2e9e6faadf773f09cf4f6ce0f67e6323e949e260dc077d6f4d",
+      "bytes": 734305
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint4.jpg",
+      "sha256": "cb03504c5b67f8e32b2f841e0f9efc1851cf7495cb77257c57da75c2d23ea28f",
+      "bytes": 851699
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint5.jpg",
+      "sha256": "14b2c95a7d37ec333eb5fe9020a73bca1509d9a0a1059b58fbd1339a8e705d1d",
+      "bytes": 706179
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint6.jpg",
+      "sha256": "cbc1fb4b819289db8eb8c199dfe08392276e7d4b378f57f72e7b305eff1d304b",
+      "bytes": 843388
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint7.jpg",
+      "sha256": "e45cd892b9d63dccd2ccf831572cb5b0c1abacd938946fc4934bf6b1b1379bfe",
+      "bytes": 965577
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint8.jpg",
+      "sha256": "f5d5a674b11dc1dbc3a39ef5d9dd9d12615dbeb6c0535c5437cc8226f1c618ff",
+      "bytes": 754297
+    },
+    {
+      "path": "camp/canyonpoint/canyonpoint9.jpg",
+      "sha256": "afb82064815abe266470a2c5e1bacf1ba02e45cb95fbc1052ebaa8256d7d96cc",
+      "bytes": 627771
+    },
+    {
+      "path": "camp/canyonpoint/index.html",
+      "sha256": "f20decc0a4e02c68fdf69408d4aa3092eec7779d03ce69e1fee0574b4b87b1d8",
+      "bytes": 46403
+    },
+    {
+      "path": "camp/canyonvista/canyonvista1.jpg",
+      "sha256": "d9994a5e98d03978ace32755a55de22e42f675f009ef626677ea35256b822f2b",
+      "bytes": 267680
+    },
+    {
+      "path": "camp/canyonvista/canyonvista2.jpg",
+      "sha256": "e6bba1889d7bb41583eafd1fb0da538c442fe66491eb2fbdc059f4d086cd265e",
+      "bytes": 309198
+    },
+    {
+      "path": "camp/canyonvista/canyonvista3.jpg",
+      "sha256": "98d977f9be1327d954258384698039d30e21f22a7bda247a70f53261fa5afdd3",
+      "bytes": 262097
+    },
+    {
+      "path": "camp/canyonvista/canyonvista4.jpg",
+      "sha256": "69cf0a8b62e7522ed931bc6c54789b587e235b619d86e987cff903c6bef0d75c",
+      "bytes": 201629
+    },
+    {
+      "path": "camp/canyonvista/canyonvista5.jpg",
+      "sha256": "0ddf3d09758addc340a0ec4c7d7c795da0d87050d1b9172fbb682d525bb15cb8",
+      "bytes": 215004
+    },
+    {
+      "path": "camp/canyonvista/canyonvista6.jpg",
+      "sha256": "db39d34708745880b191364b45b1cf2de211ff66439cf809f1937445baf8dcd6",
+      "bytes": 230755
+    },
+    {
+      "path": "camp/canyonvista/canyonvista7.jpg",
+      "sha256": "743b085c905fcb0d558ffee5385e2ceb15c4956fdd9f79386987a3a65673f47e",
+      "bytes": 259698
+    },
+    {
+      "path": "camp/canyonvista/index.html",
+      "sha256": "0b243292388de05541a1ad74df09f286b1cc9aef914591f9068c55f024e9e81c",
+      "bytes": 47109
+    },
+    {
+      "path": "camp/christophercreek/christophercreek1.jpg",
+      "sha256": "bb4531eebd0e50b1b72ae0d7c1506ef3945e87d5c343c97426d478b0259c6715",
+      "bytes": 858380
+    },
+    {
+      "path": "camp/christophercreek/christophercreek10.jpg",
+      "sha256": "57a16f1430a5a9f2648dd606ac1de96db2ea5cec9da7575af549814d32109bd0",
+      "bytes": 789998
+    },
+    {
+      "path": "camp/christophercreek/christophercreek2.jpg",
+      "sha256": "27afb72305bf5dc5cfbaf955fc122fd19c16df47bf3795dc65bb5ecf040627ed",
+      "bytes": 819930
+    },
+    {
+      "path": "camp/christophercreek/christophercreek3.jpg",
+      "sha256": "a4e3dd29f8183a3c399230b2cc4694ba577fbc1522ddc0581a9c24ce4d95b018",
+      "bytes": 818877
+    },
+    {
+      "path": "camp/christophercreek/christophercreek4.jpg",
+      "sha256": "edc14916f1c600f0fbd186a785611f3a1636f6b008019457bbcea0867907bb93",
+      "bytes": 1071617
+    },
+    {
+      "path": "camp/christophercreek/christophercreek5.jpg",
+      "sha256": "9e5e91b2c73d10cfc1a9fd23c64171437e528aa11e6b64d49eb754404feffc24",
+      "bytes": 632903
+    },
+    {
+      "path": "camp/christophercreek/christophercreek6.jpg",
+      "sha256": "5114f85e45930252740be73258badbf1593617551d4850f7fb59cb43dd2aa870",
+      "bytes": 725422
+    },
+    {
+      "path": "camp/christophercreek/christophercreek7.jpg",
+      "sha256": "bd78a168fb5f525204d47c84d4a3d1389dda65d0180e1b05a450a72fe691410c",
+      "bytes": 781475
+    },
+    {
+      "path": "camp/christophercreek/christophercreek8.jpg",
+      "sha256": "2c6ab21d8c3cb2ea6eb3258a81b15fea284bbf72d224b90c2a79b1192e1f123e",
+      "bytes": 817184
+    },
+    {
+      "path": "camp/christophercreek/christophercreek9.jpg",
+      "sha256": "f325edf868b3fa57739bc09c0a8f7bb8a9ad9252b3cf940002b690b063cbb9f3",
+      "bytes": 888153
+    },
+    {
+      "path": "camp/christophercreek/index.html",
+      "sha256": "71f3fd96679cee5e4c9bd66fbe107fc271333b9c783afc13dc19a9d94f7b0aca",
+      "bytes": 48100
+    },
+    {
+      "path": "camp/cinders/cinders1.jpg",
+      "sha256": "f3256266a4874fde13dbb4b3a35370f9cef8ebb7e8d9955edffa07e7912ad4dc",
+      "bytes": 174318
+    },
+    {
+      "path": "camp/cinders/cinders2.jpg",
+      "sha256": "be34b90a6cf99a0e5ebcca375da7553fe30b1b5cb828444eed4854499e802361",
+      "bytes": 150471
+    },
+    {
+      "path": "camp/cinders/cinders3.jpg",
+      "sha256": "d4cf18a8f63b664e860a6d8a6e975d5bf7106b8dbee2a07271cb90c558080275",
+      "bytes": 144504
+    },
+    {
+      "path": "camp/cinders/cinders4.jpg",
+      "sha256": "e0e2cfadaa4d3fdbc2e6088e6757abcf0abeb0bc92f47a33528780c0b54e0b97",
+      "bytes": 191913
+    },
+    {
+      "path": "camp/cinders/cinders5.jpg",
+      "sha256": "0654809706fe13f13fd8b9509ac2c49779f0339dd0055a1e3cef7651affbadf4",
+      "bytes": 97556
+    },
+    {
+      "path": "camp/cinders/cinders6.jpg",
+      "sha256": "8be7452f4639b46158f6979d5ec2244eb4f7ddd8d6ea468eb74431ec29f770a0",
+      "bytes": 118657
+    },
+    {
+      "path": "camp/cinders/cinders7.jpeg",
+      "sha256": "1749685af0d712e1703a4ff7a22a3c85b0effd09004ce13476c604b1e479cea3",
+      "bytes": 116035
+    },
+    {
+      "path": "camp/cinders/cinders7.jpg",
+      "sha256": "821483e6bb9beef1fef9158c294ca8dd191d3639b899d7cf4a8940181939dd6f",
+      "bytes": 135445
+    },
+    {
+      "path": "camp/cinders/index.html",
+      "sha256": "1e3f2bd0f9dfe4e21c2dd826e9843000a77a5a82fde09c5a79c8f0780f096928",
+      "bytes": 47415
+    },
+    {
+      "path": "camp/crook/crook1.jpg",
+      "sha256": "352cd4204d1942e32f39c9fe6700a85f8019841d7efac63f3a398e2d81d67b94",
+      "bytes": 781992
+    },
+    {
+      "path": "camp/crook/crook2.jpg",
+      "sha256": "abcad1971adfad7c94b6ace1a77cb2603d3790286adf95682c207ba5007d0975",
+      "bytes": 903107
+    },
+    {
+      "path": "camp/crook/crook3.jpg",
+      "sha256": "65fc856a0b47efe8626f0f7e259adfb29af06394d0c3f2e8e8de207313a4dd39",
+      "bytes": 722688
+    },
+    {
+      "path": "camp/crook/crook4.jpg",
+      "sha256": "16fc5df6305a1e07455ee172200dab44da866318b1cc4c33aecc3fec9c8286ca",
+      "bytes": 917076
+    },
+    {
+      "path": "camp/crook/crook5.jpg",
+      "sha256": "6f514e4e97793da8ce1782a4eae9122ef1f9a042cc4c77b614c39b5ef65d7f29",
+      "bytes": 726131
+    },
+    {
+      "path": "camp/crook/crook6.jpg",
+      "sha256": "379f04401cfc54424e622c9f3b60431cce36a2cfb8008cfb4257f969c3d26e95",
+      "bytes": 877868
+    },
+    {
+      "path": "camp/crook/crook7.jpg",
+      "sha256": "949d67a07f2fdda10232db5b42eebdf075161f8e80ac72b1b5cb1e1f54c6b1da",
+      "bytes": 810118
+    },
+    {
+      "path": "camp/crook/crook8.jpg",
+      "sha256": "c58fb7cc2eda24bb59fd6506a10d9c9bce9dd6d646154d812b0c3afe7f6d9d28",
+      "bytes": 756312
+    },
+    {
+      "path": "camp/crook/crook9.jpg",
+      "sha256": "1fc640d3fd242112e7130b4afbd7ab372da5ae9be47e5bf4488a556b594823fb",
+      "bytes": 837194
+    },
+    {
+      "path": "camp/crook/index.html",
+      "sha256": "30871deea0c19b5441e1690762988d49b3081d172fbb4b32254a31b01e631aba",
+      "bytes": 45160
+    },
+    {
+      "path": "camp/dairysprings/dairysprings1.jpg",
+      "sha256": "0ea38e27d784abfeb94ee46886f28a1da5f549ea25e508a20b5a29a0d39454d6",
+      "bytes": 275352
+    },
+    {
+      "path": "camp/dairysprings/dairysprings2.jpg",
+      "sha256": "5c5e2775222c90c888e5aa09dbb3c302bbab2e30b86e57848b3fb118c5791983",
+      "bytes": 175118
+    },
+    {
+      "path": "camp/dairysprings/dairysprings3.jpg",
+      "sha256": "18a20bcb1b993124235fbdf72dcc9fe98a27fad0fc83f89ea8a3f6a53a51e5b6",
+      "bytes": 272439
+    },
+    {
+      "path": "camp/dairysprings/dairysprings4.jpg",
+      "sha256": "cd107cb02490de03eedd330dea527f67cb5b0849538e53e64b0002234d9e57c6",
+      "bytes": 293447
+    },
+    {
+      "path": "camp/dairysprings/dairysprings5.jpg",
+      "sha256": "c9ef3aa5d965393c594d01cd6fccd2578a9bbb973c6035e81e3385b69ea31a19",
+      "bytes": 276537
+    },
+    {
+      "path": "camp/dairysprings/dairysprings6.jpg",
+      "sha256": "02fdc672dc0f44402d111fc02500594e51dfe3cd6fa34d84bbd900d75ba61177",
+      "bytes": 336628
+    },
+    {
+      "path": "camp/dairysprings/dairysprings7.jpg",
+      "sha256": "dd29a01e68fa64be3e680c013a5bebbf9ca79f987c0763bdc8daf5d95b0384e2",
+      "bytes": 271190
+    },
+    {
+      "path": "camp/dairysprings/dairysprings8.jpg",
+      "sha256": "1f0216032007d3735cf54f987a8c7aabf73880ecf0ee097582e56d48f49b274b",
+      "bytes": 214585
+    },
+    {
+      "path": "camp/dairysprings/dairysprings9.jpg",
+      "sha256": "3475c4d4145735a1fa3614fb60f4fb141a55ced6f90796c1d88c5d91387b810d",
+      "bytes": 152492
+    },
+    {
+      "path": "camp/dairysprings/index.html",
+      "sha256": "14127adf10e5c566f888eefe52ebce24a58f8e67cac9ad6b228732c0863e8109",
+      "bytes": 52811
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse1.jpg",
+      "sha256": "75d547f7d6ebb404d7968c821c78a1bdd2634ab8235ab28dfe62d0f8b4ab965a",
+      "bytes": 513108
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse2.jpg",
+      "sha256": "d599b7544af5f12003c5bbf5064b4fde832a836f5b043e421ea1ba5176ed86b7",
+      "bytes": 587649
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse3.jpg",
+      "sha256": "2e6c6bc823e920e227f5531c670ca275a8c39f8032b33c3d9b0741422227d1b6",
+      "bytes": 756869
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse4.jpg",
+      "sha256": "53c3bbccd6e400afa900e030cd0c58b8ddddba7f61c375b105da15ad4fea6d58",
+      "bytes": 601932
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse5.jpg",
+      "sha256": "824c7ff16201d06126a81293cb91383333e4e4093a5fcfde37292628bee1f29b",
+      "bytes": 772150
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse6.jpg",
+      "sha256": "131f20a75e30ba7b07fcde88695e31cbad22a1d0b1a041b7725551aa45410a6c",
+      "bytes": 687682
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse7.jpg",
+      "sha256": "d181e1829189016d325524dc1a93fcb23657bc5710dfed5276fa36d40b32bea7",
+      "bytes": 525549
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse8.jpg",
+      "sha256": "ba771484bd515a40536755ad12107cd138c5a8eb8b5355bbe50fc0922a23c13b",
+      "bytes": 618662
+    },
+    {
+      "path": "camp/deadhorseranch/deadhorse9.jpg",
+      "sha256": "cc01c2c41c8c5411f25dc4b0e4a64fd14ff5bffcd16b11c3dbdbef544db5b892",
+      "bytes": 685166
+    },
+    {
+      "path": "camp/deadhorseranch/index.html",
+      "sha256": "7eda912d563d404797e91ddcfb95db635a614c5f3190ed87daa8e42e255272bf",
+      "bytes": 49376
+    },
+    {
+      "path": "camp/doublesprings/doublesprings1.jpg",
+      "sha256": "5edeb2fe95b2b359ad32b585319bb4f87914015a3fccdff77e1a8ba890e41c99",
+      "bytes": 271315
+    },
+    {
+      "path": "camp/doublesprings/doublesprings10.jpg",
+      "sha256": "f6732a513d2f8be568c570981dec251e9ee2f9c97fe899f1a5f3a921e86b82c2",
+      "bytes": 328371
+    },
+    {
+      "path": "camp/doublesprings/doublesprings2.jpg",
+      "sha256": "7ea4fa63be8c6a83f32045a56bd77f823f12f030cc9544f0925132485f68fb59",
+      "bytes": 209665
+    },
+    {
+      "path": "camp/doublesprings/doublesprings3.jpg",
+      "sha256": "52c05c2b67311a68c0222fa21adf60fb819285d8e2b6afdbad5decf27bd7a12d",
+      "bytes": 302760
+    },
+    {
+      "path": "camp/doublesprings/doublesprings4.jpg",
+      "sha256": "ed80e941139c0e5b9ec7912d591b8b2b64156867bc930c7077e2aaebd9d4ebf1",
+      "bytes": 277549
+    },
+    {
+      "path": "camp/doublesprings/doublesprings5.jpg",
+      "sha256": "de0c0a8a5967b70473107883016b92daf3f8b282cdd47f462f8e7cad25c0b0f9",
+      "bytes": 289602
+    },
+    {
+      "path": "camp/doublesprings/doublesprings7.jpg",
+      "sha256": "f5f5e4a342a9fdfcc3cec49c5e640a6eff86af17d7c5b4c8e37644a2fc79e156",
+      "bytes": 275234
+    },
+    {
+      "path": "camp/doublesprings/doublesprings8.jpg",
+      "sha256": "d9637866f58bcf77c9ddf67d2f7f216a2dd3f7075bb9908a87f3e753b8560f4b",
+      "bytes": 264662
+    },
+    {
+      "path": "camp/doublesprings/doublesprings9.jpg",
+      "sha256": "0662bc20f200837a6906bd498c8bff893a2aeb677ea2383940bf92237ce3ea4c",
+      "bytes": 308922
+    },
+    {
+      "path": "camp/doublesprings/index.html",
+      "sha256": "38a6bf1ef8498ed047a9238d975ab59377e55efac3dd2858386aaaf861c63b15",
+      "bytes": 50327
+    },
+    {
+      "path": "camp/endoftheworld/eotw1.jpg",
+      "sha256": "7af9653e3b5dd3abc1e272628a2957bd344e02d92024cf010c16ee047fd4486f",
+      "bytes": 201963
+    },
+    {
+      "path": "camp/endoftheworld/eotw2.jpg",
+      "sha256": "c94691cf632882376c5cfaf2ed8e01efbecc36c23ac815674c74303062382d74",
+      "bytes": 270040
+    },
+    {
+      "path": "camp/endoftheworld/eotw3.jpg",
+      "sha256": "9b6214331a304467c4097b1ebb87eed9205d621769e5a48a73fc9a84a23cb9fe",
+      "bytes": 157791
+    },
+    {
+      "path": "camp/endoftheworld/eotw4.jpg",
+      "sha256": "33cfa7597f0d5b004073861924c6cdeb9d744b57e626eb00a03a9d72c139f46e",
+      "bytes": 180671
+    },
+    {
+      "path": "camp/endoftheworld/eotw5.jpg",
+      "sha256": "33c1128fc8c6ecb67efcf2aea606031ced88bd614ead143e66347869b15eed64",
+      "bytes": 197487
+    },
+    {
+      "path": "camp/endoftheworld/eotw6.jpg",
+      "sha256": "8c23fc3eaab152e604b6281212f28de19acbfd2ade3b8a1c61cd575a7cce17c9",
+      "bytes": 196310
+    },
+    {
+      "path": "camp/endoftheworld/eotw7.jpg",
+      "sha256": "6e54f99efc8c81d5ab06c188b32972268f497432a86da5f2f1d3ea39b4d5f68a",
+      "bytes": 266942
+    },
+    {
+      "path": "camp/endoftheworld/index.html",
+      "sha256": "4661bf4c7735554d17febb4e7f51fad2956d6318db06507034e432fae859ed86",
+      "bytes": 46995
+    },
+    {
+      "path": "camp/first-time-arizona-campsites/index.html",
+      "sha256": "9f85fff9608438c83ea6070d55bbf9785f70062cd36704e9be7e2e0597eaea6a",
+      "bytes": 21507
+    },
+    {
+      "path": "camp/flagstaff/index.html",
+      "sha256": "db5debf2b65e27ab2ac2e0d4bf6245e617a509c0c756cc36b6a9f703dea9781a",
+      "bytes": 19913
+    },
+    {
+      "path": "camp/foolshollow/foolshollow1.jpg",
+      "sha256": "8f5f1677e49214723f4c60b309073311707458966f9f35bd8ebcced41f33ce61",
+      "bytes": 762323
+    },
+    {
+      "path": "camp/foolshollow/foolshollow10.jpg",
+      "sha256": "4507825d968d8d0a5d2718092c7a76b31d8bfbb8d61d711be3b1617eae5f4e01",
+      "bytes": 760557
+    },
+    {
+      "path": "camp/foolshollow/foolshollow2.jpg",
+      "sha256": "85661012a6907dfd95ca18014cda7c960194c0e7e98b0872c841b7a5dba1ce63",
+      "bytes": 738317
+    },
+    {
+      "path": "camp/foolshollow/foolshollow3.jpg",
+      "sha256": "653c5e5ad1ebc50fcbbfef6c41410be34ac5d2b6c3d49dee5d99fe215ba565f1",
+      "bytes": 857941
+    },
+    {
+      "path": "camp/foolshollow/foolshollow4.jpg",
+      "sha256": "5c4fdcaf9170676e326cd2a0f29e964e3f3b317e83c5c418b0e67eec754341f1",
+      "bytes": 682232
+    },
+    {
+      "path": "camp/foolshollow/foolshollow5.jpg",
+      "sha256": "d598aff8dd65e39cc8393e626c8b467ba0d2b6621588da4c386dd75eb293a401",
+      "bytes": 562614
+    },
+    {
+      "path": "camp/foolshollow/foolshollow6.jpg",
+      "sha256": "629f7d4305e1be8a8ee768cbbf2931371d610aea9bb50a4ace98b0b21524133a",
+      "bytes": 356648
+    },
+    {
+      "path": "camp/foolshollow/foolshollow7.jpg",
+      "sha256": "898d0d33fcdb92cb8512eab65d94d3c03e042fd7aac64b76c1a63ff2d4800149",
+      "bytes": 613700
+    },
+    {
+      "path": "camp/foolshollow/foolshollow8.jpg",
+      "sha256": "4b08017c4c1b11086ff234afd265488e406a2e13dd959500ac0e0838f5f13826",
+      "bytes": 509380
+    },
+    {
+      "path": "camp/foolshollow/foolshollow9.jpg",
+      "sha256": "b59ac55559db51cd9f22a9654cc7d3f179b5665bfd6e3578c23ef6d3f04dd7dc",
+      "bytes": 587091
+    },
+    {
+      "path": "camp/foolshollow/index.html",
+      "sha256": "3296b9930a00a983eea6b0f20ff339d1cf6e7c3ab5437ead718e3d0489155527",
+      "bytes": 46153
+    },
+    {
+      "path": "camp/fr171/fr171-1.jpg",
+      "sha256": "86316e2160e5692b8c877e3e9b514079673098cd5046bafcb147195cbea5cb2f",
+      "bytes": 641397
+    },
+    {
+      "path": "camp/fr171/fr171-10.jpg",
+      "sha256": "4ee2980d5d5e99e2533a942b85954d21bc6b5dd35e22df3c5090aa5197944071",
+      "bytes": 793083
+    },
+    {
+      "path": "camp/fr171/fr171-2.jpg",
+      "sha256": "9dade8bbf1be12576d040bd739349376479a6f6fce7a8f04c27ba9eaa8057269",
+      "bytes": 733268
+    },
+    {
+      "path": "camp/fr171/fr171-3.jpg",
+      "sha256": "0b4bae8d6aae36eb08b84d25dae74a9ac0bbfdfe4669e2cd7449e04ca30160f7",
+      "bytes": 752543
+    },
+    {
+      "path": "camp/fr171/fr171-4.jpg",
+      "sha256": "66454d9236f53c1d5a29c1edcbde6f6a012714555533d077e5fe796f6bcc1f55",
+      "bytes": 569775
+    },
+    {
+      "path": "camp/fr171/fr171-5.jpg",
+      "sha256": "7517a91f51e69e36f4dbab6b53f7757711e40612db30dd0c83e32cd65dcd1f77",
+      "bytes": 707811
+    },
+    {
+      "path": "camp/fr171/fr171-6.jpg",
+      "sha256": "747dc80cebd35ae47cbd5354f38ca4e941a75899bc651c6901fdd8595151a83e",
+      "bytes": 1027038
+    },
+    {
+      "path": "camp/fr171/fr171-7.jpg",
+      "sha256": "af368bee6425eee12244e070023bdfecbe41bf054e8ec67f1ac507e1c2cd8e9f",
+      "bytes": 918185
+    },
+    {
+      "path": "camp/fr171/fr171-8.jpg",
+      "sha256": "2899c096a95b0de894b046091bf3d5e5cb7966d05631b528330a14eb028edaa9",
+      "bytes": 803758
+    },
+    {
+      "path": "camp/fr171/fr171-9.jpg",
+      "sha256": "de9c8c78aea4e424ca67ac4422f11c9a1f4d388a499f70849339fea41c694ff4",
+      "bytes": 809820
+    },
+    {
+      "path": "camp/fr171/index.html",
+      "sha256": "1cb4bcfce9dcf70e6bb460142a93c437d8003a3192e581847423a3381c29b5cb",
+      "bytes": 40466
+    },
+    {
+      "path": "camp/havilandlake/havilandlake1.jpg",
+      "sha256": "3051058456e6e050bea2991872673e70602bba8b020d0a68a4d4aea7dd9da0bc",
+      "bytes": 991363
+    },
+    {
+      "path": "camp/havilandlake/havilandlake10.jpg",
+      "sha256": "e935f628d67eb76a5f846041379e28b114a9c6ccb11b7b1f5e9174e0e5e3a2ea",
+      "bytes": 1443069
+    },
+    {
+      "path": "camp/havilandlake/havilandlake2.jpg",
+      "sha256": "a91ac1d8aa753a38ccde79ef601f9622dda11cd6b34d4948bb61a56180899d8f",
+      "bytes": 1058120
+    },
+    {
+      "path": "camp/havilandlake/havilandlake3.jpg",
+      "sha256": "a4291da362827e69700d9e150724ac8b527c5c4c03540bd8e372f77447ec4c1d",
+      "bytes": 1172409
+    },
+    {
+      "path": "camp/havilandlake/havilandlake4.jpg",
+      "sha256": "36723fa62b21dee843c2fdc940a0b6c2bd4e70d0a5fb670b4f8adb8c0338bfb8",
+      "bytes": 1241624
+    },
+    {
+      "path": "camp/havilandlake/havilandlake5.jpg",
+      "sha256": "c602ae73748e83ba7335e5beb76fa2b81c4024e263e226d00ff44d0a9b4db6df",
+      "bytes": 1489215
+    },
+    {
+      "path": "camp/havilandlake/havilandlake6.jpg",
+      "sha256": "9b1ae4e07bdae42c9ea2bac50d72ddf5df04c6afe39443ba5da91b60c5f0dfda",
+      "bytes": 1604557
+    },
+    {
+      "path": "camp/havilandlake/havilandlake7.jpg",
+      "sha256": "9eb46d5f9b35ad1ce4847d8ca30d89109d9cf3b0f0c7c6c1ed9fc0b941057d89",
+      "bytes": 1649978
+    },
+    {
+      "path": "camp/havilandlake/havilandlake8.jpg",
+      "sha256": "2858619c671c0a61ed6ef779de1a7d358bdd8325c89768b3936836f64d5da2ac",
+      "bytes": 1615317
+    },
+    {
+      "path": "camp/havilandlake/havilandlake9.jpg",
+      "sha256": "fb97a458c9dc28b1f5dedd24c7cc1bba1446d6f527eec16b788c86a10a5fa626",
+      "bytes": 1628268
+    },
+    {
+      "path": "camp/havilandlake/index.html",
+      "sha256": "e91fe1cffad293c6ee49a7792272ae0984439be03c46fefe033f03f17385ca61",
+      "bytes": 52421
+    },
+    {
+      "path": "camp/hawaii/index.html",
+      "sha256": "c9b2bc7502ceb2e0679a132b28dec12dcac919a878f900afd2603f835d667a93",
+      "bytes": 17422
+    },
+    {
+      "path": "camp/hookena/hookena1.jpg",
+      "sha256": "458b12bf2359ca8fbc0f49dcbed804483209d58d0fe7f83fe50f7908aaebbada",
+      "bytes": 252662
+    },
+    {
+      "path": "camp/hookena/hookena10.jpg",
+      "sha256": "70f3b3679d3ae745b1f54c2dc11036fcc54721174ad5b64891633536f5fc9924",
+      "bytes": 177800
+    },
+    {
+      "path": "camp/hookena/hookena2.jpg",
+      "sha256": "96cee21efaeca8af2abef1d3a68fbe5d361847a966afba16f4b228c00f845996",
+      "bytes": 108411
+    },
+    {
+      "path": "camp/hookena/hookena3.jpg",
+      "sha256": "a2d9fa4ac630eb416947cf6e194fc74a7f537bc213ccf9c37622ddd8f2d158ed",
+      "bytes": 153298
+    },
+    {
+      "path": "camp/hookena/hookena4.jpg",
+      "sha256": "c5a5f35056a1f0798ebab8b914645b6e71db4cea09cb9dac249bab46aabe0db8",
+      "bytes": 176336
+    },
+    {
+      "path": "camp/hookena/hookena5.jpg",
+      "sha256": "d20ff232841f8bd98e5ec804fc7be83be304a187fa2c954bc388ff8c50719c45",
+      "bytes": 181262
+    },
+    {
+      "path": "camp/hookena/hookena6.jpg",
+      "sha256": "cf0a91fc1f95b88bc7b922db3950b1f65ec17a359f6633810eee34761bea5ac8",
+      "bytes": 138100
+    },
+    {
+      "path": "camp/hookena/hookena7.jpg",
+      "sha256": "f048c3d34434df2dcd315fd6d0006bed28f15a2ec2c7a9cfd414f58e768bdf61",
+      "bytes": 88384
+    },
+    {
+      "path": "camp/hookena/hookena8.jpg",
+      "sha256": "3be1590c84bc2e1c002a57304acb986b596b1c20b43a540145e7b3ff69856272",
+      "bytes": 192918
+    },
+    {
+      "path": "camp/hookena/hookena9.jpg",
+      "sha256": "7e40cdf9d7e12967ef0381d67369e54e330c97bc216ec50a4effd17f618aec79",
+      "bytes": 108619
+    },
+    {
+      "path": "camp/hookena/index.html",
+      "sha256": "325b318dc264880ddb48fb082ac06e4b80f22f01889ca3164e79b56e8afda37e",
+      "bytes": 49483
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa1.jpg",
+      "sha256": "783d77d3bc82c2b76f7a83f9c433e719cd2fe00e0ace053519bc51a116944830",
+      "bytes": 963503
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa10.jpg",
+      "sha256": "17995fa492f78e5927bafd3d8376b2987e376e2978a0f993753ffc510ceea115",
+      "bytes": 775711
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa2.jpg",
+      "sha256": "917430a2226df86f035030ba9aa3bbc93aec5da72b2ff6d92cbd2612b2492797",
+      "bytes": 850180
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa3.jpg",
+      "sha256": "155d3a3d84a0692dbb4ff047fdf0c039b1fcbb2a5ed55ef46ab3d3169b7f8fe5",
+      "bytes": 897589
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa4.jpg",
+      "sha256": "98123435d5ffb7331800269f6fd70bba4f267ca6e403f96459e0da3c203ef80e",
+      "bytes": 782818
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa5.jpg",
+      "sha256": "5522bf9ca47a966ac1b5dc1a140d8a3de6e146e2718c00e0a92137443de044c7",
+      "bytes": 769395
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa6.jpg",
+      "sha256": "638fa2f86d48117ca0eff98737db88a774b90b081c40463761a7eb02f95a1f5e",
+      "bytes": 811849
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa7.jpg",
+      "sha256": "e536e376d8d5e461a7ac44cfed1273fe8e1341a4f9e81d3341475625bcf2c75e",
+      "bytes": 842462
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa8.jpg",
+      "sha256": "98a76fc8b3adaedc849014a8fb0916588aaa4e5e71a80857e39c1f78a97c4544",
+      "bytes": 798978
+    },
+    {
+      "path": "camp/houstonmesa/houstonmesa9.jpg",
+      "sha256": "a2b15c2109b74c44971cd72f583eef9ecc2bb17eda764d9d7eac1b085298c437",
+      "bytes": 886893
+    },
+    {
+      "path": "camp/houstonmesa/index.html",
+      "sha256": "fd9d5d2d1defde7e59d8ede1dd651b19c03d4fc418f696f94a316b54dbc40a7d",
+      "bytes": 48820
+    },
+    {
+      "path": "camp/index.html",
+      "sha256": "36ea267ad62dcf0e408118a1133c5e9f747ed6e3d54853f36d7a81f69c202f5a",
+      "bytes": 57956
+    },
+    {
+      "path": "camp/index.json",
+      "sha256": "c986f583e8938ae09d403d5f16627e6fc40f380a39df6bff9979abada3b262a6",
+      "bytes": 2631
+    },
+    {
+      "path": "camp/keaiwa/index.html",
+      "sha256": "363fe1f901c428a501997a796209c5b9c17fe9f48957b0b541ef1881405b06b7",
+      "bytes": 49559
+    },
+    {
+      "path": "camp/keaiwa/keaiwa1.jpg",
+      "sha256": "77ad9f3f2b8af0420bdf2e6cc955171cd6fd9eeaeb48236af648c4bf4ca301c0",
+      "bytes": 157406
+    },
+    {
+      "path": "camp/keaiwa/keaiwa2.jpg",
+      "sha256": "9d55786ce7aa12733ce6de38cb22f6651fdc09a2933add4b4af5f2055e745900",
+      "bytes": 237310
+    },
+    {
+      "path": "camp/keaiwa/keaiwa3.jpg",
+      "sha256": "c6eb62d1d8916af76868f791f5e840597ebaaae5e0690838c1d71715c52de87b",
+      "bytes": 55663
+    },
+    {
+      "path": "camp/keaiwa/keaiwa4.jpg",
+      "sha256": "68538738d4e16cda0630b368caa5ee7a92c2b6d39de921d35004411ba4b827a0",
+      "bytes": 40794
+    },
+    {
+      "path": "camp/keaiwa/keaiwa5.jpg",
+      "sha256": "9f1bb97e0bb09a1321c8eb1095c890be8673ff2c279f207360661d12bf2d47d9",
+      "bytes": 78474
+    },
+    {
+      "path": "camp/keaiwa/keaiwa6.jpg",
+      "sha256": "ac4106039f375b8cf81bdf53b24549088e71d4e7491828f8f4c15f02a5ec81a3",
+      "bytes": 226426
+    },
+    {
+      "path": "camp/lakecuyamaca/index.html",
+      "sha256": "3b8be392777d57a734ed276c58b7c07f6b7be2e79ec89bc13455ff6580de8505",
+      "bytes": 51617
+    },
+    {
+      "path": "camp/lakecuyamaca/lakecuyamaca1.jpg",
+      "sha256": "7cdb3c03bd427adcebd16230d808c29aba51afc7138e6c7986b963c41e48bd01",
+      "bytes": 689001
+    },
+    {
+      "path": "camp/lakecuyamaca/lakecuyamaca2.jpg",
+      "sha256": "5a6bce75746a5554f6e2049cf7b6401c6d02a63a06f9ec388c63cc3748081e63",
+      "bytes": 989402
+    },
+    {
+      "path": "camp/lakecuyamaca/lakecuyamaca3.jpg",
+      "sha256": "80e6ca162a5a68b4c6645e9dd40a28602d2178463c4138839da158ee15f72be7",
+      "bytes": 572838
+    },
+    {
+      "path": "camp/lakecuyamaca/lakecuyamaca4.jpg",
+      "sha256": "b44f8019dee578ea79be22b79048254bff0d22c72b85fc09b2fbea6cd915a574",
+      "bytes": 714964
+    },
+    {
+      "path": "camp/lakemary/index.html",
+      "sha256": "9d2cb09660b8b7ac0aa9f0c910d171bc1a5078ee49ebfa7ef97eeb1dc8d7b933",
+      "bytes": 51162
+    },
+    {
+      "path": "camp/lakemary/lakemary1.jpg",
+      "sha256": "e76ab6b41159112de91e3d62e12976fb4afc69edf0afc5467e56af9a6f972918",
+      "bytes": 157760
+    },
+    {
+      "path": "camp/lakemary/lakemary2.jpg",
+      "sha256": "1ae3dbb768432f6e668fef892d16404aed9111692a67b9f0d2796edd22817ad4",
+      "bytes": 199072
+    },
+    {
+      "path": "camp/lakemary/lakemary3.jpg",
+      "sha256": "581daeb878da3ef016f2fc4bfb4359997e51c06d5cf6564cf56c42713802c46a",
+      "bytes": 147688
+    },
+    {
+      "path": "camp/lakemary/lakemary4.jpg",
+      "sha256": "cd65f9d1c35065ded753482b504f43ffa7c9639f7214a8ab2fbb45c9ae0be30c",
+      "bytes": 192586
+    },
+    {
+      "path": "camp/lakemary/lakemary5.jpg",
+      "sha256": "cc2acb4e0731e697c90dd3f1152f55f01304b6f7f91a7b962c210cd4ec6f391f",
+      "bytes": 156481
+    },
+    {
+      "path": "camp/lakemary/lakemary6.jpg",
+      "sha256": "b0af10f07c6f03c1c9d7057a991085191ff5bebfdaf8378be2d45a21e71a63a8",
+      "bytes": 195229
+    },
+    {
+      "path": "camp/lakemary/lakemary7.jpg",
+      "sha256": "14f6c977716392f7f5b5c370dc3c47e82c1e367e19cca23c9bdeb39efdb1b8f6",
+      "bytes": 245897
+    },
+    {
+      "path": "camp/lakeview/index.html",
+      "sha256": "bd9924ae9be907e4be34ed1e7154ad3ef4a638b3575b9a7824538361735852e3",
+      "bytes": 50098
+    },
+    {
+      "path": "camp/lakeview/lakeview1.jpg",
+      "sha256": "0816186951c2ca8ff1251f03cada7ee6b4962815c3aef67c8424b813c2902f81",
+      "bytes": 241034
+    },
+    {
+      "path": "camp/lakeview/lakeview2.jpg",
+      "sha256": "f4bb1d9c0c5172251c3efcdf32660770821b68e45a81709250503160e22d14e9",
+      "bytes": 253082
+    },
+    {
+      "path": "camp/lakeview/lakeview3.jpg",
+      "sha256": "e59497774fb104427be0aacd1b3bf3ac4f837750f54b2eddf46da449c58bccc2",
+      "bytes": 221303
+    },
+    {
+      "path": "camp/lakeview/lakeview4.jpg",
+      "sha256": "cdf2713186167b6072657344cab969d81d875241a25da0e8fd4069e5d365c0c6",
+      "bytes": 224369
+    },
+    {
+      "path": "camp/lakeview/lakeview5.jpg",
+      "sha256": "399a0fd6bc726c3245d42353b07eb0dd0a908562c9b659b84a72c43647f8c35e",
+      "bytes": 282719
+    },
+    {
+      "path": "camp/lakeview/lakeview6.jpg",
+      "sha256": "9415e1cb089277489292efb76a27b823ba638692a3cc6aa5de1b2a0e88bb4183",
+      "bytes": 244179
+    },
+    {
+      "path": "camp/lakeview/lakeview7.jpg",
+      "sha256": "78440f40014217bb7dbac68bc87e9228b96a537d3814d566e40f023d542b3ecc",
+      "bytes": 214206
+    },
+    {
+      "path": "camp/lakeview2/index.html",
+      "sha256": "a6e1c20f69fb7b1983a8997c0ed2a50e923084ae4633a23941913c1ec9c0a90e",
+      "bytes": 52285
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-1.jpg",
+      "sha256": "f424ff378befcacb8f96e338ae10f2aad81e33eb3b5293379e868876b23592d5",
+      "bytes": 442751
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-2.jpg",
+      "sha256": "83e1ea83f29705fd5715c26fc4f3333373ad45b838303d90528733233c68e9eb",
+      "bytes": 631769
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-3.jpg",
+      "sha256": "7e6fcdf52bc7de5857167a49bf74536bbcb22473bbf00f366eb15f0d30cce12c",
+      "bytes": 585015
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-4.jpg",
+      "sha256": "a78402f30fa3022ec123e990479a1e5cee30e8295a90a3e8ac9711443eb4915a",
+      "bytes": 473815
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-5.jpg",
+      "sha256": "37b457c3d688d3224855ab212267bc5e992a29cc4aef22ba160a1877690d66af",
+      "bytes": 581150
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-6.jpg",
+      "sha256": "4bb057e2e3336617609e573a3096cb110a1a766f14eab26cdac7271fa91fc02f",
+      "bytes": 559908
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-7.jpg",
+      "sha256": "db4a5c2c01269643a0dbba115b62d4c1636f2a19831cee493855793020450806",
+      "bytes": 579989
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-8.jpg",
+      "sha256": "4dee8b5ff446797aea167ec9d1be6784beba8697ee5c0db2452fb101e6618640",
+      "bytes": 703151
+    },
+    {
+      "path": "camp/lakeview2/lakeview2-9.jpg",
+      "sha256": "03badc0e27ab7fc55593351f03dd1737d26312e2c8bb2b9ea9e817565490a6e9",
+      "bytes": 388745
+    },
+    {
+      "path": "camp/lowerwolfcreek/index.html",
+      "sha256": "b523ae4ead29e6e424ccbbf717cecf8b2ffa08640f5b59eb2e913259396047aa",
+      "bytes": 49065
+    },
+    {
+      "path": "camp/lowerwolfcreek/lowerwolfcreek1.jpg",
+      "sha256": "9eb589b76723ba92de0bff7729bf3b023f06f081eb2c09d8834b46ae8d45dc0b",
+      "bytes": 134921
+    },
+    {
+      "path": "camp/lowerwolfcreek/lowerwolfcreek2.jpg",
+      "sha256": "0766041bc51a3c7137d7ac451256224faedd16991baa92eb1566cbb3a21ecca9",
+      "bytes": 210882
+    },
+    {
+      "path": "camp/lowerwolfcreek/lowerwolfcreek3.jpg",
+      "sha256": "32a1d36219b0dec896cb4c05fc236f181703db3859bdf83e2c1e3bff846f0f19",
+      "bytes": 194898
+    },
+    {
+      "path": "camp/lowerwolfcreek/lowerwolfcreek4.jpg",
+      "sha256": "8ecddf72606b6736ecb0d9288dfb53a4f04d8af595984014a3db4cc83acb9cf3",
+      "bytes": 200000
+    },
+    {
+      "path": "camp/lowerwolfcreek/lowerwolfcreek5.jpg",
+      "sha256": "2abb9be78225c57e026b08e79364e026fe1f11437291933323347918f70eaeec",
+      "bytes": 194338
+    },
+    {
+      "path": "camp/marshall/index.html",
+      "sha256": "07d1479c518c9a515b09fb5de19663f1cd874c3545c587024e3a11d47c2b92b9",
+      "bytes": 51262
+    },
+    {
+      "path": "camp/marshall/marshall0.jpg",
+      "sha256": "2b1c5c2c89922a2575b00d85cedbad193a3a4c065416aecd601fa5f797adcfc5",
+      "bytes": 181955
+    },
+    {
+      "path": "camp/marshall/marshall1.jpg",
+      "sha256": "9a8c5cfdd06a37da1577dd53f0f1b9e27c350e1e03bc422bbbe2f14f76334ed4",
+      "bytes": 128054
+    },
+    {
+      "path": "camp/marshall/marshall2.jpg",
+      "sha256": "8c0c617cddc742e3509389d0b9021f5ac514f6b69fa01f711d3a49f7aad67b00",
+      "bytes": 76774
+    },
+    {
+      "path": "camp/marshall/marshall3.jpg",
+      "sha256": "df48399f8d073fb06983d98e0e6c95b4e79b8750a5e2ca0e7989f0833a37dc37",
+      "bytes": 176695
+    },
+    {
+      "path": "camp/marshall/marshall4.jpg",
+      "sha256": "59cf4bca993d7958e12c3eef267e5a6c533a4ee2cb3e4c0637b24d51d5911f3d",
+      "bytes": 178874
+    },
+    {
+      "path": "camp/marshall/marshall5.jpg",
+      "sha256": "9ad70457bc52aa462a3bffdb9a63ec38041cf239680c8bcc6f574c9e8ca2694b",
+      "bytes": 189205
+    },
+    {
+      "path": "camp/marshall/marshall6.jpg",
+      "sha256": "c97f06191a950acf5038b7b397bbb2c0851249a83b6c786f5b49284cc843ca90",
+      "bytes": 210992
+    },
+    {
+      "path": "camp/minguslake/index.html",
+      "sha256": "729f15d85528bdd98719459cb79e15c2d44afd35eee1f6d90a6958b08b69689f",
+      "bytes": 51372
+    },
+    {
+      "path": "camp/minguslake/mingus1.jpg",
+      "sha256": "18c5b496d79d3cbe7d0d6169c3bacb3373c673d924463fc064d3e7ec2adb189e",
+      "bytes": 693237
+    },
+    {
+      "path": "camp/minguslake/mingus10.jpg",
+      "sha256": "b65f4977b4e28a1761ab87191bc35103d5cb83624f1faea1ce6662c35558c93e",
+      "bytes": 646282
+    },
+    {
+      "path": "camp/minguslake/mingus2.jpg",
+      "sha256": "fd2e75a9115b6a40d436a66657962f8a01f304c04fd61995a068dd7b93f4da85",
+      "bytes": 780705
+    },
+    {
+      "path": "camp/minguslake/mingus3.jpg",
+      "sha256": "73fbc1640759de09cb834d0a7d2bacda6045c459975327dee21ceed830d8a57b",
+      "bytes": 643725
+    },
+    {
+      "path": "camp/minguslake/mingus4.jpg",
+      "sha256": "ad1aac732dcd3e70f9dfad9f4b6b4073569421ee53bbb51ed8f28066321e6b87",
+      "bytes": 730727
+    },
+    {
+      "path": "camp/minguslake/mingus5.jpg",
+      "sha256": "6287923cf7651fdbb12d583527b7d72d6ba46c186e7d25f1ce212ae4bd3be615",
+      "bytes": 867665
+    },
+    {
+      "path": "camp/minguslake/mingus6.jpg",
+      "sha256": "fc8c2979f0bc39c41d27be0e7b81147f0f087ef836e6d884f6aa484107d6e901",
+      "bytes": 581910
+    },
+    {
+      "path": "camp/minguslake/mingus7.jpg",
+      "sha256": "46cbccf4a96bac204a4dfb0d7a64b32ac0352e82f6d8983894b6aa0f17ab3d6d",
+      "bytes": 676884
+    },
+    {
+      "path": "camp/minguslake/mingus8.jpg",
+      "sha256": "6362c6cbfb3cd54f04cb1c40bb490886327acf4b06a22eef5d6450f80ec74b46",
+      "bytes": 871354
+    },
+    {
+      "path": "camp/minguslake/mingus9.jpg",
+      "sha256": "91d3f35fb13c629638e97a99bc7355222b885e4c8790b5197072cff852f3aa4d",
+      "bytes": 941420
+    },
+    {
+      "path": "camp/mogollon-rim/index.html",
+      "sha256": "ac5192a190cce6768615c8fcfe71cda30e5c924520999aab1fe175e5d11d944a",
+      "bytes": 21610
+    },
+    {
+      "path": "camp/mogollon/index.html",
+      "sha256": "4a00be018d36b637c890d75b1dc4513ebc378bcd62ba8ccf16e3b404920daa77",
+      "bytes": 49678
+    },
+    {
+      "path": "camp/mogollon/mogollon1.jpg",
+      "sha256": "c7b21c9469130322335b9a4d26a97c5576f42ce13317f212b6492ea191670cc1",
+      "bytes": 904961
+    },
+    {
+      "path": "camp/mogollon/mogollon2.jpg",
+      "sha256": "bf3ded01c5b65c52451886ec967c463df5c848d95e09e0ce1de19f30d37299c9",
+      "bytes": 861139
+    },
+    {
+      "path": "camp/mogollon/mogollon3.jpg",
+      "sha256": "06181173636b550cadb4bccee98d42b68b8ef0fb30c643d4f4d67aced1be5570",
+      "bytes": 841954
+    },
+    {
+      "path": "camp/mogollon/mogollon4.jpg",
+      "sha256": "046bfa433f5c177b60bbf807568b08c519d71fdb6aa405f0aed92fd44c69f526",
+      "bytes": 887739
+    },
+    {
+      "path": "camp/mogollon/mogollon5.jpg",
+      "sha256": "fd279be41de00cca3d1755e9c425440abaf62c8a4a6cbf1c99a98a99e6a80109",
+      "bytes": 796903
+    },
+    {
+      "path": "camp/mogollon/mogollon6.jpg",
+      "sha256": "382fedfc86d7af42cdd8e3aa709089964e34ebaa19d2f0e89793142d50221b5e",
+      "bytes": 856739
+    },
+    {
+      "path": "camp/mogollon/mogollon7.jpg",
+      "sha256": "06171458a8954d421a89afd842bbdde811f49ab507daceea9bf1cf97b141914c",
+      "bytes": 863748
+    },
+    {
+      "path": "camp/mogollon/mogollon8.jpg",
+      "sha256": "f0e0478998f9dca5b016490e56835cf0b714f95392a87bd178502bed6b70d969",
+      "bytes": 901180
+    },
+    {
+      "path": "camp/mogollon/mogollon9.jpg",
+      "sha256": "768a98d168181435a9c8d0c0d7cf2f161d96a71e3c140737bfb39bedf5a14ead",
+      "bytes": 819512
+    },
+    {
+      "path": "camp/pacheta/index.html",
+      "sha256": "07fdf3d60c6abd459a71e6b090fa99a81073d2ee561bd47d3a7b9a6c4b56cb62",
+      "bytes": 51808
+    },
+    {
+      "path": "camp/pacheta/pacheta1.jpg",
+      "sha256": "aa015b0965316d31c962dc48be32d3e88bb96ee1138982916dc0b38b68c45fa2",
+      "bytes": 212281
+    },
+    {
+      "path": "camp/pacheta/pacheta10.jpg",
+      "sha256": "1fe0b16d1a32725494475bd0029e6f26f8f3793a2a5ed6019bc4fd128aa6dba8",
+      "bytes": 112680
+    },
+    {
+      "path": "camp/pacheta/pacheta2.jpg",
+      "sha256": "51bfc396423d535e7f21c8a78ba8bdf3a7b16ac8a9120a4d35f5026fefeb6ec2",
+      "bytes": 170328
+    },
+    {
+      "path": "camp/pacheta/pacheta3.jpg",
+      "sha256": "8dfa86851a7c48ebaec5c3acebc7923f7a1b9f7a447a30abb9579796518b321e",
+      "bytes": 197933
+    },
+    {
+      "path": "camp/pacheta/pacheta4.jpg",
+      "sha256": "49c6b421df1ee1469e5f8fcddd487057dc0712dd9734a210ff71e8e9f1af133c",
+      "bytes": 171232
+    },
+    {
+      "path": "camp/pacheta/pacheta5.jpg",
+      "sha256": "1b2565e8244f53e57ce5820e394682f933e47bc11e9c42ae98b4e8ccb611029e",
+      "bytes": 168919
+    },
+    {
+      "path": "camp/pacheta/pacheta6.jpg",
+      "sha256": "e1f8d5e2d8884f222a0d41763f5e81c67f2e285b8041974e93c20f7b455ebf5b",
+      "bytes": 241852
+    },
+    {
+      "path": "camp/pacheta/pacheta7.jpg",
+      "sha256": "2b5e7444c206523b42d16ba19eb0e62efe3336a511d83ddf0298b81b7bed31f3",
+      "bytes": 216918
+    },
+    {
+      "path": "camp/pacheta/pacheta8.jpg",
+      "sha256": "af8f11c450e7d60d45d087bd094ee71cf1433fcf08423d2e6d5d75786f59ad8a",
+      "bytes": 252093
+    },
+    {
+      "path": "camp/pacheta/pacheta9.jpg",
+      "sha256": "7438d410bdcebb240d115f273a915965ab5e3e8f96ce3ca4a0cb259dfdd12c0a",
+      "bytes": 132232
+    },
+    {
+      "path": "camp/phoenix-hot-weather-camping/index.html",
+      "sha256": "674a24541c528838debd8a9584e42a21970bfb3069d5356bcc593bb20d1ad3a1",
+      "bytes": 23201
+    },
+    {
+      "path": "camp/pinegrove/index.html",
+      "sha256": "34ad865b44d6d67601413f8e1863e91c9e293e8fce1a05ac59ea95a01d939fdc",
+      "bytes": 51327
+    },
+    {
+      "path": "camp/pinegrove/pinegrove1.jpg",
+      "sha256": "63a65044343ef0c257ff3fb7f2f7393342a31ca05c9b2a448dbdd88474eb5ef9",
+      "bytes": 224882
+    },
+    {
+      "path": "camp/pinegrove/pinegrove2.jpg",
+      "sha256": "f48655c10d5229ce2814d11d0432fea777af1a3816cc44f88569867c55e20d11",
+      "bytes": 183602
+    },
+    {
+      "path": "camp/pinegrove/pinegrove3.jpg",
+      "sha256": "0b2002fb2216bc1983560ad2742f1ec7ba72f5bfdb99c61ff898a6240f7f9868",
+      "bytes": 197206
+    },
+    {
+      "path": "camp/pinegrove/pinegrove4.jpg",
+      "sha256": "38030c99f5ff4db721bd7846f9e9bf3feb4ef80e341c456be753f6c310fb2fd8",
+      "bytes": 236631
+    },
+    {
+      "path": "camp/pinegrove/pinegrove5.jpg",
+      "sha256": "bf7e0558afd30c7769771959fd0f352339c9018632c0d1331b8f444c921c6479",
+      "bytes": 269286
+    },
+    {
+      "path": "camp/pinegrove/pinegrove6.jpg",
+      "sha256": "1a479822d8970fbea4e0840368f06297893f306f529dc99e830730a44c0d5a9d",
+      "bytes": 196676
+    },
+    {
+      "path": "camp/pinegrove/pinegrove7.jpg",
+      "sha256": "a2b49d0bb271fad6500cffd4031c40ec6d2dab9ef7757b4f202f57f45dafe432",
+      "bytes": 233972
+    },
+    {
+      "path": "camp/potatopatch/index.html",
+      "sha256": "f9c74b2743c5859925dad7463f4c62222587c1faa35aece29d6b3b539abaefdd",
+      "bytes": 51049
+    },
+    {
+      "path": "camp/potatopatch/potatopatch1.jpg",
+      "sha256": "62b5f53f948fc00d777bb9c783f60da698e5466348d64c94074d42037e004dca",
+      "bytes": 670027
+    },
+    {
+      "path": "camp/potatopatch/potatopatch2.jpg",
+      "sha256": "a67f39397e996b3815730e75c95b2d2e6d1e9d6bdd342f9082c0a6054ec24991",
+      "bytes": 795284
+    },
+    {
+      "path": "camp/potatopatch/potatopatch3.jpg",
+      "sha256": "c8a6f385f27f615630fa048a296568ed53851e65ddacaf51cd49c94ca81812cd",
+      "bytes": 846471
+    },
+    {
+      "path": "camp/potatopatch/potatopatch4.jpg",
+      "sha256": "e8d06adef330fb88ce6ddb5b66195ae1ca982fa3fba334ce1222568dec1d0f9d",
+      "bytes": 753513
+    },
+    {
+      "path": "camp/powellsprings/index.html",
+      "sha256": "807205df3b8271664a29dfe2af3151b6544ce7cbb833f936186e144ba3def1c6",
+      "bytes": 49151
+    },
+    {
+      "path": "camp/powellsprings/powellsprings1.jpg",
+      "sha256": "720673e7da81dc30d97a3d14782759a7fb8f84f340a6f8656926693ee9bd4408",
+      "bytes": 942753
+    },
+    {
+      "path": "camp/powellsprings/powellsprings2.jpg",
+      "sha256": "35c007fda6e23110bf2943bc379a85a9de37d23217bf93e5f2ec4c1ecd3f3dcc",
+      "bytes": 881801
+    },
+    {
+      "path": "camp/powellsprings/powellsprings3.jpg",
+      "sha256": "86c0091c85ea26207f79973c3d49467018219f8d7c4126f7c0fa92c774656ddb",
+      "bytes": 817130
+    },
+    {
+      "path": "camp/powellsprings/powellsprings4.jpg",
+      "sha256": "b16701cf5abf5c664dd8c595235a3743f68178860b2d5911ddb7d4d1f5896c6f",
+      "bytes": 724432
+    },
+    {
+      "path": "camp/powellsprings/powellsprings5.jpg",
+      "sha256": "c2075f5b238448a19388f9baab11245dc34f3b8b70874e3343a724d00dcd27e2",
+      "bytes": 722704
+    },
+    {
+      "path": "camp/powellsprings/powellsprings6.jpg",
+      "sha256": "d07428a378f1d53080d824cbc7d92e637e00f545292b6f27ea7730037bacf139",
+      "bytes": 740553
+    },
+    {
+      "path": "camp/powellsprings/powellsprings7.jpg",
+      "sha256": "fe91a0fc24987396a9c258e8601bff86e52fa333b6dd00be4a42ab964a3202d7",
+      "bytes": 709380
+    },
+    {
+      "path": "camp/powellsprings/powellsprings8.jpg",
+      "sha256": "e2e3a3ae5ec03c8b399f19b55f0b490644edf47ee4a64d475bcd1c567cf69e60",
+      "bytes": 478989
+    },
+    {
+      "path": "camp/prescott/index.html",
+      "sha256": "60553fa958a8a48c1464e321f05b664d27528b88e60000b8b4b2bc3eea7d9359",
+      "bytes": 17602
+    },
+    {
+      "path": "camp/redrockpark/index.html",
+      "sha256": "c60f2996d89dc3ee8f9c450651a833682e103ca836f0ee52660a8ae671af0d7c",
+      "bytes": 49810
+    },
+    {
+      "path": "camp/redrockpark/redrockpark1.jpg",
+      "sha256": "38e0b1656ef28bfc05c0b2c6c6214193ad45ba6e9049d96cf02af3c7215ab32f",
+      "bytes": 704247
+    },
+    {
+      "path": "camp/redrockpark/redrockpark2.jpg",
+      "sha256": "ed9daf20f03a17e6bba50e99e80ffe7763fd5f32be5d291c61b8a9fdfe4a7a10",
+      "bytes": 511592
+    },
+    {
+      "path": "camp/redrockpark/redrockpark3.jpg",
+      "sha256": "3268755e0d6d1ee8e5a93b2f65adda84af74d2ec78907cc454ec9c8b19ebc700",
+      "bytes": 541341
+    },
+    {
+      "path": "camp/rim/index.html",
+      "sha256": "da832a762e9f333f5a249bfeefbf352e3e4d911c0b9849baf161ce214fa27e56",
+      "bytes": 49998
+    },
+    {
+      "path": "camp/rim/rim1.jpg",
+      "sha256": "7b24da1bfa03fbb38a23214c70fb9ac7ea73f27cc0a6189e0eedb947f26e65a0",
+      "bytes": 644579
+    },
+    {
+      "path": "camp/rim/rim10.jpg",
+      "sha256": "73df1d338f5288df07547aa28becb9f065506b8a0ca79391ec3b5211354a053c",
+      "bytes": 926518
+    },
+    {
+      "path": "camp/rim/rim2.jpg",
+      "sha256": "eaac92fdf7da2869c417d03c2d71248cb3ee485bd588e618903392c5b95a2e2a",
+      "bytes": 809250
+    },
+    {
+      "path": "camp/rim/rim3.jpg",
+      "sha256": "0ada6418793b5e56a1b517b0c06bde5fc84a19869a222fc522f556c077ad483f",
+      "bytes": 808220
+    },
+    {
+      "path": "camp/rim/rim4.jpg",
+      "sha256": "cd176b6e07d1aaa3bad2999e49230294f5947a8deaf8f8f1945675566f7c886b",
+      "bytes": 735148
+    },
+    {
+      "path": "camp/rim/rim5.jpg",
+      "sha256": "578fa9288a5d859ae07d7038c583b4e847de03ac2cc41b8bc1a96c32850de2a6",
+      "bytes": 706505
+    },
+    {
+      "path": "camp/rim/rim6.jpg",
+      "sha256": "faddb6a64643201ffbe0c424bbea786d594885f5d0bbddd57a544d61efb04407",
+      "bytes": 901804
+    },
+    {
+      "path": "camp/rim/rim7.jpg",
+      "sha256": "e4a037f9a5c9bf0cb394197dab9e15edebb7604bcb1d27a5362415aaf33db29f",
+      "bytes": 814518
+    },
+    {
+      "path": "camp/rim/rim8.jpg",
+      "sha256": "9e1b6e439e5dd04e870bcc13d2c9ba712e3fb1cc80af1a981a2ae665e43f6522",
+      "bytes": 808035
+    },
+    {
+      "path": "camp/rim/rim9.jpg",
+      "sha256": "e124479bfef4b808674cb40afc47f3236033724e537f2ccad22ccb3bfac89d32",
+      "bytes": 888923
+    },
+    {
+      "path": "camp/sanclementebeach/index.html",
+      "sha256": "22cd0d53b233b30460e15c2536fc9e19cb1b9734d115e4cc61ac98832055bbec",
+      "bytes": 52166
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach1.jpg",
+      "sha256": "d204f6cc3c70cef1161efff075ccb2f52949d270b856100cdeaac5b4d76b7db1",
+      "bytes": 501121
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach10.jpg",
+      "sha256": "1fcc45d03dc71a2351692b91893b177c5ae5a318219d73bd52c0914145b92012",
+      "bytes": 554470
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach2.jpg",
+      "sha256": "f5958ce622fd473a1f7f935c1c782bc89e0598af2c0de7cef482918641a25fbf",
+      "bytes": 614927
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach3.jpg",
+      "sha256": "5ea660b435178c61089f153363e6239e38b0a444c8c1ba902788d5fe5e184541",
+      "bytes": 559692
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach4.jpg",
+      "sha256": "45582578873f75e672a013b9bd84d89dd05b41271d1f7f26342a6b9e45c21801",
+      "bytes": 493946
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach5.jpg",
+      "sha256": "2d23bdf652131e0ddcde269e2354820b0de292bb00d3e4d5fad39ae8ea6722ee",
+      "bytes": 631522
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach6.jpg",
+      "sha256": "0ae563de4f0d28d86cc165d8c98ea7f3903e403318eed15a3c54ece7840dbe18",
+      "bytes": 513620
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach7.jpg",
+      "sha256": "c164861fa3bf826c277ffeb3ee3ac5e57420b6ea3ac85598e52d0fc8afefe0ee",
+      "bytes": 599370
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach8.jpg",
+      "sha256": "4a9895b59b818e283d49cec364ad5e21adf7b9e7a16d50f5e6d989573f4e2910",
+      "bytes": 624716
+    },
+    {
+      "path": "camp/sanclementebeach/sanclementebeach9.jpg",
+      "sha256": "847d0ce961cbddfc4cdef9c44a9598256c3c42146a71e35672fd92f51e19566f",
+      "bytes": 397108
+    },
+    {
+      "path": "camp/sharpcreek/index.html",
+      "sha256": "2cc52fbd22bc3060bbec19e15a3886ed0291013c197d084db7f0ee804dd888d1",
+      "bytes": 45540
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek1.jpg",
+      "sha256": "45287ebc39db20a0a8e3f2db7ca8e7d854479215811562598aec6b3973090db6",
+      "bytes": 866988
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek10.jpg",
+      "sha256": "af1fd7bca34d88256ca8db87e09bafb8d033b1a1680093c1878bf08c8e0f4f06",
+      "bytes": 833987
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek2.jpg",
+      "sha256": "0e7d88e0c2d5a2a7c32b883fc565248a44ad8396c1fc45d5e45ff43822b487c0",
+      "bytes": 699935
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek3.jpg",
+      "sha256": "2c4255e6e0d04cb5f1073f48d02f2eb7494242263e3678ffa8cb966e2d0b3374",
+      "bytes": 641780
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek4.jpg",
+      "sha256": "b2816b525f824e7137fd230b3fd84108c49fb9573a048650e84a24557f2ca0f7",
+      "bytes": 960494
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek5.jpg",
+      "sha256": "1e68907f87a28d47d01a23034fbce93a6947106bc20a160478a49a4fc3831e0e",
+      "bytes": 485982
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek6.jpg",
+      "sha256": "54d79de113793e8f00d210594d1c97da967c5b2bdc5e4e757c692cde2b4e5e4e",
+      "bytes": 624593
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek7.jpg",
+      "sha256": "404fe19cc086ab22cab471255d5ac87862f2bd28691a21ed07c51c5332948f48",
+      "bytes": 671503
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek8.jpg",
+      "sha256": "d92860616d3dd8859ad9f5b9dda1c17d512b6523b89aede5571d4880a95ff3bf",
+      "bytes": 792864
+    },
+    {
+      "path": "camp/sharpcreek/sharpcreek9.jpg",
+      "sha256": "920006634f76ca30f434e25548c64582569676360530eaaa8e1ec2277a4c1c84",
+      "bytes": 688335
+    },
+    {
+      "path": "camp/showlowlake/index.html",
+      "sha256": "267958147ac70eabae9b7cb8c8bee99f6beb486f9a0e0cbc245e09ecb9e2d1dd",
+      "bytes": 45768
+    },
+    {
+      "path": "camp/showlowlake/showlowlake1.jpg",
+      "sha256": "55a1ea463ae6deb9de1fb2fa607167af1b532f3edae032d269f39ab6dba59f4e",
+      "bytes": 768296
+    },
+    {
+      "path": "camp/showlowlake/showlowlake10.jpg",
+      "sha256": "a0f6c450bf109cbf42219b3ef053c00d14250a09980a1b0ba316abbbbf1ab618",
+      "bytes": 480328
+    },
+    {
+      "path": "camp/showlowlake/showlowlake2.jpg",
+      "sha256": "fe25ee2deb320510bd0c33b05d610cbf0017f5aba87e923e7c5182b83784e237",
+      "bytes": 614408
+    },
+    {
+      "path": "camp/showlowlake/showlowlake3.jpg",
+      "sha256": "c9f21f1c767d0663c6afe60e6db867b2c446ef7c501eaf525e8849263f2547a3",
+      "bytes": 694028
+    },
+    {
+      "path": "camp/showlowlake/showlowlake4.jpg",
+      "sha256": "c33c18af45f152bf22fde0cda83330231958777b3d1d0e23be8989d8b5f3f67b",
+      "bytes": 887725
+    },
+    {
+      "path": "camp/showlowlake/showlowlake5.jpg",
+      "sha256": "58b585b371666f4199487f310247ca7b9c96c300c680c5fe5bc80175a19332a5",
+      "bytes": 843181
+    },
+    {
+      "path": "camp/showlowlake/showlowlake6.jpg",
+      "sha256": "eeffdbab2d8732c055ddf055cc513896d02f87380a577aa02d4fad29677afb5f",
+      "bytes": 776568
+    },
+    {
+      "path": "camp/showlowlake/showlowlake7.jpg",
+      "sha256": "6493c375876d1581b88632cd255fcb1b86f3d0e0ce51a5bafa08ee16cbe8f063",
+      "bytes": 472975
+    },
+    {
+      "path": "camp/showlowlake/showlowlake8.jpg",
+      "sha256": "47369e420c50105675cc551ad59ba5608c5a6b8a2d281f9045c7031fb2552860",
+      "bytes": 838644
+    },
+    {
+      "path": "camp/showlowlake/showlowlake9.jpg",
+      "sha256": "c7157b985ce3103f0ede92d8c26143db8c1de88fc4119e4aaf501422c198162a",
+      "bytes": 902512
+    },
+    {
+      "path": "camp/sinkhole/index.html",
+      "sha256": "442fced2741497736ef6fb4a9cafbb7855d9f888a8b88464e355005a3a1d6a0c",
+      "bytes": 45919
+    },
+    {
+      "path": "camp/sinkhole/sinkhole1.jpg",
+      "sha256": "49510f24274eba83cfb477c0c7160f9089b0a07543591aa8638084bb7ae59a4f",
+      "bytes": 831218
+    },
+    {
+      "path": "camp/sinkhole/sinkhole10.jpg",
+      "sha256": "6e24440c55de8ed9ce708d0b2864d29a087b520e13b67555c2ed4a3e8da729d7",
+      "bytes": 777350
+    },
+    {
+      "path": "camp/sinkhole/sinkhole2.jpg",
+      "sha256": "408058e4b0dc02ccae1f2abd2838b05a370a3fdb553d5178f54c4c8354cca15f",
+      "bytes": 803034
+    },
+    {
+      "path": "camp/sinkhole/sinkhole3.jpg",
+      "sha256": "4bfbb9d3a5b720357fcd931f8570767f6fd9fc0f57a1d465df39da9973e207e1",
+      "bytes": 757135
+    },
+    {
+      "path": "camp/sinkhole/sinkhole4.jpg",
+      "sha256": "89acf2d12e5187f66c98a8a8542621fc185b58c1771db760b50ce33ec2e5a1c9",
+      "bytes": 746363
+    },
+    {
+      "path": "camp/sinkhole/sinkhole5.jpg",
+      "sha256": "374997cba505136d4597423fd0df543ad0958e7a9609dca1cb51cd5d1b77edff",
+      "bytes": 768290
+    },
+    {
+      "path": "camp/sinkhole/sinkhole6.jpg",
+      "sha256": "6e4dad738c8c6ebd6f5c8c28b98f90c5d4a493367cebded3ef3942984a41f107",
+      "bytes": 783157
+    },
+    {
+      "path": "camp/sinkhole/sinkhole7.jpg",
+      "sha256": "ee38877c65a19f629579bb7517db0372f774791848c801a0905b47ba4b28b72e",
+      "bytes": 709891
+    },
+    {
+      "path": "camp/sinkhole/sinkhole8.jpg",
+      "sha256": "b93296e1389b5d1fdd3f048d5aa1ab1326f61d391342e368a6425a5987f19f61",
+      "bytes": 743701
+    },
+    {
+      "path": "camp/sinkhole/sinkhole9.jpg",
+      "sha256": "b95365b26f382424689b49f86541fe94a6507a16560d1fa3d0f255d0cb538970",
+      "bytes": 750925
+    },
+    {
+      "path": "camp/southern-california-beach/index.html",
+      "sha256": "41622eb7a1e560a8a443214c8743173517ffa529bc1fa2b3a623f977490c79b0",
+      "bytes": 13654
+    },
+    {
+      "path": "camp/spillway/index.html",
+      "sha256": "3846e45df44c5d2cee00ac15731517dc491d021fddb3336b9ef3482a688e4a02",
+      "bytes": 44241
+    },
+    {
+      "path": "camp/spillway/spillway1.jpg",
+      "sha256": "5a332d2fb9e174d3ae92b706cd513a1d548cab5377fb76acc40d29d2297ef903",
+      "bytes": 982739
+    },
+    {
+      "path": "camp/spillway/spillway2.jpg",
+      "sha256": "ec6429bb55fe523857970b2035a395dabd981fe204c2c9663bdfd49ae8e7433f",
+      "bytes": 881838
+    },
+    {
+      "path": "camp/spillway/spillway3.jpg",
+      "sha256": "dcc1964ff93e9075391dd1752c180b9342fbd1e7114148c37976094a7576988a",
+      "bytes": 953956
+    },
+    {
+      "path": "camp/spillway/spillway4.jpg",
+      "sha256": "ff24c564443fff1ca78c764830ade43e9f3f40d89cd4a35b9250ff21d216c57f",
+      "bytes": 794676
+    },
+    {
+      "path": "camp/spillway/spillway5.jpg",
+      "sha256": "8ac5a387dc069a5fd5be725b05b793fd438b7cb347d13eef927538d004a76e0f",
+      "bytes": 833616
+    },
+    {
+      "path": "camp/spillway/spillway6.jpg",
+      "sha256": "53809250f2e1240a9d083c474a7080d5eb2d646c51030a916406f35527119940",
+      "bytes": 682636
+    },
+    {
+      "path": "camp/spillway/spillway7.jpg",
+      "sha256": "05f246796967595fe2c0a5f5bbebb785ccb105df68f4bbce9e131d607d94bcba",
+      "bytes": 445246
+    },
+    {
+      "path": "camp/spillway/spillway8.jpg",
+      "sha256": "99cb8a90160e01eafe4609c244c33046faaf2334c71b7ad192e8bd6445103c55",
+      "bytes": 854581
+    },
+    {
+      "path": "camp/spillway/spillway9.jpg",
+      "sha256": "a2dfd713d070d08e2ff486c91f4556d04860e0adf490f70ed5b6088b52b0e1f2",
+      "bytes": 937361
+    },
+    {
+      "path": "camp/volcanoes/index.html",
+      "sha256": "e24c4fd2c9ea6a7bc5bf9a47794e987701693a514e15929fc6e67d8327bf8272",
+      "bytes": 50526
+    },
+    {
+      "path": "camp/volcanoes/volcanoes1.jpg",
+      "sha256": "fcb84b70d15fa7dae5a61cf8f12493155b367ce0c1a064e0f9899d72968f22b1",
+      "bytes": 156511
+    },
+    {
+      "path": "camp/volcanoes/volcanoes2.jpg",
+      "sha256": "3e2b7a8bb59d5feb06f683da8117c91cd3b18c4c65c174cf18b29fe25666e5ba",
+      "bytes": 123527
+    },
+    {
+      "path": "camp/volcanoes/volcanoes3.jpg",
+      "sha256": "fb7fabc1dfb5c2ec59553e3d5525ffaef05665c9fe25ae026a0a5371c4f7c8aa",
+      "bytes": 252271
+    },
+    {
+      "path": "camp/volcanoes/volcanoes4.jpg",
+      "sha256": "582e2086894d806aa54f07140b638a84e1fdfdaf5255628cb5d3272149e6e97a",
+      "bytes": 49721
+    },
+    {
+      "path": "camp/weekend-phoenix/index.html",
+      "sha256": "054659729d7b51fa4b4b7f439b8946f4cf72b62b4ad2eb0d63f657948810a2f7",
+      "bytes": 20856
+    },
+    {
+      "path": "camp/westclearcreek/index.html",
+      "sha256": "871f74e750b7aa7dbe70cca64a0582ea9e06c460301b4bebcd3664b1ffcbe00e",
+      "bytes": 50669
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek1.jpg",
+      "sha256": "74f280e3f4ec0a7ac2182e4b6a5f8d77606d6093b32fff842944af3cd7d058e8",
+      "bytes": 171678
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek2.jpg",
+      "sha256": "a044fdbe80f6ae0da35cb0ce91b9d0f19260e2cc6014ab60aa4283d5b48956ae",
+      "bytes": 352857
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek3.jpg",
+      "sha256": "b5d0f4295657f541244c70eb0026c647189d0c47c268d367fabdb29643c29856",
+      "bytes": 282664
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek4.jpg",
+      "sha256": "c5c2323ec2a6b285cbb006d81ae317074cac0ad99e34cd1dbb36cae5646bc348",
+      "bytes": 338830
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek5.jpg",
+      "sha256": "c42a942ac5c18c248cef6e997f5e4e1ececc03fee9e68160b754eff059942178",
+      "bytes": 87770
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek6.jpg",
+      "sha256": "ffbdae17fab31ef75aa26e3006cb89e935654bc3d0b9f19fdee433814678b004",
+      "bytes": 237680
+    },
+    {
+      "path": "camp/westclearcreek/westclearcreek7.jpg",
+      "sha256": "cf2e60d50f622eda53a4e885fe0f5169aba9a2fe69e97dfd5f62872e081975d4",
+      "bytes": 84124
+    },
+    {
+      "path": "camp/white-mountains/index.html",
+      "sha256": "cc95a19d85458b3515faeb446717cdc99fc866d1c47ac8467a9ef9cb46c7165f",
+      "bytes": 14389
+    },
+    {
+      "path": "camp/woodscanyon/index.html",
+      "sha256": "d36505d37afec581430e086135c0fe5242230c091605a06680a0a875af406828",
+      "bytes": 51484
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon1.jpg",
+      "sha256": "24865031aebc19fa05ec61c2968033b09ee211285f8cf208e552234ac79ab587",
+      "bytes": 326010
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon10.jpg",
+      "sha256": "df4c6533beff8de822898a17d2466dd58bb0a5d8d6be7e54f9681cde85c38608",
+      "bytes": 456871
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon2.jpg",
+      "sha256": "91dced8a59dcc91197d60d6a5a29e31a1c79f265a971ed8796d8a85ecdee5601",
+      "bytes": 118548
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon3.jpg",
+      "sha256": "c51571c4b67dab17172c5d1db927678d54adfa419f3c7237e10850a7b5a3d2f1",
+      "bytes": 234576
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon4.jpg",
+      "sha256": "18124ac9dadc2bfc8455257abfce53fc740035df5a084edfb157e825c7452a1d",
+      "bytes": 226349
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon5.jpg",
+      "sha256": "7bf63a0417d04bc74eff96d6ce43e98a3f93ed1e2bc4ce4dcdaa7db2f9d89ea0",
+      "bytes": 153170
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon6.jpg",
+      "sha256": "b43e76495d54aca38e279c4ce5badcbf8f84dbcc2b26fe2e281e0d256ed49ef5",
+      "bytes": 199933
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon7.jpg",
+      "sha256": "4e3cf91a37b6f36de1c3d629dc416a5fa023f8e6252460e0d6bdd424db85b5e7",
+      "bytes": 114382
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon8.jpg",
+      "sha256": "f9c67a6551107e072801ace4ec999d8345dbdd8e15a7fdff00f9085bfe982598",
+      "bytes": 179038
+    },
+    {
+      "path": "camp/woodscanyon/woodscanyon9.jpg",
+      "sha256": "05579f526b07d77855b8e6593d28090e10cc63f21ffd38d64519c5ae1110eb91",
+      "bytes": 282071
+    },
+    {
+      "path": "camp/zion/index.html",
+      "sha256": "9a7fa65f0f8617041b0495326b20f425f5a1f5553b23a6d7944a6d87cd7319b8",
+      "bytes": 51739
+    },
+    {
+      "path": "camp/zion/zion1.jpg",
+      "sha256": "100cdda0e5c7a5781a1fededb5a3f60c74714526ca5e914c9e0544ed4772918d",
+      "bytes": 132254
+    },
+    {
+      "path": "camp/zion/zion10.jpg",
+      "sha256": "bfb7a037eb60e8f304295ca2e3465cfbe77e59f43204abeaa941934f103e6c6c",
+      "bytes": 122867
+    },
+    {
+      "path": "camp/zion/zion2.jpg",
+      "sha256": "ce3bad8dc402f7e03cfb49c11b0d3f443bd87d920533b844574bf00985c2f459",
+      "bytes": 146718
+    },
+    {
+      "path": "camp/zion/zion3.jpg",
+      "sha256": "9a478df4df03f9c2f7a8a125ad7016a094b65385cf0f69693f64c28211b48e96",
+      "bytes": 137981
+    },
+    {
+      "path": "camp/zion/zion4.jpg",
+      "sha256": "57a6b4e9feaa9a36bc1390967966f133a85b5f06f09ae3a5651a08cf163e4488",
+      "bytes": 77015
+    },
+    {
+      "path": "camp/zion/zion5.jpg",
+      "sha256": "28449401432103dafce8b04577e4c5f7864fb2de5ebec8faf1188e8a1d06cf42",
+      "bytes": 217738
+    },
+    {
+      "path": "camp/zion/zion6.jpg",
+      "sha256": "e1a9e66a72fd579a640c8b612cf102387ea1b83d651faf9fa337fc4df5775939",
+      "bytes": 197292
+    },
+    {
+      "path": "camp/zion/zion7.jpg",
+      "sha256": "dcef9d4f13aa7afa031cf3d4545228e17870c7b7a2a208150a4e29386f6c7227",
+      "bytes": 213496
+    },
+    {
+      "path": "camp/zion/zion8.jpg",
+      "sha256": "8e39fe8af52605ad03dd30167b91a7c20be51847f0998c5691995e9e9c4a24a9",
+      "bytes": 121494
+    },
+    {
+      "path": "camp/zion/zion9.jpg",
+      "sha256": "9a9551fb07579f6460e8580a50733acdee8b1d835433f7457d73bc406b140e95",
+      "bytes": 199033
+    },
+    {
+      "path": "category-index.js",
+      "sha256": "61c54ebd7724f60802cbf73d15807bf554cbd69cbf4a5e650f95a58c9d4ea470",
+      "bytes": 26770
+    },
+    {
+      "path": "category-shell.js",
+      "sha256": "4fff03dd5aa15a6d79a53c35c2849576f50d06997a68678a711dba19f73e0bb2",
+      "bytes": 9416
+    },
+    {
+      "path": "code/angle_miter_calculator/index.html",
+      "sha256": "effbee8f74684aa1e7fe135083bffb130982d6e460dc1bc22dddcafc0edd98c2",
+      "bytes": 29479
+    },
+    {
+      "path": "code/cut_length_calculator/index.html",
+      "sha256": "7cb22f46bd4777e33bcb1e04af995c2a21057bf285f006151ae36e5cfe22b4ed",
+      "bytes": 36988
+    },
+    {
+      "path": "code/cut_length_calculator/saw_cutting.jpeg",
+      "sha256": "a1e0b8479a9cc01ac186bbf45ebb324f8bfe053c7d2815ee63de9201dacb5caf",
+      "bytes": 91471
+    },
+    {
+      "path": "code/index.html",
+      "sha256": "8a64a1468134568e8188658c32cb0c36a397f08cd389a73278c9c8341da74a22",
+      "bytes": 5006
+    },
+    {
+      "path": "code/index.json",
+      "sha256": "3be12fe89fa39b6094ae3ec48e62f908c462c6632fc918765c3b61d82a721393",
+      "bytes": 535
+    },
+    {
+      "path": "code/metal_weight/index.html",
+      "sha256": "83ee32e5c60157886664a6a7f187e0845942687c37a208d7d9a0686a0cbe5a92",
+      "bytes": 28042
+    },
+    {
+      "path": "code/metal_weight/metal_weight.jpg",
+      "sha256": "7b3749e08d2afc1d35feb834ba41c7cf258b91d7ed0070cee6777ae0b2253ba1",
+      "bytes": 64755
+    },
+    {
+      "path": "code/panel_layout/index.html",
+      "sha256": "960eb6472dcafbcd36e074692a9cfc599566f94acece84046de73f3b05dc422c",
+      "bytes": 31829
+    },
+    {
+      "path": "code/panel_layout/shear.jpeg",
+      "sha256": "4da1ea61bb3ec17206b0d673237a52b8a68b948babf8693397efa218b28bbc3d",
+      "bytes": 81204
+    },
+    {
+      "path": "contact.html",
+      "sha256": "0a444830a496876b7756c7b4d6612583b82c1bd56cb958f090a543fbace100e1",
+      "bytes": 454
+    },
+    {
+      "path": "contact/index.html",
+      "sha256": "d99553a30d72c438659430509700ba1d7db44934f0670895f345e0c659dd1589",
+      "bytes": 9234
+    },
+    {
+      "path": "data-camp.js",
+      "sha256": "9d7ff1be3e814d144533047d7bd389b106ee64c9d8b764f899c167d8bddf1619",
+      "bytes": 22022
+    },
+    {
+      "path": "data-gear.js",
+      "sha256": "06eb04500a4a8cb49d7dce1d49fdaffedbbf556da1f6d013de2268f00430e5fe",
+      "bytes": 31727
+    },
+    {
+      "path": "data-projects.js",
+      "sha256": "70c97339ea92d9ff17e26d07cfc523cf594ef14ffb051beab35ec48ecdaee866",
+      "bytes": 6621
+    },
+    {
+      "path": "disclosure/index.html",
+      "sha256": "fce378b3910028abe280fc7baefef2834df7225f18af9fb30ce406acbb562ba4",
+      "bytes": 3420
+    },
+    {
+      "path": "gear-index.js",
+      "sha256": "faf9d42201cb01effc55fff35677dde33c5e94d6e49267e64840047078013622",
+      "bytes": 10155
+    },
+    {
+      "path": "gear/3000wpuresineinverter/3000wpuresineinverter.jpg",
+      "sha256": "ddbaa62c746e7917338a8f1d00750a50001e048c5ad8bec5e07ecde3edaaab2b",
+      "bytes": 135582
+    },
+    {
+      "path": "gear/3000wpuresineinverter/index.html",
+      "sha256": "d10a1848cfd03680a8a0c3f03adca750b5d24bb834e269238184b0205cf93c41",
+      "bytes": 30651
+    },
+    {
+      "path": "gear/actually-use/index.html",
+      "sha256": "48c46c47a0a286d48aefca73a9b121bb162bd8637fadd30370478c43f2547749",
+      "bytes": 16474
+    },
+    {
+      "path": "gear/after-dark/index.html",
+      "sha256": "4802e1fa60effbb2d4a450fbf444deff10ac40f1ac3578d4792972bbf1cb56e4",
+      "bytes": 15372
+    },
+    {
+      "path": "gear/anker737powerbank/anker737powerbank.jpg",
+      "sha256": "3cd7d499da92dbc080c78eaed7ae1d48ac11c95c74c3cb1b8deb0ca2c9127cf8",
+      "bytes": 126314
+    },
+    {
+      "path": "gear/anker737powerbank/index.html",
+      "sha256": "db0fece0a18ebaa6c2a267dd3d6d1044e8a1b5a32199064263c20de9db108732",
+      "bytes": 28332
+    },
+    {
+      "path": "gear/arcturuswoolblanket/arcturuswoolblanket.jpg",
+      "sha256": "304aa5990fe8bfa3cc2bb03a6c741cb10172ccef0bf19bcec758bb7ef81142f4",
+      "bytes": 231618
+    },
+    {
+      "path": "gear/arcturuswoolblanket/index.html",
+      "sha256": "136d5b660c8d2b8964f6bc8d597328b3f3c68579616f2e31f6bcde75b62157f1",
+      "bytes": 17914
+    },
+    {
+      "path": "gear/beginner/index.html",
+      "sha256": "52a5bf8ca273b9eefaf87f35f41faab9a319420228549ffe2df47f1d9bf73f4e",
+      "bytes": 18432
+    },
+    {
+      "path": "gear/blackdiamondstorm/blackdiamond.png",
+      "sha256": "c0edb810ffc82208b8553728ee0cc95594d248988119b2395ce49ab84cbe7213",
+      "bytes": 2090044
+    },
+    {
+      "path": "gear/blackdiamondstorm/index.html",
+      "sha256": "c12b945a58f4b037fef01c278e29d0884109bb5b745f631c8f2458aa99c5a334",
+      "bytes": 31883
+    },
+    {
+      "path": "gear/boreal21saw/index.html",
+      "sha256": "5a7781b56c98037843e6460182183d0aa49bda8888d5f38c0c12f89a324c226c",
+      "bytes": 32102
+    },
+    {
+      "path": "gear/bougerv12vfridge/bougerv12vfridge.png",
+      "sha256": "fbd416b36b6a42778658701f8e98ab16d7d815ecd3e135c1e1713568707a13bf",
+      "bytes": 2020356
+    },
+    {
+      "path": "gear/bougerv12vfridge/bougerv12vfridge.svg",
+      "sha256": "42b59d9f08382eb996e0167c47ce3b5f52353759872d609e5d87aedc80102042",
+      "bytes": 1101
+    },
+    {
+      "path": "gear/bougerv12vfridge/index.html",
+      "sha256": "270facf33b46d150a8e821ac84f7b85ef98891c3954d43a06145e03c4d4f774e",
+      "bytes": 27865
+    },
+    {
+      "path": "gear/buy-again/index.html",
+      "sha256": "1e27f27aa980d8220dfb20baca962785d29d4ed0dc96d86eba9b50882d3f6f63",
+      "bytes": 15717
+    },
+    {
+      "path": "gear/camera-trip-kit/index.html",
+      "sha256": "c248fcc99976707eb51646b609f995a879b3b97dbbb9943c805bcb296fe39a36",
+      "bytes": 16779
+    },
+    {
+      "path": "gear/camp-comfort/index.html",
+      "sha256": "eb4ca8cf53bab8b988353480de96c82283db42b404a8e958df2e176a2db69b53",
+      "bytes": 19373
+    },
+    {
+      "path": "gear/camp-kitchen/index.html",
+      "sha256": "9906135703effa399dc02006b09c5299ebefc3596bfec06c1fdc39ff3aef2323",
+      "bytes": 19920
+    },
+    {
+      "path": "gear/camp-tools/index.html",
+      "sha256": "c84c8b7729490ece04f7c47a5a52b140743374ff7b169f75b03bb7b7e5b65f3b",
+      "bytes": 17920
+    },
+    {
+      "path": "gear/car-camping/index.html",
+      "sha256": "391fedb300c5fbad0289e2be952cba3f4cfe9e8992a52d9f8e590b06fb53c71e",
+      "bytes": 17987
+    },
+    {
+      "path": "gear/cold-weather/index.html",
+      "sha256": "5bd0baf15c5c67497b8199d70a69b135d66af5bbafd38a9883cb565ce00fa331",
+      "bytes": 17996
+    },
+    {
+      "path": "gear/colemanvintage/colemanvintage.png",
+      "sha256": "f25c54a855988d42c77e0dc828cc13564d2bf106cf3b6ea656c824731cb42d36",
+      "bytes": 1565202
+    },
+    {
+      "path": "gear/colemanvintage/colemanvintage1.png",
+      "sha256": "2b1129a22c06eb46e1e58ce9138a847e402c3879ecab2b50fdf0677b246e48bd",
+      "bytes": 1615124
+    },
+    {
+      "path": "gear/colemanvintage/index.html",
+      "sha256": "3cf43e2fd8028e3b862980f0cc5c565f2564727543bf1f34b802c0fb60304242",
+      "bytes": 32972
+    },
+    {
+      "path": "gear/columbiarainjacket/columbiarainjacket-forest-opt.jpg",
+      "sha256": "0c3974e61a2b4540c19237b26ebee3864a2e730a18de6c1b8d1f243aa92cec44",
+      "bytes": 1062375
+    },
+    {
+      "path": "gear/columbiarainjacket/columbiarainjacket-forest.png",
+      "sha256": "176c5a805480c68e949bd8a238445843123404b538d3082d206ea8ae00f08fd2",
+      "bytes": 2794054
+    },
+    {
+      "path": "gear/columbiarainjacket/columbiarainjacket.jpg",
+      "sha256": "41966abb67e6f3676ddb958ec910aea86c389a5cc0eaab1cb1cd17069359e524",
+      "bytes": 111727
+    },
+    {
+      "path": "gear/columbiarainjacket/index.html",
+      "sha256": "f74e6631176783e827a3369dd6888cddb6f13f6ca8615310ec6ec035216f30e5",
+      "bytes": 33639
+    },
+    {
+      "path": "gear/condorprimitive/condorprimitive-camp-opt.jpg",
+      "sha256": "de39c9b3b56a3523cd2823846396ce2dd0d2b22ec71e6f39d1b6f8d25b42ae4e",
+      "bytes": 1358738
+    },
+    {
+      "path": "gear/condorprimitive/condorprimitive-camp.png",
+      "sha256": "97c13732beff0c05ba3a7b63f25cb2bbc01bb34af7502701b055601551441fd6",
+      "bytes": 3263163
+    },
+    {
+      "path": "gear/condorprimitive/condorprimitive.jpg",
+      "sha256": "daf1baf1d2da787f962d0ca8733eaacb7ef371f2bccfefa58e5f5bb66a9222c8",
+      "bytes": 357269
+    },
+    {
+      "path": "gear/condorprimitive/index.html",
+      "sha256": "5605b9c4a1d1635c5eccc34dc540d5fa2db82aeed3125df59df68ff5ad18bf05",
+      "bytes": 32779
+    },
+    {
+      "path": "gear/enohammock/enohammock-opt.jpg",
+      "sha256": "8f5dd0c517e6cf5ba1a302c9469f38df2cda4d75392a6302e7b1ac2444116ce2",
+      "bytes": 412299
+    },
+    {
+      "path": "gear/enohammock/enohammock.png",
+      "sha256": "4b5c9c3396465c45e04db08da5c0f95484c6b47008ae48aaf36bac8e4d9fe5a6",
+      "bytes": 2328086
+    },
+    {
+      "path": "gear/enohammock/index.html",
+      "sha256": "cecfd6962ffad53afbae7b65da3892a82e96f0e40f1e6cef1b7a2da3d82762e9",
+      "bytes": 32231
+    },
+    {
+      "path": "gear/eunzelcampingtowel/eunzelcampingtowel-dark-opt.jpg",
+      "sha256": "d597b79f6f9aef5f9fdc97dbba7a8ef979c180cd1a504b05324cc9efdf227eea",
+      "bytes": 630710
+    },
+    {
+      "path": "gear/eunzelcampingtowel/eunzelcampingtowel-dark.png",
+      "sha256": "fff34a3f15c16ef5c2da24ec0f5d8881436e72bde20c28617bb000b4df46e47e",
+      "bytes": 2271571
+    },
+    {
+      "path": "gear/eunzelcampingtowel/index.html",
+      "sha256": "e6faa8613c9c43728f63c9ded8a8466beaa96b4a833e2fedfcada3f9eeb4267a",
+      "bytes": 21005
+    },
+    {
+      "path": "gear/first-five/index.html",
+      "sha256": "a9804e3011d3dff737e89c679db160d6fbe9794438cbdbd59d25aeb183dff370",
+      "bytes": 14986
+    },
+    {
+      "path": "gear/garmininreachmini2/garmininreachmini2-dark.png",
+      "sha256": "40a616a38de8fc455fae7295e1cb0440d98b8b3f393e66aee8732bbbce1f5ef3",
+      "bytes": 1946517
+    },
+    {
+      "path": "gear/garmininreachmini2/index.html",
+      "sha256": "c2793ccbeb4f5efc375cf099854afb64b85aff37a01f7c11160d01128142f31f",
+      "bytes": 22463
+    },
+    {
+      "path": "gear/gciwildernessrecliner/gciwilderness-camp-opt.jpg",
+      "sha256": "097126d17c7c5ad88a1e19220cc5c8f1c8889d11e5858d956902acfe57cb2b07",
+      "bytes": 953400
+    },
+    {
+      "path": "gear/gciwildernessrecliner/gciwilderness-camp.png",
+      "sha256": "beee85a1c2bb0a0dc69f8c6058539181543eb70fbf4e3fbf2180eaa457411174",
+      "bytes": 2592045
+    },
+    {
+      "path": "gear/gciwildernessrecliner/gciwilderness.png",
+      "sha256": "159a85eca57d8b3fc1b269ecf7f173977eddd03a98075b130225ad54b95ddf5b",
+      "bytes": 1803184
+    },
+    {
+      "path": "gear/gciwildernessrecliner/index.html",
+      "sha256": "a7fedad33a92a67717935f90c500abb68109cb42a9158b26937eb46857dcbd72",
+      "bytes": 33026
+    },
+    {
+      "path": "gear/goalzerolighthouse/goalzerolighthouse.jpg",
+      "sha256": "a32a2f0c6325024cbaa9b9afdbc42a68be8d0e95815e969a719d54ec4bccd1bd",
+      "bytes": 99310
+    },
+    {
+      "path": "gear/goalzerolighthouse/index.html",
+      "sha256": "69d37ed326a6446626e114011a56fa3caa2b81cc571cc0e318f39aaba5048337",
+      "bytes": 32852
+    },
+    {
+      "path": "gear/gransforshatchet/gransforshatchet.png",
+      "sha256": "f9d407d1dac827dc14e4605d7e9d5188b44bafdd3686df51ef7b0eff54e198a7",
+      "bytes": 1117305
+    },
+    {
+      "path": "gear/gransforshatchet/index.html",
+      "sha256": "22e4447833842e818d98a5c74ab3b97a1469546fc8e1c98b65de6de4224c414f",
+      "bytes": 33755
+    },
+    {
+      "path": "gear/helinoxcampchair/helinoxcampchair.png",
+      "sha256": "053c55d0a531379dd2307fb2c5de469aea2c59e5d9fae204153a2961aa9e4d31",
+      "bytes": 1506526
+    },
+    {
+      "path": "gear/helinoxcampchair/index.html",
+      "sha256": "4a939e235b8aa478960e37d6134dd6829b2fe965ad7960450b2454bf2775824d",
+      "bytes": 32659
+    },
+    {
+      "path": "gear/hultsbrukaneby/hultsbrukaneby-dark.png",
+      "sha256": "1259fe5133a0ecf9b306eae8939591181da1160add535187302d533b9472b7ad",
+      "bytes": 1879789
+    },
+    {
+      "path": "gear/hultsbrukaneby/index.html",
+      "sha256": "b25905ab030cb547e240f7bda1ee1ea7f207e582a0a685b3ad23af1221d28a05",
+      "bytes": 22592
+    },
+    {
+      "path": "gear/index.html",
+      "sha256": "5176b6d285661c47f5ca32dddce40c54b5e1a0ce0f226853a9d62eead909d06a",
+      "bytes": 51193
+    },
+    {
+      "path": "gear/index.json",
+      "sha256": "790b09405889538a75533819a7e4fba4b99baf78d396c3202d0eb08aebbeda36",
+      "bytes": 6473
+    },
+    {
+      "path": "gear/katadynbefree/index.html",
+      "sha256": "01800db6bdc8d59baf0109b270f09131ed9ab0605750d7dedf6950a67b3ab377",
+      "bytes": 33612
+    },
+    {
+      "path": "gear/katadynbefree/katadynfilter.png",
+      "sha256": "92d54cc60109c4c62a094a7a16ca9f18620446287d4e31e31746b033433ebb42",
+      "bytes": 1901897
+    },
+    {
+      "path": "gear/katadynbefree/katadynfilter2.png",
+      "sha256": "365222d85d7ae024ade4f104523674847e1af2488d46b75d14f7b8d6981ebf87",
+      "bytes": 1622645
+    },
+    {
+      "path": "gear/keltylatestart/index.html",
+      "sha256": "780d46a244dd4331d8f66d0a9e9bb4ecabd3c1198c19ea17c74b3289a8d63b90",
+      "bytes": 34142
+    },
+    {
+      "path": "gear/leathermanwave/index.html",
+      "sha256": "1e9fc230774a87e39f00c479582b6b90282bf7b19c08ca8be0018f624a061cef",
+      "bytes": 33364
+    },
+    {
+      "path": "gear/lfbrosdieselheater/index.html",
+      "sha256": "c71983091c86b83e527e947c90b12a1355b18790834a80e4c5ac7a9a6961c594",
+      "bytes": 27302
+    },
+    {
+      "path": "gear/lfbrosdieselheater/lfbrosdieselheater.jpg",
+      "sha256": "5a2da30f169afc4640c402d6419f843343cb57dd2281d497332650e04e2e1885",
+      "bytes": 148665
+    },
+    {
+      "path": "gear/lifepo4200ah/index.html",
+      "sha256": "906515caa68640ddef30a7977e781dfb73b675418f9bb23f4468be52be05baf2",
+      "bytes": 24310
+    },
+    {
+      "path": "gear/lifepo4200ah/lifepo4200ah-dark.png",
+      "sha256": "1a6bcf1da3882cbb0b1fc6bb29542f0c466e0fc1f91ef12258b663ae3cd69282",
+      "bytes": 1671712
+    },
+    {
+      "path": "gear/litime40adcdc/index.html",
+      "sha256": "14fccc094e75a11facc26691c2f51cf4cd89b52ce4376f3f75534aabfc98a629",
+      "bytes": 29746
+    },
+    {
+      "path": "gear/litime40adcdc/litime40adcdc.jpg",
+      "sha256": "ee4961284241c9655d01b7ddcfdd0626b1a533f88f53d2982e713989ee05aabc",
+      "bytes": 208102
+    },
+    {
+      "path": "gear/litime40adcdc/litime40adcdc.svg",
+      "sha256": "58ca894ce5245080625c0937165d33889dc9cc35fcc903e39b0727c13380aa9a",
+      "bytes": 1116
+    },
+    {
+      "path": "gear/litime40adcdc/litime40adcdc.webp",
+      "sha256": "00a8d8dec49e3b6475f22dda577b35439a0d2f7cb9a4b215ab3c5a095459dc8d",
+      "bytes": 107535
+    },
+    {
+      "path": "gear/maxxfandeluxe/index.html",
+      "sha256": "8934bb99351d49570ace26c4ca87b957ce770a34c7a9800e93bbb55e6caf4f11",
+      "bytes": 22640
+    },
+    {
+      "path": "gear/maxxfandeluxe/maxxfandeluxe-dark.png",
+      "sha256": "be48625886a052de8944acac92597b06bd1ae2df8e38edcce843aba9a1f404fa",
+      "bytes": 1526153
+    },
+    {
+      "path": "gear/mrbuddyheater/index.html",
+      "sha256": "bd095f40081e45c1524f7a20690df405120b65274985bbddf6f98d36f58e153a",
+      "bytes": 19237
+    },
+    {
+      "path": "gear/mrbuddyheater/mrbuddyheater.jpg",
+      "sha256": "c82d29b93656edd81738d457058e114222c548821725596d83c55f9f82859628",
+      "bytes": 207904
+    },
+    {
+      "path": "gear/msralpinedeluxe/index.html",
+      "sha256": "cf7ce808ed7163fd3686998321b29d90f28e0e1c19c2c21ab138e25bb38d6b44",
+      "bytes": 29938
+    },
+    {
+      "path": "gear/msralpinedeluxe/msralpinedeluxe.png",
+      "sha256": "0b4774d522bb2d0609e28f6b76bca0a0f4831f29472e637fbcdd4b90f5785aa2",
+      "bytes": 1622877
+    },
+    {
+      "path": "gear/msrpocketrocket/index.html",
+      "sha256": "4d75dd779c7d7ed304fd355133ad885e0389e21600f750332320be761fecbcfc",
+      "bytes": 31828
+    },
+    {
+      "path": "gear/msrpocketrocket/msrpocketrocket.png",
+      "sha256": "9e1eeb5f9420629c6cc3e9cacff58e59d3e6b7441c24d0216aa942b59bdf7e96",
+      "bytes": 1418183
+    },
+    {
+      "path": "gear/naturehiketable/index.html",
+      "sha256": "b8908d72fd1ac851af31c2f3b4fb3ac537f4225a42a966c374914b41cf31fb5e",
+      "bytes": 32559
+    },
+    {
+      "path": "gear/naturehiketable/naturehiketable.jpg",
+      "sha256": "8369e1d25ba02737119ea2251e94abf4934be9a735904c2efffb3ec5ca2c8069",
+      "bytes": 247275
+    },
+    {
+      "path": "gear/nemopillow/index.html",
+      "sha256": "168423bba8596ea865496ea1e249a5ad5dc1a67c8bc8eedd67e790d64578e9c6",
+      "bytes": 30206
+    },
+    {
+      "path": "gear/nemopillow/nemopillow.png",
+      "sha256": "3a433d09c3f72c5d45644a1baaf1b37766d29f16b84077f6e3ac274f7e04f3a3",
+      "bytes": 1955888
+    },
+    {
+      "path": "gear/nocoboostplus/index.html",
+      "sha256": "0dc878a79f33bdca8380e6ea914815496283925ed1cdcd1295f2ae102e05c061",
+      "bytes": 34090
+    },
+    {
+      "path": "gear/nocoboostplus/nocoboostplus.jpg",
+      "sha256": "18f481d996670a7d32f5eed484ce9fdacad779ef82ef307813a612b95f0155fa",
+      "bytes": 155740
+    },
+    {
+      "path": "gear/nocoboostplus/nocoboostplus1.jpg",
+      "sha256": "d52fdb7c01fc498849a3c6b49d1011eee1f850d51734072568f8154e5ce7e291",
+      "bytes": 175711
+    },
+    {
+      "path": "gear/noico80mil/index.html",
+      "sha256": "4f73544f30747bbec072eddc110cae1c2e6f8314698428fa4de373d04b0926ed",
+      "bytes": 22065
+    },
+    {
+      "path": "gear/noico80mil/noico80mil-dark-opt.jpg",
+      "sha256": "feca5329507c4f103ede1e87568a9f931995e9d5c3425b9128a3c2d658dab9cb",
+      "bytes": 668883
+    },
+    {
+      "path": "gear/noico80mil/noico80mil-dark.png",
+      "sha256": "50fca74b1af9af6b8d2e04f82d42a2c8e4282691d7f55a34c1423b707493504d",
+      "bytes": 2202040
+    },
+    {
+      "path": "gear/odolandgrill/index.html",
+      "sha256": "dafad33858d53408a9c4e8af44488b9fd8c9b28ccaee2efd629fd8a8ff38478e",
+      "bytes": 30637
+    },
+    {
+      "path": "gear/odolandgrill/odolandgrill.jpg",
+      "sha256": "bd2db2cb9d02b5d785e20e73339b2fb07a0c8f51c7a9d70198fdd59823b5a832",
+      "bytes": 188067
+    },
+    {
+      "path": "gear/odolandgrill/odolandgrill1.jpg",
+      "sha256": "07f51d48fce77455d05f8b2b786b5699364d98fd3df1eb44414a1ba7110e417a",
+      "bytes": 244023
+    },
+    {
+      "path": "gear/odolandstove/index.html",
+      "sha256": "d677a62a68aa6282a016a2c318cc9e780c4c36de49cc0afaa7d9109393c494a4",
+      "bytes": 30807
+    },
+    {
+      "path": "gear/odolandstove/odolandstove.png",
+      "sha256": "0faa1ecededec56da06e801b11542bf2b1ab038e6262239846b53b3be1be3067",
+      "bytes": 1903211
+    },
+    {
+      "path": "gear/ospreytoiletry/index.html",
+      "sha256": "e9ba3eb7812a1d4bb1c9dc3b2a1e77db2c1d50d81c6540eea23a0fcde53a5a42",
+      "bytes": 32916
+    },
+    {
+      "path": "gear/ospreytoiletry/ospreytoiletry.png",
+      "sha256": "334ca95aeae2d99faccd468862f324e63bf24e3fe945f1887849acd2b79a47d6",
+      "bytes": 2048879
+    },
+    {
+      "path": "gear/outlandfirebowl870/outlandfirebowl870.jpg",
+      "sha256": "0d39b5983ee6130a7890b98178a5b891810ce8af1ead7efc99f6fd1ccad49675",
+      "bytes": 189496
+    },
+    {
+      "path": "gear/outlandfirepit/index.html",
+      "sha256": "fa1a0c1f8b059f47068e3d07d115742a94cca1cbd05937492489ff5cd602ad1c",
+      "bytes": 32201
+    },
+    {
+      "path": "gear/outlandfirepit/outlandfirepit-camp-alt.png",
+      "sha256": "33f2076db2487f882e782b1af51eb3fea2d1149d564b310bf07f529f4b7eef1c",
+      "bytes": 2615315
+    },
+    {
+      "path": "gear/outlandfirepit/outlandfirepit-camp-opt.jpg",
+      "sha256": "0490ed888284e30db179d3c95ac92b9404d7ac45ed58a6a281ec4b2dc8d85cff",
+      "bytes": 995337
+    },
+    {
+      "path": "gear/outlandfirepit/outlandfirepit-camp-wide-opt.jpg",
+      "sha256": "3cf668ab6b6754e750fe4502185f220049e2c75725bf3ad1f1642fc155b6c05c",
+      "bytes": 914908
+    },
+    {
+      "path": "gear/outlandfirepit/outlandfirepit-camp-wide.png",
+      "sha256": "eab9810321073693f8c19b501f32fd1f76074429d9ae2bc04e1d5588d827dd27",
+      "bytes": 2545437
+    },
+    {
+      "path": "gear/outlandfirepit/outlandfirepit-camp.png",
+      "sha256": "33f2076db2487f882e782b1af51eb3fea2d1149d564b310bf07f529f4b7eef1c",
+      "bytes": 2615315
+    },
+    {
+      "path": "gear/passagedinnerware/index.html",
+      "sha256": "1f83c60df4a9c04866074cfea99988e45e0917f5a9a710ca83836cd9ebf08a2d",
+      "bytes": 32068
+    },
+    {
+      "path": "gear/passagedinnerware/passagedinnerware.png",
+      "sha256": "e056b2f2f2acc96cd1fee8fa250f4b97c98bdbcdd753db9e025ec3d4058b766b",
+      "bytes": 1640286
+    },
+    {
+      "path": "gear/recovery-kit/index.html",
+      "sha256": "f28eb85ef795c848814c245c4a9da2b0df7f16a3bb13a345efbfc1e39e2d70a0",
+      "bytes": 20726
+    },
+    {
+      "path": "gear/recprohoughtonac/index.html",
+      "sha256": "9b38842495148e67a40d97987c9e9825c4d538c1ac52a5216c689c50d00547bf",
+      "bytes": 25837
+    },
+    {
+      "path": "gear/recprohoughtonac/recprohoughtonac-dark.png",
+      "sha256": "b73df43beb416cc4ddb9bde55525477b4cbf8a48a98c1d6f7deaf4865779fca7",
+      "bytes": 1582047
+    },
+    {
+      "path": "gear/redwing44/index.html",
+      "sha256": "7b06edadf3fb0ba5d276a6f0e3ef0b27a0e30580a7b09ee02df08575d6c8e7bf",
+      "bytes": 34168
+    },
+    {
+      "path": "gear/redwing44/redwing44-1.png",
+      "sha256": "5ee7e8ed8942f281fb0f5ebff030e9acc50ce8d1813c9e5ace2508f62efe9284",
+      "bytes": 1634201
+    },
+    {
+      "path": "gear/redwing44/redwing44-2.png",
+      "sha256": "9ea3606406ef6383de5b3ccb025dbe2a2fa991a49dbd556835abe74093be7266",
+      "bytes": 1572906
+    },
+    {
+      "path": "gear/redwing44/redwing44-3.png",
+      "sha256": "fac55002a32c58a49b08ffe72c4f8c3da3cd20ca318312f784e39a879fa5fdb3",
+      "bytes": 1626734
+    },
+    {
+      "path": "gear/rotopax2galdiesel/index.html",
+      "sha256": "c36b7d5652395f85ecfb2701b0c35c725e67dd60e0f5eb69e6425645b2b93461",
+      "bytes": 22894
+    },
+    {
+      "path": "gear/rotopax2galdiesel/rotopax2galdiesel-dark.png",
+      "sha256": "f3565e128d3841e25b1a24a3bb0dfbb824ba5493d891c1d49f0430e546f74899",
+      "bytes": 1672400
+    },
+    {
+      "path": "gear/scepterwatercan/index.html",
+      "sha256": "aa0ef71a9a3ed748fc2b6c1bd13e7d56393f063f2ebbf4ed5dc7f14ea64fd7f6",
+      "bytes": 22093
+    },
+    {
+      "path": "gear/scepterwatercan/scepterwatercan-dark.png",
+      "sha256": "971d1da624c745e956b24aac28ca73fd799026c31840c351d91127553bd5cf27",
+      "bytes": 1984480
+    },
+    {
+      "path": "gear/shurflo4008/index.html",
+      "sha256": "5e80f42918bf25ce93df48a35ac884c29eb38abed7255bac0afa8ada9490409c",
+      "bytes": 23799
+    },
+    {
+      "path": "gear/shurflo4008/shurflo4008-dark.png",
+      "sha256": "4abb7878c28e2e0d91fb5a7cc3578e50576076047f16b305f7bc6e1b39f5d297",
+      "bytes": 2070150
+    },
+    {
+      "path": "gear/sigma18-50lens/index.html",
+      "sha256": "fdd165e58dca64309f74bc440158e1b99b3f942165d002d84569cc47c5114158",
+      "bytes": 33539
+    },
+    {
+      "path": "gear/sigma18-50lens/sigma1850-2.png",
+      "sha256": "11e75d8cba034be7d2fc7b2379b87ed705884d160bd594033dc6a7946bba5ed5",
+      "bytes": 1580098
+    },
+    {
+      "path": "gear/sigma18-50lens/sigma1850.png",
+      "sha256": "9da0c1ff0038fe6cf2e3ec71fadaacb7f85f0271fd09904ce831147c71b23b4e",
+      "bytes": 1627377
+    },
+    {
+      "path": "gear/silkygomboy240/index.html",
+      "sha256": "cbcd051b6a1efa86349c488c0442ab362cf7b0ef08e6ad4a2e15b2610ccc12eb",
+      "bytes": 22596
+    },
+    {
+      "path": "gear/silkygomboy240/silkygomboy240-dark.png",
+      "sha256": "9a137b236ea6907329a2f0bb7165482deb8bc82be90c9192b7d767eeedc40218",
+      "bytes": 2024966
+    },
+    {
+      "path": "gear/siroccofan/index.html",
+      "sha256": "8f8c8bfe69f3a67eea53bbb619ac4412281119ad3669e93b4706ba1ad8f3a032",
+      "bytes": 26669
+    },
+    {
+      "path": "gear/siroccofan/siroccofan.jpg",
+      "sha256": "f68d834a14894b8a408b8d5a7bf362ceeed19501107a4a9579054704223bb826",
+      "bytes": 147147
+    },
+    {
+      "path": "gear/siroccofan/siroccofan.svg",
+      "sha256": "dcc49215249cee953a798f03e55350f8520df9270a86c0e90a80e372387aa190",
+      "bytes": 1109
+    },
+    {
+      "path": "gear/smallrigtripod/index.html",
+      "sha256": "8af68d0e997bd9e00d961a10e3b21d36a2f46052534279f32bceeca74b590750",
+      "bytes": 33305
+    },
+    {
+      "path": "gear/smallrigtripod/smallrig.png",
+      "sha256": "efab9431b1004faaa785ca4d612ce2c51136f2120a71611204f5db4450b7b62f",
+      "bytes": 1467322
+    },
+    {
+      "path": "gear/snugpakjungleblanket/index.html",
+      "sha256": "dc968fa0d797d6c9d1fe45433dcf9c850fce2420703cd377e3efb1f6cc1af820",
+      "bytes": 17677
+    },
+    {
+      "path": "gear/snugpakjungleblanket/snugpakjungleblanket.jpg",
+      "sha256": "a319ea9bc1283635a8f65cd845d944449f5d67527c17992c0496067d1c447977",
+      "bytes": 205826
+    },
+    {
+      "path": "gear/solostove/index.html",
+      "sha256": "a1f8c510e11fa8ce9cc584ba58a10d34c93fb5d2ea218d564a5cae494b698d6e",
+      "bytes": 33699
+    },
+    {
+      "path": "gear/solostove/solostove-camp-opt.jpg",
+      "sha256": "bf943a6b11a87ffe93ad932b875d357c3665576fa38850d400d69a8469f7897f",
+      "bytes": 810847
+    },
+    {
+      "path": "gear/solostove/solostove-camp.png",
+      "sha256": "bdb3be016e69b858e6c31d3b5b6a44a405db378c3bf1e17e1226b4efdee98c7f",
+      "bytes": 2414746
+    },
+    {
+      "path": "gear/solostove/solostove.jpg",
+      "sha256": "643adee4d8d5b3a98cfebbc2a65aed281e70e8f27418e8099926438397dc19ab",
+      "bytes": 72603
+    },
+    {
+      "path": "gear/sony15glens/index.html",
+      "sha256": "ab3f22ed310834501615d4c249cdf87950e97749d9d572b296b16c97d0acad89",
+      "bytes": 33525
+    },
+    {
+      "path": "gear/sony15glens/sony15g.png",
+      "sha256": "171de1c268f0a78b55b28e739f1a848f3f6908b6cea3521ad9b58a7f6a93a116",
+      "bytes": 1529071
+    },
+    {
+      "path": "gear/sony15glens/sony15g2.jpg",
+      "sha256": "f622167ac884df5f9aeb391b48d5aea83180472d0706ec1837943e15300bbe56",
+      "bytes": 1593439
+    },
+    {
+      "path": "gear/sonyzve10/index.html",
+      "sha256": "f1ef28fa53a883864ca7308978034b901a658b6e30345c233c0d29cec7484ce7",
+      "bytes": 33431
+    },
+    {
+      "path": "gear/sonyzve10/zve10.png",
+      "sha256": "86bfecf1c094591e82aec5f9f5e315123ea46cbc85cca90fb8662ac443b9edf8",
+      "bytes": 1658342
+    },
+    {
+      "path": "gear/starlinkmini/index.html",
+      "sha256": "bf5e8026edad29f086785619261f40786bd6441868ec7836d7914671eaaeba7e",
+      "bytes": 22176
+    },
+    {
+      "path": "gear/starlinkmini/starlinkmini-dark.png",
+      "sha256": "d11ac0143d30d4c7426184fd88e3c1bb037b78ffe66442fc021772c7c5e132a9",
+      "bytes": 1522866
+    },
+    {
+      "path": "gear/staticv/index.html",
+      "sha256": "2c63fad029ca64d8f8a2733e1f08782f694b878439a84dda2d0df52739da4b1e",
+      "bytes": 34703
+    },
+    {
+      "path": "gear/staundeflators/index.html",
+      "sha256": "bf2b51c7372e150dd37ae2c4fc681bc804c455d66b1e0bc2b3174a0690d17e99",
+      "bytes": 29723
+    },
+    {
+      "path": "gear/staundeflators/staundeflators.jpg",
+      "sha256": "33f388342b1a870ab5d7372b585ddf25d77dcc8ea5d35f452a7e27f1f84055cf",
+      "bytes": 259985
+    },
+    {
+      "path": "gear/staundeflators/staundeflators.svg",
+      "sha256": "7f30cca1cce734d47a83f6ddfcbd031748d18a992d6391438bb5256cd6b0016c",
+      "bytes": 1146
+    },
+    {
+      "path": "gear/stsultralight0/index.html",
+      "sha256": "1e48fe146ca9b7a2c4d1aee9b0504c2e2497ac793dae633f753ab8ad91d1e9d1",
+      "bytes": 32729
+    },
+    {
+      "path": "gear/stsultralight0/stsultralight0-1.png",
+      "sha256": "2ff536524dcb6a335103603680cf4abd19b97a8ecccb9c9a60f199d86714acdb",
+      "bytes": 1567963
+    },
+    {
+      "path": "gear/stsultralight0/stsultralight0-2.png",
+      "sha256": "104d90d9ee5dcf02e7abdb5778ca99968aca0ac74488da5d0acb71355cf4981b",
+      "bytes": 1681633
+    },
+    {
+      "path": "gear/stsultralight0/stsultralight0.png",
+      "sha256": "b46a46da2f7c96466d631790b58d6d6454d33bfb070526f070be0382bd727c52",
+      "bytes": 1350171
+    },
+    {
+      "path": "gear/vehicle-power/index.html",
+      "sha256": "662515c5bcd9d5cc655629ca8b505efc50f33d1e93f1c8ee6b1b78c4c3aa2960",
+      "bytes": 14999
+    },
+    {
+      "path": "gear/viair88p/index.html",
+      "sha256": "7badc2752af49a74b353441288de84d34a8ceca381d6e99f78f285885a9b2c41",
+      "bytes": 28542
+    },
+    {
+      "path": "gear/viair88p/viair88p.jpg",
+      "sha256": "5076b157b718d6873baafd82203e639eab0f465de99b526e1023807882c80275",
+      "bytes": 208657
+    },
+    {
+      "path": "gear/viair88p/viair88p.svg",
+      "sha256": "c64fb65d5c7c8d4d364a3f44badeb1b414ce64d3aa4676f7a1937a123c73a88b",
+      "bytes": 1191
+    },
+    {
+      "path": "gear/westinghouseheatedblanket/index.html",
+      "sha256": "b80f4933224441132c1d7e6914bb7e94fd2851702f8171ebcf2d0fe5040d30be",
+      "bytes": 18836
+    },
+    {
+      "path": "gear/westinghouseheatedblanket/westinghouseheatedblanket.jpg",
+      "sha256": "d807556693f58be35ca9af10ad2d9cbbff4a55fe562d690612f52797accfa3a9",
+      "bytes": 201873
+    },
+    {
+      "path": "gear/wildpeaktitaniumcookset/index.html",
+      "sha256": "7df02d3a1fa6fff61166640f524ab9917de9d851d0bd3d6107489bf57099669b",
+      "bytes": 23156
+    },
+    {
+      "path": "gear/wildpeaktitaniumcookset/wildpeaktitaniumcookset-dark.png",
+      "sha256": "3a80d1c5ee4afd9ad9230a5a44a19693f91a88c57054e425bc57defceee40f8a",
+      "bytes": 1784510
+    },
+    {
+      "path": "gear/wiseowlstakes/index.html",
+      "sha256": "1a94613b6df5329ffeaade34dd84264afbeb595cccb272e52beaf37a43ce2696",
+      "bytes": 34274
+    },
+    {
+      "path": "gear/wiseowlstakes/wiseowlstakes.jpg",
+      "sha256": "f8d468176d6884000ae51e97b81eec7fbfb3565a83fbbf529c34cb4057da04da",
+      "bytes": 319046
+    },
+    {
+      "path": "gear/wynnskytirerepair/index.html",
+      "sha256": "05e16f2a290ffa56ac20de61368ef3895a9c42ee45386bcc59b85829627cdc1d",
+      "bytes": 29095
+    },
+    {
+      "path": "gear/wynnskytirerepair/wynnskytirerepair.jpg",
+      "sha256": "97596059b4b7f4c58c02430275b4843895c9df95f1e9a0b7d91f2d114cea9680",
+      "bytes": 246408
+    },
+    {
+      "path": "gear/wynnskytirerepair/wynnskytirerepair.svg",
+      "sha256": "ef2f6bce31f0d4f7caf162120830874c4283bae7e6747d30dc6ccb6f7425c0d1",
+      "bytes": 1188
+    },
+    {
+      "path": "gear/xbullrecoveryboards/index.html",
+      "sha256": "9b38adadec283333562cee09859a4b8882eaacddb0c3348e402559aab06a063a",
+      "bytes": 34174
+    },
+    {
+      "path": "gear/xbullrecoveryboards/xbullrecoveryboards.png",
+      "sha256": "00d3898ba702859961ca953ac811a534f1dc92a181d4849b2b501b42909fe631",
+      "bytes": 1314404
+    },
+    {
+      "path": "gear/xbullrecoveryboards/xbullrecoveryboards1-opt.jpg",
+      "sha256": "18c721c8e9326bfd23856a4c4c9f6b0939096acd9316255fc59fc437e32bd6dc",
+      "bytes": 802929
+    },
+    {
+      "path": "gear/xbullrecoveryboards/xbullrecoveryboards1.png",
+      "sha256": "418231337bad9b065318b4ed4a4e498a5ce9ab2a25c3b207f9e1e39165ab4e35",
+      "bytes": 3203756
+    },
+    {
+      "path": "how-to/air-down-tires/index.html",
+      "sha256": "cdc74a1444c5f23e8a9ccae9a26b8ca0ed838bf12c7f8747c37320315847017d",
+      "bytes": 2532
+    },
+    {
+      "path": "how-to/arizona-heat/index.html",
+      "sha256": "44acbd7432876aedb45f4e16d5f02310c7cddf80b3984671168ef117a1f9a49f",
+      "bytes": 2595
+    },
+    {
+      "path": "how-to/back-into-campsite/index.html",
+      "sha256": "af1ae173faea8c5227a6cdc4e7eeb0f4fa304d7c66a4bed5af9ce110663e0dd2",
+      "bytes": 2486
+    },
+    {
+      "path": "how-to/back-up-trailer/index.html",
+      "sha256": "d450c240fbbc271f14420773229571cefd7f47f9d87dbe710d8835d75916d020",
+      "bytes": 6182
+    },
+    {
+      "path": "how-to/bowline-knot/index.html",
+      "sha256": "a46fce65be166870bc692f46ffde428cda0d6da89e1d96d803eecc587f31cf39",
+      "bytes": 2463
+    },
+    {
+      "path": "how-to/camp-dishes-gray-water/index.html",
+      "sha256": "1de8c950699db1b060729b6d14172e5cc5f2f302d1440244a54cf7564f6673e8",
+      "bytes": 2473
+    },
+    {
+      "path": "how-to/camp-handwashing-station/index.html",
+      "sha256": "d0f92b1d2d928e58a7d86644a985cbb04549d762110943aed5ebc8510346d07f",
+      "bytes": 2490
+    },
+    {
+      "path": "how-to/camp-kitchen/index.html",
+      "sha256": "5a14ec4c6fd0f1ae3d49665e539d3978c8edfee62a4a0a6548db4c1417a41508",
+      "bytes": 15719
+    },
+    {
+      "path": "how-to/camping-for-people-who-hate-camping/index.html",
+      "sha256": "191e6d363796878905b57eb8836d18979320b5b2868bf653b441c6ac8cd84cdf",
+      "bytes": 10404
+    },
+    {
+      "path": "how-to/charge-dead-battery/index.html",
+      "sha256": "65550ac41d0cf6a242de0216ad0f5280a9bffc11a016e6bfc429c3727d32b347",
+      "bytes": 2284
+    },
+    {
+      "path": "how-to/choose-campsite/index.html",
+      "sha256": "c358f0e73c5d05d5bc96787955d1d8fcb239ae636d4926e3e213d7fbadc26185",
+      "bytes": 15046
+    },
+    {
+      "path": "how-to/clove-hitch/index.html",
+      "sha256": "48220c6099032ab0054d73c666afa2680e42c4f606941c4cfde8dd6f3caeef3f",
+      "bytes": 2471
+    },
+    {
+      "path": "how-to/cook-over-coals/index.html",
+      "sha256": "078618f3d4dc0a7515083a10883d40726351540cdf367a65532b3574c5718e85",
+      "bytes": 2308
+    },
+    {
+      "path": "how-to/filter-water/index.html",
+      "sha256": "8c40306f9d8a2f1dc0db8865742f02e66eae5d90d83fa605f7c5527e8d9bf821",
+      "bytes": 2560
+    },
+    {
+      "path": "how-to/first-time-arizona-campsites/index.html",
+      "sha256": "c5da9ad5ea70c58abd0f0601e615724bc76a0b8297c6b694dfbc2cf905144cea",
+      "bytes": 10670
+    },
+    {
+      "path": "how-to/fix-stuck-zipper/index.html",
+      "sha256": "3d7fffcec23cc4114b8711560c0955b391da222e3e6dfab3120a8505bd5e73d8",
+      "bytes": 2278
+    },
+    {
+      "path": "how-to/get-unstuck/index.html",
+      "sha256": "235f4de7fd1675cb0e37b1306519313613618bce7944db8254017c703e3dfb97",
+      "bytes": 2556
+    },
+    {
+      "path": "how-to/guy-out-tent/index.html",
+      "sha256": "342cf1eb63b122f23d741f9f49a44f61bcf107071f39f94bc02a51ad876c20db",
+      "bytes": 2527
+    },
+    {
+      "path": "how-to/hook-up-trailer/index.html",
+      "sha256": "6e3e67f7f7114fafb12ff6da9faec3c64f467595e7d3b25be855e51986f6c49d",
+      "bytes": 2304
+    },
+    {
+      "path": "how-to/index.html",
+      "sha256": "91d3862f3baa028c70cfad3490b978dca3841dbb68549893b4405cc710b278e5",
+      "bytes": 7820
+    },
+    {
+      "path": "how-to/jump-start-car/index.html",
+      "sha256": "b588f4d56133e363bec5e7803f34f610419b5adf18f023756a6985aeb7048361",
+      "bytes": 2580
+    },
+    {
+      "path": "how-to/keep-camp-organized/index.html",
+      "sha256": "efe064e53ea9dcc1133fd68f8be8d1c0ed1b20a90023f5846dbf3697acd797ca",
+      "bytes": 2452
+    },
+    {
+      "path": "how-to/keep-cooler-cold/index.html",
+      "sha256": "8d96efe5319d4a2bb865aa2694fed0842400b8fda6e2b2c579c8dcdde64e6c20",
+      "bytes": 2469
+    },
+    {
+      "path": "how-to/pack-car-camping/index.html",
+      "sha256": "647de71e6b54ec71c61990417fce7ce0aff9407c4767f824eced67e00d3253df",
+      "bytes": 21220
+    },
+    {
+      "path": "how-to/patch-air-mattress/index.html",
+      "sha256": "5f12e3d2e6193a02f4b1c7f86e3b385d3040655a3cbeeded8d0c230f90176645",
+      "bytes": 5756
+    },
+    {
+      "path": "how-to/phoenix-hot-weather-camping/index.html",
+      "sha256": "22ee10f119b04372ecc4d39ef3460ea8b5161dd1c0fbca7a0870569eed4f35af",
+      "bytes": 10442
+    },
+    {
+      "path": "how-to/pitch-tarp-wind/index.html",
+      "sha256": "34248298001ed3e7e2e0a0586fb6c5403c1d47128e6ba53b5d94111aef122603",
+      "bytes": 7965
+    },
+    {
+      "path": "how-to/plug-tire/index.html",
+      "sha256": "f4bbf128fb5ad6af5da320d59ed31f11e60f8f7aa6edbaf104eae67550bae2f1",
+      "bytes": 2513
+    },
+    {
+      "path": "how-to/put-out-campfire/index.html",
+      "sha256": "b8ea1d71eb0ed385b5b7c6daa41e3a348cd1b92de794ea484c53256c7edfe0be",
+      "bytes": 2502
+    },
+    {
+      "path": "how-to/read-tape-measure/index.html",
+      "sha256": "1e9f0418d928f42b5e32ad6876fc4d0fbba2fdc02beb407b587573f2222d8ff7",
+      "bytes": 6050
+    },
+    {
+      "path": "how-to/read-topo-map/index.html",
+      "sha256": "800818618af02c9e2eb2c310aab582425d88a8eb5f369db5e3812516efcf3f43",
+      "bytes": 2290
+    },
+    {
+      "path": "how-to/set-up-camp-fast/camp-setup.css",
+      "sha256": "086706d6f6393d5901b93a4b681e119a6287071b53ac48b4f635e035b0d183d4",
+      "bytes": 3160
+    },
+    {
+      "path": "how-to/set-up-camp-fast/index.html",
+      "sha256": "2c389fba6f7d968411f967ac108ba196b82107eaa8cd12a3d487169cb92482d0",
+      "bytes": 2452
+    },
+    {
+      "path": "how-to/sharpen-knife/index.html",
+      "sha256": "736d3ed4a9a8dbbde61fd30a02c6e6a8414e938f9605a4a99102d6e4ec39a97f",
+      "bytes": 2272
+    },
+    {
+      "path": "how-to/sleep-better-tent/index.html",
+      "sha256": "b5bf4d923b4790c880c6148ad6564c1c5d19d925d229bbbd4f27ae7c5de359b1",
+      "bytes": 11338
+    },
+    {
+      "path": "how-to/split-kindling/index.html",
+      "sha256": "8e8c296608ca147356d5f73489663f24d9b139bd24a7809bb5f8b9691c50d960",
+      "bytes": 2470
+    },
+    {
+      "path": "how-to/start-campfire/index.html",
+      "sha256": "40294fcd2af203eae1344318ac648ab9a677d8e1b1f39bf616c0dd05f3dccd40",
+      "bytes": 10194
+    },
+    {
+      "path": "how-to/taut-line-hitch/index.html",
+      "sha256": "e762a03333be5b47f7987c837681b97cdac29d3323860c77a5e36807d7ef6dc0",
+      "bytes": 2500
+    },
+    {
+      "path": "how-to/test-car-battery/index.html",
+      "sha256": "cddbc8d12ccfd09dc0d0da9fa98638f02233c6a1c655890b282e0fc126f480d7",
+      "bytes": 2475
+    },
+    {
+      "path": "how-to/truckers-hitch/index.html",
+      "sha256": "d39475ff3b756e7d7bfec2be53ad2b687932a62fe8b520b938858a735426bef8",
+      "bytes": 2479
+    },
+    {
+      "path": "how-to/use-dial-caliper/index.html",
+      "sha256": "689b7a459d3ec5aca43ffa39075050a4c83dc58f22643b0d344b4dbcbbeebf2c",
+      "bytes": 5836
+    },
+    {
+      "path": "how-to/use-generator-safely/index.html",
+      "sha256": "0aee520c6dc622c245f29816de7533c74a67cf0709bd315f620a6f9c1d4b92c8",
+      "bytes": 2286
+    },
+    {
+      "path": "how-to/use-hatchet-safely/index.html",
+      "sha256": "2265b0394041227c9a550d5b37bef18be51094e19b0684a841cf6bfc10cee168",
+      "bytes": 2512
+    },
+    {
+      "path": "how-to/use-multimeter/index.html",
+      "sha256": "3e22627ced9657e951aa2767c4fa802546f44bbf06293386cedaa349d16eb2c2",
+      "bytes": 5972
+    },
+    {
+      "path": "how-to/use-ratchet-straps/index.html",
+      "sha256": "81ab25750387caf994d8481716b6ee0cc15cd7be7f6b02c8ac363ccf1fa9c139",
+      "bytes": 2560
+    },
+    {
+      "path": "how-to/use-tire-chains/index.html",
+      "sha256": "4e56fb627311fcdd617bc496dbdc6dc745c621410c5ba36465ee84b5d06988db",
+      "bytes": 2304
+    },
+    {
+      "path": "how-to/use-traction-boards/index.html",
+      "sha256": "3aa86e1655a758bd7674ac672279bcf3b144d18ef34450473f6dbc068c68bd5c",
+      "bytes": 2534
+    },
+    {
+      "path": "how-to/weather-turns/index.html",
+      "sha256": "2a70a4488d4e7aa6d05292d8a9fb5c98b51bfb518b4528d1df288423027fde5d",
+      "bytes": 2470
+    },
+    {
+      "path": "index.html",
+      "sha256": "cb08fba69ab6b401d2db5305ad19ba51d195bc0438f123fbfc6872f25e6edb14",
+      "bytes": 107046
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "c2436b7ae5f59569056fa4c2bddfec1f4ae774349a41fa2c549363aa8ac2d406",
+      "bytes": 498
+    },
+    {
+      "path": "offline/index.html",
+      "sha256": "5c9e2337545e72f4936f4d945dad370cb132d4479aac92a1493381e80cf37a6e",
+      "bytes": 670
+    },
+    {
+      "path": "privacy/index.html",
+      "sha256": "b01a83c0c7a41e94eed98660c3f3fcba2e42d17e06868abe90e6e2c59f80080a",
+      "bytes": 4105
+    },
+    {
+      "path": "project-service-map.js",
+      "sha256": "ff9c12543587fcefb65d715dfeedef54a05643b127d168623f9e8f6eab3b863b",
+      "bytes": 4061
+    },
+    {
+      "path": "projects/66c10/index.html",
+      "sha256": "3e5b2b7c80680c833e704f81b0b67692872c655cf498a234139883f29767500e",
+      "bytes": 30925
+    },
+    {
+      "path": "projects/66c10/truck0.jpg",
+      "sha256": "a7455f8cf7e90d14c77a888b7abbd97b58e448b59b31701d3441cd49a3ca7b51",
+      "bytes": 1209799
+    },
+    {
+      "path": "projects/66c10/truck1.jpg",
+      "sha256": "c94f87a3d26a3f9798f87fb13c14a6dfd322b9f15ce2dd5302c0e75fc42e5fd5",
+      "bytes": 165817
+    },
+    {
+      "path": "projects/66c10/truck2-opt.jpg",
+      "sha256": "79231edbd7adfe5eeda9d9c182ecaab72d6a1dbd40d427d6e900b359773f11cd",
+      "bytes": 499428
+    },
+    {
+      "path": "projects/66c10/truck2.jpg",
+      "sha256": "72aec0e6256a3a0abd09b0d2f30ad711cf37caa1d78627ef03851e1945fb0683",
+      "bytes": 3476966
+    },
+    {
+      "path": "projects/66c10/truck3.jpg",
+      "sha256": "11b32bfc3b9dba36a081b687308e34041d512823b77e8126275026dd5bc523ac",
+      "bytes": 165950
+    },
+    {
+      "path": "projects/66c10/truck4.jpg",
+      "sha256": "dc9abd792c1b5acd1e77003cd8addb274708e1d8a4caf9255b4f6802b8e8cbfc",
+      "bytes": 1286918
+    },
+    {
+      "path": "projects/66c10/truck5.jpg",
+      "sha256": "e328449e3670e1acdde514b38637a79b1baea13fa565c83c527935a8ab0f5a80",
+      "bytes": 1417353
+    },
+    {
+      "path": "projects/66c10/truck6.jpg",
+      "sha256": "278fc0d02239a5041f46ed94e98eb6e134b696be7f29437d238dca5127688087",
+      "bytes": 1278107
+    },
+    {
+      "path": "projects/66c10/truck7-opt.jpg",
+      "sha256": "b8c0178e1470af49da985ac897f930609e6fd59d141ab24948776a810171202d",
+      "bytes": 339730
+    },
+    {
+      "path": "projects/66c10/truck7.jpg",
+      "sha256": "fa1c12b64059368bec61b7a69c8aa14e040441ff0aad3b0420453ae3485027b1",
+      "bytes": 4705282
+    },
+    {
+      "path": "projects/cherokee/index.html",
+      "sha256": "24c7c0975f7e36f24f8fa162397818aececf14f5014b982d7db6d714353fc31a",
+      "bytes": 34190
+    },
+    {
+      "path": "projects/cherokee/jeep.jpg",
+      "sha256": "a9c095111de56dd86450f7c7d465b6f0e717c6aec98017df331a66a45c4b91a5",
+      "bytes": 1548817
+    },
+    {
+      "path": "projects/cherokee/jeep1.jpg",
+      "sha256": "d789fe4527e0e3bbb3c35c49d922ca4f63f6c8fe189aed4a0f04b456e166128a",
+      "bytes": 166226
+    },
+    {
+      "path": "projects/cherokee/jeep10.jpg",
+      "sha256": "dbac19e66f1b3ab963588a6f2a94f13f4569d841821d30392eb1cbcf360e8756",
+      "bytes": 195431
+    },
+    {
+      "path": "projects/cherokee/jeep11.jpg",
+      "sha256": "6db82361eb207b2d26513855b094668db304b898e27043563b6162c3ea783ec7",
+      "bytes": 235518
+    },
+    {
+      "path": "projects/cherokee/jeep2.jpg",
+      "sha256": "1dff6beb39646643a42ee33c9589ad48643930eeedd99be569b6f0ee2440bd77",
+      "bytes": 206335
+    },
+    {
+      "path": "projects/cherokee/jeep3.jpg",
+      "sha256": "3eb39b15d2620dc2e4ed937f5f48ecee64548eb0a3e987e1886cfff484e10e21",
+      "bytes": 183419
+    },
+    {
+      "path": "projects/cherokee/jeep4.jpg",
+      "sha256": "4deec52fcb77ba4bde565d758b6a9bf7405ae654292f352e0a31d2ba3ee1d826",
+      "bytes": 226022
+    },
+    {
+      "path": "projects/cherokee/jeep5.jpg",
+      "sha256": "92064855e7de7ad9a26c6a81b2acac8de1c055b8080496d077001f828210bf52",
+      "bytes": 84689
+    },
+    {
+      "path": "projects/cherokee/jeep6.jpg",
+      "sha256": "d74cc0e9e70e7a88fdf647a9335c811087586d018d2552bb504ab41f5ac03093",
+      "bytes": 123705
+    },
+    {
+      "path": "projects/cherokee/jeep7.jpg",
+      "sha256": "f6718f2c93ea54f7586d01b110ae28b58b3b89398bc7cfe7053c155ac2e105ca",
+      "bytes": 142113
+    },
+    {
+      "path": "projects/cherokee/jeep8.jpg",
+      "sha256": "87694b98b08aae59f9c5c88bb7c7e62ac61f68152f72b50628fb2cc4fff42272",
+      "bytes": 197019
+    },
+    {
+      "path": "projects/cherokee/jeep9.jpg",
+      "sha256": "f0e94264ad60e54528aab55a804f36a331e937f0f62109351e7d6d4b5ab2dc0f",
+      "bytes": 186903
+    },
+    {
+      "path": "projects/empire-site/empire_site1.png",
+      "sha256": "ca98914920cd62b97de05f12d43bf59ce79e0e5aede8a03cf747f87e96607d9b",
+      "bytes": 593001
+    },
+    {
+      "path": "projects/empire-site/empire_site2.png",
+      "sha256": "dbb100bb75fef55336d9930a2bc9caf2dfab044f0fa8358cab1ab98d6741a028",
+      "bytes": 379855
+    },
+    {
+      "path": "projects/empire-site/empire_site3.png",
+      "sha256": "7c504242bcfd687e9cda95cb1a12c2ccf7d9e096fc4a8ef9adae2ec3baaef789",
+      "bytes": 642368
+    },
+    {
+      "path": "projects/empire-site/empire_site4.png",
+      "sha256": "95996c8c739ae9fad066011d16f19f15a0f2de25db2457eec34aef937105da1a",
+      "bytes": 168620
+    },
+    {
+      "path": "projects/empire-site/index.html",
+      "sha256": "64f3d3de86f247a8289b2427b0d0f5f62a07ea5009556ec2aa7ebff178fc3b60",
+      "bytes": 36581
+    },
+    {
+      "path": "projects/empire-site/laptop.png",
+      "sha256": "459166efe8525cd2dd1ad4b03498c494ede3537ab418d51b4f350b8afb2a3f41",
+      "bytes": 1478678
+    },
+    {
+      "path": "projects/index.html",
+      "sha256": "5ba918fb2c21cf3e19d3de92643b4487f79fcc6b571f264a166c62a538dbb2af",
+      "bytes": 17521
+    },
+    {
+      "path": "projects/mailbox/index.html",
+      "sha256": "a09232161c5341102e5fad921aa68f444bb64a95a3c9c1e365d68ded0ab62acb",
+      "bytes": 29739
+    },
+    {
+      "path": "projects/mailbox/mailbox.jpg",
+      "sha256": "d2fa2537bc9f18c2f99409335eb5844bc477dfe5d80a46077a8dced2953f27e0",
+      "bytes": 61296
+    },
+    {
+      "path": "projects/mailbox/mailbox1.jpg",
+      "sha256": "3aebe6ea3ad07c525fd586f0bc18b2348b8d07cd2033e087c49cbccdaaddf387",
+      "bytes": 480650
+    },
+    {
+      "path": "projects/router-table/index.html",
+      "sha256": "6806e3824ab32dc97daa6290d12d1064699962bf008fc1cd46f14fd8d6794214",
+      "bytes": 31425
+    },
+    {
+      "path": "projects/router-table/router1.jpg",
+      "sha256": "64879c50f0a7e8c5280567ebd77393d966cede3cddb1fa59c0e141fcdb447d96",
+      "bytes": 304343
+    },
+    {
+      "path": "projects/router-table/router10.jpg",
+      "sha256": "38614f854fcb166109798aaf2f17de4c97df58d906d9879147ba7034fc8b5d1a",
+      "bytes": 318148
+    },
+    {
+      "path": "projects/router-table/router11.jpg",
+      "sha256": "a730d2a7f9bb068b73575640310ebd93b694998d675e2a23d094f73804202039",
+      "bytes": 310886
+    },
+    {
+      "path": "projects/router-table/router12.jpg",
+      "sha256": "0d9cd0ae4a9a8ccb7cf10e87b6b7f9873c74999060948a2809fbc67ab5389a16",
+      "bytes": 305520
+    },
+    {
+      "path": "projects/router-table/router2.jpg",
+      "sha256": "89a4d1f54dbc6ffdb0229ed6c05e8fd3262a92aada28f2067ab2534873b68772",
+      "bytes": 281287
+    },
+    {
+      "path": "projects/router-table/router3.jpg",
+      "sha256": "d6ca275600a99a40f268b4da847b02c361e52b6cf9f3dcda30a875b14e502448",
+      "bytes": 302870
+    },
+    {
+      "path": "projects/router-table/router4.jpg",
+      "sha256": "a9038fec8cf2479ef6fb953888da1607cfe184f4b850c4547a424bcbfbe115af",
+      "bytes": 277480
+    },
+    {
+      "path": "projects/router-table/router5.jpg",
+      "sha256": "24897bcca0bd48ef48bcbe6a9e2bf9ea617f03c830972474a7346462f8b35fc4",
+      "bytes": 208401
+    },
+    {
+      "path": "projects/router-table/router6.jpg",
+      "sha256": "78047f2feca296b5751d50b0291483b40ee285e9a6822fd3c3625316d358fe61",
+      "bytes": 323564
+    },
+    {
+      "path": "projects/router-table/router7.jpg",
+      "sha256": "f255aa35ee8809e7bf95ebae1d18087767b8400f7bbcc2f5b589a2d11e4b28ea",
+      "bytes": 377759
+    },
+    {
+      "path": "projects/router-table/router8.jpg",
+      "sha256": "29335ee9e094218c6a2ece630c252fbd215190a762466ed20bc26904bef9b2ab",
+      "bytes": 306021
+    },
+    {
+      "path": "projects/router-table/router9.jpg",
+      "sha256": "f776e35561dadfa82f542553b33885ee53e2babdb7b5e39bb07f9911b0c48e03",
+      "bytes": 328881
+    },
+    {
+      "path": "projects/solar-rooftop/index.html",
+      "sha256": "2922dbf8c6b3d1dbe8e4236f31c8ab84e9a4b51519d64470aa6033c3c69bb755",
+      "bytes": 29873
+    },
+    {
+      "path": "projects/solar-rooftop/solar0.jpg",
+      "sha256": "a4b269bb22682e34c721edf07c325338023cc5a5ea3c71a917482d18b9a414b6",
+      "bytes": 370875
+    },
+    {
+      "path": "projects/solar-rooftop/solar1.jpg",
+      "sha256": "89e66da0e7080c7508c4b1becfa1889612ebd7e08554664ae1a50689b77b2adb",
+      "bytes": 263710
+    },
+    {
+      "path": "projects/solar-rooftop/solar2.jpg",
+      "sha256": "add7b977c4a7b7da3d34f1670bab537edd42abc901467e1b3386fc4fe2c144fa",
+      "bytes": 150856
+    },
+    {
+      "path": "projects/solar-rooftop/solar3.jpg",
+      "sha256": "55ac7e23da55be891485203eb13af433944b047c242d9ae0259fe6bc37259aca",
+      "bytes": 353057
+    },
+    {
+      "path": "projects/steel-pergola/index.html",
+      "sha256": "1c63b9d856d4199d284e69fdde44324276d053a44dbdde32cbda9a4f435c9c94",
+      "bytes": 28674
+    },
+    {
+      "path": "projects/steel-pergola/pergola.jpg",
+      "sha256": "bdf7b36082dff6c3f852a4a4f328f0bbc27643643c38d9abe60fe23cfce987a0",
+      "bytes": 385249
+    },
+    {
+      "path": "projects/steel-pergola/pergola1.jpg",
+      "sha256": "b709e982085ff78fb713448892a1557a95aacefc6ec835d64b5966e50db6ce4e",
+      "bytes": 347749
+    },
+    {
+      "path": "projects/steel-pergola/pergola2.jpg",
+      "sha256": "f10e15a8166906b4af06d7ec2ec959918ac519c582c685a8569da2dcf989e4f4",
+      "bytes": 362302
+    },
+    {
+      "path": "projects/steel-pergola/pergola3.jpg",
+      "sha256": "556d03448fec8d68af1f1e936f35bf7e1d2354b75481df5a7c9d1dff306eecec",
+      "bytes": 512459
+    },
+    {
+      "path": "projects/steel-pergola/pergola4.jpg",
+      "sha256": "7e6d26a0fc6c5467d9f5c3dbfe1eac5810525fb4505c582e14e089ebb09ad169",
+      "bytes": 462138
+    },
+    {
+      "path": "projects/steel-pergola/pergola5.jpg",
+      "sha256": "8ab161900ab3c80632c524f36bbf566c361613dda785d8da06a4aac6c5bc83da",
+      "bytes": 401658
+    },
+    {
+      "path": "projects/steel-pergola/pergola6.jpg",
+      "sha256": "58633f1c5011352026b1ba0bd4165ba2b371eda245544a5b9d0d39d62cf29789",
+      "bytes": 383390
+    },
+    {
+      "path": "projects/steel-pergola/pergola7.jpg",
+      "sha256": "640a7b0d19847729e8281d2e4d097757c9556a6ce610673283ec6dcdb171542b",
+      "bytes": 384789
+    },
+    {
+      "path": "projects/steel-pergola/pergola8.jpg",
+      "sha256": "9e858a6f90f268bb0c3ac8ed2596a4daba4af2201f271c6410825bf8f591c0c1",
+      "bytes": 424599
+    },
+    {
+      "path": "projects/van-rack/index.html",
+      "sha256": "f8e925cacc0fdc0e2dae2434156c3d0a62bf1accf63f50c5ff3cddd05560ae6f",
+      "bytes": 28659
+    },
+    {
+      "path": "projects/van-rack/van_rack.jpg",
+      "sha256": "7ab4d2c7f07a3147f959bb43a7228b759fe2c95a41c049851f259e80cd4c5761",
+      "bytes": 137332
+    },
+    {
+      "path": "projects/van-rack/van_rack1.jpg",
+      "sha256": "f05eb3b67da399d71c2aadeaffb4d688ad4bee3cb4b235591941eddd8c027556",
+      "bytes": 904394
+    },
+    {
+      "path": "projects/van-rack/van_rack2.jpg",
+      "sha256": "f2c9599227e5298dbcf0c1508914d0528502a7bd054ae7947b04a3db4b1c2bee",
+      "bytes": 69941
+    },
+    {
+      "path": "projects/van-rack/van_rack3.jpg",
+      "sha256": "172ea4b9fdcbdee9bca16d509a53dd0aabc38374e29f98de495d45aa6eb21913",
+      "bytes": 65144
+    },
+    {
+      "path": "projects/xj-battery/index.html",
+      "sha256": "f28804e4ed3fbc0f2cacf3d20f5f2a81b2fe5d062ee510fa834577ad4dc5229c",
+      "bytes": 31622
+    },
+    {
+      "path": "projects/xj-battery/xj_battery.jpg",
+      "sha256": "4b8e99761fca499fbb39306541ee2ca1f74fbdf2a5cd688eda210860a6023a8f",
+      "bytes": 1663819
+    },
+    {
+      "path": "projects/xj-battery/xj_battery1.jpg",
+      "sha256": "9d4902c9856d565641134cf727fe23c9c65f56fbdf846a5c60a7b1595e52d2e5",
+      "bytes": 113223
+    },
+    {
+      "path": "projects/xj-battery/xj_battery2.jpg",
+      "sha256": "b503b90c96d74807d66ca08f0666282a175026dfc4d7a7cfa03a5e8fcdf2c4d4",
+      "bytes": 119739
+    },
+    {
+      "path": "projects/xj-battery/xj_battery3.jpg",
+      "sha256": "444fd544a1cb74763211fc3974266073e521bcdb9ab3fd703b798ab975346a2d",
+      "bytes": 108179
+    },
+    {
+      "path": "projects/xj-battery/xj_battery4.jpg",
+      "sha256": "937db6df9f591db23af1756f61cc58a116a15555dec6825a9e8320cbcca7bfc1",
+      "bytes": 168384
+    },
+    {
+      "path": "related-content.js",
+      "sha256": "8554deb5a5797cde343b80f70846759f646b5810845a44d937d47e05c3448cbd",
+      "bytes": 67953
+    },
+    {
+      "path": "repo/angle_miter_calculator.html",
+      "sha256": "697fba37d1ec0848effa8f0ee9bb0049ef760ba828ada738a0b4110bc5e3f3f6",
+      "bytes": 22702
+    },
+    {
+      "path": "repo/backpacking_checklist.html",
+      "sha256": "c759a9a475c676244687ebf186451d991d6ab707e756e42c7b14b76cdd1f056a",
+      "bytes": 18216
+    },
+    {
+      "path": "repo/camp_match.html",
+      "sha256": "cc1869d1bc6e7159bf03d8f1a043ec7e5443d75ffd166e943e5b574e867aa25c",
+      "bytes": 33695
+    },
+    {
+      "path": "repo/campgrounds.html",
+      "sha256": "c67aacfac9356975f6fa985e47fa17e5cd13aab9be61c6d7cfe4d74fef2dc0f7",
+      "bytes": 19842
+    },
+    {
+      "path": "repo/car_camping_checklist.html",
+      "sha256": "37a062f92e4eb155523b45e880f52ccc38de686870f86eb4b9db9da156c19d7b",
+      "bytes": 21004
+    },
+    {
+      "path": "repo/cookbook.html",
+      "sha256": "54036a0ba3a66470f3e8cc38bc9084f22c25245a2314c1e6ce884ab2498240a0",
+      "bytes": 39830
+    },
+    {
+      "path": "repo/critter_hazards.html",
+      "sha256": "92c79ab920050e41779f7fa8d5452a144456cb979d53ce2eaee746bd2d952ce9",
+      "bytes": 34599
+    },
+    {
+      "path": "repo/cut_list_calculator.html",
+      "sha256": "638f62bb3b40867a8412799ac5da0afdccc85488a15fbab55e0528c263a59412",
+      "bytes": 34478
+    },
+    {
+      "path": "repo/desert_plants_reference.html",
+      "sha256": "6d1add4aec73f3277ef14eef8ec5ecf70af6121798539817559e1301e2c3889f",
+      "bytes": 36930
+    },
+    {
+      "path": "repo/dxf_nesting.html",
+      "sha256": "66f5182b67f31ea24c8b8d87691891cd4e1aa489df42b0feb443197ca2dbe363",
+      "bytes": 49985
+    },
+    {
+      "path": "repo/index.html",
+      "sha256": "4dba6a1bd59e4336421321e996e73036b3e020cd66171829c58390eb6576a1d0",
+      "bytes": 8825
+    },
+    {
+      "path": "repo/material_weight_cost_estimator.html",
+      "sha256": "b03cee40eddf075adfee8091306ea2cb55b05e2eb3ae3b27123fed823f48609b",
+      "bytes": 29436
+    },
+    {
+      "path": "repo/panel_layout_calculator.html",
+      "sha256": "ea75efc1afc89caaefa896daf2a95bc536ef479fe77c21c7d5624cb46bf182a2",
+      "bytes": 37452
+    },
+    {
+      "path": "repo/pipe_table.html",
+      "sha256": "c59303ec75b8a7f81605206e33fbe481a19a17a6c34e25358b1e8029b15851f7",
+      "bytes": 23938
+    },
+    {
+      "path": "repo/sheet_metal_gauge_reference.html",
+      "sha256": "d6a2bf2383836d173375dee5d63fe974e2107dfd29853e3ef4d03e0633bea757",
+      "bytes": 16069
+    },
+    {
+      "path": "repo/sheet_metal_weight.html",
+      "sha256": "f40e886d00e43d95ebc4e93aa1632159e511df1b8deba79cdbd50b888c2872e4",
+      "bytes": 28563
+    },
+    {
+      "path": "repo/tool_shell.js",
+      "sha256": "f92da3b5ad67d09f93cdf7d3565dca9452b108e1c6833d4790ce7323b839273f",
+      "bytes": 6276
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "35b12921ea82994578aec8072dd909f53892c918c6c9b987364e3293b757e7cd",
+      "bytes": 69
+    },
+    {
+      "path": "script.js",
+      "sha256": "aea70714cf1af88af00c0830467de6cf7b063d5166d19b0c5aeaff88509a9bad",
+      "bytes": 53083
+    },
+    {
+      "path": "search/index.html",
+      "sha256": "b107bb7e812a8c7abd3669a765fdfeb83ca0403fa2720270f5f79ab488772df7",
+      "bytes": 3615
+    },
+    {
+      "path": "services/consulting/index.html",
+      "sha256": "7215b7001e8427e120be4c36af42091d879cfa56269a04f9570f627337e6847c",
+      "bytes": 10822
+    },
+    {
+      "path": "services/fabrication/index.html",
+      "sha256": "f3650142603da11ccef17e7adf483d2d34b0dec4e88640598075c44f2b4b6149",
+      "bytes": 10940
+    },
+    {
+      "path": "services/index.html",
+      "sha256": "44b27ef96e4d891cfb8c5129a220bf8ebe28121f78676fb8bdb79fce0b045ff5",
+      "bytes": 1612
+    },
+    {
+      "path": "services/project-management/index.html",
+      "sha256": "848cf335d837775f4b0c4a124f1f2c9b25cab49d516414059c4c83f05b6574bb",
+      "bytes": 10963
+    },
+    {
+      "path": "services/systems/index.html",
+      "sha256": "8996fdf236f6e22fb7b14afdbe976e0281c9da96a86311ab89e20dcbf7c97c7c",
+      "bytes": 1472
+    },
+    {
+      "path": "services/websites/index.html",
+      "sha256": "d3f39d9692a8250e2a62e80dd2082536856864861874b01b59f55718de5b2e81",
+      "bytes": 11002
+    },
+    {
+      "path": "site.webmanifest",
+      "sha256": "c2436b7ae5f59569056fa4c2bddfec1f4ae774349a41fa2c549363aa8ac2d406",
+      "bytes": 498
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "211ab5e07696bbeece2281bc017d104911ee43f1f524de96ada352df85c12173",
+      "bytes": 12362
+    },
+    {
+      "path": "store/index.html",
+      "sha256": "41b926fe7f837a3f3cb0e51d1013302ac84637c463ad6801ff7ed5fed51a85f5",
+      "bytes": 73717
+    },
+    {
+      "path": "styles.css",
+      "sha256": "38132cae66d4e8c338f1efeff8ca187b92091273af461e45f201dea8dbfd8aee",
+      "bytes": 374632
+    },
+    {
+      "path": "sw.js",
+      "sha256": "ae73241ea7c544260568be17d0a040773d32cf420423bbe9bbc309bbc75c9ff3",
+      "bytes": 1899
+    }
+  ]
+}

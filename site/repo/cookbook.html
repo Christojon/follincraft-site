@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Camp Cookbook - Follincraft</title>
+<meta name="description" content="A camp cookbook with simple meals, ingredients, prep notes, and food ideas that travel well for car camping and outdoor trips.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Camp Cookbook">
+  <meta property="og:description" content="A camp cookbook with simple meals, ingredients, prep notes, and food ideas that travel well for car camping and outdoor trips.">
+  <meta property="og:url" content="https://follincraft.com/repo/cookbook.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Camp Cookbook">
+  <meta name="twitter:description" content="A camp cookbook with simple meals, ingredients, prep notes, and food ideas that travel well for car camping and outdoor trips.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/cookbook.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0b0f14;--card:#11161d;--ink:#e9edf2;--muted:#9aa6b2;--line:#1b2430;--orange:#ea580c;
+}
+html,body{margin:0;height:100%;background:linear-gradient(180deg,#0b0f14,#0a0d12);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.tool-page{padding:94px 0 40px}
+.tool-intro{max-width:1160px;margin:0 auto;padding:0 18px 18px}
+.eyebrow{margin:0 0 6px;color:#fff;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.tool-intro h1{margin:0;font-size:42px;line-height:1.05;color:var(--orange)}
+.tool-intro p{margin:12px 0 0;max-width:760px;color:var(--muted);font-size:16px;line-height:1.55}
+.cookbook-wrap{max-width:1160px;margin:0 auto;padding:18px}
+.cookbook-hero{position:sticky;top:0;z-index:20;background:#0b0f14f2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.cookbook-hero-row{display:flex;align-items:center;gap:14px;max-width:1160px;margin:0 auto;padding:14px 18px}
+.mark{width:42px;height:42px;display:grid;place-items:center}
+.mark svg{width:34px;height:34px;fill:var(--orange)}
+.cookbook-title{margin:0;font-size:22px;font-weight:800;color:var(--orange)}
+.spacer{flex:1}
+.btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 10px;border-radius:10px;cursor:pointer}
+.btn:hover{border-color:#2a3342}
+.btn.primary{background:var(--orange);color:#0c0f14;border-color:#000;font-weight:800}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 10px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#0e1218;color:var(--muted);cursor:pointer;font-size:12px}
+.pill.active{border-color:#ff8a3d;color:var(--ink);box-shadow:0 0 0 1px #ff8a3d33 inset}
+.search{display:flex;gap:8px;align-items:center}
+.search input{background:#0e1218;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 10px;min-width:280px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
+details.card{border:1px solid var(--line);background:#11161d;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #0007}
+details.card summary{display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer;list-style:none;border-bottom:1px solid var(--line)}
+details.card summary::-webkit-details-marker{display:none}
+.ic{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px}
+.ic svg{width:36px;height:36px;fill:var(--orange)}
+.title{font-weight:800;color:#ffffff}
+.meta{font-size:12px;color:var(--muted)}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.badge{font-size:11px;border:1px solid var(--line);background:#0d1218;color:var(--muted);padding:3px 7px;border-radius:999px}
+.chev{margin-left:auto;width:16px;height:16px;fill:var(--muted);transform:rotate(-90deg);transition:transform .15s ease}
+details[open] .chev{transform:rotate(0)}
+.body{padding:14px}
+.row{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:780px){.row{grid-template-columns:1fr 1fr}}
+.section{border:1px solid var(--line);background:#0f141b;border-radius:14px;padding:12px}
+.section h3{margin:0 0 8px 0;color:var(--orange);font-size:14px}
+.kv{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;border:1px solid var(--line);background:#0d1218;color:var(--muted);padding:5px 8px;border-radius:999px}
+.ing{display:flex;align-items:center;gap:10px;padding:8px;border:1px dashed #1a2230;border-radius:12px;margin:6px 0;background:#0c1117}
+.ing input[type=checkbox]{width:18px;height:18px;cursor:pointer;-webkit-appearance:none;appearance:none;border:2px solid var(--orange);border-radius:4px;background:none;position:relative}
+.ing input[type=checkbox]:checked{background:var(--orange);border-color:var(--orange)}
+.ing input[type=checkbox]:checked::after{content:"";position:absolute;left:4px;top:0;width:4px;height:9px;border:solid #0b0f15;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.store{margin-left:auto;font-size:11px;color:#ffb089;border:1px solid #1f2a36;background:#141a21;padding:2px 6px;border-radius:999px}
+ol{margin:8px 0 0 18px;padding:0}
+ol li{margin:6px 0;color:#cfd5dc}
+ul.bul{margin:8px 0 0 18px}
+.small{font-size:12px;color:var(--muted)}
+.tip{border-left:3px solid var(--orange);padding:8px 10px;background:#0c1218;border-radius:8px;margin:6px 0}
+@media(max-width:700px){
+  .tool-page{padding-top:86px}
+  .tool-intro{padding:0 16px 16px}
+  .tool-intro h1{font-size:34px}
+  .tool-intro p{font-size:15px}
+  .cookbook-wrap{padding:16px}
+  .cookbook-hero-row{padding:12px 16px}
+}
+</style>
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Camp Cookbook",
+  "description": "A camp cookbook with simple meals, ingredients, prep notes, and food ideas that travel well for car camping and outdoor trips.",
+  "url": "https://follincraft.com/repo/cookbook.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Camp Cookbook",
+      "item": "https://follincraft.com/repo/cookbook.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+      <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+    </div>
+                      <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </div>
+</header>
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+              <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+</div>
+<main class="tool-page">
+<section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Camp Cookbook</span></p>
+  <p class="eyebrow">Camp Resource</p>
+  <h1>Camp Cookbook</h1>
+  <p>Simple camp meals that pack cleanly, cook with normal camp gear, and turn into a useful grocery list before you leave.</p>
+</section>
+<header class="cookbook-hero">
+  <div class="cookbook-hero-row">
+    <div class="spacer"></div>
+    <button class="btn" id="collapseAll">Collapse all</button>
+    <button class="btn" id="expandAll">Expand all</button>
+    <button class="btn" id="copyGrocery">Copy grocery list</button>
+    <button class="btn" id="printBtn">Print</button>
+  </div>
+</header>
+
+<div class="cookbook-wrap">
+  <div class="filters">
+    <div class="search">
+      <input id="q" placeholder="Search recipes or ingredients" aria-label="Search recipes or ingredients"/>
+      <button class="btn" id="resetFilters">Reset</button>
+    </div>
+    <span class="pill" data-filter="meal:breakfast">Breakfast</span>
+    <span class="pill" data-filter="meal:dinner">Mains</span>
+    <span class="pill" data-filter="meal:side">Sides</span>
+    <span class="pill" data-filter="meal:dessert">Dessert</span>
+    <span class="pill" data-filter="meal:snack">Snacks</span>
+    <span class="pill" data-filter="method:skillet">Skillet</span>
+    <span class="pill" data-filter="method:grill">Grill</span>
+    <span class="pill" data-filter="method:foil">Foil Packets</span>
+    <span class="pill" data-filter="method:fire">Campfire</span>
+    <span class="pill" data-filter="tag:kid">Kid Friendly</span>
+    <span class="pill" data-filter="tag:make-ahead">Make-ahead</span>
+    <span class="pill" data-filter="time:15">Under 15</span>
+    <span class="pill" data-filter="time:30">Under 30</span>
+  </div>
+
+  <div id="grid" class="grid"></div>
+</div>
+
+<script>
+/* icons */
+function icon(kind){
+  switch(kind){
+    case 'chef': return '<path d="M7 10h10v8H7z"/><path d="M8 10a4 4 0 1 1 8 0"/>';
+    case 'clock':return '<circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/>';
+    case 'users':return '<path d="M16 11a3 3 0 1 0-4 0a5 5 0 0 0-6 5v1h16v-1a5 5 0 0 0-6-5z"/>';
+    case 'pan':  return '<rect x="5" y="10" width="10" height="6" rx="2"/><path d="M15 12h4"/>';
+    case 'chev': return '<path d="M8 5l8 7-8 7"/>';
+    default:     return '<circle cx="12" cy="12" r="9"/>';
+  }
+}
+function ing(txt,store){return {txt,store}} // 'D' dry, 'C' cooler
+
+/* RECIPES — your list with upgraded, practical directions */
+const RECIPES = [
+/* ======================= BREAKFAST ======================= */
+{id:'breakfast-burritos',meal:'breakfast',name:'Breakfast Burritos',method:['skillet','fire'],time:30,serves:4,tags:['kid','make-ahead'],
+  gear:['12" skillet','spatula','foil'],target:'—',
+  ingredients:[ing('8 medium tortillas','D'),ing('6 eggs','C'),ing('12 oz breakfast sausage or bacon','C'),ing('2 cups diced potatoes (precooked or frozen hash)','C'),ing('1 cup shredded cheese','C'),ing('Salsa','C'),ing('Oil','D')],
+  tips:['Cook meat & potatoes at home to bag-and-reheat for dawn starts.','Reheat wrapped burritos 3–5 min on coals.'],
+  directions:[
+    'Heat skillet medium. Cook sausage/bacon until browned and crisp, 5–7 min; remove, leaving 1–2 tbsp fat.',
+    'Add 1 tbsp oil if pan is dry. Fry potatoes over medium-high until golden on the edges, 5–7 min; salt & pepper.',
+    'Push potatoes to one side. Crack eggs into empty side; scramble just to set.',
+    'Return meat; fold together. Kill hot spots if using fire by sliding pan off direct flame.',
+    'Warm tortillas on grate or dry pan (10–20 sec/side). Fill with egg/meat/potato, cheese, salsa; roll tight.',
+    'Optional: wrap in foil and warm on grate 3–5 min to meld.'
+  ]
+},
+{id:'chorizo-skillet',meal:'breakfast',name:'Chorizo Breakfast Skillet',method:['skillet','fire'],time:22,serves:4,tags:['spicy'],
+  gear:['skillet','lid/foil'],target:'—',
+  ingredients:[ing('9 oz chorizo','C'),ing('1 onion, diced','D'),ing('1 bell pepper, diced','D'),ing('4–6 eggs','C'),ing('1 cup cheese','C'),ing('Oil','D'),ing('Tortillas (opt)','D')],
+  tips:['Covering traps heat so eggs set without burning the bottom.'],
+  directions:[
+    'Medium heat. Brown chorizo 4–5 min until it darkens and renders.',
+    'Add onion & pepper; cook to soft edges and a few char spots, 4–6 min.',
+    'Level mixture. Make 4–6 wells. Crack one egg in each; sprinkle salt.',
+    'Cover with lid/foil 2–4 min until whites set and yolks jammy.',
+    'Scatter cheese; cover 30 sec to melt. Serve with warm tortillas.'
+  ]
+},
+{id:'bacon-egg-hash',meal:'breakfast',name:'Cheesy Bacon & Egg Hash',method:['skillet','fire'],time:24,serves:4,tags:['kid'],
+  gear:['skillet'],target:'—',
+  ingredients:[ing('6 strips bacon','C'),ing('1.5 lb potatoes, 1/2\" dice','D'),ing('4 eggs','C'),ing('1 cup shredded cheese','C'),ing('Salt & pepper','D')],
+  tips:['Par-cook potatoes 4–5 min in microwave at home to halve fuel time.'],
+  directions:[
+    'Cook bacon to crisp; remove and chop. Leave ~2 tbsp fat.',
+    'Add potatoes; cook medium-high, stirring only every 2–3 min to develop crust. 8–12 min to tender-crisp.',
+    'Return bacon; season. Make 4 wells and crack eggs.',
+    'Cover to set eggs to preference; sprinkle cheese to melt. Rest 1 min.'
+  ]
+},
+{id:'muffin-sandwich',meal:'breakfast',name:'Sausage, Egg & Cheese Muffin Sandwiches',method:['skillet'],time:15,serves:4,tags:['kid','make-ahead'],
+  gear:['skillet'],target:'—',
+  ingredients:[ing('4 English muffins','D'),ing('4 sausage patties','C'),ing('4 eggs','C'),ing('4 cheese slices','C'),ing('Butter or oil','D')],
+  tips:['Wrap finished sandwiches in foil for grab-and-go mornings.'],
+  directions:[
+    'Split muffins; toast on dry pan or grate until edges crisp.',
+    'Warm sausage 2–3 min/side; move to cooler edge to hold.',
+    'Add fat if needed; fry eggs to preference, salt & pepper.',
+    'Build: muffin + sausage + egg + cheese + lid. Press lightly to melt.'
+  ]
+},
+{id:'breakfast-taquitos',meal:'breakfast',name:'Egg & Sausage Breakfast Taquitos',method:['skillet'],time:18,serves:4,tags:['kid','make-ahead'],
+  gear:['skillet'],target:'—',
+  ingredients:[ing('12 small tortillas','D'),ing('6 eggs','C'),ing('8 oz cooked sausage, crumbled','C'),ing('1 cup cheese','C'),ing('Oil','D')],
+  tips:['Roll tight with seam down so they self-seal while searing.'],
+  directions:[
+    'Scramble eggs soft; remove heat and fold in sausage + cheese.',
+    'Fill tortillas (2–3 tbsp), roll tight, seam-side down.',
+    'Film pan with oil; medium heat. Sear seam 1–2 min to set; roll to crisp all sides 5–7 min total.'
+  ]
+},
+{id:'breakfast-quesa',meal:'breakfast',name:'Sausage & Egg Breakfast Quesadilla',method:['skillet'],time:14,serves:4,tags:['kid'],
+  gear:['skillet'],target:'—',
+  ingredients:[ing('8 tortillas','D'),ing('4 eggs','C'),ing('1 cup cooked sausage','C'),ing('1.5 cups cheese','C'),ing('Oil','D')],
+  tips:['Use medium heat; too hot burns before cheese melts.'],
+  directions:[
+    'Scramble eggs soft and set aside.',
+    'Build tortilla + cheese + eggs + sausage + cheese + tortilla.',
+    'Cook 2–3 min/side to golden and melty; rest 1 min, then slice.'
+  ]
+},
+{id:'chilaquiles',meal:'breakfast',name:'Camping Chilaquiles',method:['skillet'],time:15,serves:4,tags:['spicy'],
+  gear:['skillet','lid'],target:'—',
+  ingredients:[ing('Tortilla chips','D'),ing('2 cups red/green salsa','D/C'),ing('4 eggs','C'),ing('1 cup cheese (opt)','C'),ing('Onion/cilantro (opt)','D')],
+  tips:['Soften chips, don’t stew them—mix gently and serve immediately.'],
+  directions:[
+    'Simmer salsa 2–3 min to slightly thicken.',
+    'Fold in chips to coat; heat 60–90 sec until just softened.',
+    'Make four wells; crack eggs; cover 2–3 min to set whites.',
+    'Top with cheese, onion, cilantro. Serve fast.'
+  ]
+},
+{id:'huevos-rancheros',meal:'breakfast',name:'Huevos Rancheros Tacos',method:['skillet'],time:15,serves:4,tags:[],
+  gear:['skillet'],target:'—',
+  ingredients:[ing('8 tortillas','D'),ing('4–6 eggs','C'),ing('2 cups ranchero salsa','D/C'),ing('1 can beans, warmed','D'),ing('Oil','D')],
+  tips:['Warm tortillas first; hot tortillas won’t crack and hold eggs better.'],
+  directions:[
+    'Warm beans and salsa in separate pots/pans.',
+    'Film skillet with oil; fry eggs sunny/over easy; salt.',
+    'Warm tortillas; spoon beans + salsa; top with egg and serve.'
+  ]
+},
+{id:'parfaits',meal:'breakfast',name:'Mason Jar Berry Yogurt Parfaits',method:['no-cook'],time:5,serves:4,tags:['kid'],
+  gear:['jars'],target:'—',
+  ingredients:[ing('4 cups yogurt','C'),ing('2 cups berries','C'),ing('1–1.5 cups granola','D'),ing('Honey','D')],
+  tips:['Layer granola on top to keep it crunchy until serving.'],
+  directions:[
+    'Layer yogurt → berries → drizzle honey → granola in jars.',
+    'Cap and chill. Stir only when eating.'
+  ]
+},
+
+/* ======================= MAINS (GRILL/FOIL/SKILLET) ======================= */
+{id:'beer-brats',meal:'dinner',name:'Grilled Beer Brats',method:['grill','fire'],time:20,serves:4,tags:['kid'],
+  gear:['grate','tongs','small pan/foil'],target:'160°F internal',
+  ingredients:[ing('8 brats','C'),ing('8 buns','D'),ing('1 onion, sliced','D'),ing('Oil','D'),ing('Mustard','D')],
+  tips:['Two-zone fire: sear over hot side, finish on cooler side.','Onions: pan/foil with a splash of oil until soft.'],
+  directions:[
+    'Preheat grill to medium-high (hand test 5–6 sec).',
+    'Grill brats, turning every 2–3 min, 10–12 min total to 160°F.',
+    'Meanwhile, cook onions in small pan/foil with oil over medium heat until soft and sweet, 6–8 min.',
+    'Toast buns briefly; serve brats with onions and mustard.'
+  ]
+},
+{id:'baked-potatoes-foil',meal:'dinner',name:'Grilled Baked Potatoes (Foil)',method:['foil','grill','fire'],time:45,serves:4,tags:[],
+  gear:['heavy foil','tongs'],target:'Tender when squeezed',
+  ingredients:[ing('4 russet potatoes','D'),ing('Oil or butter','D/C'),ing('Salt & pepper','D')],
+  tips:['Microwave 4–5 min at home to cut grill time in half.'],
+  directions:[
+    'Poke each potato with a fork 5–6 times. Rub with oil and salt.',
+    'Wrap each in double foil (shiny side in).',
+    'Set on grate or coal edge, turning every 10 min until a gentle squeeze gives easily (40–50 min; 20–25 if pre-par-cooked).',
+    'Rest 5 min; split, season, add butter.'
+  ]
+},
+{id:'mac-foil-tray',meal:'dinner',name:'Campfire Mac & Cheese (Foil Tray)',method:['fire','grill'],time:25,serves:4,tags:['kid'],
+  gear:['foil tray','foil lid','spoon'],target:'Bubbling edges',
+  ingredients:[ing('12 oz pasta, cooked al dente','D'),ing('1 cup evaporated or shelf milk','D'),ing('2 cups shredded cheese','C'),ing('2 tbsp butter (opt)','C'),ing('Salt & pepper','D')],
+  tips:['Keep over moderate heat; high heat splits the sauce.'],
+  directions:[
+    'Combine pasta, milk, 1½ cups cheese, butter, seasoning in tray.',
+    'Cover with foil; set near coals/indirect heat.',
+    'Stir at 8–10 min; add remaining cheese. Cover and heat until creamy and bubbling (total 20–25 min).'
+  ]
+},
+{id:'loaded-nachos',meal:'dinner',name:'Loaded Campfire Nachos (Skillet)',method:['skillet','fire','grill'],time:12,serves:4,tags:['kid'],
+  gear:['lidded skillet or foil cover'],target:'Cheese fully melted',
+  ingredients:[ing('Tortilla chips','D'),ing('2 cups shredded cheese','C'),ing('1 can black beans, drained','D'),ing('Salsa','D/C'),ing('Pickled jalapeños (opt)','D')],
+  tips:['Layer light; thick piles trap steam and go soggy.'],
+  directions:[
+    'Lightly oil skillet. Layer chips → cheese → beans; repeat.',
+    'Cover; heat low over fire/grill until cheese melts, 5–8 min.',
+    'Top with salsa/jalapeños. Serve from skillet.'
+  ]
+},
+{id:'croissant-dogs',meal:'dinner',name:'Croissant Hot Dogs',method:['grill','skillet'],time:15,serves:4,tags:['kid'],
+  gear:['grate or pan','tongs'],target:'Dough set and puffed',
+  ingredients:[ing('8 hot dogs','C'),ing('1 tube crescent/croissant dough','C'),ing('Mustard/ketchup','D')],
+  tips:['Cook indirect first so dough sets, then kiss over direct heat.'],
+  directions:[
+    'Wrap each dog with dough spiral, leaving gaps for heat.',
+    'Cook on greased grate over indirect heat or in covered pan until dough puffs and sets (8–12 min).',
+    'Finish 30–60 sec over direct heat for color; serve.'
+  ]
+},
+{id:'shrimp-foil',meal:'dinner',name:'Grilled Shrimp Foil Packets',method:['foil','grill','fire'],time:14,serves:4,tags:['GF'],
+  gear:['foil','tongs'],target:'Shrimp pink/opaque',
+  ingredients:[ing('1.5 lb shrimp, peeled','C'),ing('4 tbsp butter or oil','C/D'),ing('2 cloves garlic, minced','D'),ing('1 lemon (zest/juice)','D'),ing('Chili flakes','D'),ing('Salt & pepper','D'),ing('Parsley (opt)','D')],
+  tips:['Make flat, sealed packets: fold long sides twice, then crimp ends.'],
+  directions:[
+    'Toss shrimp with butter/oil, garlic, lemon, chili, salt/pepper.',
+    'Divide into 4 double-foil packets; seal tightly.',
+    'Cook on hot grates/coals 3–4 min/side (6–8 min total). Rest 2 min; open away from face.'
+  ]
+},
+{id:'saus-pep-foil',meal:'dinner',name:'Sausage & Peppers Foil Packs',method:['foil','grill','fire'],time:25,serves:4,tags:['GF','make-ahead'],
+  gear:['foil','tongs'],target:'Potatoes tender',
+  ingredients:[ing('14 oz smoked sausage, coins','C'),ing('1 lb baby potatoes, thin-sliced','D'),ing('2 bell peppers, strips','D'),ing('1 onion, slices','D'),ing('2 tbsp oil','D'),ing('Salt/pepper or Cajun','D')],
+  tips:['Thin potatoes = same cook time as sausage/veg.'],
+  directions:[
+    'Toss all ingredients; portion onto double-foil.',
+    'Fold long edges together twice; crimp ends to seal.',
+    'Cook 10–12 min/side over coals, flipping once; steam escapes when done.'
+  ]
+},
+{id:'chicken-fajita-foil',meal:'dinner',name:'Tex-Mex Chicken Fajita Foil Packets',method:['foil','grill','fire'],time:22,serves:4,tags:['make-ahead'],
+  gear:['foil','tongs'],target:'Chicken 165°F',
+  ingredients:[ing('1.5 lb chicken strips','C'),ing('2 bell peppers, strips','D'),ing('1 onion, slices','D'),ing('2 tbsp oil','D'),ing('Fajita seasoning','D'),ing('Tortillas (serve)','D')],
+  tips:['Freeze the seasoned mix in a bag; it doubles as an ice pack.'],
+  directions:[
+    'Season chicken + veg with oil + fajita seasoning.',
+    'Divide into sealed packets. Cook 8–10 min/side over medium coals.',
+    'Check a thick piece to 165°F. Serve with warm tortillas.'
+  ]
+},
+{id:'grilled-chicken-kebabs',meal:'dinner',name:'Grilled Chicken Kebabs',method:['grill'],time:20,serves:4,tags:['GF','make-ahead'],
+  gear:['skewers','tongs'],target:'165°F internal',
+  ingredients:[ing('1.5 lb chicken chunks','C'),ing('2 bell peppers','D'),ing('1 onion','D'),ing('Oil + lemon + garlic + spices','D')],
+  tips:['Turn every 2–3 min to build even color without drying.'],
+  directions:[
+    'Marinate chicken 2–24 hr (oil, lemon, garlic, spices).',
+    'Skewer chicken and veg; oil + salt.',
+    'Grill medium-high, turning often, 10–12 min to 165°F; rest 3 min.'
+  ]
+},
+
+/* ======================= SIDES / SALSAS ======================= */
+{id:'grilled-corn',meal:'side',name:'Grilled Corn On The Cob',method:['grill','fire'],time:14,serves:4,tags:[],
+  gear:['grate','tongs'],target:'Kernels tender/charred',
+  ingredients:[ing('4 ears corn','D'),ing('Oil or butter','D/C'),ing('Salt','D')],
+  tips:['No husk: oil + salt and turn often. In husk: 15–20 min, then peel.'],
+  directions:[
+    'Husked: oil + salt; grill over medium-high, turning, 8–12 min to tender with char.',
+    'In husk: grill 15–20 min, turning; peel, butter, salt.'
+  ]
+},
+{id:'elote',meal:'side',name:'Mexican Elote',method:['grill'],time:15,serves:4,tags:['kid'],
+  gear:['grill','bowl/brush'],target:'—',
+  ingredients:[ing('4 ears grilled corn','D'),ing('3 tbsp mayo','C'),ing('2 tbsp sour cream (opt)','C'),ing('1/2 tsp chili powder','D'),ing('1 lime, wedges','D'),ing('Crumbled cotija/feta','C')],
+  tips:['Brush sauce while corn is hot so it sticks, then cheese + lime.'],
+  directions:[
+    'Grill corn to char. Mix mayo + sour cream + chili.',
+    'Brush hot corn; roll in cotija; finish with lime and extra chili.'
+  ]
+},
+{id:'corn-salsa',meal:'side',name:'Corn Salsa',method:['no-cook','skillet'],time:10,serves:6,tags:['veg'],
+  gear:['bowl (skillet if charring)'],target:'—',
+  ingredients:[ing('2 cans corn, drained','D'),ing('1/2 red onion, minced','D'),ing('1 jalapeño, minced','D'),ing('1 lime (juice)','D'),ing('Cilantro','D'),ing('Salt/pepper','D')],
+  tips:['Dry-skillet char the corn 3–4 min for smoky depth.'],
+  directions:[
+    'Optional: char drained corn in dry skillet; cool.',
+    'Mix corn, onion, jalapeño, lime, cilantro; season to taste.'
+  ]
+},
+{id:'veg-kebabs',meal:'side',name:'Grilled Vegetable Kebabs',method:['grill','fire'],time:16,serves:4,tags:['veg','GF'],
+  gear:['skewers','tongs'],target:'Tender with light char',
+  ingredients:[ing('Zucchini','D'),ing('Peppers','D'),ing('Onion','D'),ing('Mushrooms','D'),ing('Cherry tomatoes','D'),ing('Oil','D'),ing('Salt/pepper','D')],
+  tips:['Leave space between pieces so heat can circulate.'],
+  directions:[
+    'Cut veg to similar size; oil + salt/pepper.',
+    'Skewer; grill medium-high, turning, 8–12 min to tender-char.'
+  ]
+},
+{id:'cheesy-foil-potatoes',meal:'side',name:'Cheesy Foil Packet Potatoes',method:['foil','grill','fire'],time:22,serves:4,tags:[],
+  gear:['foil','tongs'],target:'Potatoes tender',
+  ingredients:[ing('1.5 lb potatoes, thin-sliced','D'),ing('1 small onion, thin-sliced','D'),ing('2 tbsp butter or oil','C/D'),ing('1.5 cups shredded cheese','C'),ing('Salt/pepper','D')],
+  tips:['Thin slices cook with the cheese—no parboil needed.'],
+  directions:[
+    'Toss potatoes + onion with butter/oil, salt, pepper.',
+    'Pile on double-foil; seal (fold long edges twice, crimp ends).',
+    'Cook 8–10 min/side over medium coals. Carefully open; add cheese; re-seal 2–3 min to melt.'
+  ]
+},
+
+/* ======================= SNACKS / PARTY ======================= */
+{id:'pigs-blanket',meal:'snack',name:'Campfire Pigs In A Blanket',method:['grill','fire'],time:15,serves:6,tags:['kid'],
+  gear:['skewers or grate'],target:'Dough puffed & browned',
+  ingredients:[ing('Cocktail sausages or hot dogs','C'),ing('Crescent/croissant dough','C'),ing('Mustard (dip)','D')],
+  tips:['Indirect heat sets dough; finish briefly over direct.'],
+  directions:[
+    'Wrap dough around sausage leaving ends exposed.',
+    'Cook over indirect heat on grate or skewered, rotating, 8–12 min until dough puffs and browns.'
+  ]
+},
+{id:'foil-chicken-nachos',meal:'snack',name:'Foil Pack Chicken Nachos',method:['foil','grill','fire'],time:15,serves:4,tags:['kid'],
+  gear:['foil tray/packets'],target:'Cheese melted',
+  ingredients:[ing('Tortilla chips','D'),ing('2 cups cooked shredded chicken','C'),ing('2 cups cheese','C'),ing('1 can black beans, drained','D'),ing('Salsa','D/C')],
+  tips:['Build in two layers for even melt.'],
+  directions:[
+    'Layer chips → chicken → beans → cheese in foil tray/packets.',
+    'Cover; heat over medium coals 8–10 min until melty; top with salsa.'
+  ]
+},
+{id:'camp-queso',meal:'snack',name:'Campfire Queso',method:['skillet','fire','grill'],time:12,serves:8,tags:[],
+  gear:['small cast iron'],target:'Smooth, pourable',
+  ingredients:[ing('8 oz melting cheese/Velveeta','C'),ing('1 cup salsa/Rotel','D/C'),ing('1/2 cup milk or evap milk','D/C'),ing('Cooked chorizo (opt)','C')],
+  tips:['Low heat + frequent stirring prevents clumps.'],
+  directions:[
+    'Add cheese + salsa + milk to skillet over low heat.',
+    'Stir frequently until fully smooth (6–8 min). Hold warm at edge.'
+  ]
+},
+{id:'chili-cheese-fries',meal:'snack',name:'Campfire Chili Cheese Fries',method:['skillet','fire','grill'],time:18,serves:4,tags:['kid'],
+  gear:['skillet + lid'],target:'Fries crisp, cheese melted',
+  ingredients:[ing('1 lb frozen fries/wedges','C'),ing('1 can chili','D'),ing('1.5 cups shredded cheese','C'),ing('Green onions (opt)','D')],
+  tips:['Cover to steam/melt, then uncover 1–2 min to re-crisp.'],
+  directions:[
+    'Cook fries in lightly oiled, covered skillet over medium heat, stirring occasionally until crisp (10–12 min).',
+    'Pour chili over; top with cheese; cover until melted. Garnish onions.'
+  ]
+},
+
+/* ======================= DESSERT ======================= */
+{id:'smores',meal:'dessert',name:'S’mores',method:['fire'],time:5,serves:6,tags:['kid'],
+  gear:['roasting sticks'],target:'Marshmallow golden/browned',
+  ingredients:[ing('Graham crackers','D'),ing('Chocolate squares','D'),ing('Marshmallows','D')],
+  tips:['Let the hot marshmallow rest 20–30 sec to melt the chocolate.'],
+  directions:[
+    'Roast marshmallow to golden (or char to taste).',
+    'Sandwich with chocolate between grahams; rest briefly to melt.'
+  ]
+},
+{id:'berry-peach-cobbler',meal:'dessert',name:'Campfire Berry–Peach Cobbler',method:['fire','grill'],time:25,serves:6,tags:['kid'],
+  gear:['cast iron or foil tray + foil'],target:'Fruit bubbling, biscuit set',
+  ingredients:[ing('2 cans sliced peaches, drained','D'),ing('2 cups berries (fresh or drained)','D/C'),ing('1/2 cup sugar (opt)','D'),ing('1 tsp cinnamon','D'),ing('1 tube biscuit dough or 2 cups dry mix','C/D'),ing('Butter (opt)','C')],
+  tips:['Indirect heat prevents scorching the bottom.'],
+  directions:[
+    'Combine fruit, sugar (opt), cinnamon in pan/tray.',
+    'Top with biscuit dough portions; dot with butter.',
+    'Cover and bake near coals/indirect grill 15–25 min until fruit bubbles and biscuits set.'
+  ]
+}
+];
+
+/* ===== Filters / Render ===== */
+let active = { meal:null, method:null, time:null, tag:null, q:'' };
+let visibleRecipes = [];
+
+const grid = document.getElementById('grid');
+function render(){
+  grid.innerHTML = '';
+  const q = (active.q||'').trim().toLowerCase();
+  const items = RECIPES.filter(r=>{
+    if(active.meal && r.meal!==active.meal) return false;
+    if(active.method && !(r.method||[]).includes(active.method)) return false;
+    if(active.time && ((active.time==='15' && r.time>15) || (active.time==='30' && r.time>30))) return false;
+    if(active.tag && !(r.tags||[]).includes(active.tag)) return false;
+    if(q){
+      const hay = (r.name+' '+(r.ingredients.map(i=>i.txt).join(' '))+' '+(r.directions.join(' '))).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  visibleRecipes = items;
+  items.forEach(r=>{
+    const det = document.createElement('details');
+    det.className='card';
+    det.innerHTML = `
+      <summary>
+        <div class="ic"><svg viewBox="0 0 24 24">${icon('chef')}</svg></div>
+        <div>
+          <div class="title">${r.name}</div>
+          <div class="meta">
+            <svg style="vertical-align:middle;width:14px;height:14px;fill:var(--orange)" viewBox="0 0 24 24">${icon('clock')}</svg>
+            <span>${r.time} min</span>
+            &nbsp;•&nbsp;
+            <svg style="vertical-align:middle;width:14px;height:14px;fill:var(--orange)" viewBox="0 0 24 24">${icon('users')}</svg>
+            <span>serves ${r.serves}</span>
+            &nbsp;•&nbsp;
+            <svg style="vertical-align:middle;width:14px;height:14px;fill:var(--orange)" viewBox="0 0 24 24">${icon('pan')}</svg>
+            <span>${(r.method||[]).join(', ')}</span>
+          </div>
+          <div class="badges">${(r.tags||[]).map(t=>`<span class="badge">${t.replace('-', ' ')}</span>`).join('')}</div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24">${icon('chev')}</svg>
+      </summary>
+      <div class="body">
+        <div class="row">
+          <div class="section">
+            <h3>Ingredients (for ${r.serves})</h3>
+            <div id="ing-${r.id}"></div>
+            <div class="tip small">${r.tips?.[0]||''}</div>
+            ${r.tips?.[1]?`<div class="tip small">${r.tips[1]}</div>`:''}
+          </div>
+          <div class="section">
+            <h3>Directions</h3>
+            <ol>${r.directions.map(s=>`<li>${s}</li>`).join('')}</ol>
+            <div class="kv" style="margin-top:10px">
+              ${(r.gear||[]).map(g=>`<span class="chip">Gear: ${g}</span>`).join('')}
+              ${r.target?`<span class="chip">Target: ${r.target}</span>`:''}
+            </div>
+          </div>
+        </div>
+      </div>`;
+    grid.appendChild(det);
+
+    const box = det.querySelector('#ing-'+r.id);
+    r.ingredients.forEach(it=>{
+      const row = document.createElement('label');
+      row.className='ing';
+      row.innerHTML = `<input type="checkbox" aria-label="Checkbox"><div>${it.txt}</div><span class="store">${it.store==='C'?'Cooler':'Dry'}</span>`;
+      box.appendChild(row);
+    });
+  });
+}
+
+const pills = Array.from(document.querySelectorAll('.pill'));
+const qEl = document.getElementById('q');
+pills.forEach(p=>p.addEventListener('click',()=>{
+  const [k,v]=p.dataset.filter.split(':');
+  const same = active[k]===v; active[k]=same?null:v;
+  pills.filter(x=>x.dataset.filter.startsWith(k+':')).forEach(x=>x.classList.remove('active'));
+  if(!same)p.classList.add('active'); render();
+}));
+qEl.addEventListener('input',()=>{active.q=qEl.value;render();});
+document.getElementById('resetFilters').onclick=()=>{active={meal:null,method:null,time:null,tag:null,q:''};pills.forEach(p=>p.classList.remove('active'));qEl.value='';render();};
+document.getElementById('expandAll').onclick=()=>{document.querySelectorAll('details.card').forEach(d=>d.open=true);};
+document.getElementById('collapseAll').onclick=()=>{document.querySelectorAll('details.card').forEach(d=>d.open=false);};
+document.getElementById('printBtn').onclick=()=>window.print();
+document.getElementById('copyGrocery').onclick=async()=>{
+  const dry=[], cooler=[];
+  visibleRecipes.forEach(r=>r.ingredients.forEach(i=>(i.store==='C'?cooler:dry).push(i.txt)));
+  const text=[
+    'Cooler',
+    ...[...new Set(cooler)].map(i=>`- ${i}`),
+    '',
+    'Dry',
+    ...[...new Set(dry)].map(i=>`- ${i}`)
+  ].join('\n');
+  try{
+    await navigator.clipboard.writeText(text);
+    document.getElementById('copyGrocery').textContent='Copied';
+    setTimeout(()=>document.getElementById('copyGrocery').textContent='Copy grocery list',900);
+  }catch(_){}
+};
+
+render();
+</script>
+</div>
+</main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+  <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+  <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

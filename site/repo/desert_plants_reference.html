@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Desert Plant ID - Follincraft</title>
+  <meta name="description" content="A practical Sonoran desert plant ID reference for cactus, trees, shrubs, wildflowers, toxic plants, thorns, shade, and common camp-area hazards.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Desert Plant ID">
+  <meta property="og:description" content="A practical Sonoran desert plant ID reference for cactus, trees, shrubs, wildflowers, toxic plants, thorns, shade, and common camp-area hazards.">
+  <meta property="og:url" content="https://follincraft.com/repo/desert_plants_reference.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desert Plant ID">
+  <meta name="twitter:description" content="A practical Sonoran desert plant ID reference for cactus, trees, shrubs, wildflowers, toxic plants, thorns, shade, and common camp-area hazards.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+  <link rel="canonical" href="https://follincraft.com/repo/desert_plants_reference.html">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --bg:#000000;
+      --card:#0b0c0f;
+      --ink:#ffffff;
+      --muted:#bbbbbb;
+      --line:#333333;
+      --accent:#ff6600;
+    }
+
+    html{scrollbar-width:thin; scrollbar-color:var(--accent) #0b0c0f}
+    ::-webkit-scrollbar{width:10px}
+    ::-webkit-scrollbar-track{background:#0b0c0f}
+    ::-webkit-scrollbar-thumb{background:var(--accent); border-radius:6px}
+    ::-webkit-scrollbar-thumb:hover{background:#ff8533}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .plant-app .tool-page{padding:88px 0 40px}
+    .plant-app .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    .plant-app .tool-intro{max-width:1100px; margin:0 auto; padding:0 24px 18px}
+    .plant-app .tool-intro .breadcrumbs{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .plant-app .tool-intro .breadcrumbs a{color:inherit; text-decoration:none}
+    .plant-app .tool-intro .breadcrumbs a:hover{color:var(--accent)}
+    .plant-app .eyebrow{margin:0 0 4px; color:#fff; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+    .plant-app .tool-intro h1{margin:0 0 8px; color:var(--accent); font-size:1.8rem; line-height:1.08}
+    .plant-app .tool-intro p:not(.breadcrumbs):not(.eyebrow){margin:0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55}
+    .plant-app .tool-intro::after{
+      content:"";
+      display:block;
+      width:min(760px, 100%);
+      height:2px;
+      margin-top:20px;
+      background:linear-gradient(90deg, var(--accent), rgba(255,102,0,.34), rgba(255,102,0,0));
+    }
+
+    .plant-app .reference-controls{display:flex; align-items:center; gap:10px; margin:10px 0 16px}
+
+    .plant-app .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr))}
+    .plant-app .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:none;
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .plant-app .photo{width:100%; aspect-ratio:1/1; object-fit:cover; background:#111; border:1px solid var(--line); border-radius:8px}
+    .plant-app .card-body{padding:0}
+    .plant-app .card-meta{margin:0 0 8px; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase}
+    .plant-app h4{margin:0 0 7px; color:#fff; font-size:18px; line-height:1.14}
+    .plant-app .latin{display:block; margin:3px 0 0; color:var(--muted); font-size:12px; font-weight:800}
+    .plant-app .desc{margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.45}
+    .plant-app .tags{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px}
+    .plant-app .pill{font-size:12px; padding:4px 8px; border-radius:8px; border:1px solid var(--line); background:#15171c; font-weight:800}
+    .plant-app .risk-high{color:#fff; background:rgba(239,68,68,.14); border-color:rgba(239,68,68,.35)}
+    .plant-app .risk-med{color:#fff; background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35)}
+    .plant-app .risk-low{color:#fff; background:rgba(22,163,74,.14); border-color:rgba(22,163,74,.35)}
+
+    .plant-app .field-card-notes{display:grid; gap:7px; margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,.1)}
+    .plant-app .field-card-notes p{margin:0; color:#c8d0da; font-size:13px; line-height:1.42}
+    .plant-app .field-card-notes strong{color:#fff; font-weight:900}
+    .plant-app .credit{
+      margin:18px 0 0;
+      padding:14px 16px;
+      border:1px solid rgba(255,102,0,.45);
+      border-radius:8px;
+      background:rgba(255,102,0,.08);
+      color:#e5e7eb;
+      font-size:15px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
+    @media (max-width:700px){
+      .plant-app .tool-page{padding-top:82px}
+      .plant-app .tool-intro{padding:0 16px 16px}
+      .plant-app .tool-intro h1{font-size:1.8rem}
+      .plant-app .tool-intro p{font-size:15px}
+      .plant-app .wrap{padding:16px}
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Desert Plant ID",
+  "description": "A practical Sonoran desert plant ID reference for cactus, trees, shrubs, wildflowers, toxic plants, thorns, shade, and common camp-area hazards.",
+  "url": "https://follincraft.com/repo/desert_plants_reference.html",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <div class="plant-app">
+    <header>
+      <div class="wrap nav">
+        <div class="brand">
+          <div class="logo">
+            <a href="../index.html#about" style="text-decoration:none">
+              <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+            </a>
+          </div>
+          <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+        </div>
+        <nav id="topNav">
+          <a href="../projects/index.html">Projects</a>
+          <a href="../camp/index.html">Camp</a>
+          <a href="../gear/index.html">Gear</a>
+          
+          <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+        </nav>
+        <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+      </div>
+    </header>
+
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <nav class="mobile-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a href="../search/index.html">Search</a>
+      </nav>
+    </div>
+
+    <main class="tool-page">
+      <section class="tool-intro">
+        <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Desert Plant ID</span></p>
+        <p class="eyebrow">Field Reference</p>
+        <h1 class="title">Desert Plant ID</h1>
+        <p>Quick ID for common Sonoran desert plants, with practical notes on shade, thorns, dropped segments, bloom-season bees, and which plants deserve extra room.</p>
+      </section>
+
+      <div class="wrap">
+        <div class="reference-controls">
+          <div class="fc-select" data-select="plantFilter">
+            <button class="fc-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="fc-select-label">All plants</span>
+              <span class="fc-select-caret">&#9662;</span>
+            </button>
+            <div class="fc-select-menu" role="listbox">
+              <button type="button" class="fc-select-option is-selected" data-value="all">All plants</button>
+              <button type="button" class="fc-select-option" data-value="cactus">Cactus</button>
+              <button type="button" class="fc-select-option" data-value="tree">Trees</button>
+              <button type="button" class="fc-select-option" data-value="shrub">Shrubs</button>
+              <button type="button" class="fc-select-option" data-value="wildflower">Wildflowers</button>
+              <button type="button" class="fc-select-option" data-value="spines">Spines</button>
+              <button type="button" class="fc-select-option" data-value="toxic">Toxic / irritant</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="grid" class="grid"></div>
+        <p class="credit">Camp note: identify before you touch, use established sites, and do not trim or damage plants to make a spot more convenient.</p>
+      </div>
+    </main>
+
+    <script>
+      const PLANTS = [
+        {
+                "name": "Saguaro",
+                "latin": "Carnegiea gigantea",
+                "type": "cactus",
+                "risk": "low",
+                "wiki": "Carnegiea gigantea",
+                "desc": "The signature Sonoran cactus. Great landmark, bad thing to park directly under when old arms or skeletons are overhead.",
+                "use": [
+                        "Use as a landmark, not a tie-off",
+                        "Give old or leaning plants extra room",
+                        "Photograph from established paths or pads"
+                ],
+                "avoid": [
+                        "Do not climb, cut, shoot, or collect parts",
+                        "Do not pitch under dead arms",
+                        "Do not make new tracks for a photo angle"
+                ],
+                "image": "../assets/reference/plants/saguaro.jpg"
+        },
+        {
+                "name": "Jumping Cholla",
+                "latin": "Cylindropuntia fulgida",
+                "type": "cactus",
+                "risk": "med",
+                "wiki": "Cylindropuntia fulgida",
+                "desc": "Barbed segments detach easily and stick to shoes, dogs, cuffs, and bare skin. The dropped pieces are the real camp problem.",
+                "use": [
+                        "Carry a comb or pliers",
+                        "Scan the ground before kneeling",
+                        "Keep tents and chairs away from fallen segments"
+                ],
+                "avoid": [
+                        "Do not pull segments off with bare fingers",
+                        "Do not camp where segments litter the whole pad",
+                        "Do not walk close in sandals after dark"
+                ],
+                "image": "../assets/reference/plants/jumping-cholla.jpg"
+        },
+        {
+                "name": "Prickly Pear",
+                "latin": "Opuntia",
+                "type": "cactus",
+                "risk": "med",
+                "wiki": "Opuntia",
+                "desc": "Flat pads, obvious spines, and tiny glochids that are easy to miss. Common near desert camps and rough on dogs and sleeping pads.",
+                "use": [
+                        "Give pads and fruit room",
+                        "Use tweezers or tape for tiny spines",
+                        "Check paws and cuffs after walking through brush"
+                ],
+                "avoid": [
+                        "Do not brush against pads",
+                        "Do not handle fruit bare-handed",
+                        "Do not lay soft gear in thorn litter"
+                ],
+                "image": "../assets/reference/plants/prickly-pear.jpg"
+        },
+        {
+                "name": "Fishhook Barrel Cactus",
+                "latin": "Ferocactus wislizeni",
+                "type": "cactus",
+                "risk": "low",
+                "wiki": "Ferocactus wislizeni",
+                "desc": "Round ribbed cactus with hooked spines. Easy to see in daylight, easy to bump while backing a vehicle or carrying gear.",
+                "use": [
+                        "Use as a visual marker for camp edges",
+                        "Leave vehicle-door clearance",
+                        "Watch kids and pets around hooks"
+                ],
+                "avoid": [
+                        "Do not assume barrel cactus is a water source",
+                        "Do not drag bins or chairs past it",
+                        "Do not back over small plants"
+                ],
+                "image": "../assets/reference/plants/fishhook-barrel-cactus.jpg"
+        },
+        {
+                "name": "Mesquite",
+                "latin": "Prosopis",
+                "type": "tree",
+                "risk": "med",
+                "wiki": "Prosopis",
+                "desc": "Useful filtered shade with sharp thorns and hard seed pods. Good comfort tree, but thorn litter is hard on feet, paws, and inflatables.",
+                "use": [
+                        "Check the ground before laying mats",
+                        "Use shade edges instead of tight branches",
+                        "Expect insects and pods under dense cover"
+                ],
+                "avoid": [
+                        "Do not hang hammocks from weak limbs",
+                        "Do not park where branches scrape doors or awnings",
+                        "Do not walk barefoot under it"
+                ],
+                "image": "../assets/reference/plants/mesquite.jpg"
+        },
+        {
+                "name": "Palo Verde",
+                "latin": "Parkinsonia florida",
+                "type": "tree",
+                "risk": "low",
+                "wiki": "Parkinsonia florida",
+                "desc": "Green-barked desert tree with soft-looking shade and seasonal flowers. Small thorns and bloom-season bees still matter around camp.",
+                "use": [
+                        "Use open shade, not tight branch tunnels",
+                        "Leave awning and door clearance",
+                        "Watch for bees during heavy bloom"
+                ],
+                "avoid": [
+                        "Do not trim branches for convenience",
+                        "Do not put the kitchen directly under active bees",
+                        "Do not force a vehicle into tight shade"
+                ],
+                "image": "../assets/reference/plants/palo-verde.jpg"
+        },
+        {
+                "name": "Ironwood",
+                "latin": "Olneya tesota",
+                "type": "tree",
+                "risk": "low",
+                "wiki": "Olneya tesota",
+                "desc": "Dense desert tree with strong shade and rough, durable wood. Often a better shade tree than it looks, but still has thorns and fragile desert soil around it.",
+                "use": [
+                        "Use existing bare pads near shade",
+                        "Keep traffic on durable ground",
+                        "Look up before relying on shade in wind"
+                ],
+                "avoid": [
+                        "Do not collect wood or break branches",
+                        "Do not expand a pad under the canopy",
+                        "Do not assume shade means level ground"
+                ],
+                "image": "../assets/reference/plants/ironwood.jpg"
+        },
+        {
+                "name": "Creosote Bush",
+                "latin": "Larrea tridentata",
+                "type": "shrub",
+                "risk": "low",
+                "wiki": "Larrea tridentata",
+                "desc": "The common low-desert shrub that smells like rain after storms. It signals exposed, hot desert and can hide uneven ground or small washes.",
+                "use": [
+                        "Treat creosote flats as hot exposed terrain",
+                        "Look for existing bare pads",
+                        "Use it as a clue to check drainage"
+                ],
+                "avoid": [
+                        "Do not drive through shrubs to make a shortcut",
+                        "Do not force a new campsite in dense growth",
+                        "Do not ignore wash channels between plants"
+                ],
+                "image": "../assets/reference/plants/creosote-bush.jpg"
+        },
+        {
+                "name": "Ocotillo",
+                "latin": "Fouquieria splendens",
+                "type": "shrub",
+                "risk": "low",
+                "wiki": "Fouquieria splendens",
+                "desc": "Tall cane-like desert plant that leafs out quickly after moisture. Not a cactus, but still sharp and brittle around vehicles and furniture.",
+                "use": [
+                        "Leave clearance for doors and awnings",
+                        "Use as a seasonal rain clue",
+                        "Photograph without pushing through stems"
+                ],
+                "avoid": [
+                        "Do not use stems as tie-offs",
+                        "Do not brush vehicles through it",
+                        "Do not trim it to make a path"
+                ],
+                "image": "../assets/reference/plants/ocotillo.jpg"
+        },
+        {
+                "name": "Agave",
+                "latin": "Agave americana",
+                "type": "spines",
+                "risk": "med",
+                "wiki": "Agave americana",
+                "desc": "Rigid leaves with spear tips at shin, knee, dog, and kid height. Beautiful until the night walk from the chair to the vehicle.",
+                "use": [
+                        "Give spear tips a wide path",
+                        "Use a headlamp around camp",
+                        "Place kitchens and chairs away from points"
+                ],
+                "avoid": [
+                        "Do not clip points to make a site easier",
+                        "Do not step backward near rosettes",
+                        "Do not set guy lines through leaves"
+                ],
+                "image": "../assets/reference/plants/agave.jpg"
+        },
+        {
+                "name": "Soaptree Yucca",
+                "latin": "Yucca elata",
+                "type": "spines",
+                "risk": "med",
+                "wiki": "Yucca elata",
+                "desc": "Tall yucca with stiff leaf tips and a distinctive trunk. Good ID plant, bad close neighbor for tents, pets, and dark camp paths.",
+                "use": [
+                        "Keep camp walkways clear of leaves",
+                        "Leave room for kids and dogs",
+                        "Use established openings instead of pushing through"
+                ],
+                "avoid": [
+                        "Do not camp where leaves reach the tent door",
+                        "Do not use as a clothesline anchor",
+                        "Do not cut leaves for convenience"
+                ],
+                "image": "../assets/reference/plants/soaptree-yucca.jpg"
+        },
+        {
+                "name": "Oleander",
+                "latin": "Nerium oleander",
+                "type": "toxic",
+                "risk": "med",
+                "wiki": "Nerium oleander",
+                "desc": "Common ornamental around towns, roads, and developed areas. All parts are toxic if eaten, and burning trimmings is a bad idea.",
+                "use": [
+                        "Keep kids and pets from chewing leaves",
+                        "Wash hands after contact",
+                        "Treat it as a look-only plant"
+                ],
+                "avoid": [
+                        "Do not burn branches or leaves",
+                        "Do not use stems as skewers",
+                        "Do not mistake it for harmless shade brush"
+                ],
+                "image": "../assets/reference/plants/oleander.jpg"
+        },
+        {
+                "name": "Teddy Bear Cholla",
+                "latin": "Cylindropuntia bigelovii",
+                "type": "cactus",
+                "risk": "med",
+                "wiki": "Cylindropuntia bigelovii",
+                "desc": "Dense pale cholla that looks soft from a distance and punishes close passes. Fallen joints collect around the base.",
+                "use": [
+                        "Give the whole patch a wide path",
+                        "Watch dog paws and pant cuffs",
+                        "Use pliers or a comb for removal"
+                ],
+                "avoid": [
+                        "Do not brush past for a shortcut",
+                        "Do not kneel near dropped joints",
+                        "Do not camp where joints are scattered through the pad"
+                ],
+                "image": "../assets/reference/plants/teddy-bear-cholla.jpg"
+        },
+        {
+                "name": "Compass Barrel Cactus",
+                "latin": "Ferocactus cylindraceus",
+                "type": "cactus",
+                "risk": "low",
+                "wiki": "Ferocactus cylindraceus",
+                "desc": "Tall barrel cactus often leaning slightly, with dense red or yellow spines. Common on hot rocky slopes and desert flats.",
+                "use": [
+                        "Use it as a visual cue for hot exposed terrain",
+                        "Leave clearance for vehicle doors",
+                        "Watch footing around rocky bases"
+                ],
+                "avoid": [
+                        "Do not treat it as emergency water",
+                        "Do not step backward into the spine mass",
+                        "Do not move rocks to build a pad beside it"
+                ],
+                "image": "../assets/reference/plants/compass-barrel-cactus.jpg"
+        },
+        {
+                "name": "Catclaw Acacia",
+                "latin": "Senegalia greggii",
+                "type": "shrub",
+                "risk": "med",
+                "wiki": "Senegalia greggii",
+                "desc": "Thorny desert shrub with hooked claws that grab clothing, skin, dog leads, and soft gear.",
+                "use": [
+                        "Recognize it before walking through washes",
+                        "Keep camp paths out of branches",
+                        "Wear long sleeves when moving nearby"
+                ],
+                "avoid": [
+                        "Do not drag tents, pads, or bags through it",
+                        "Do not park where branches scrape paint",
+                        "Do not use as a casual windbreak"
+                ],
+                "image": "../assets/reference/plants/catclaw-acacia.jpg"
+        },
+        {
+                "name": "Brittlebush",
+                "latin": "Encelia farinosa",
+                "type": "wildflower",
+                "risk": "low",
+                "wiki": "Encelia farinosa",
+                "desc": "Gray-green shrub with yellow daisy-like blooms. A common desert color marker after rain and a good clue for open sunny slopes.",
+                "use": [
+                        "Use as a seasonal bloom marker",
+                        "Stay on durable ground around bloom areas",
+                        "Photograph without stepping into clusters"
+                ],
+                "avoid": [
+                        "Do not crush bloom patches for a campsite",
+                        "Do not assume flowers mean soft level ground",
+                        "Do not collect plants from public land"
+                ],
+                "image": "../assets/reference/plants/brittlebush.jpg"
+        },
+        {
+                "name": "Globe Mallow",
+                "latin": "Sphaeralcea ambigua",
+                "type": "wildflower",
+                "risk": "low",
+                "wiki": "Sphaeralcea ambigua",
+                "desc": "Orange desert wildflower that shows up along roadsides, washes, and open slopes. Pretty, common, and easy to stomp by accident.",
+                "use": [
+                        "Watch for it during spring bloom",
+                        "Use trails and bare ground around patches",
+                        "Keep kids from picking whole clusters"
+                ],
+                "avoid": [
+                        "Do not drive over bloom patches",
+                        "Do not turn a photo stop into a new pullout",
+                        "Do not assume every orange flower is poppy"
+                ],
+                "image": "../assets/reference/plants/globe-mallow.jpg"
+        },
+        {
+                "name": "Desert Marigold",
+                "latin": "Baileya multiradiata",
+                "type": "wildflower",
+                "risk": "low",
+                "wiki": "Baileya multiradiata",
+                "desc": "Bright yellow wildflower on thin stems, common in disturbed sandy or gravelly desert soil after moisture.",
+                "use": [
+                        "Use as a clue for sandy open ground",
+                        "Photograph from the edge",
+                        "Expect delicate stems to crush easily"
+                ],
+                "avoid": [
+                        "Do not park on bloom patches",
+                        "Do not collect bunches",
+                        "Do not set chairs in flower clusters"
+                ],
+                "image": "../assets/reference/plants/desert-marigold.jpg"
+        },
+        {
+                "name": "Chuparosa",
+                "latin": "Justicia californica",
+                "type": "shrub",
+                "risk": "low",
+                "wiki": "Justicia californica",
+                "desc": "Red tubular flowers that attract hummingbirds. Often found in washes and rocky desert edges.",
+                "use": [
+                        "Look for pollinators during bloom",
+                        "Treat nearby wash channels with respect",
+                        "Leave flowering branches alone"
+                ],
+                "avoid": [
+                        "Do not trim branches for camp clearance",
+                        "Do not block animal or pollinator activity with camp setup",
+                        "Do not force a site in dense wash growth"
+                ],
+                "image": "../assets/reference/plants/chuparosa.jpg"
+        },
+        {
+                "name": "Desert Willow",
+                "latin": "Chilopsis linearis",
+                "type": "tree",
+                "risk": "low",
+                "wiki": "Chilopsis linearis",
+                "desc": "Small desert tree with narrow leaves and showy flowers, often near washes or places that collect more water.",
+                "use": [
+                        "Use as a clue that drainage or wash terrain is nearby",
+                        "Enjoy filtered shade from the edge",
+                        "Look up for dead branches before sitting"
+                ],
+                "avoid": [
+                        "Do not camp in the wash because the tree looks inviting",
+                        "Do not hang heavy gear from light limbs",
+                        "Do not trim flowering branches"
+                ],
+                "image": "../assets/reference/plants/desert-willow.jpg"
+        }
+];;;
+
+      const grid = document.getElementById('grid');
+
+      function buildCards(list){
+        grid.innerHTML='';
+        list.forEach(p=>{
+          const card=document.createElement('article');
+          card.className='card';
+          card.dataset.type=p.type;
+
+          const img=document.createElement('img');
+          img.className='photo';
+          img.alt=p.name;
+          img.loading='lazy';
+          img.src=p.image || placeholderForType(p.type);
+          card.appendChild(img);
+
+          const body=document.createElement('div');
+          body.className='card-body';
+          body.innerHTML=`
+            <p class="card-meta">${labelForType(p.type)}</p>
+            <h4>${p.name} <span class="latin">${p.latin}</span></h4>
+            <p class="desc">${p.desc}</p>
+            <div class="tags">
+              <span class="pill ${riskClass(p.risk)}">Camp risk: ${p.risk.toUpperCase()}</span>
+            </div>
+            <div class="field-card-notes">
+              <p><strong>Use:</strong> ${p.use.slice(0,3).join('; ')}.</p>
+              <p><strong>Avoid:</strong> ${p.avoid.slice(0,3).join('; ')}.</p>
+            </div>
+          `;
+          card.appendChild(body);
+          grid.appendChild(card);
+
+        });
+      }
+
+      function labelForType(type){
+        return {
+          cactus:'Cactus',
+          tree:'Tree',
+          shrub:'Shrub',
+          wildflower:'Wildflower',
+          spines:'Spines',
+          toxic:'Toxic / Irritant'
+        }[type] || type;
+      }
+
+      function riskClass(r){return r==='high'?'risk-high':r==='med'?'risk-med':'risk-low'}
+
+      function placeholderForType(t){
+        const colors={cactus:'#eab308',tree:'#22c55e',shrub:'#84cc16',wildflower:'#f59e0b',spines:'#f97316',toxic:'#ef4444'};
+        const label=labelForType(t);
+        const c=colors[t]||'#ff6600';
+        const svg=encodeURIComponent(
+          `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'>
+             <rect width='1200' height='750' fill='#0f1115'/>
+             <circle cx='600' cy='375' r='150' fill='${c}' opacity='.35'/>
+             <text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle'
+                   font-family='Inter, sans-serif' font-size='44' fill='#ffffff'>${label}</text>
+           </svg>`
+        );
+        return `data:image/svg+xml;charset=utf-8,${svg}`;
+      }
+
+      function wireReferenceSelect(selectName, onChange){
+        const root = document.querySelector(`.fc-select[data-select="${selectName}"]`);
+        if (!root) return null;
+        const trigger = root.querySelector(".fc-select-trigger");
+        const label = root.querySelector(".fc-select-label");
+        const options = Array.from(root.querySelectorAll(".fc-select-option"));
+        function close(){
+          root.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+        trigger.addEventListener("click", e=>{
+          e.preventDefault();
+          e.stopPropagation();
+          document.querySelectorAll(".fc-select.is-open").forEach(el => { if (el !== root) el.classList.remove("is-open"); });
+          root.classList.toggle("is-open");
+          trigger.setAttribute("aria-expanded", root.classList.contains("is-open") ? "true" : "false");
+        });
+        options.forEach(opt => opt.addEventListener("click", e=>{
+          e.preventDefault();
+          e.stopPropagation();
+          options.forEach(item => item.classList.toggle("is-selected", item === opt));
+          label.textContent = opt.textContent.trim();
+          root.dataset.value = opt.dataset.value;
+          close();
+          onChange(opt.dataset.value);
+        }));
+        document.addEventListener("click", close);
+        return root;
+      }
+
+      wireReferenceSelect('plantFilter', activeType => {
+        document.querySelectorAll('.card').forEach(card=>{
+          card.style.display=(activeType==='all'||card.dataset.type===activeType)?'':'none';
+        });
+      });
+
+      buildCards(PLANTS);
+    </script>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+      <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+        <div>
+          <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3>
+          <p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p>
+        </div>
+        <div>
+          <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3>
+          <p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3>
+          <div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap">
+            <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+            <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+            <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+          </div>
+          <p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px">
+        <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+      </p>
+      <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn?.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    </script>
+  </div>
+</body>
+</html>

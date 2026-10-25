@@ -1,0 +1,37 @@
+/* Single-article prototype: uses the existing Camp/Gear palette and split layout. */
+.camp-howto{max-width:1100px;margin:0 auto;padding:96px 20px 48px;color:var(--ink)}
+.camp-howto *{box-sizing:border-box;min-width:0}
+.camp-howto .breadcrumbs{font-size:.9rem;color:var(--muted);margin:0 0 12px}
+.camp-howto .breadcrumbs a{color:inherit}
+.camp-howto h1{color:var(--accent);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.12;margin:0 0 12px;font-weight:800}
+.camp-howto .camp-deck{max-width:780px;font-size:1.08rem;line-height:1.65;margin:0 0 14px}
+.camp-howto .camp-byline{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+.camp-howto .camp-opening{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:start}
+.camp-howto figure{margin:0}
+.camp-howto figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+.camp-howto figcaption{font-size:.9rem;line-height:1.55;color:var(--muted);padding:10px 2px}
+.camp-howto .camp-panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+.camp-howto .camp-panel h2{font-size:1.1rem;margin:0 0 12px;color:var(--accent)}
+.camp-howto p,.camp-howto li{font-size:1rem;line-height:1.7}
+.camp-howto p{margin:0 0 14px}
+.camp-howto p:last-child{margin-bottom:0}
+.camp-howto ul,.camp-howto ol{padding-left:22px;margin:0}
+.camp-howto li+li{margin-top:8px}
+.camp-howto strong{color:#fff}
+.camp-howto a{color:var(--accent);text-underline-offset:3px}
+.camp-howto a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.camp-howto .camp-jump{display:flex;flex-wrap:wrap;gap:10px 24px;padding:20px 0;margin:4px 0 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+.camp-howto [id]{scroll-margin-top:90px}
+.camp-howto .camp-reading{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr);gap:32px;align-items:start}
+.camp-howto .camp-section-title{font-size:1.5rem;color:var(--accent);margin:0 0 18px;line-height:1.25}
+.camp-howto .camp-steps{padding:0;list-style:none;counter-reset:setup}
+.camp-howto .camp-steps>li{counter-increment:setup;padding:0 0 22px 44px;margin:0 0 22px;border-bottom:1px solid var(--line);position:relative}
+.camp-howto .camp-steps>li:before{content:counter(setup,decimal-leading-zero);position:absolute;left:0;top:0;font-weight:800;color:var(--accent);font-size:1.15rem}
+.camp-howto h3{font-size:1.15rem;line-height:1.35;color:#fff;margin:0 0 10px}
+.camp-howto .camp-aside{display:grid;gap:20px}
+.camp-howto .camp-note{border-left:3px solid var(--accent);padding:12px 16px;background:rgba(234,88,12,.06)}
+.camp-howto .camp-conditions{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:12px}
+.camp-howto .camp-finish{margin-top:24px}
+.camp-howto .camp-related{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:20px}
+@media(max-width:800px){.camp-howto .camp-opening,.camp-howto .camp-reading,.camp-howto .camp-conditions{grid-template-columns:1fr}.camp-howto .camp-reading{gap:8px}.camp-howto .camp-aside{margin-bottom:24px}.camp-howto{padding-top:88px}.camp-howto .camp-panel{padding:18px}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}

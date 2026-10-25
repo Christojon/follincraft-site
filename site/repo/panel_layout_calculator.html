@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Layout Calculator - Follincraft</title>
+<meta name="description" content="Panel layout calculator for estimating flat part nesting, sheet usage, part count, and waste before cutting material.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Panel Layout Calculator">
+  <meta property="og:description" content="Panel layout calculator for estimating flat part nesting, sheet usage, part count, and waste before cutting material.">
+  <meta property="og:url" content="https://follincraft.com/repo/panel_layout_calculator.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panel Layout Calculator">
+  <meta name="twitter:description" content="Panel layout calculator for estimating flat part nesting, sheet usage, part count, and waste before cutting material.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/panel_layout_calculator.html">
+
+  <style>
+    /* Font (match site) */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    :root{
+      --bg:#000000;
+      --card:#0b0c10;
+      --ink:#ffffff;
+      --muted:#d6d6d6;
+      --accent:#ff6600;
+
+      --line:#2a2a2d;
+      --input-bg:#0e1115;
+      --input-border:#2f3237;
+
+      --good:#22c55e;
+      --bad:#ef4444;
+    }
+
+    html, body{ height:100%; }
+    /* Orange scrollbar */
+    html{ scrollbar-width:thin; scrollbar-color: var(--accent) #0b0c10; }
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-track{ background:#0b0c10; }
+    ::-webkit-scrollbar-thumb{ background:var(--accent); border-radius:6px; }
+    ::-webkit-scrollbar-thumb:hover{ filter:brightness(1.1); }
+
+    body{
+      margin:0;
+      font-family:'Roboto', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+      font-size:15px;
+      line-height:1.5;
+      background:var(--bg);
+      color:var(--ink);
+    }
+
+    .tool-page{ padding:94px 0 40px; }
+    .tool-intro{ max-width:1200px; margin:0 auto; padding:0 24px 18px; }
+    .eyebrow{ margin:0 0 6px; color:#fff; font-size:14px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .tool-intro h1{ margin:0; font-size:42px; line-height:1.05; color:var(--accent); }
+    .tool-intro p{ margin:12px 0 0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55; }
+    .tool-wrap{ max-width:1200px; margin:0 auto; padding:24px; }
+
+    /* Heading block (matches your other tools) */
+    .page-head{ margin-bottom:16px; }
+    .title{ margin:0; font-size:20px; color:var(--accent); }
+    .blurb{ margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+    /* Side-by-side like the other app */
+    .grid{ display:grid; gap:16px; }
+    @media (min-width:1000px){ .grid{ grid-template-columns: 450px 1fr; } }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+
+    label{
+      font-size:14px;
+      color:var(--muted);
+      display:block;
+      margin-bottom:6px;
+      font-weight:500;
+    }
+
+    input[type="number"], input[type="text"]{
+      width:100%;
+      box-sizing:border-box;
+      background:var(--input-bg);
+      color:var(--ink);
+      border:1px solid var(--input-border);
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:14px;
+      outline:none;
+      transition:border-color .15s, box-shadow .15s;
+    }
+    input[type="number"]:focus, input[type="text"]:focus{
+      border-color:#ff8033;
+      box-shadow:0 0 0 3px rgba(255,102,0,.2);
+    }
+
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+    .btns{ display:flex; gap:10px; flex-wrap:wrap; }
+    button{
+      appearance:none;
+      border:1px solid transparent;
+      border-radius:10px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      background:var(--accent);
+      color:#fff;
+      font-size:14px;
+      letter-spacing:.2px;
+      transition:filter .15s, transform .02s;
+    }
+    button:hover{ filter:brightness(1.04); }
+    button:active{ transform:translateY(1px); }
+
+    button.secondary{
+      background:#14161b;
+      color:#fff;
+      border-color:var(--line);
+    }
+    button.secondary:hover{ background:#191c22; }
+
+    .muted{ color:var(--muted); font-size:13px; }
+
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#111317;
+      color:#fff;
+    }
+    .totals{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+
+    .parts-table{ width:100%; border-collapse:collapse; }
+    .parts-table th, .parts-table td{
+      text-align:left;
+      padding:8px 8px;
+      border-bottom:1px solid var(--line);
+      color:#fff;
+    }
+    .parts-table th{ color:var(--muted); font-weight:600; font-size:13px; }
+    .part-letter{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:34px;
+      height:34px;
+      border-radius:8px;
+      background:rgba(255,102,0,.12);
+      border:1px solid rgba(255,102,0,.45);
+      color:#ff8a3d;
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+
+    .del{
+      background:#14161b;
+      border:1px solid var(--line);
+      color:#ffb4a8;
+      padding:6px 10px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .del:hover{ background:#191c22; }
+
+    .sheet{ margin-bottom:18px; }
+    .sheet h3{ margin:0 0 8px 0; font-size:16px; color:#fff; }
+    .sheet-stats{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 8px; }
+
+    .legend{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+    .legend .swatch{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 8px; border:1px solid var(--line);
+      border-radius:999px; background:#111317; font-size:12px; color:#fff;
+    }
+    .legend .box{ width:12px; height:12px; border-radius:3px; }
+
+    .svg-wrap{
+      width:100%;
+      border:1px dashed var(--line);
+      border-radius:12px;
+      background:#0e1115;
+      padding:8px;
+    }
+    svg{ width:100%; height:auto; display:block; border-radius:8px; }
+    .sheet-label{
+      font-size:2.2px;
+      font-weight:800;
+      fill:#fff;
+      paint-order:stroke;
+      stroke:#0b0c10;
+      stroke-width:.35px;
+    }
+    .sheet-dim{
+      font-size:1.7px;
+      fill:#dbeafe;
+      paint-order:stroke;
+      stroke:#0b0c10;
+      stroke-width:.25px;
+    }
+    .layout-table-wrap{ margin-top:14px; overflow:auto; border-radius:10px; }
+    .layout-table{ width:100%; border-collapse:collapse; font-size:13px; }
+    .layout-table th,
+    .layout-table td{ border-bottom:1px solid var(--line); padding:8px; text-align:left; }
+    .layout-table th{ color:var(--muted); background:#111317; }
+    .print-report{ display:none; }
+
+    /* Ensure all text is readable on dark */
+    .card * { color: inherit; }
+    @media (max-width:700px){
+      .tool-page{padding-top:86px}
+      .tool-intro{padding:0 16px 16px}
+      .tool-intro h1{font-size:34px}
+      .tool-intro p{font-size:15px}
+      .tool-wrap{padding:16px}
+    }
+    @media print{
+      @page{ size:letter; margin:.45in; }
+      body{ background:#fff; color:#111; font-family:Arial, sans-serif; }
+      body > header,
+      .tool-page,
+      #contact,
+      footer{ display:none !important; }
+      .print-report{
+        display:block !important;
+        color:#111;
+      }
+      .print-report h1{ margin:0 0 4px; font-size:24px; color:#111; }
+      .print-report h2{ margin:18px 0 8px; font-size:15px; color:#111; }
+      .print-meta{
+        display:grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap:8px;
+        margin:12px 0 16px;
+        font-size:11px;
+      }
+      .print-meta div{ border:1px solid #bbb; padding:6px; border-radius:4px; }
+      .print-report table{ width:100%; border-collapse:collapse; font-size:11px; }
+      .print-report th,
+      .print-report td{ color:#111; border:1px solid #bbb; padding:5px; }
+      .print-report thead th{ background:#eee; color:#111; position:static; }
+      .print-sheet{
+        break-inside:avoid;
+        page-break-inside:avoid;
+        margin:0 0 16px;
+        border:1px solid #999;
+        border-radius:6px;
+        padding:8px;
+      }
+      .print-sheet h3{ margin:0 0 6px; font-size:13px; color:#111; }
+      .print-sheet svg{ width:100%; height:auto; border:1px solid #aaa; }
+      .print-sheet .legend{ color:#111; }
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Panel Layout Calculator",
+  "description": "Panel layout calculator for estimating flat part nesting, sheet usage, part count, and waste before cutting material.",
+  "url": "https://follincraft.com/repo/panel_layout_calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Panel Layout Calculator",
+      "item": "https://follincraft.com/repo/panel_layout_calculator.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Panel Layout Calculator</span></p>
+      <p class="eyebrow">Shop Tool</p>
+      <h1>Panel Layout Calculator</h1>
+      <p>Lay flat parts onto sheet stock, see what fits, and get a quick visual on waste before you start nesting for real.</p>
+    </section>
+  <div class="tool-wrap">
+
+    <div class="grid">
+      <!-- Controls (left) -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <label>Sheet width (in)</label>
+            <input id="sheetW" type="number" step="1.0" value="48"  aria-label="Sheet W"/>
+          </div>
+          <div>
+            <label>Sheet height (in)</label>
+            <input id="sheetH" type="number" step="1.0" value="120"  aria-label="Sheet H"/>
+          </div>
+        </div>
+        <div class="row" style="margin-top:12px;">
+          <div>
+            <label>Kerf / gap between parts (in)</label>
+            <input id="kerf" type="number" step="0.0625" value="0.125"  aria-label="Kerf"/>
+          </div>
+          <div>
+            <label>Edge margin (in) <span class="muted">(optional)</span></label>
+            <input id="margin" type="number" step="0.0625" value="0"  aria-label="Margin"/>
+          </div>
+        </div>
+
+        <h3 style="margin:18px 0 8px 0; font-size:14px; color:var(--muted);">Parts</h3>
+        <table class="parts-table" id="partsTable">
+          <thead>
+            <tr>
+              <th style="width:14%">Part</th>
+              <th style="width:20%">Width</th>
+              <th style="width:20%">Height</th>
+              <th style="width:16%">Qty</th>
+              <th style="width:10%">Rotate?</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="partsBody"></tbody>
+        </table>
+        <div class="btns" style="margin-top:10px;">
+          <button id="addPart" type="button" class="secondary" onclick="window._addPartRow()">+ Add part</button>
+        </div>
+
+        <div class="btns" style="margin-top:16px;">
+          <button id="runBtn" type="button" onclick="window._optimize()">Optimize</button>
+          <button id="clearBtn" type="button" class="secondary" onclick="window._clear()">Clear</button>
+          <button id="sampleBtn" type="button" class="secondary" onclick="window._sample()">Load example</button>
+        </div>
+        <p class="muted">Tip: Try rotating parts or adjusting kerf to boost sheet utilization.</p>
+      </section>
+
+      <!-- Results (right) -->
+      <section class="card">
+        <div class="btns" style="justify-content:flex-end; margin-bottom:10px;">
+          <button id="copyLayoutBtn" type="button" class="secondary">Copy summary</button>
+          <button id="printLayoutBtn" type="button" class="secondary">Print layout</button>
+        </div>
+        <div id="summary" class="totals"></div>
+        <div id="notes" class="muted" style="margin-bottom:8px;"></div>
+        <div id="sheets"></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const EPS = 1e-6;
+      const partsBody = document.getElementById('partsBody');
+      const copyLayoutBtn = document.getElementById('copyLayoutBtn');
+      const printLayoutBtn = document.getElementById('printLayoutBtn');
+      const colors = ['#3b82f6','#22c55e','#f59e0b','#ef4444','#8b5cf6','#06b6d4','#a3e635','#f97316'];
+      let lastLayout = null;
+
+      // ---- Rows ----
+      function addPartRow(w='', h='', q='', rot=true){
+        const tr = document.createElement('tr');
+        const letter = partLetter(partsBody.children.length);
+        tr.innerHTML = `
+          <td><span class="part-letter">${letter}</span></td>
+          <td><input type="text" inputmode="decimal" value="${w}" placeholder="e.g. 18"  aria-label="E.g. 18"/></td>
+          <td><input type="text" inputmode="decimal" value="${h}" placeholder="e.g. 24"  aria-label="E.g. 24"/></td>
+          <td><input type="text" inputmode="numeric" value="${q}" placeholder="e.g. 6"  aria-label="E.g. 6"/></td>
+          <td><input type="checkbox" ${rot? 'checked' : ''} aria-label="Checkbox"/></td>
+          <td><button type="button" class="del">Remove</button></td>
+        `;
+        tr.querySelector('.del').addEventListener('click', () => {
+          tr.remove();
+          refreshPartLetters();
+        });
+        partsBody.appendChild(tr);
+        refreshPartLetters();
+      }
+
+      function refreshPartLetters(){
+        partsBody.querySelectorAll('tr').forEach((tr, index) => {
+          const badge = tr.querySelector('.part-letter');
+          if (badge) badge.textContent = partLetter(index);
+        });
+      }
+
+      function clearAll(){
+        partsBody.innerHTML = '';
+        document.getElementById('sheets').innerHTML = '';
+        document.getElementById('summary').innerHTML = '';
+        document.getElementById('notes').textContent = '';
+        lastLayout = null;
+        addPartRow();
+      }
+
+      function sample(){
+        clearAll();
+        document.getElementById('sheetW').value = '48';
+        document.getElementById('sheetH').value = '96';
+        document.getElementById('kerf').value = '0.125';
+        document.getElementById('margin').value = '0';
+        partsBody.innerHTML = '';
+        addPartRow(18, 24, 6, true);
+        addPartRow(12, 12, 8, true);
+        addPartRow(6, 30, 4, true);
+      }
+
+      // ---- Packing (free-rectangle nesting) ----
+      function packMulti(parts, W, H, kerf, margin){
+        const rects = [];
+        let pid = 0;
+        parts.forEach((p, idx) => { for (let i=0;i<p.qty;i++) rects.push({ id: pid++, label:p.label, w:p.w, h:p.h, rot:p.rot, type: idx }); });
+        rects.sort((a,b)=> (Math.max(b.w,b.h) - Math.max(a.w,a.h)) || ((b.w*b.h)-(a.w*a.h)) );
+        const sheets = [];
+        for (const r of rects){
+          let best = null;
+          sheets.forEach((sheet, sheetIndex) => {
+            const candidate = findPlacement(sheet, r, kerf);
+            if (candidate && (!best || comparePlacement(candidate, best) < 0)) best = { ...candidate, sheetIndex };
+          });
+          if (!best){
+            const sheet = newSheet(W, H, margin);
+            const candidate = findPlacement(sheet, r, kerf);
+            if (!candidate) throw new Error(`Part ${r.w}x${r.h} does not fit on sheet ${W}x${H} with margins.`);
+            sheets.push(sheet);
+            best = { ...candidate, sheetIndex: sheets.length - 1 };
+          }
+          placeRect(sheets[best.sheetIndex], best, kerf);
+        }
+        return sheets;
+      }
+
+      function newSheet(W, H, margin){
+        return {
+          free:[{ x: margin, y: margin, w: W - margin * 2, h: H - margin * 2 }],
+          placed:[]
+        };
+      }
+
+      function orientations(rect){
+        const out = [{ id:rect.id, label:rect.label, w:rect.w, h:rect.h, rot:false, type:rect.type }];
+        if (rect.rot && Math.abs(rect.w-rect.h) > EPS) out.push({ id:rect.id, label:rect.label, w:rect.h, h:rect.w, rot:true, type:rect.type });
+        return out;
+      }
+
+      function findPlacement(sheet, rect, kerf){
+        let best = null;
+        for (const free of sheet.free){
+          for (const o of orientations(rect)){
+            if (o.w <= free.w + EPS && o.h <= free.h + EPS){
+              const leftoverW = free.w - o.w;
+              const leftoverH = free.h - o.h;
+              const scoreShort = Math.min(leftoverW, leftoverH);
+              const scoreArea = free.w * free.h - o.w * o.h;
+              const candidate = { ...o, x:free.x, y:free.y, scoreShort, scoreArea };
+              if (!best || comparePlacement(candidate, best) < 0) best = candidate;
+            }
+          }
+        }
+        return best;
+      }
+
+      function comparePlacement(a, b){
+        return (a.scoreShort - b.scoreShort) || (a.scoreArea - b.scoreArea) || (a.y - b.y) || (a.x - b.x);
+      }
+
+      function placeRect(sheet, placed, kerf){
+        sheet.placed.push(placed);
+        const used = { x:placed.x, y:placed.y, w:placed.w + kerf, h:placed.h + kerf };
+        const nextFree = [];
+        sheet.free.forEach(free => splitFreeRect(free, used, nextFree));
+        sheet.free = pruneFreeRects(nextFree);
+      }
+
+      function splitFreeRect(free, used, out){
+        if (!intersects(free, used)){ out.push(free); return; }
+        const freeRight = free.x + free.w;
+        const freeBottom = free.y + free.h;
+        const usedRight = used.x + used.w;
+        const usedBottom = used.y + used.h;
+        if (used.x > free.x) out.push({ x:free.x, y:free.y, w:used.x-free.x, h:free.h });
+        if (usedRight < freeRight) out.push({ x:usedRight, y:free.y, w:freeRight-usedRight, h:free.h });
+        if (used.y > free.y) out.push({ x:free.x, y:free.y, w:free.w, h:used.y-free.y });
+        if (usedBottom < freeBottom) out.push({ x:free.x, y:usedBottom, w:free.w, h:freeBottom-usedBottom });
+      }
+
+      function intersects(a,b){
+        return a.x < b.x + b.w - EPS && a.x + a.w > b.x + EPS && a.y < b.y + b.h - EPS && a.y + a.h > b.y + EPS;
+      }
+
+      function pruneFreeRects(rects){
+        const cleaned = rects.filter(r => r.w > EPS && r.h > EPS);
+        return cleaned.filter((r, i) => !cleaned.some((other, j) => i !== j && containsRect(other, r)));
+      }
+
+      function containsRect(a,b){
+        return b.x >= a.x - EPS && b.y >= a.y - EPS && b.x + b.w <= a.x + a.w + EPS && b.y + b.h <= a.y + a.h + EPS;
+      }
+
+      // ---- Rendering ----
+      function renderSheets(sheets, W, H, parts){
+        const container = document.getElementById('sheets');
+        container.innerHTML = '';
+
+        const placedCounts = new Array(parts.length).fill(0);
+        sheets.forEach(s => s.placed.forEach(it => placedCounts[it.type]++));
+
+        const sheetArea = W * H;
+        const requestedArea = parts.reduce((a,p)=> a + p.w*p.h*p.qty, 0);
+        const util = (requestedArea / (sheets.length * sheetArea)) * 100;
+
+        document.getElementById('summary').innerHTML = `
+          <span class="pill">Sheet: <strong>${fmt(W)} × ${fmt(H)} in</strong></span>
+          <span class="pill">Sheets used: <strong>${sheets.length}</strong></span>
+          <span class="pill">Placed: <strong>${placedCounts.reduce((a,n)=>a+n,0)}</strong></span>
+          <span class="pill">Utilization (requested): <strong>${fmt(util)}%</strong></span>
+        `;
+        document.getElementById('notes').textContent = 'Legend shows placed / requested for each part.';
+
+        sheets.forEach((sheet, si) => {
+          const div = document.createElement('div');
+          div.className = 'sheet';
+          div.innerHTML = `<h3>Sheet ${si+1}</h3>`;
+          const usedArea = sheet.placed.reduce((sum,item)=>sum + item.w * item.h, 0);
+          const sheetUtil = (usedArea / sheetArea) * 100;
+          const stats = document.createElement('div');
+          stats.className = 'sheet-stats';
+          stats.innerHTML = `
+            <span class="pill">Parts: <strong>${sheet.placed.length}</strong></span>
+            <span class="pill">Yield: <strong>${fmt(sheetUtil)}%</strong></span>
+            <span class="pill">Waste: <strong>${fmt(sheetArea - usedArea)} sq in</strong></span>
+          `;
+          div.appendChild(stats);
+
+          const legend = document.createElement('div'); legend.className = 'legend';
+          parts.forEach((p, idx) => {
+            const sw = document.createElement('span'); sw.className = 'swatch';
+            const placed = placedCounts[idx];
+            const txt = `${escapeHTML(p.label)} — ${fmt(p.w)}×${fmt(p.h)} in — <strong>${Math.min(placed,p.qty)}/${p.qty}</strong>${p.rot? ' (rot ok)' : ''}`;
+            sw.innerHTML = `<span class="box" style="background:${colors[idx % colors.length]}"></span> ${txt}`;
+            legend.appendChild(sw);
+          });
+          div.appendChild(legend);
+
+          const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+          svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+          const border = document.createElementNS('http://www.w3.org/2000/svg','rect');
+          border.setAttribute('x', 0); border.setAttribute('y', 0);
+          border.setAttribute('width', W); border.setAttribute('height', H);
+          border.setAttribute('fill', '#0b0c10');
+          border.setAttribute('stroke', getCss('--line'));
+          border.setAttribute('stroke-dasharray', '4 4');
+          svg.appendChild(border);
+
+          sheet.placed.forEach(item => {
+              const r = document.createElementNS('http://www.w3.org/2000/svg','rect');
+              const col = colors[item.type % colors.length];
+              r.setAttribute('x', item.x);
+              r.setAttribute('y', item.y);
+              r.setAttribute('width', item.w);
+              r.setAttribute('height', item.h);
+              r.setAttribute('fill', col);
+              r.setAttribute('fill-opacity', '0.18');
+              r.setAttribute('stroke', '#3b3f46');
+              r.setAttribute('stroke-width', 0.6);
+              svg.appendChild(r);
+              const displayLabel = shortPartLabel(parts[item.type].label);
+              const labelSize = Math.max(1.05, Math.min(1.85, item.h / 4.2, item.w / 11));
+              const dimSize = Math.max(0.85, Math.min(1.25, labelSize * 0.72));
+              const label = document.createElementNS('http://www.w3.org/2000/svg','text');
+              label.setAttribute('x', item.x + Math.min(item.w / 2, item.w - 1));
+              label.setAttribute('y', item.y + item.h / 2 - (item.h > 8 ? 0.7 : 0));
+              label.setAttribute('text-anchor','middle');
+              label.setAttribute('class','sheet-label');
+              label.setAttribute('font-size', labelSize);
+              label.textContent = displayLabel;
+              svg.appendChild(label);
+              if (item.h >= 8 && item.w >= 8){
+                const dim = document.createElementNS('http://www.w3.org/2000/svg','text');
+                dim.setAttribute('x', item.x + item.w / 2);
+                dim.setAttribute('y', item.y + item.h / 2 + 2);
+                dim.setAttribute('text-anchor','middle');
+                dim.setAttribute('class','sheet-dim');
+                dim.setAttribute('font-size', dimSize);
+                dim.textContent = `${fmt(item.w)} x ${fmt(item.h)}`;
+                svg.appendChild(dim);
+              }
+          });
+
+          const wrap = document.createElement('div'); wrap.className = 'svg-wrap';
+          wrap.appendChild(svg);
+          div.appendChild(wrap);
+          container.appendChild(div);
+        });
+
+        renderCutOrder(sheets, parts);
+      }
+
+      function renderCutOrder(sheets, parts){
+        const container = document.getElementById('sheets');
+        const rows = sheets.flatMap((sheet, si) => sheet.placed.map(item => `
+          <tr>
+            <td>${si+1}</td>
+            <td>${escapeHTML(parts[item.type].label)}</td>
+            <td>${fmt(item.x)}, ${fmt(item.y)}</td>
+            <td>${fmt(item.w)} x ${fmt(item.h)}</td>
+            <td>${item.rot ? 'Yes' : 'No'}</td>
+          </tr>
+        `)).join('');
+        const div = document.createElement('div');
+        div.className = 'layout-table-wrap';
+        div.innerHTML = `
+          <table class="layout-table">
+            <thead><tr><th>Sheet</th><th>Part</th><th>Origin</th><th>Size</th><th>Rotated</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        `;
+        container.appendChild(div);
+      }
+
+      // ---- Run ----
+      function optimize(){
+        const W = parseFloat(document.getElementById('sheetW').value);
+        const H = parseFloat(document.getElementById('sheetH').value);
+        const kerf = parseFloat(document.getElementById('kerf').value || '0');
+        const margin = parseFloat(document.getElementById('margin').value || '0');
+        if (!(W>0 && H>0)) { alert('Sheet size must be positive numbers.'); return; }
+        if (kerf < 0 || margin < 0) { alert('Kerf and margin must be zero or greater.'); return; }
+
+        const parts = [];
+        partsBody.querySelectorAll('tr').forEach((tr, index) => {
+          const inputs = tr.querySelectorAll('input');
+          const label = partLetter(index);
+          const w = parseFloat(inputs[0].value);
+          const h = parseFloat(inputs[1].value);
+          const qty = parseInt(inputs[2].value,10) || 0;
+          const rot = inputs[3].checked;
+          if (qty>0 && w>0 && h>0) parts.push({ label, w, h, qty, rot });
+        });
+        if (!parts.length) { alert('Add at least one part with quantity > 0.'); return; }
+
+        const sheets = packMulti(parts, W, H, kerf, margin);
+        lastLayout = {
+          W, H, kerf, margin, parts, sheets
+        };
+        renderSheets(sheets, W, H, parts);
+      }
+
+      function fmt(n){ const num = Number(n); return isFinite(num) ? (Math.abs(num) >= 100 ? num.toFixed(1) : num.toFixed(3)).replace(/\.0+$/,'') : String(n); }
+      function getCss(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+      function escapeHTML(value){
+        return String(value ?? '').replace(/[&<>"']/g, ch => ({
+          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+        }[ch]));
+      }
+      function escapeAttr(value){ return escapeHTML(value); }
+      function shortPartLabel(value){
+        const text = String(value || '').trim();
+        if (!text) return 'Part';
+        const beforeDash = text.split(/\s+-\s+/)[0].trim();
+        return beforeDash.length <= 10 ? beforeDash : beforeDash.slice(0, 10);
+      }
+      function partLetter(index){
+        let n = index;
+        let out = '';
+        do {
+          out = String.fromCharCode(65 + (n % 26)) + out;
+          n = Math.floor(n / 26) - 1;
+        } while (n >= 0);
+        return out;
+      }
+      function svgToString(svg){ return new XMLSerializer().serializeToString(svg); }
+
+      // expose for inline onclick
+      window._addPartRow = addPartRow;
+      window._clear = clearAll;
+      window._sample = sample;
+      window._optimize = optimize;
+
+      copyLayoutBtn.addEventListener('click', async () => {
+        const summary = document.getElementById('summary').textContent.trim().replace(/\s+/g, ' ');
+        const notes = document.getElementById('notes').textContent.trim();
+        const sheets = [...document.querySelectorAll('#sheets .sheet')].map(sheet => sheet.textContent.trim().replace(/\s+/g, ' '));
+        const text = [summary, notes, ...sheets].filter(Boolean).join('\n');
+        if (!text) return;
+        try{
+          await navigator.clipboard.writeText(text);
+          copyLayoutBtn.textContent = 'Copied';
+          setTimeout(() => copyLayoutBtn.textContent = 'Copy summary', 900);
+        }catch(_){}
+      });
+
+      printLayoutBtn.addEventListener('click', () => {
+        if (!lastLayout) {
+          optimize();
+          if (!lastLayout) return;
+        }
+        buildPrintReport(lastLayout);
+        window.print();
+      });
+
+      function buildPrintReport(layout){
+        const sheetArea = layout.W * layout.H;
+        const requestedArea = layout.parts.reduce((a,p)=> a + p.w*p.h*p.qty, 0);
+        const util = (requestedArea / (layout.sheets.length * sheetArea)) * 100;
+        const partRows = layout.parts.map(p => `
+          <tr>
+            <td>${escapeHTML(p.label)}</td>
+            <td>${fmt(p.w)} x ${fmt(p.h)}</td>
+            <td>${p.qty}</td>
+            <td>${p.rot ? 'Yes' : 'No'}</td>
+          </tr>
+        `).join('');
+        const sheetBlocks = [...document.querySelectorAll('#sheets .sheet')].map((sheet, index) => {
+          const legend = sheet.querySelector('.legend')?.outerHTML || '';
+          const svg = sheet.querySelector('svg');
+          return `<div class="print-sheet"><h3>Sheet ${index+1}</h3>${legend}${svg ? svgToString(svg) : ''}</div>`;
+        }).join('');
+        document.getElementById('printReport').innerHTML = `
+          <h1>Panel Layout</h1>
+          <p>Printable sheet layout generated by Follincraft.</p>
+          <div class="print-meta">
+            <div><strong>Sheet size</strong><br>${fmt(layout.W)} x ${fmt(layout.H)} in</div>
+            <div><strong>Kerf / margin</strong><br>${fmt(layout.kerf)} / ${fmt(layout.margin)} in</div>
+            <div><strong>Sheets / yield</strong><br>${layout.sheets.length} / ${fmt(util)}%</div>
+            <div><strong>Parts placed</strong><br>${layout.sheets.reduce((sum,s)=>sum+s.placed.length,0)}</div>
+          </div>
+          <h2>Sheet Layouts</h2>
+          ${sheetBlocks}
+          <h2>Part List</h2>
+          <table>
+            <thead><tr><th>Part</th><th>Size</th><th>Qty</th><th>Rotate</th></tr></thead>
+            <tbody>${partRows}</tbody>
+          </table>
+        `;
+      }
+
+      // Start with a visible example so the preview area never opens as a blank panel.
+      sample();
+      optimize();
+    })();
+  </script>
+  </div>
+  </main>
+
+  <section id="printReport" class="print-report" aria-hidden="true"></section>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

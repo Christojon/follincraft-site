@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>404 - Page Not Found | Follincraft</title>
+  <meta name="description" content="Follincraft page not found. Use the homepage to return to projects, camp notes, gear guides, tools, and contact information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#ea580c;
+      --ink:#f9fafb;
+      --muted:#a1a1aa;
+      --line:#2b2b2b;
+      --bg:#0b0b0b;
+      --panel:#131313;
+      --radius:14px;
+      --navh:68px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .title{margin:0 0 8px;font-size:26px;color:var(--accent)}
+    .lead{color:var(--muted)}
+    .btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:10px 14px;border-radius:10px;text-decoration:none;transition:all 0.2s;cursor:pointer}
+    .btn:hover{background:var(--accent);color:#000;transform:translateY(-2px)}
+    .btn.solid{background:var(--accent);color:#000}
+
+    /* 404 Specific */
+    .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+    .error-content { max-width: 600px; }
+    .error-code { font-size: 80px; font-weight: 800; color: var(--accent); margin-bottom: 10px; }
+    .error-message { font-size: 24px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <h1 class="title">Page Not Found</h1>
+      <p class="lead">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+      <a class="btn solid" href="index.html">Return Home</a>
+    </div>
+  </div>
+</body>
+</html>

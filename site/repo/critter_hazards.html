@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Desert Critter ID & Hazards - Follincraft</title>
+<meta name="description" content="A practical desert critter hazard reference for rattlesnakes, scorpions, bees, spiders, and camp safety in Arizona and the Southwest.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Desert Critter ID &amp; Hazards">
+  <meta property="og:description" content="A practical desert critter hazard reference for rattlesnakes, scorpions, bees, spiders, and camp safety in Arizona and the Southwest.">
+  <meta property="og:url" content="https://follincraft.com/repo/critter_hazards.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desert Critter ID &amp; Hazards">
+  <meta name="twitter:description" content="A practical desert critter hazard reference for rattlesnakes, scorpions, bees, spiders, and camp safety in Arizona and the Southwest.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/critter_hazards.html">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --bg:#000000;
+      --card:#0b0c0f;
+      --ink:#ffffff;
+      --muted:#bbbbbb;
+      --line:#333333;
+      --accent:#ff6600;
+    }
+
+    /* Orange scrollbars */
+    html{scrollbar-width:thin; scrollbar-color: var(--accent) #0b0c0f;}
+    ::-webkit-scrollbar{width:10px}
+    ::-webkit-scrollbar-track{background:#0b0c0f}
+    ::-webkit-scrollbar-thumb{background:var(--accent); border-radius:6px}
+    ::-webkit-scrollbar-thumb:hover{background:#ff8533}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .critter-app .tool-page{padding:88px 0 40px}
+    .critter-app .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    .critter-app .tool-intro{max-width:1100px; margin:0 auto; padding:0 24px 18px}
+    .critter-app .tool-intro .breadcrumbs{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .critter-app .tool-intro .breadcrumbs a{color:inherit; text-decoration:none}
+    .critter-app .tool-intro .breadcrumbs a:hover{color:var(--accent)}
+    .critter-app .eyebrow{margin:0 0 4px; color:#fff; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+    .critter-app .tool-intro h1{margin:0 0 8px; color:var(--accent); font-size:1.8rem; line-height:1.08}
+    .critter-app .tool-intro p:not(.breadcrumbs):not(.eyebrow){margin:0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55}
+    .critter-app .tool-intro::after{
+      content:"";
+      display:block;
+      width:min(760px, 100%);
+      height:2px;
+      margin-top:20px;
+      background:linear-gradient(90deg, var(--accent), rgba(255,102,0,.34), rgba(255,102,0,0));
+    }
+
+    .critter-app .reference-controls{display:flex; align-items:center; gap:10px; margin:10px 0 16px}
+
+    .critter-app .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr))}
+    .critter-app .card{
+      background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+      box-shadow:none;
+      padding:12px;
+      display:flex; flex-direction:column;
+      gap:12px;
+    }
+    .critter-app .photo{width:100%; aspect-ratio:1/1; object-fit:cover; background:#111; border:1px solid var(--line); border-radius:8px}
+    .critter-app .card-body{padding:0}
+    .critter-app .card-meta{margin:0 0 8px; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase}
+    .critter-app h4{margin:0 0 7px; color:#fff; font-size:18px; line-height:1.14}
+    .critter-app .latin{display:block; margin:3px 0 0; color:var(--muted); font-size:12px; font-weight:800}
+    .critter-app .desc{margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.45}
+    .critter-app .tags{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px}
+    .critter-app .pill{font-size:12px; padding:4px 8px; border-radius:8px; border:1px solid var(--line); background:#15171c; font-weight:800}
+    .critter-app .risk-high{color:#fff; background:rgba(239,68,68,.14); border-color:rgba(239,68,68,.35)}
+    .critter-app .risk-med{color:#fff; background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.35)}
+    .critter-app .risk-low{color:#fff; background:rgba(22,163,74,.14); border-color:rgba(22,163,74,.35)}
+
+    .critter-app .field-card-notes{display:grid; gap:7px; margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,.1)}
+    .critter-app .field-card-notes p{margin:0; color:#c8d0da; font-size:13px; line-height:1.42}
+    .critter-app .field-card-notes strong{color:#fff; font-weight:900}
+    .critter-app .credit{
+      margin:18px 0 0;
+      padding:14px 16px;
+      border:1px solid rgba(255,102,0,.45);
+      border-radius:8px;
+      background:rgba(255,102,0,.08);
+      color:#e5e7eb;
+      font-size:15px;
+      line-height:1.5;
+      font-weight:700;
+    }
+    @media (max-width:700px){
+      .critter-app .tool-page{padding-top:82px}
+      .critter-app .tool-intro{padding:0 16px 16px}
+      .critter-app .tool-intro h1{font-size:1.8rem}
+      .critter-app .tool-intro p{font-size:15px}
+      .critter-app .wrap{padding:16px}
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Desert Critter ID & Hazards",
+  "description": "A practical desert critter hazard reference for rattlesnakes, scorpions, bees, spiders, and camp safety in Arizona and the Southwest.",
+  "url": "https://follincraft.com/repo/critter_hazards.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Desert Critter ID & Hazards",
+      "item": "https://follincraft.com/repo/critter_hazards.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="critter-app">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Desert Critter ID &amp; Hazards</span></p>
+      <p class="eyebrow">Field Reference</p>
+      <h1 class="title">Desert Critter ID &amp; Hazards</h1>
+      <p>Quick ID for common Arizona hazards, with practical notes and first-aid basics. Built to scan fast in the field and still feel like the rest of the site.</p>
+    </section>
+
+      <div class="wrap">
+      <div class="reference-controls">
+        <div class="fc-select" data-select="critterFilter">
+          <button class="fc-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="fc-select-label">All critters</span>
+            <span class="fc-select-caret">&#9662;</span>
+          </button>
+          <div class="fc-select-menu" role="listbox">
+            <button type="button" class="fc-select-option is-selected" data-value="all">All critters</button>
+            <button type="button" class="fc-select-option" data-value="snake">Snakes</button>
+            <button type="button" class="fc-select-option" data-value="lizard">Lizards</button>
+            <button type="button" class="fc-select-option" data-value="amphibian">Amphibians</button>
+            <button type="button" class="fc-select-option" data-value="arachnid">Spiders / scorpions</button>
+            <button type="button" class="fc-select-option" data-value="insect">Insects</button>
+            <button type="button" class="fc-select-option" data-value="myriapod">Centipedes</button>
+            <button type="button" class="fc-select-option" data-value="plant">Cacti / plants</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <p class="credit">Safety note: general info only — keep distance and seek professional medical care for bites/stings or exposures.</p>
+    </div>
+  </main>
+
+  <script>
+    // 20 Arizona hazards
+    const CRITTERS = [
+        {
+                "name": "Western Diamondback Rattlesnake",
+                "latin": "Crotalus atrox",
+                "type": "snake",
+                "risk": "high",
+                "wiki": "Crotalus atrox",
+                "desc": "Heavy-bodied rattlesnake with bold black-and-white tail bands; common across AZ.",
+                "dos": [
+                        "Back away slowly",
+                        "Call 911 if bitten",
+                        "Keep limb at/below heart",
+                        "Remove rings/watches"
+                ],
+                "donts": [
+                        "Don’t cut/suck venom",
+                        "Don’t ice or tourniquet",
+                        "Don’t chase or handle"
+                ],
+                "image": "../assets/reference/critters/western-diamondback-rattlesnake.jpg"
+        },
+        {
+                "name": "Mojave Rattlesnake",
+                "latin": "Crotalus scutulatus",
+                "type": "snake",
+                "risk": "high",
+                "wiki": "Crotalus scutulatus",
+                "desc": "Potent neurotoxic venom; often greenish hue (“Mojave green”).",
+                "dos": [
+                        "Seek emergency care immediately",
+                        "Note color/pattern if safe",
+                        "Keep still and calm"
+                ],
+                "donts": [
+                        "Don’t try to kill it",
+                        "Don’t elevate the limb",
+                        "Don’t take painkillers/alcohol"
+                ],
+                "image": "../assets/reference/critters/mojave-rattlesnake.jpg"
+        },
+        {
+                "name": "Sidewinder",
+                "latin": "Crotalus cerastes",
+                "type": "snake",
+                "risk": "high",
+                "wiki": "Crotalus cerastes",
+                "desc": "Small rattlesnake that sidewinds over dunes; horn-like scales above eyes.",
+                "dos": [
+                        "Give it space",
+                        "Watch footing in dunes",
+                        "Use a headlamp at night"
+                ],
+                "donts": [
+                        "Don’t step near shrubs/holes blindly"
+                ],
+                "image": "../assets/reference/critters/sidewinder.jpg"
+        },
+        {
+                "name": "Sonoran Coral Snake",
+                "latin": "Micruroides euryxanthus",
+                "type": "snake",
+                "risk": "med",
+                "wiki": "Micruroides euryxanthus",
+                "desc": "Small, secretive; red-yellow-black bands (red touches yellow). Rare bites.",
+                "dos": [
+                        "Do not handle",
+                        "If bitten, seek medical care",
+                        "Teach kids color rules"
+                ],
+                "donts": [
+                        "Don’t confuse with king snake",
+                        "Don’t attempt to capture"
+                ],
+                "image": "../assets/reference/critters/sonoran-coral-snake.jpg"
+        },
+        {
+                "name": "Gila Monster",
+                "latin": "Heloderma suspectum",
+                "type": "lizard",
+                "risk": "med",
+                "wiki": "Heloderma suspectum",
+                "desc": "Large beaded lizard; venomous but slow; protected species.",
+                "dos": [
+                        "Leave it entirely alone",
+                        "Call medical care if bitten",
+                        "Report harassment to authorities"
+                ],
+                "donts": [
+                        "Don’t pick up or harass",
+                        "Don’t try to pry if latched—wait for release"
+                ],
+                "image": "../assets/reference/critters/gila-monster.jpg"
+        },
+        {
+                "name": "Desert Iguana",
+                "latin": "Dipsosaurus dorsalis",
+                "type": "lizard",
+                "risk": "low",
+                "wiki": "Dipsosaurus dorsalis",
+                "desc": "Common tan lizard in hot flats; harmless; may carry salmonella.",
+                "dos": [
+                        "Observe only",
+                        "Wash hands after contact surfaces"
+                ],
+                "donts": [
+                        "Don’t attempt to catch"
+                ],
+                "image": "../assets/reference/critters/desert-iguana.jpg"
+        },
+        {
+                "name": "Chuckwalla",
+                "latin": "Sauromalus ater",
+                "type": "lizard",
+                "risk": "low",
+                "wiki": "Sauromalus ater",
+                "desc": "Big rock-dwelling lizard; inflates body in crevices; harmless.",
+                "dos": [
+                        "Give space around rock cracks",
+                        "Enjoy from a distance"
+                ],
+                "donts": [
+                        "Don’t try to pull from cracks"
+                ],
+                "image": "../assets/reference/critters/chuckwalla.jpg"
+        },
+        {
+                "name": "Sonoran Desert Toad (Colorado River Toad)",
+                "latin": "Incilius alvarius",
+                "type": "amphibian",
+                "risk": "med",
+                "wiki": "Incilius alvarius",
+                "desc": "Large toad; toxic skin secretions dangerous to pets; illegal to lick/possess toxins.",
+                "dos": [
+                        "Wash hands after contact",
+                        "Keep pets away from toads",
+                        "Rinse pet’s mouth, call vet if exposed"
+                ],
+                "donts": [
+                        "Don’t handle unnecessarily",
+                        "Don’t allow dogs to mouth toads"
+                ],
+                "image": "../assets/reference/critters/sonoran-desert-toad-colorado-river-toad.jpg"
+        },
+        {
+                "name": "Couch’s Spadefoot",
+                "latin": "Scaphiopus couchii",
+                "type": "amphibian",
+                "risk": "low",
+                "wiki": "Scaphiopus couchii",
+                "desc": "Burrowing toad appearing after monsoons; harmless; may secrete mild irritant.",
+                "dos": [
+                        "Avoid touching eyes after handling",
+                        "Rinse skin if irritation occurs"
+                ],
+                "donts": [
+                        "Don’t collect from breeding pools"
+                ],
+                "image": "../assets/reference/critters/couch-s-spadefoot.jpg"
+        },
+        {
+                "name": "Arizona Bark Scorpion",
+                "latin": "Centruroides sculpturatus",
+                "type": "arachnid",
+                "risk": "med",
+                "wiki": "Centruroides sculpturatus",
+                "desc": "Small slender scorpion; most medically significant sting in AZ.",
+                "dos": [
+                        "Shake out shoes/bedding",
+                        "Apply cool compress",
+                        "Seek care for severe symptoms"
+                ],
+                "donts": [
+                        "Don’t sleep on floor without barrier",
+                        "Don’t crush barefoot"
+                ],
+                "image": "../assets/reference/critters/arizona-bark-scorpion.jpg"
+        },
+        {
+                "name": "Giant Desert Hairy Scorpion",
+                "latin": "Hadrurus arizonensis",
+                "type": "arachnid",
+                "risk": "low",
+                "wiki": "Hadrurus arizonensis",
+                "desc": "Largest US scorpion; painful but generally mild sting.",
+                "dos": [
+                        "Use UV light to spot at night",
+                        "Seal door sweeps"
+                ],
+                "donts": [
+                        "Don’t handle"
+                ],
+                "image": "../assets/reference/critters/giant-desert-hairy-scorpion.jpg"
+        },
+        {
+                "name": "Western Black Widow",
+                "latin": "Latrodectus hesperus",
+                "type": "arachnid",
+                "risk": "med",
+                "wiki": "Latrodectus hesperus",
+                "desc": "Shiny black spider with red hourglass; neurotoxic bite.",
+                "dos": [
+                        "Clean bite and seek care if systemic symptoms",
+                        "Wear gloves around debris"
+                ],
+                "donts": [
+                        "Don’t disturb webs with bare hands"
+                ],
+                "image": "../assets/reference/critters/western-black-widow.jpg"
+        },
+        {
+                "name": "Arizona Recluse",
+                "latin": "Loxosceles arizonica",
+                "type": "arachnid",
+                "risk": "med",
+                "wiki": "Loxosceles arizonica",
+                "image": "../assets/reference/critters/arizona-recluse.jpg",
+                "desc": "Brown recluse relative; bites uncommon; necrosis possible.",
+                "dos": [
+                        "Seek medical evaluation for worsening lesions",
+                        "Shake out clothes/gear"
+                ],
+                "donts": [
+                        "Don’t self-debride wounds"
+                ]
+        },
+        {
+                "name": "Africanized Honey Bee (Killer Bee)",
+                "latin": "Africanized bee",
+                "type": "insect",
+                "risk": "high",
+                "wiki": "Africanized_bee",
+                "desc": "Highly defensive swarms; stings can be numerous.",
+                "dos": [
+                        "Run to shelter/vehicle",
+                        "Remove stingers with card edge",
+                        "Call 911 if multiple stings/ALLERGY"
+                ],
+                "donts": [
+                        "Don’t swat/hit nest",
+                        "Don’t jump in water (they wait)"
+                ],
+                "image": "../assets/reference/critters/africanized-honey-bee-killer-bee.jpg"
+        },
+        {
+                "name": "Paper Wasp",
+                "latin": "Polistes",
+                "type": "insect",
+                "risk": "med",
+                "wiki": "Polistes",
+                "desc": "Umbrella nests under eaves; painful stings; allergic risk.",
+                "dos": [
+                        "Treat with cold pack/antihistamine",
+                        "Hire removal for large nests"
+                ],
+                "donts": [
+                        "Don’t spray from a ladder near swarms"
+                ],
+                "image": "../assets/reference/critters/paper-wasp.jpg"
+        },
+        {
+                "name": "Tarantula Hawk Wasp",
+                "latin": "Pepsis grossa",
+                "type": "insect",
+                "risk": "med",
+                "wiki": "Pepsis grossa",
+                "desc": "Huge wasp; very painful sting; not aggressive unless handled.",
+                "dos": [
+                        "Give wide berth",
+                        "Teach kids not to grab bright wasps"
+                ],
+                "donts": [
+                        "Don’t handle"
+                ],
+                "image": "../assets/reference/critters/tarantula-hawk-wasp.jpg"
+        },
+        {
+                "name": "Kissing Bug (Conenose)",
+                "latin": "Triatoma rubida",
+                "type": "insect",
+                "risk": "med",
+                "wiki": "Triatoma",
+                "desc": "Nocturnal blood-feeding bug; bites can trigger allergic reactions.",
+                "dos": [
+                        "Seal screens/cracks",
+                        "Wash bites; monitor for reaction",
+                        "See doctor for severe swelling"
+                ],
+                "donts": [
+                        "Don’t crush on skin",
+                        "Don’t ignore facial bites"
+                ],
+                "image": "../assets/reference/critters/kissing-bug-conenose.png"
+        },
+        {
+                "name": "Palo Verde Beetle",
+                "latin": "Derobrachus hovorei",
+                "type": "insect",
+                "risk": "low",
+                "wiki": "Derobrachus hovorei",
+                "desc": "Large summer beetle; harmless but startling.",
+                "dos": [
+                        "Leave lights minimal at night",
+                        "Let it be"
+                ],
+                "donts": [
+                        "Don’t spray poisons unnecessarily"
+                ],
+                "image": "../assets/reference/critters/palo-verde-beetle.jpg"
+        },
+        {
+                "name": "Giant Desert Centipede",
+                "latin": "Scolopendra heros",
+                "type": "myriapod",
+                "risk": "med",
+                "wiki": "Scolopendra heros",
+                "desc": "Big, fast centipede; very painful venomous bite.",
+                "dos": [
+                        "Wear shoes/gloves when moving debris",
+                        "Clean bite; seek care if severe"
+                ],
+                "donts": [
+                        "Don’t handle or corner"
+                ],
+                "image": "../assets/reference/critters/giant-desert-centipede.jpg"
+        },
+        {
+                "name": "Jumping (Chain-Fruit) Cholla",
+                "latin": "Cylindropuntia fulgida",
+                "type": "plant",
+                "risk": "med",
+                "wiki": "Cylindropuntia fulgida",
+                "desc": "Segments detach and stick with barbed spines.",
+                "dos": [
+                        "Carry a comb/pliers to remove",
+                        "Pull away in direction of spines",
+                        "Disinfect punctures"
+                ],
+                "donts": [
+                        "Don’t grab with fingers",
+                        "Don’t yank straight out (angle helps)"
+                ],
+                "image": "../assets/reference/critters/jumping-chain-fruit-cholla.jpg"
+        },
+        {
+                "name": "Saguaro Cactus Spines",
+                "latin": "Carnegiea gigantea",
+                "type": "plant",
+                "risk": "low",
+                "wiki": "Carnegiea gigantea",
+                "desc": "Long, rigid spines can penetrate deeply.",
+                "dos": [
+                        "Move slowly around arms",
+                        "Use tweezers for spines; soak and clean"
+                ],
+                "donts": [
+                        "Don’t cut deeply to remove"
+                ],
+                "image": "../assets/reference/critters/saguaro-cactus-spines.jpg"
+        },
+        {
+                "name": "Oleander (toxic landscape plant)",
+                "latin": "Nerium oleander",
+                "type": "plant",
+                "risk": "med",
+                "wiki": "Nerium oleander",
+                "desc": "Common ornamental; all parts toxic if ingested; smoke is toxic.",
+                "dos": [
+                        "Keep kids/pets from chewing",
+                        "Wash hands after pruning"
+                ],
+                "donts": [
+                        "Don’t burn trimmings",
+                        "Don’t use skewers/stems for food"
+                ],
+                "image": "../assets/reference/critters/oleander-toxic-landscape-plant.jpg"
+        }
+];;;
+
+    const grid = document.getElementById('grid');
+
+    function buildCards(list){
+      grid.innerHTML='';
+      list.forEach(c=>{
+        const card=document.createElement('article');
+        card.className='card';
+        card.dataset.type=c.type;
+
+          const img=document.createElement('img');
+          img.className='photo';
+          img.alt=c.name;
+          img.loading='lazy';
+          img.src=c.image || placeholderForType(c.type);
+          card.appendChild(img);
+
+        const body=document.createElement('div');
+        body.className='card-body';
+        body.innerHTML=`
+          <p class="card-meta">${capitalize(c.type)}</p>
+          <h4>${c.name} <span class="latin">${c.latin}</span></h4>
+          <p class="desc">${c.desc}</p>
+          <div class="tags">
+            <span class="pill ${riskClass(c.risk)}">Risk: ${c.risk.toUpperCase()}</span>
+          </div>
+          <div class="field-card-notes">
+            <p><strong>Do:</strong> ${c.dos.slice(0,3).join('; ')}.</p>
+            <p><strong>Avoid:</strong> ${c.donts.slice(0,3).join('; ')}.</p>
+          </div>
+        `;
+        card.appendChild(body);
+        grid.appendChild(card);
+
+      });
+    }
+
+    function riskClass(r){return r==='high'?'risk-high':r==='med'?'risk-med':'risk-low'}
+    function capitalize(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+
+    function placeholderForType(t){
+      const colors={snake:"#ef4444",lizard:"#f59e0b",amphibian:"#10b981",arachnid:"#8b5cf6",insect:"#22c55e",myriapod:"#06b6d4",plant:"#eab308"};
+      const c=colors[t]||"#ff6600";
+      const svg=encodeURIComponent(
+        `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'>
+           <rect width='1200' height='750' fill='#0f1115'/>
+           <circle cx='600' cy='375' r='140' fill='${c}' opacity='.35'/>
+           <text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle'
+                 font-family='Inter, sans-serif' font-size='44' fill='#ffffff'>${capitalize(t)}</text>
+         </svg>`
+      );
+      return `data:image/svg+xml;charset=utf-8,${svg}`;
+    }
+
+    function wireReferenceSelect(selectName, onChange){
+      const root = document.querySelector(`.fc-select[data-select="${selectName}"]`);
+      if (!root) return null;
+      const trigger = root.querySelector(".fc-select-trigger");
+      const label = root.querySelector(".fc-select-label");
+      const options = Array.from(root.querySelectorAll(".fc-select-option"));
+      function close(){
+        root.classList.remove("is-open");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+      trigger.addEventListener("click", e=>{
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelectorAll(".fc-select.is-open").forEach(el => { if (el !== root) el.classList.remove("is-open"); });
+        root.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", root.classList.contains("is-open") ? "true" : "false");
+      });
+      options.forEach(opt => opt.addEventListener("click", e=>{
+        e.preventDefault();
+        e.stopPropagation();
+        options.forEach(item => item.classList.toggle("is-selected", item === opt));
+        label.textContent = opt.textContent.trim();
+        root.dataset.value = opt.dataset.value;
+        close();
+        onChange(opt.dataset.value);
+      }));
+      document.addEventListener("click", close);
+      return root;
+    }
+
+    wireReferenceSelect('critterFilter', activeType => {
+      document.querySelectorAll('.card').forEach(card=>{
+        card.style.display=(activeType==='all'||card.dataset.type===activeType)?'':'none';
+      });
+    });
+
+    // Initial render (all cards visible)
+    buildCards(CRITTERS);
+  </script>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+  <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3>
+      <p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div>
+      <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3>
+      <div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap">
+        <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+        <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+        <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+      </div>
+      <p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px">
+    <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+  </p>
+  <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>X-BULL Recovery Boards &ndash; Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Field notes on X-BULL recovery boards: when budget traction boards help, what they cannot replace, and how they fit a practical recovery kit." />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="X-BULL Recovery Boards &ndash; Follincraft">
+  <meta property="og:description" content="Field notes on X-BULL recovery boards: when budget traction boards help, what they cannot replace, and how they fit a practical recovery kit.">
+  <meta property="og:url" content="https://follincraft.com/gear/xbullrecoveryboards/">
+  <meta property="og:image" content="https://follincraft.com/gear/xbullrecoveryboards/xbullrecoveryboards.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X-BULL Recovery Boards &ndash; Follincraft">
+  <meta name="twitter:description" content="Field notes on X-BULL recovery boards: when budget traction boards help, what they cannot replace, and how they fit a practical recovery kit.">
+  <meta name="twitter:image" content="https://follincraft.com/gear/xbullrecoveryboards/xbullrecoveryboards.png">
+  <link rel="canonical" href="https://follincraft.com/gear/xbullrecoveryboards/">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1"/>
+
+  <!-- Favicons -->
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" />
+  <link rel="manifest" href="../../site.webmanifest" />
+<meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    :root{ --accent:#ea580c; --line:#222a33; --panel:#0f1419; --panel2:#11171e; --muted:#9aa4ad; }
+    .wrap{ max-width:1080px; margin:0 auto; padding:0 14px; }
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ color:var(--accent); margin:6px 0 10px; }
+
+        .detail-deck{
+      max-width:760px;
+      margin:0 0 4px;
+      color:#d7dde3;
+      font-size:1.02rem;
+      line-height:1.55;
+    }
+/* Grid */
+    .project-grid{
+      display:grid; grid-template-columns:1.06fr .94fr; gap:18px; align-items:start;
+      grid-template-areas:"media side" "below below";
+    }
+    .left{ grid-area:media; display:flex; flex-direction:column; gap:12px; }
+    .right{ grid-area:side; display:flex; flex-direction:column; gap:12px; }
+    .below{ grid-area:below; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+
+    /* Hero */
+    .hero-frame{
+      position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+      aspect-ratio:1/1; isolation:isolate; background:#000;
+    }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(22px) saturate(1.1); transform:scale(1.08); opacity:.55;
+    }
+    #heroImg{
+      position:relative; z-index:1; width:100%; height:100%; display:block;
+      object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+      width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+      background:rgba(0,0,0,.55); color:#fff; font-size:22px; display:grid; place-items:center; cursor:pointer;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.85); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+    .thumbs{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+    .thumbs a{ display:block; padding:3px; border-radius:10px; border:2px solid transparent; background:var(--panel2); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ width:96px; height:68px; object-fit:cover; border-radius:8px; display:block; }
+
+    /* Cards + chips */
+    .card{ border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:14px; }
+    .section-title{ color:var(--accent); font-size:13px; margin:0 0 6px; letter-spacing:.06em; text-transform:uppercase; font-weight:800; }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+
+    /* Overview */
+    .overview .lede{ font-weight:800; color:#fff; margin:0 0 8px; }
+    .overview p{ line-height:1.6; }
+    .keyline{ height:1px; border:0; background:linear-gradient(90deg,var(--accent),transparent); margin:10px 0 10px; }
+    .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0 0 8px; }
+    @media (max-width:620px){ .quick-grid{ grid-template-columns:1fr; } }
+    .q{ background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:10px; }
+    .q .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; display:block; }
+    .pull{ margin:8px 0 0; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:700; }
+
+        .quick-read{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:900px){ .quick-read{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:560px){ .quick-read{ grid-template-columns:1fr; } }
+    .quick-read .info{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+      border-radius:10px;
+      padding:11px 12px;
+    }
+    .quick-read .k{
+      color:var(--muted);
+      font-size:.76rem;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+    .quick-read .v{ color:#fff; font-weight:700; line-height:1.35; }
+/* WHERE TO BUY */
+    .buy-card{ border:1px solid var(--line); background:var(--panel2); border-radius:12px; padding:16px; }
+    .buy-flex{ display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center; }
+    .buy-title{ margin:0 0 6px; color:#fff; font-weight:800; }
+    .buy-note{ margin:6px 0 0; font-style:italic; color:var(--accent); }
+    .btn.solid.buy-btn{
+      color:#111827 !important;
+    }
+    .btn.solid.buy-btn:hover,
+    .btn.solid.buy-btn:focus{
+      color:#111827 !important;
+    }
+    @media (max-width:720px){
+      .buy-flex{ grid-template-columns:1fr; gap:12px; }
+      .btn.solid.buy-btn{ width:100%; text-align:center; padding:14px 18px; }
+    }
+
+    /* SPECS */
+    .specs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+    @media (max-width:960px){ .specs{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:600px){ .specs{ grid-template-columns:1fr; } }
+    .spec{ display:flex; align-items:flex-start; gap:12px; border:1px solid var(--line); border-radius:10px; padding:12px; background:var(--panel); }
+    .spec svg{ width:28px; height:28px; flex:0 0 28px; color:var(--accent); stroke-width:2.3; }
+    @media (max-width:720px){ .spec svg{ width:32px; height:32px; stroke-width:2.4; } }
+    .spec .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .spec .v{ color:#fff; font-weight:600; }
+
+    /* Notes + Reviews */
+    .my-notes{ border:2px solid var(--accent) !important; background:rgba(234,88,12,.06); }
+    .my-notes ul{
+      list-style-position:inside;
+      margin:10px 0 0;
+      padding:0;
+      display:grid;
+      gap:8px;
+    }
+    .my-notes li{
+      margin:0;
+      line-height:1.5;
+    }
+    .my-notes li::marker{ color:var(--accent); }
+    @media (max-width:560px){
+      .my-notes{ padding:14px; }
+      .my-notes p,
+      .my-notes li{ font-size:.98rem; }
+    }
+.two-up-notes{ display:grid; grid-template-columns:1fr; gap:12px; grid-column:1 / -1; width:100%; }
+    
+    .reviews{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .two-up-notes > *{ min-width:0; }
+    @media (max-width:700px){ .reviews{ grid-template-columns:1fr; } }
+    .review{ border:1px solid var(--line); border-radius:10px; background:rgba(12,15,18,.72); padding:10px 12px; display:grid; grid-template-columns:1fr auto; gap:4px 10px; align-items:center; }
+    .review h4{ margin:0; color:var(--accent); font-size:1rem; line-height:1.15; }
+    .review .note{ color:var(--muted); font-size:.9rem; line-height:1.35; }
+    .review a{ grid-row:1 / span 2; grid-column:2; align-self:center; display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#fff; border:1px solid var(--line); padding:6px 9px; border-radius:9px; font-size:.9rem; white-space:nowrap; }
+    .review a:hover{ border-color:var(--accent); }
+        .support-note{
+      color:var(--muted);
+      line-height:1.55;
+      margin:0 0 12px;
+    }
+.review a .arr{ transition:transform .14s ease; }
+    .review a:hover .arr{ transform:translateX(3px); }
+
+        .support-note{
+      color:var(--muted);
+      line-height:1.55;
+      margin:0 0 12px;
+    }
+/* CTA */
+    .cta-band{ margin:18px 0 0; border-top:2px solid var(--accent); border-bottom:2px solid var(--accent); background:var(--panel); }
+    .cta-band .wrap{ padding-top:18px; padding-bottom:18px; }
+    .cta-inner{ display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:center; }
+    @media (max-width:900px){ .cta-inner{ grid-template-columns:1fr; } }
+    .cta-actions{ display:flex; gap:10px; justify-content:flex-end; }
+    .cta-gear-text{ color:var(--muted); }
+    .cta-gear-text a{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+    }
+    .cta-gear-text a:hover{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "X-BULL Recovery Boards – Follincraft",
+  "description": "Field notes on X-BULL recovery boards: when budget traction boards help, what they cannot replace, and how they fit a practical recovery kit.",
+  "url": "https://follincraft.com/gear/xbullrecoveryboards/",
+  "image": "https://follincraft.com/gear/xbullrecoveryboards/xbullrecoveryboards.png",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://follincraft.com/gear/xbullrecoveryboards/"
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Gear",
+      "item": "https://follincraft.com/gear/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "X-BULL Recovery Boards &ndash; Follincraft",
+      "item": "https://follincraft.com/gear/xbullrecoveryboards/"
+    }
+  ]
+}
+  </script>
+<link rel="stylesheet" href="../../assets/how-to/camp-guides.css?v=20260927b">
+</head>
+<body data-gear-id="xbullrecoveryboards">
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <!-- Breadcrumbs + Title -->
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead">
+      <a href="../../index.html">Home</a> / <a href="../../gear/index.html">Gear</a> / <span>X-BULL Recovery Boards</span>
+    </div>
+    <h1 class="title proj-title">X-BULL Recovery Boards</h1><p class="detail-deck">Budget recovery boards for the kind of sand, mud, snow, and bad judgment where traction matters more than brand prestige.</p>
+  </div>
+
+  <main class="project">
+    <p class="affiliate-note wrap">Disclosure: Some product links may be affiliate links. <a href="../../disclosure/index.html">How recommendations and commissions work.</a></p>
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+
+ <!-- LEFT - hero + thumbs -->
+<div class="left">
+  <div
+    class="hero-frame"
+    id="heroFrame"
+    style="--hero:url('xbullrecoveryboards.png')"
+  >
+    <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+    <img
+      id="heroImg"
+      src="xbullrecoveryboards.png"
+      alt="Bright red X-BULL recovery boards crossed on a dark background"
+     width="1024" height="1024">
+    <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+  </div>
+  <div class="thumbs" id="thumbs">
+    <a class="active" href="xbullrecoveryboards.png">
+      <img src="xbullrecoveryboards.png" alt="" width="1024" height="1024">
+    </a>
+    <a href="xbullrecoveryboards1-opt.jpg">
+      <img src="xbullrecoveryboards1-opt.jpg" alt="" width="2000" height="1333">
+    </a>
+  </div>
+</div>
+
+          <!-- RIGHT - chips + overview -->
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">Budget friendly</span>
+              <span class="chip">10 ton rating</span>
+              <span class="chip">Sand, mud, and snow</span>
+              <span class="chip">Truck and SUV ready</span>
+            </div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">Recovery boards are not a personality. They are traction you can deploy when tires have stopped helping themselves.</p>
+              <p>
+                The X-BULL boards are reinforced nylon with a stated 10 ton rated load and a tooth pattern that actually grabs tread instead of polishing mud. The stated rating is a product specification, not approval for bridging a gap, supporting a jack or freeing a vehicle resting on its chassis.
+              </p>
+              <p>
+                They are not the lightest things in the world, but for the price they give you a lot of peace of mind. The ramped ends slide in under the tire once you shovel a bit, and the molded handles mean you can drag them around in gloves without fighting slick plastic. If you camp on forest roads, soft shoulders, or washed out pullouts, consider boards alongside route choice, a shovel and a plan for getting help.
+              </p>
+              <hr class="keyline">
+              <div class="quick-grid">
+                <div class="q">
+                  <span class="sub">Best for</span>
+                  Solo-ish dirt-road travel, sand, snow, mud, and truck kits that need a self-recovery option.</div>
+                <div class="q">
+                  <span class="sub">Not for</span>
+                  People who need premium expedition boards, heavy repeated commercial recovery, or an excuse to drive deeper into trouble.</div>
+              </div>
+              <p class="pull">
+                If you want a set of recovery boards that live on the rack or in the bed and just quietly do their job when you bury a tire, these are hard to argue with.
+              </p>
+            </article>
+          </div>
+
+          <!-- BELOW -->
+          <div class="below">
+
+            <!-- WHERE TO BUY -->
+            <article class="card buy-card span-2">
+              <h5 class="section-title">Where to Buy</h5>
+              <div class="buy-flex">
+                <div>
+                  <h3 class="buy-title">X-BULL Recovery Traction Tracks Kit</h3>
+                  <p class="lead buy-blurb" style="margin:0">
+                    A pair of red recovery boards with ramped ends, aggressive teeth, and a carry bag. Rated for up to 10 tons and sized for modern SUVs and trucks.
+                  </p>
+                  <p class="buy-note">
+                    Direct product link - current details and availability.
+                  </p>
+                </div>
+                <a
+                  class="btn solid buy-btn"
+                  href="https://www.amazon.com/X-BULL-Recovery-Traction-Tracks-Ladder/dp/B01MS1SKIW"
+                  rel="noopener"
+                >
+                  View product &rarr;
+                </a>
+              </div>
+            </article>
+              <article class="card span-2">
+                <h5 class="section-title">Quick Read</h5>
+                <div class="quick-read">
+                  <div class="info"><div class="k">Role</div><div class="v">Budget friendly</div></div>
+                  <div class="info"><div class="k">Best Fit</div><div class="v">Weekend desert trips, snow runs where plows stop, and everyday people who want recovery gear that actually works without going full overland catalog.</div></div>
+                  <div class="info"><div class="k">Why It Works</div><div class="v">These are the boards I throw in the truck when there is a chance of getting stuck but I do not feel like paying Maxtrax money.</div></div>
+                  <div class="info"><div class="k">Skip If</div><div class="v">Heavy commercial rigs or constant guided tour use. If you are driving deep sand every weekend, the premium boards still win in long term durability.</div></div>
+                </div>
+              </article>
+
+
+            <!-- SPECS -->
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="specs">
+                <div class="spec">
+                  <!-- size -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="4" y="7" width="16" height="10" rx="2"/>
+                    <path d="M8 7V5h8v2"/>
+                  </svg>
+                  <div>
+                    <div class="k">Size</div>
+                    <div class="v">About 42 in long and 12 in wide per board, around 11 lb for the pair</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <!-- material -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
+                    <path d="M8 7v10M16 7v10"/>
+                  </svg>
+                  <div>
+                    <div class="k">Material</div>
+                    <div class="v">Reinforced nylon with UV resistance and a stated 10 ton load rating</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <!-- terrain -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 17l4-4 4 4 4-4 4 4"/>
+                    <path d="M4 7h16"/>
+                  </svg>
+                  <div>
+                    <div class="k">Terrain</div>
+                    <div class="v">Sand, mud, snow, and sloppy forest road shoulders</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <!-- teeth -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 18l3-8 3 8 3-8 3 8 3-8"/>
+                  </svg>
+                  <div>
+                    <div class="k">Traction</div>
+                    <div class="v">Cross shaped teeth that bite into tread and terrain so the tire climbs instead of polishing ruts</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <!-- ramps -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 17h18L7 7 3 9z"/>
+                  </svg>
+                  <div>
+                    <div class="k">Ramps</div>
+                    <div class="v">Contoured entry ramps designed to slide under buried tires with minimal digging</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <!-- extras -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="5" y="4" width="14" height="16" rx="3"/>
+                    <path d="M9 9h6M9 13h4"/>
+                  </svg>
+                  <div>
+                    <div class="k">Extras</div>
+                    <div class="v">Molded hand holds, multiple mounting holes, and a simple carry bag in the kit</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card span-2">
+              <h5 class="section-title">Choose It / Skip It</h5>
+              <div class="quick-grid">
+                <div class="q">
+                  <span class="sub">Choose it</span>
+                  You drive sand, snow, mud, soft shoulders, or forest-road pullouts where a shovel and extra surface area can get you moving again.
+                </div>
+                <div class="q">
+                  <span class="sub">Skip it</span>
+                  You need premium boards for constant hard recovery work, or you are hoping boards will replace judgment, route choice, and digging.
+                </div>
+              </div>
+              <p class="pull">Use them early with a shovel and lower throttle. Spinning deeper first just makes the boards work harder.</p>
+            </article>
+
+            <!-- NOTES + REVIEWS -->
+            <div class="two-up-notes">
+              <article class="card my-notes">
+                <h5 class="section-title">My Notes</h5>
+                <p>I see these as practical insurance, not a license to make worse decisions. They belong with a shovel, gloves, and the patience to dig before spinning deeper.</p>
+                <ul>
+                  <li>Mount them where mud and sand can live without ruining the interior.</li>
+                  <li>Use them with a shovel; boards work better when the tires have a ramp instead of a trench.</li>
+                  <li>Inspect teeth and flex after hard recoveries instead of assuming plastic lasts forever.</li>
+                </ul>
+              </article>
+            </div>
+
+          </div><!-- /.below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="camp-howto camp-merged-notes" data-phase-two-notes><section class="camp-block" id="board-limits"><h2>What the boards can—and cannot—solve</h2><p class="camp-byline">Use guidance · follow the instructions for your board generation.</p><p>Check the instructions for the exact board generation. <a href="https://www.xbullauto.com/pages/faq">X-BULL’s FAQ links its recovery-track instructions</a>; a product load claim does not certify every terrain, bridging span or vehicle-recovery setup.</p><ul><li>Inspect for damage and identify a controlled path to firmer ground before attempting use. Boards do not correct an unstable side slope or a vehicle that may roll or slide.</li><li>Keep the vehicle immobilized while anyone is positioning equipment. Nobody should place hands or boards near a tire while the driver applies power.</li><li>Clear people from the tire and board paths before movement; boards can be displaced violently by wheelspin. Stop if the board moves instead of providing controlled progress.</li><li>Do not crawl under an unsupported vehicle to make room for a board, or assume a board is a jack base or bridge unless that exact use is approved by its maker.</li></ul><p>The <a href="../recovery-kit/index.html#recovery-decisions">recovery decision check</a> explains when to stop and seek help.</p></section></div>
+<section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div>
+            <div class="section-title" style="margin:0; color:var(--accent)">Build out the truck kit</div>
+            <h3 id="ctaTitle" class="title" style="margin:6px 0 8px; color:#fff">
+              Build around the roads you take and the help available along them.
+            </h3>
+            <p class="lead cta-gear-text" style="margin:0;">
+              Compare a jump pack, basic tools, a suitable spare and communication equipment; none removes the need to turn back or call for help.
+              <br>
+              <a
+                href="../../gear/index.html"
+                onclick="try{ window.top.location.href = this.href; } catch(e){ window.location.href = this.href; } return false;"
+                aria-label="See all gear items"
+              >
+                See all gear &rarr;
+              </a>
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn ghost" id="ctaPrevGear" href="#">&larr; Previous gear</a>
+            <a class="btn solid" id="ctaNextGear" href="#">Next gear &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<!-- Lightbox & slider -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+    style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;"
+  >
+    <button
+      class="lb-close"
+      id="lbClose"
+      aria-label="Close"
+      style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;"
+    >
+      &times;
+    </button>
+    <button
+      class="lb-nav lb-prev"
+      id="lbPrev"
+      aria-label="Previous"
+      style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;"
+    >
+      &lsaquo;
+    </button>
+    <img
+      id="lbImg"
+      alt="Full-size image"
+      style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;"
+    >
+    <button
+      class="lb-nav lb-next"
+      id="lbNext"
+      aria-label="Next"
+      style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;"
+    >
+      &rsaquo;
+    </button>
+  </div>
+
+  <script>
+// Slider + blur + thumbs + lightbox
+    (function(){
+      const hero  = document.getElementById('heroImg');
+      const frame = document.getElementById('heroFrame');
+      const thumbs= document.getElementById('thumbs');
+      const lb    = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbPrev= document.getElementById('lbPrev');
+      const lbNext= document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+
+      function setHero(url){
+        if (!url) return;
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+      function show(n){
+        if (!imgs.length) return;
+        i = (n + imgs.length) % imgs.length;
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        setHero(imgs[i]);
+      }
+
+      // init
+      setHero(imgs[i] || hero.currentSrc || hero.src);
+
+      // thumbs
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const idx = imgs.indexOf(a.getAttribute('href'));
+        if (idx !== -1) show(idx);
+      });
+
+      // arrows
+      frame.querySelector('.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.next')?.addEventListener('click', () => show(i+1));
+
+      // lightbox
+      hero.addEventListener('click', () => {
+        if (!imgs.length) return;
+        lbImg.src = imgs[i] || hero.src;
+        lb.style.display='flex';
+      });
+      lbClose?.addEventListener('click', () => lb.style.display='none');
+      lb?.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev?.addEventListener('click', () => show(i-1));
+      lbNext?.addEventListener('click', () => show(i+1));
+    })();
+
+    // CTA: random tagline + prev/next from /gear/index.json using id
+    (async () => {
+      const CTA_TAGLINES = [
+        "Good trips come from a dialed setup, not one flashy piece of gear.",
+        "The right kit turns a normal weekend into something you remember.",
+        "Reliable gear is boring until the moment it saves your ass.",
+        "If it is in my kit, it earned its spot.",
+        "Do not overthink your loadout. Just bring what works.",
+        "Buy once, cry once, then forget about it for a decade.",
+        "Your packing list should feel like a system, not chaos.",
+        "Solid gear makes bad weather feel like part of the fun.",
+        "You do not need everything, just the right things.",
+        "Most gear is hype. These pieces actually deliver.",
+        "Lightweight is good. Durable is better. Both is best.",
+        "A simple kit beats a complicated kit every single time.",
+        "Gear does not make the trip, but bad gear definitely ruins one.",
+        "Test your gear before the trail tests you.",
+        "If I bring it again and again, there is a reason.",
+        "Every piece here is something I would buy twice.",
+        "When your kit works, you notice the scenery, not the problems.",
+        "Out there, reliability is freedom.",
+        "Small upgrades can make huge differences.",
+        "When gear disappears into the background, that is when it is perfect."
+      ];
+
+      const taglineEl = document.getElementById('ctaTitle');
+      if (taglineEl & CTA_TAGLINES.length) {
+        const pick = Math.floor(Math.random() * CTA_TAGLINES.length);
+        taglineEl.textContent = CTA_TAGLINES[pick];
+      }
+
+      const prevEl = document.getElementById('ctaPrevGear');
+      const nextEl = document.getElementById('ctaNextGear');
+      if (!prevEl & !nextEl) return;
+
+      const currentId = (document.body.dataset.gearId || "").trim();
+      if (!currentId) {
+        console.warn('[gear-cta] Missing data-gear-id on body');
+        return;
+      }
+
+      let items = [];
+      try {
+        const res = await fetch('/gear/index.json', { cache:'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        items = Array.isArray(data) ? data : (data.items || []);
+      } catch (err) {
+        console.warn('[gear-cta] Failed to load /gear/index.json', err);
+        return;
+      }
+
+      const idx = items.findIndex(it => String(it.id || "").trim() === currentId);
+      if (idx === -1) {
+        console.warn('[gear-cta] Current ID not found in index.json', currentId);
+        return;
+      }
+
+      const prevItem = items[(idx - 1 + items.length) % items.length];
+      const nextItem = items[(idx + 1) % items.length];
+
+      if (prevEl & prevItem & prevItem.url) {
+        prevEl.href = prevItem.url;
+      }
+      if (nextEl & nextItem & nextItem.url) {
+        nextEl.href = nextItem.url;
+      }
+    })();
+  </script>
+  <script src="../../category-shell.js?v=hub-consistency-2"></script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=gear-campervan-1"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=no-decision-card-1"></script>
+</body>
+</html>

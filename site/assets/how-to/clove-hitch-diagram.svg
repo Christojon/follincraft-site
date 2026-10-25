@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Clove hitch tutorial diagram</title>
+  <desc id="desc">Four step diagram showing a clove hitch tied around a support with the working tail visible.</desc>
+  <defs>
+    <style>
+      .bg{fill:#080b0f}.panel{fill:#11151b;stroke:#2b333d;stroke-width:2}.pole{fill:#7a3f24}.pole-hi{fill:#a75b32;opacity:.9}.rope{fill:none;stroke:#6ec7ff;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}.rope-edge{fill:none;stroke:#16202a;stroke-width:34;stroke-linecap:round;stroke-linejoin:round}.arrow{fill:none;stroke:#f97316;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.txt{fill:#f6f7f8;font:700 34px Inter,Arial,sans-serif}.cap{fill:#b9c0ca;font:600 22px Inter,Arial,sans-serif}.num{fill:#f97316;font:800 28px Inter,Arial,sans-serif}.label{fill:#f8d5c0;font:700 20px Inter,Arial,sans-serif}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#f97316"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="52" y="62" class="txt">Clove hitch</text>
+  <text x="52" y="98" class="cap">Two wraps around the support, crossed in the middle, with a visible working tail.</text>
+
+  <g transform="translate(50 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">1</text><text x="66" y="45" class="cap">Hang the rope over the support</text>
+    <rect x="100" y="105" width="320" height="36" rx="8" class="pole"/><rect x="100" y="105" width="320" height="10" rx="5" class="pole-hi"/>
+    <path class="rope-edge" d="M240 84v142"/>
+    <path class="rope" d="M240 84v142"/>
+    <path class="arrow" marker-end="url(#arrow)" d="M185 174c-44 6-58 29-50 55"/>
+  </g>
+
+  <g transform="translate(630 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">2</text><text x="66" y="45" class="cap">Wrap around and cross the standing line</text>
+    <rect x="100" y="105" width="320" height="36" rx="8" class="pole"/><rect x="100" y="105" width="320" height="10" rx="5" class="pole-hi"/>
+    <path class="rope-edge" d="M220 82c0 58 88 22 88 74 0 45-94 12-94 70"/>
+    <path class="rope" d="M220 82c0 58 88 22 88 74 0 45-94 12-94 70"/>
+    <path class="rope-edge" d="M250 224v-124"/>
+    <path class="rope" d="M250 224v-124"/>
+    <path class="arrow" marker-end="url(#arrow)" d="M355 82c40 28 42 79 6 111"/>
+  </g>
+
+  <g transform="translate(50 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">3</text><text x="66" y="45" class="cap">Tuck the tail under the second wrap</text>
+    <rect x="100" y="105" width="320" height="36" rx="8" class="pole"/><rect x="100" y="105" width="320" height="10" rx="5" class="pole-hi"/>
+    <path class="rope-edge" d="M190 224v-120c0-48 146-48 146 2v118"/>
+    <path class="rope" d="M190 224v-120c0-48 146-48 146 2v118"/>
+    <path class="rope-edge" d="M337 224c0-55-148-55-148 0"/>
+    <path class="rope" d="M337 224c0-55-148-55-148 0"/>
+    <path class="arrow" marker-end="url(#arrow)" d="M388 205c-24-42-76-54-114-32"/>
+  </g>
+
+  <g transform="translate(630 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">4</text><text x="66" y="45" class="cap">Dress it flat, tail visible</text>
+    <rect x="90" y="105" width="340" height="36" rx="8" class="pole"/><rect x="90" y="105" width="340" height="10" rx="5" class="pole-hi"/>
+    <path class="rope-edge" d="M105 184c80-94 220-94 302 0"/>
+    <path class="rope" d="M105 184c80-94 220-94 302 0"/>
+    <path class="rope-edge" d="M105 64c80 96 220 96 302 0"/>
+    <path class="rope" d="M105 64c80 96 220 96 302 0"/>
+    <path class="rope-edge" d="M105 184l-55 55"/>
+    <path class="rope" d="M105 184l-55 55"/>
+    <path class="rope-edge" d="M407 184l72 0"/>
+    <path class="rope" d="M407 184l72 0"/>
+    <text x="36" y="230" class="label">tail</text>
+    <text x="405" y="216" class="label">standing line</text>
+  </g>
+</svg>

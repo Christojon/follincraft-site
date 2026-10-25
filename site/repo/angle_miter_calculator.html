@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Angle / Miter Calculator - Follincraft</title>
+  <meta name="description" content="Angle / miter calculator with a draggable cut preview. Enter or drag a corner angle and get the saw setting." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Angle / Miter Calculator">
+  <meta property="og:description" content="Angle / miter calculator with a draggable cut preview. Enter or drag a corner angle and get the saw setting.">
+  <meta property="og:url" content="https://follincraft.com/repo/angle_miter_calculator.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Angle / Miter Calculator">
+  <meta name="twitter:description" content="Angle / miter calculator with a draggable cut preview. Enter or drag a corner angle and get the saw setting.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/angle_miter_calculator.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --accent:#ea580c;
+      --bg:#0a0c0f;
+      --panel:#0f1419;
+      --panel2:#11171e;
+      --line:#222a33;
+      --muted:#9aa4ad;
+      --txt:#ffffff;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--txt);
+    }
+    .tool-page{ padding:94px 0 40px; }
+    .tool-intro{ max-width:960px; margin:0 auto; padding:0 14px 18px; }
+    .eyebrow{ margin:0 0 6px; color:#fff; font-size:14px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .tool-intro h1{ margin:0; font-size:42px; line-height:1.05; color:var(--accent); }
+    .tool-intro p{ margin:12px 0 0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55; }
+    .tool-wrap{ max-width:960px; margin:0 auto; padding:16px 14px 26px; }
+    .top{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-start;
+      margin-bottom:10px;
+    }
+    .top h2{ margin:0; font-size:18px; line-height:1.2; color:#fff; }
+    .sub{ color:var(--muted); font-size:13px; margin-top:4px; line-height:1.45; max-width:66ch; }
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:var(--panel);
+      overflow:hidden;
+    }
+    .hd{
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .hd strong{
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .bd{ padding:14px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width:820px){ .grid{ grid-template-columns:1fr; } }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--panel2);
+      padding:12px;
+    }
+
+    label{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:0 0 6px;
+      font-weight:900;
+    }
+
+    input, select{
+      width:100%;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.25);
+      color:#fff;
+      padding:10px 10px;
+      font:inherit;
+      outline:none;
+    }
+    input:focus, select:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 2px rgba(234,88,12,.18);
+    }
+
+    .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .row > *{ flex:1; min-width:220px; }
+
+    .out{
+      margin-top:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      border-radius:12px;
+      padding:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      padding:10px 12px;
+      border-radius:12px;
+      min-width:240px;
+      flex:1;
+    }
+    .k{
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+    .v{
+      font-size:28px;
+      font-weight:900;
+      line-height:1.1;
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .v small{ font-size:12px; color:var(--muted); font-weight:800; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 12px;
+      border-radius:10px;
+      border:1px solid var(--accent);
+      background:rgba(234,88,12,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:active{ transform:translateY(1px); }
+
+    .note{
+      margin-top:10px;
+      padding:10px 12px;
+      border-left:3px solid var(--accent);
+      background:rgba(234,88,12,.06);
+      color:#fff;
+      line-height:1.55;
+      border-radius:0;
+    }
+    .muted{ color:var(--muted); }
+
+    /* Preview */
+    .preview{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .svg-wrap{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(0,0,0,.18);
+      overflow:hidden;
+      touch-action:none;
+    }
+    svg{ display:block; width:100%; height:auto; }
+    #previewSvg{ cursor:crosshair; }
+    #bis,
+    #dragHandle{
+      cursor:grab;
+      pointer-events:stroke;
+    }
+    #dragHandle{
+      pointer-events:all;
+      filter:drop-shadow(0 0 10px rgba(234,88,12,.45));
+    }
+    #dragHandle:active{ cursor:grabbing; }
+    .legend{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      color:var(--muted); font-size:12px;
+    }
+    .dot{ width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:6px; }
+    .dot.accent{ background:var(--accent); }
+    .dot.white{ background:#fff; }
+    @media (max-width:700px){
+      .tool-page{padding-top:86px}
+      .tool-intro h1{font-size:34px}
+      .tool-intro p{font-size:15px}
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Angle / Miter Calculator",
+  "description": "Angle / miter calculator with a draggable cut preview. Enter or drag a corner angle and get the saw setting.",
+  "url": "https://follincraft.com/repo/angle_miter_calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angle / Miter Calculator",
+      "item": "https://follincraft.com/repo/angle_miter_calculator.html"
+    }
+  ]
+}
+  </script>
+</head>
+
+<body data-tool-style="site">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Angle / Miter Calculator</span></p>
+      <p class="eyebrow">Shop Tool</p>
+      <h1>Angle / Miter Calculator</h1>
+      <p>Fast corner-angle and saw-setting math with a visual preview so you can sanity check a cut before you burn material.</p>
+    </section>
+  <div class="tool-wrap">
+    <section class="card">
+      <div class="hd">
+        <strong>Inputs + Preview</strong>
+        <span class="muted" style="font-size:12px;">2-piece miter</span>
+      </div>
+
+      <div class="bd">
+        <div class="grid">
+          <!-- Inputs -->
+          <div class="panel">
+            <div class="row">
+              <div>
+                <label for="inDeg">Corner angle (degrees)</label>
+                <input id="inDeg" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" value="90"  aria-label="In Deg"/>
+              </div>
+            </div>
+
+            <div class="out">
+              <div class="pill">
+                <div class="k">Saw setting</div>
+                <div class="v"><span id="outSaw">45.0</span>°</div>
+              </div>
+
+              <div class="pill">
+                <div class="k">Corner you will get</div>
+                <div class="v"><span id="outCorner">90.0</span>°</div>
+              </div>
+
+              <button class="btn" id="copyBtn" type="button" title="Copy saw angle">Copy saw angle</button>
+            </div>
+          </div>
+
+          <!-- Preview -->
+          <div class="panel preview">
+            <div class="svg-wrap" aria-label="Angle preview">
+              <svg id="previewSvg" viewBox="0 0 520 360" role="img">
+                <!-- background grid -->
+                <defs>
+                  <pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse">
+                    <path d="M 26 0 L 0 0 0 26" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect x="0" y="0" width="520" height="360" fill="url(#g)"/>
+
+                <!-- stock preview -->
+                <polygon id="boardA" points="" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+                <polygon id="boardB" points="" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.46)" stroke-width="2"/>
+                <path id="legA" d="" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round"/>
+                <path id="legB" d="" stroke="rgba(255,255,255,.82)" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- miter bisector -->
+                <path id="bis" d="" stroke="rgba(234,88,12,.95)" stroke-width="6" stroke-linecap="round"/>
+                <circle id="dragHandle" cx="0" cy="0" r="12" fill="#ea580c" stroke="#fff" stroke-width="3"/>
+
+                <!-- arc -->
+                <path id="arc" d="" fill="none" stroke="rgba(234,88,12,.55)" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- label -->
+                <rect id="labelBg" x="0" y="0" width="168" height="34" rx="10" fill="rgba(0,0,0,.50)" stroke="rgba(34,42,51,.9)"/>
+                <text id="label" x="0" y="0" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="14"></text>
+              </svg>
+            </div>
+
+            <div class="legend">
+              <span><span class="dot white"></span>Stock edges</span>
+              <span><span class="dot accent"></span>Drag miter line</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const inDeg = document.getElementById('inDeg');
+
+    const outSaw = document.getElementById('outSaw');
+    const outCorner = document.getElementById('outCorner');
+    const copyBtn = document.getElementById('copyBtn');
+
+    // SVG nodes
+    const previewSvg = document.getElementById('previewSvg');
+    const boardA = document.getElementById('boardA');
+    const boardB = document.getElementById('boardB');
+    const legA = document.getElementById('legA');
+    const legB = document.getElementById('legB');
+    const bis  = document.getElementById('bis');
+    const dragHandle = document.getElementById('dragHandle');
+    const arc  = document.getElementById('arc');
+    const label = document.getElementById('label');
+    const labelBg = document.getElementById('labelBg');
+    const preview = {
+      ox: 260,
+      oy: 280,
+      len: 180,
+      stockWidth: 40
+    };
+
+    function clamp(n,a,b){ return Math.min(b, Math.max(a,n)); }
+    function num(v,f=0){ const n = Number(v); return Number.isFinite(n)?n:f; }
+    function fmt(n){ return (Math.round(n*10)/10).toFixed(1); }
+    function rad(d){ return d * Math.PI / 180; }
+    function deg(r){ return r * 180 / Math.PI; }
+    function pointOn(ox, oy, angleDeg, len){
+      const a = rad(angleDeg);
+      return { x: ox + Math.cos(a) * len, y: oy - Math.sin(a) * len };
+    }
+    function boardPoints(ox, oy, angleDeg, len, width){
+      const a = rad(angleDeg);
+      const dx = Math.cos(a);
+      const dy = -Math.sin(a);
+      const nx = -dy;
+      const ny = dx;
+      const half = width / 2;
+      const start = { x: ox, y: oy };
+      const end = { x: ox + dx * len, y: oy + dy * len };
+      return [
+        `${start.x + nx * half},${start.y + ny * half}`,
+        `${end.x + nx * half},${end.y + ny * half}`,
+        `${end.x - nx * half},${end.y - ny * half}`,
+        `${start.x - nx * half},${start.y - ny * half}`
+      ].join(' ');
+    }
+
+    function calc(){
+      const corner = clamp(num(inDeg.value, 90), 1, 180);
+      const saw = corner / 2;
+
+      outSaw.textContent = fmt(saw);
+      outCorner.textContent = fmt(corner);
+
+      drawPreview(corner);
+    }
+
+    function drawPreview(cornerDeg){
+      const { ox, oy, len, stockWidth } = preview;
+
+      const ax = ox + len, ay = oy;
+      const b = pointOn(ox, oy, cornerDeg, len);
+      const c = pointOn(ox, oy, cornerDeg / 2, len * 0.78);
+
+      boardA.setAttribute('points', boardPoints(ox, oy, 0, len, stockWidth));
+      boardB.setAttribute('points', boardPoints(ox, oy, cornerDeg, len, stockWidth));
+
+      legA.setAttribute('d', `M ${ox} ${oy} L ${ax} ${ay}`);
+      legB.setAttribute('d', `M ${ox} ${oy} L ${b.x} ${b.y}`);
+      bis.setAttribute('d',  `M ${ox} ${oy} L ${c.x} ${c.y}`);
+      dragHandle.setAttribute('cx', c.x);
+      dragHandle.setAttribute('cy', c.y);
+
+      const r = 70;
+      const start = 0; // along +x
+      const end = rad(cornerDeg);
+      const sx = ox + Math.cos(start) * r;
+      const sy = oy - Math.sin(start) * r;
+      const ex = ox + Math.cos(end) * r;
+      const ey = oy - Math.sin(end) * r;
+      const large = cornerDeg > 180 ? 1 : 0;
+      const sweep = 0; // going "up" in our coordinate setup
+      arc.setAttribute('d', `M ${sx} ${sy} A ${r} ${r} 0 ${large} ${sweep} ${ex} ${ey}`);
+
+      const labelPoint = pointOn(ox, oy, cornerDeg / 2, 86);
+
+      const text = `${fmt(cornerDeg)}° corner`;
+      label.textContent = text;
+
+      label.setAttribute('x', labelPoint.x - 70);
+      label.setAttribute('y', labelPoint.y - 8);
+
+      labelBg.setAttribute('x', labelPoint.x - 86);
+      labelBg.setAttribute('y', labelPoint.y - 30);
+      labelBg.setAttribute('width', 172);
+      labelBg.setAttribute('height', 34);
+    }
+
+    function svgPoint(evt){
+      const pt = previewSvg.createSVGPoint();
+      pt.x = evt.clientX;
+      pt.y = evt.clientY;
+      return pt.matrixTransform(previewSvg.getScreenCTM().inverse());
+    }
+
+    function updateFromPointer(evt){
+      const { ox, oy } = preview;
+      const pt = svgPoint(evt);
+      const miterAngle = clamp(deg(Math.atan2(oy - pt.y, pt.x - ox)), 0.5, 90);
+      const corner = miterAngle * 2;
+      inDeg.value = fmt(corner);
+      calc();
+    }
+
+    let dragging = false;
+    function startDrag(evt){
+      dragging = true;
+      previewSvg.setPointerCapture?.(evt.pointerId);
+      updateFromPointer(evt);
+    }
+
+    dragHandle.addEventListener('pointerdown', startDrag);
+    bis.addEventListener('pointerdown', startDrag);
+    previewSvg.addEventListener('pointermove', (evt) => {
+      if (!dragging) return;
+      updateFromPointer(evt);
+    });
+    ['pointerup','pointercancel','pointerleave'].forEach((evtName) => {
+      previewSvg.addEventListener(evtName, (evt) => {
+        dragging = false;
+        previewSvg.releasePointerCapture?.(evt.pointerId);
+      });
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      const text = `${outSaw.textContent}°`;
+      try{
+        await navigator.clipboard.writeText(text);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = 'Copied';
+        setTimeout(()=>copyBtn.textContent = old, 900);
+      }catch(_){}
+    });
+
+    ['input','change'].forEach(evt=>{
+      inDeg.addEventListener(evt, calc);
+    });
+
+    calc();
+  </script>
+  </div>
+  </main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer class="category-shell-footer">
+    <div class="wrap category-shell-footer-grid">
+      <div>
+        <h3>About Follincraft</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">Twenty-plus years of fabrication, design, code, and field notes in one place. Shop builds, camp-tested gear, and practical tools for making the next decision faster.</p>
+      </div>
+
+      <div>
+        <h3>Location</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">Based in Phoenix, Arizona.</p>
+        <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+        </div>
+        <p class="lead" style="margin-top:16px;font-size:14px;color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p>
+      </div>
+    </div>
+    <p class="footer-copy"><span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

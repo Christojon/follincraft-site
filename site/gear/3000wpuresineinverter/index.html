@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OUBOTEK 3000W Pure Sine Wave Inverter - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A practical review of the OUBOTEK 3000W pure sine wave inverter for 12V vehicle power, with notes on 250A-plus current, battery/BMS limits, fusing, cable." />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OUBOTEK 3000W Pure Sine Wave Inverter">
+  <meta property="og:description" content="A practical review of the OUBOTEK 3000W pure sine wave inverter for 12V vehicle power, with notes on 250A-plus current, battery/BMS limits, fusing, cable.">
+  <meta property="og:url" content="https://follincraft.com/gear/3000wpuresineinverter/">
+  <meta property="og:image" content="https://follincraft.com/gear/3000wpuresineinverter/3000wpuresineinverter.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OUBOTEK 3000W Pure Sine Wave Inverter">
+  <meta name="twitter:description" content="A practical review of the OUBOTEK 3000W pure sine wave inverter for 12V vehicle power, with notes on 250A-plus current, battery/BMS limits, fusing, cable.">
+  <meta name="twitter:image" content="https://follincraft.com/gear/3000wpuresineinverter/3000wpuresineinverter.jpg">
+  <link rel="canonical" href="https://follincraft.com/gear/3000wpuresineinverter/">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1"/>
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" />
+  <link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+  <style>
+    :root{ --accent:#ea580c; --line:#222a33; --panel:#0f1419; --panel2:#11171e; --muted:#9aa4ad; }
+    .wrap{ max-width:1080px; margin:0 auto; padding:0 14px; }
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ color:var(--accent); margin:6px 0 10px; }
+        .detail-deck{
+      max-width:760px;
+      margin:0 0 4px;
+      color:#d7dde3;
+      font-size:1.02rem;
+      line-height:1.55;
+    }
+.project-grid{
+      display:grid; grid-template-columns:1.06fr .94fr; gap:18px; align-items:start;
+      grid-template-areas:"media side" "below below";
+    }
+    .left{ grid-area:media; display:flex; flex-direction:column; gap:12px; }
+    .right{ grid-area:side; display:flex; flex-direction:column; gap:12px; }
+    .below{ grid-area:below; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+    .hero-frame{
+      position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+      aspect-ratio:1/1; isolation:isolate; background:#000;
+    }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(22px) saturate(1.1); transform:scale(1.08); opacity:.55;
+    }
+    #heroImg{
+      position:relative; z-index:1; width:100%; height:100%; display:block;
+      object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+      width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+      background:rgba(0,0,0,.55); color:#fff; font-size:22px; display:grid; place-items:center; cursor:pointer;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.85); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+    .thumbs{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+    .thumbs a{ display:block; padding:3px; border-radius:10px; border:2px solid transparent; background:var(--panel2); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ width:96px; height:68px; object-fit:cover; border-radius:8px; display:block; }
+    .card{ border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:14px; }
+    .section-title{ color:var(--accent); font-size:13px; margin:0 0 6px; letter-spacing:.06em; text-transform:uppercase; font-weight:800; }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+    .overview .lede{ font-weight:800; color:#fff; margin:0 0 8px; }
+    .overview p{ line-height:1.6; }
+    .keyline{ height:1px; border:0; background:linear-gradient(90deg,var(--accent),transparent); margin:10px 0 10px; }
+    .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0 0 8px; }
+    @media (max-width:620px){ .quick-grid{ grid-template-columns:1fr; } }
+    .q{ background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:10px; }
+    .q .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; display:block; }
+    .pull{ margin:8px 0 0; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:700; }
+        .quick-read{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:900px){ .quick-read{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:560px){ .quick-read{ grid-template-columns:1fr; } }
+    .quick-read .info{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+      border-radius:10px;
+      padding:11px 12px;
+    }
+    .quick-read .k{
+      color:var(--muted);
+      font-size:.76rem;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+    .quick-read .v{ color:#fff; font-weight:700; line-height:1.35; }
+.buy-card{ border:1px solid var(--line); background:var(--panel2); border-radius:12px; padding:16px; }
+    .buy-flex{ display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center; }
+    .buy-title{ margin:0 0 6px; color:#fff; font-weight:800; }
+    .buy-note{ margin:6px 0 0; font-style:italic; color:var(--accent); }
+    .btn.buy{
+      background:var(--accent);
+      color:#0a0c0f !important;
+      border:1.5px solid var(--accent);
+      border-radius:12px;
+      padding:12px 18px;
+      font-weight:800;
+      text-decoration:none !important;
+      transition:transform .16s ease, filter .16s ease, box-shadow .16s ease;
+      box-shadow:0 0 0 0 rgba(234,88,12,0);
+    }
+    .btn.buy:hover,.btn.buy:focus{
+      color:#0a0c0f !important;
+      filter:brightness(1.06);
+      transform:translateY(-2px);
+      box-shadow:0 0 0 2px rgba(234,88,12,.35) inset;
+    }
+    .btn.buy:active{ transform:translateY(0); filter:brightness(.98); }
+    @media (max-width: 720px){
+      .buy-flex{ grid-template-columns:1fr; gap:12px; }
+      .btn.buy{ width:100%; text-align:center; padding:14px 18px; }
+    }
+    .specs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+    @media (max-width:960px){ .specs{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:600px){ .specs{ grid-template-columns:1fr; } }
+    .spec{ display:flex; align-items:flex-start; gap:12px; border:1px solid var(--line); border-radius:10px; padding:12px; background:var(--panel); }
+    .spec svg{ width:28px; height:28px; flex:0 0 28px; color:var(--accent); stroke-width:2.3; }
+    .spec .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .spec .v{ color:#fff; font-weight:600; }
+    .my-notes{ border:2px solid var(--accent) !important; background:rgba(234,88,12,.06); }
+    .my-notes ul{
+      list-style-position:inside;
+      margin:10px 0 0;
+      padding:0;
+      display:grid;
+      gap:8px;
+    }
+    .my-notes li{
+      margin:0;
+      line-height:1.5;
+    }
+    .my-notes li::marker{ color:var(--accent); }
+    @media (max-width:560px){
+      .my-notes{ padding:14px; }
+      .my-notes p,
+      .my-notes li{ font-size:.98rem; }
+    }
+.two-up-notes{ display:grid; grid-template-columns:1fr; gap:12px; grid-column:1 / -1; width:100%; }
+    .reviews{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .two-up-notes > *{ min-width:0; }
+    @media (max-width:700px){ .reviews{ grid-template-columns:1fr; } }
+    .review{ border:1px solid var(--line); border-radius:10px; background:rgba(12,15,18,.72); padding:10px 12px; display:grid; grid-template-columns:1fr auto; gap:4px 10px; align-items:center; }
+    .review h4{ margin:0; color:var(--accent); font-size:1rem; line-height:1.15; }
+    .review .note{ color:var(--muted); font-size:.9rem; line-height:1.35; }
+    .review a{ grid-row:1 / span 2; grid-column:2; align-self:center; display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#fff; border:1px solid var(--line); padding:6px 9px; border-radius:9px; font-size:.9rem; white-space:nowrap; }
+    .review a:hover{ border-color:var(--accent); }
+        .support-note{
+      color:var(--muted);
+      line-height:1.55;
+      margin:0 0 12px;
+    }
+.review a .arr{ transition:transform .14s ease; }
+    .review a:hover .arr{ transform:translateX(3px); }
+        .support-note{
+      color:var(--muted);
+      line-height:1.55;
+      margin:0 0 12px;
+    }
+.cta-band{ margin:18px 0 0; border-top:2px solid var(--accent); border-bottom:2px solid var(--accent); background:var(--panel); }
+    .cta-band .wrap{ padding-top:18px; padding-bottom:18px; }
+    .cta-inner{ display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:center; }
+    @media (max-width:900px){ .cta-inner{ grid-template-columns:1fr; } }
+    .cta-actions{ display:flex; gap:10px; justify-content:flex-end; }
+    .cta-gear-text{ color:var(--muted); }
+    .cta-gear-text a{ color:#fff; text-decoration:none; border-bottom:1px dotted var(--accent); }
+    .cta-gear-text a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "OUBOTEK 3000W Pure Sine Wave Inverter",
+  "description": "A practical review of the OUBOTEK 3000W pure sine wave inverter for 12V vehicle power, with notes on 250A-plus current, battery/BMS limits, fusing, cable sizing, ventilation, grounding, and realistic AC loads.",
+  "url": "https://follincraft.com/gear/3000wpuresineinverter/",
+  "image": "https://follincraft.com/gear/3000wpuresineinverter/3000wpuresineinverter.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://follincraft.com/gear/3000wpuresineinverter/"
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Gear",
+      "item": "https://follincraft.com/gear/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "OUBOTEK 3000W Pure Sine Wave Inverter",
+      "item": "https://follincraft.com/gear/3000wpuresineinverter/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-gear-id="3000wpuresineinverter">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead">
+      <a href="../../index.html">Home</a> / <a href="../../gear/index.html">Gear</a> / <span>OUBOTEK 3000W Pure Sine Wave Inverter</span>
+    </div>
+    <h1 class="title proj-title">OUBOTEK 3000W Pure Sine Wave Inverter</h1><p class="detail-deck">Clean 120V-style AC power is useful, but a 3000W inverter on a 12V system is a high-current electrical project first and a convenience upgrade second.</p>
+  </div>
+
+  <main class="project">
+    <p class="affiliate-note wrap">Disclosure: Some product links may be affiliate links. <a href="../../disclosure/index.html">How recommendations and commissions work.</a></p>
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('3000wpuresineinverter.jpg')">
+              <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+              <img id="heroImg" src="3000wpuresineinverter.jpg" alt="OUBOTEK 3000W pure sine wave inverter product photo" width="1254" height="1254">
+              <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+            </div>
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="3000wpuresineinverter.jpg">
+                <img src="3000wpuresineinverter.jpg" alt="" width="1254" height="1254">
+              </a>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="chip-row"><span class="chip">3000W inverter</span><span class="chip">Pure sine</span><span class="chip">Vehicle power</span><span class="chip">AC output</span></div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">A big inverter is not a flex. It is a demand on the whole electrical system.</p>
+              <p>The OUBOTEK unit shown here is sold as a 3000W rated, 6000W peak pure sine inverter. That sounds like an AC appliance number, but on a 12V battery system it is really a DC current problem: 3000W is about 250A before inverter losses, and can climb past 300A as battery voltage drops and efficiency losses are included.</p>
+              <p>That means the battery bank, BMS, bus bars, disconnect, fuse, lugs, crimp quality, and cable run all have to be sized for the real current. A single 12V lithium battery with a 100A or 200A BMS may be nowhere near enough for the full inverter rating even if the amp-hour number looks large.</p>
+              <p>Pure sine output is still the right choice for sensitive electronics, chargers, and motor loads that dislike modified sine wave. The warning is about scale: this belongs in a planned house-power system, not clipped to a battery with included cables and hope.</p>
+              <hr class="keyline">
+              <div class="quick-grid">
+                <div class="q">
+                  <span class="sub">Best for</span>
+                  Van and trailer systems with enough battery, BMS rating, bus capacity, cable, fuse protection, ventilation, and charging to support real AC loads.</div>
+                <div class="q">
+                  <span class="sub">Not for</span>
+                  Small battery banks, casual phone charging, weak BMS limits, mystery cable sizes, or builds where grounding and fuse choices are guesswork.</div>
+              </div>
+              <p class="pull">At 12V, 3000W is a very large DC load. Treat it like one.</p>
+            </article>
+          </div>
+
+          <div class="below">
+            <article class="card buy-card span-2">
+              <h5 class="section-title">Where to Buy</h5>
+              <div class="buy-flex">
+                <div>
+                  <h3 class="buy-title">OUBOTEK 3000W Pure Sine Wave Inverter</h3>
+                  <p class="lead" style="margin:0">A large 12V DC to AC inverter for vehicle systems that already have the battery, fuse, cable, ventilation, and charging plan to support real AC loads.</p>
+                  <p class="buy-note">Direct product link for current model details and pricing.</p>
+                </div>
+                <a class="btn buy" href="https://www.amazon.com/dp/B0C7461SRW?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" rel="noopener">View product &rarr;</a>
+              </div>
+            </article>
+              <article class="card span-2">
+                <h5 class="section-title">Quick Read</h5>
+                <div class="quick-read">
+                  <div class="info"><div class="k">Role</div><div class="v">3000W inverter</div></div>
+                  <div class="info"><div class="k">Best Fit</div><div class="v">Vehicle systems with a serious battery bank, short high-current DC runs, a proper fuse/disconnect, and known AC loads.</div></div>
+                  <div class="info"><div class="k">Why It Works</div><div class="v">Pure sine output is cleaner for electronics and motor loads than modified sine, when the DC side can actually feed it.</div></div>
+                  <div class="info"><div class="k">Skip If</div><div class="v">A 500W to 1500W inverter covers your real loads, or your battery/BMS cannot support 250A-plus current safely.</div></div>
+                </div>
+              </article>
+
+
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="specs">
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">Output</div>
+                    <div class="v">OUBOTEK lists 3000W rated power and 6000W peak power for this class of inverter.</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">12V Current</div>
+                    <div class="v">3000W is about 250A at 12V before losses, and can exceed 300A under real conditions.</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">Battery Limit</div>
+                    <div class="v">The battery bank and BMS must support the continuous and surge current, not just the amp-hour capacity.</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">Fuse Type</div>
+                    <div class="v">Use a DC-rated fuse or breaker with adequate interrupt rating for the battery chemistry and fault current.</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">Cable Run</div>
+                    <div class="v">Keep DC cables short, matched, protected from abrasion, and sized by current and round-trip length.</div>
+                  </div>
+                </div>
+                <div class="spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 12h16M12 4v16"/>
+                  </svg>
+                  <div>
+                    <div class="k">AC Side</div>
+                    <div class="v">Hardwired outlets, GFCI, neutral-ground bonding, and transfer switching need manual/code-aware planning.</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card span-2">
+              <h5 class="section-title">Current Reality</h5>
+              <p>The simple math is useful: watts divided by volts equals amps. At 3000W, a 12V inverter asks for about 250A before losses. At lower battery voltage and realistic inverter efficiency, the DC side can move into the 280A to 320A range. Surge loads are brief, but they still have to pass through the battery, BMS, fuse, cables, lugs, and bus bars.</p>
+              <p>This is why a 3000W inverter on 12V is near the upper edge of what makes sense. Victron's wiring guidance calls out that higher system voltage reduces DC current and allows thinner cables; if the build is truly trying to run heavy AC loads often, a 24V or 48V system may be the cleaner architecture.</p>
+            </article>
+            <article class="card span-2">
+              <h5 class="section-title">Install Checks</h5>
+              <div class="quick-read">
+                <div class="info"><div class="k">Battery</div><div class="v">Confirm continuous discharge, surge current, BMS limit, and low-voltage behavior before sizing the inverter.</div></div>
+                <div class="info"><div class="k">Fuse</div><div class="v">Place the main DC fuse close to the battery positive and select it for cable protection and interrupt rating.</div></div>
+                <div class="info"><div class="k">Cable</div><div class="v">Use fine-strand DC cable, proper lugs, correct crimp tooling, strain relief, and protected short runs.</div></div>
+                <div class="info"><div class="k">Ventilation</div><div class="v">Mount where fan exhaust is not blocked and where heat, dust, and loose cargo will not cook or damage it.</div></div>
+              </div>
+            </article>
+            <article class="card span-2">
+              <h5 class="section-title">Load Planning</h5>
+              <p>Start with the actual loads, not the inverter number. Laptop chargers, camera batteries, small tools, and occasional kitchen appliances may not need 3000W. Air conditioners, microwaves, induction cooktops, compressors, and heaters can demand huge current and may be better served by shore power, a generator, or a different system voltage.</p>
+              <p>The AC side needs the same seriousness as the DC side. Do not backfeed a vehicle or building circuit. Do not guess about neutral-ground bonding. If the inverter feeds fixed outlets, transfer switching, or anything beyond plug-in loads, follow the inverter manual and electrical code, or bring in a qualified electrician.</p>
+            </article>
+            <div class="two-up-notes">
+              <article class="card my-notes">
+                <h5 class="section-title">My Notes</h5>
+                <p>This is where bad electrical planning gets expensive fast. A 3000W inverter can be useful, but only when the rest of the system is honest about current.</p>
+                <ul>
+                  <li>Size cables, lugs, bus bars, disconnects, and fuses for worst-case DC current, not the load you hope to run most days.</li>
+                  <li>Check the battery BMS rating before assuming a 200Ah or 300Ah battery can feed a 3000W inverter.</li>
+                  <li>Mount it where heat can leave, terminals can be inspected, and the DC cables can stay short.</li>
+                  <li>If the actual loads are small, a smaller inverter may be safer, cheaper, quieter, and easier to wire correctly.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div>
+            <div class="section-title" style="margin:0; color:var(--accent)">Explore more camp gear</div>
+            <h3 id="ctaTitle" class="title" style="margin:6px 0 8px; color:#fff">Once camp power gets serious, the useful gear starts looking more like system pieces.</h3>
+            <p class="lead cta-gear-text" style="margin:0;">
+              Compare more electrical and vehicle-camp gear that matters once your setup moves beyond the basics.
+              <br>
+              <a href="../../gear/index.html" onclick="try{ window.top.location.href = this.href; } catch(e){ window.location.href = this.href; } return false;" aria-label="See all gear items">
+                See all gear &rarr;
+              </a>
+            </p>
+          </div>
+          <div class="cta-actions" id="gearActions">
+            <a class="btn ghost" id="ctaPrevGear" href="#">&larr; Previous gear</a>
+            <a class="btn solid" id="ctaNextGear" href="#">Next gear &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&lsaquo;</button>
+    <img id="lbImg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&rsaquo;</button>
+  </div>
+
+  <script> (function(){
+      const hero = document.getElementById('heroImg');
+      const frame = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs = links.map(a => a.getAttribute('href'));
+      let i = 0;
+      function setHero(url){
+        hero.src = url;
+        frame.style.setProperty('--hero', "url('" + url + "')");
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        setHero(imgs[i]);
+      }
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        show(imgs.indexOf(a.getAttribute('href')));
+      });
+      frame.querySelector('.prev')?.addEventListener('click', () => show(i - 1));
+      frame.querySelector('.next')?.addEventListener('click', () => show(i + 1));
+      hero.addEventListener('click', () => { lbImg.src = imgs[i]; lb.style.display='flex'; });
+      lbPrev.addEventListener('click', () => show(i - 1));
+      lbNext.addEventListener('click', () => show(i + 1));
+      document.getElementById('lbClose').addEventListener('click', () => lb.style.display='none');
+      lb.addEventListener('click', (e) => { if (e.target === lb) lb.style.display='none'; });
+      document.addEventListener('keydown', (e) => {
+        if (lb.style.display !== 'flex') return;
+        if (e.key === 'Escape') lb.style.display = 'none';
+        if (e.key === 'ArrowLeft') show(i - 1);
+        if (e.key === 'ArrowRight') show(i + 1);
+      });
+    })();
+  </script>
+  <script src="../../category-shell.js?v=hub-consistency-2"></script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=gear-campervan-1"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=no-decision-card-1"></script>
+</body>
+</html>

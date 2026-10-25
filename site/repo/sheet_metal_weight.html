@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sheet Metal Weight Calculator - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Quick sheet metal weight calculator for steel, stainless, aluminum, copper, and brass." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sheet Metal Weight Calculator">
+  <meta property="og:description" content="Quick sheet metal weight calculator for steel, stainless, aluminum, copper, and brass.">
+  <meta property="og:url" content="https://follincraft.com/repo/sheet_metal_weight.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sheet Metal Weight Calculator">
+  <meta name="twitter:description" content="Quick sheet metal weight calculator for steel, stainless, aluminum, copper, and brass.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+  <link rel="canonical" href="https://follincraft.com/repo/sheet_metal_weight.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{
+      --card:#0b0c10;
+      --line:#2a2a2d;
+      --input-bg:#0e1115;
+      --input-border:#2f3237;
+      --muted:#d6d6d6;
+    }
+
+    body{
+      margin:0;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--txt);
+    }
+
+    .tool-page{
+      padding:94px 0 40px;
+    }
+
+    .tool-intro{
+      max-width:1040px;
+      margin:0 auto;
+      padding:0 24px 18px;
+    }
+
+    .eyebrow{
+      margin:0 0 6px;
+      color:#fff;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .tool-intro h1{
+      margin:0;
+      font-size:42px;
+      line-height:1.05;
+      color:var(--accent);
+    }
+
+    .tool-intro p{
+      margin:12px 0 0;
+      max-width:760px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
+    }
+
+    .tool-wrap{
+      max-width:1040px;
+      margin:0 auto;
+      padding:24px;
+    }
+
+    .page-head{
+      margin-bottom:16px;
+    }
+
+    .title{
+      margin:0;
+      font-size:20px;
+      color:var(--accent);
+    }
+
+    .blurb{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      max-width:62ch;
+    }
+
+    .grid{
+      display:grid;
+      gap:16px;
+    }
+
+    @media (min-width:960px){
+      .grid{
+        grid-template-columns:360px 1fr;
+      }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 8px 28px rgba(0,0,0,.35);
+    }
+
+    .field{
+      margin-bottom:12px;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    input, select{
+      width:100%;
+      box-sizing:border-box;
+      background:var(--input-bg);
+      color:#fff;
+      border:1px solid var(--input-border);
+      border-radius:10px;
+      padding:10px 12px;
+      font:inherit;
+      outline:none;
+    }
+
+    input:focus, select:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(234,88,12,.18);
+    }
+
+    .seg{
+      display:flex;
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+      background:var(--input-bg);
+    }
+
+    .seg button{
+      flex:1;
+      border:0;
+      background:transparent;
+      color:#d6d6d6;
+      padding:10px 12px;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .seg button.active{
+      background:rgba(234,88,12,.18);
+      color:#fff;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:12px;
+    }
+
+    .chip{
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#111317;
+      color:#fff;
+      padding:7px 10px;
+      font:inherit;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .chip:hover{
+      border-color:var(--accent);
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .stat{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#111317;
+      padding:12px;
+    }
+
+    .stat-label{
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      font-weight:700;
+    }
+
+    .stat-value{
+      margin-top:8px;
+      color:#fff;
+      font-size:24px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .breakdown{
+      display:grid;
+      gap:10px;
+    }
+
+    .breakdown-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .breakdown-row:last-child{
+      border-bottom:0;
+      padding-bottom:0;
+    }
+
+    .breakdown-row strong{
+      color:#fff;
+      font-size:14px;
+    }
+
+    .breakdown-row span{
+      color:var(--muted);
+      font-size:14px;
+      text-align:right;
+    }
+
+    .note{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(234,88,12,.3);
+      background:rgba(234,88,12,.08);
+      color:#ddd;
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .d-none{
+      display:none !important;
+    }
+
+    @media (max-width:700px){
+      .tool-page{padding-top:86px}
+      .tool-intro{
+        padding:0 16px 16px;
+      }
+
+      .tool-intro h1{
+        font-size:34px;
+      }
+
+      .tool-intro p{
+        font-size:15px;
+      }
+
+      .tool-wrap{
+        padding:16px;
+      }
+
+      .row,
+      .stat-grid{
+        grid-template-columns:1fr;
+      }
+
+      .breakdown-row{
+        flex-direction:column;
+      }
+
+      .breakdown-row span{
+        text-align:left;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sheet Metal Weight Calculator",
+  "headline": "Sheet Metal Weight Calculator",
+  "description": "Quick sheet metal weight calculator for steel, stainless, aluminum, copper, and brass.",
+  "url": "https://follincraft.com/repo/sheet_metal_weight.html",
+  "image": "https://follincraft.com/assets/favicon.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://follincraft.com/repo/sheet_metal_weight.html"
+  },
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web"
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sheet Metal Weight Calculator",
+      "item": "https://follincraft.com/repo/sheet_metal_weight.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a href="../search/index.html">Search</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="eyebrow">Shop Tool</p>
+      <h1>Sheet Metal Weight Calculator</h1>
+      <p>Quick weight estimates for the materials and sheet sizes that matter before you buy, lift, or load them.</p>
+    </section>
+  <div class="tool-wrap">
+    <div class="page-head">
+      <h2 class="title">Sheet Metal Weight Calculator</h2>
+      <p class="blurb">A quick weight check for sheets, blanks, circles, and rings. Good for quoting, loading, and deciding whether the part is about to become annoying to move.</p>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="field">
+          <label>Units</label>
+          <div class="seg">
+            <button type="button" id="u-in" class="active">Inches</button>
+            <button type="button" id="u-mm">Millimeters</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="material">Material</label>
+            <select id="material" aria-label="Material">
+              <option value="mild_steel">Mild Steel</option>
+              <option value="galvanized">Galvanized Steel</option>
+              <option value="stainless">Stainless Steel</option>
+              <option value="aluminum">Aluminum</option>
+              <option value="copper">Copper</option>
+              <option value="brass">Brass</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="gauge">Gauge</label>
+            <select id="gauge" aria-label="Gauge"></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="thickness">Thickness</label>
+            <input type="number" step="0.0001" id="thickness" placeholder="0.036" aria-label="0.036">
+          </div>
+
+          <div class="field">
+            <label for="shape">Shape</label>
+            <select id="shape" aria-label="Shape">
+              <option value="rect">Rectangle / Sheet</option>
+              <option value="circle">Circle</option>
+              <option value="ring">Ring</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="rect-presets" class="field">
+          <label>Common sheet sizes</label>
+          <div class="chips">
+            <button type="button" class="chip preset" data-w="48" data-l="96">4 × 8</button>
+            <button type="button" class="chip preset" data-w="48" data-l="120">4 × 10</button>
+            <button type="button" class="chip preset" data-w="60" data-l="120">5 × 10</button>
+            <button type="button" class="chip preset" data-w="60" data-l="144">5 × 12</button>
+          </div>
+        </div>
+
+        <div class="row" id="dims-rect">
+          <div class="field">
+            <label for="w">Width</label>
+            <input type="number" step="0.001" id="w" placeholder="48" aria-label="48">
+          </div>
+          <div class="field">
+            <label for="l">Length</label>
+            <input type="number" step="0.001" id="l" placeholder="96" aria-label="96">
+          </div>
+        </div>
+
+        <div class="field d-none" id="dims-circle">
+          <label for="d">Diameter</label>
+          <input type="number" step="0.001" id="d" placeholder="24" aria-label="24">
+        </div>
+
+        <div class="row d-none" id="dims-ring">
+          <div class="field">
+            <label for="od">Outside diameter</label>
+            <input type="number" step="0.001" id="od" placeholder="24" aria-label="24">
+          </div>
+          <div class="field">
+            <label for="id">Inside diameter</label>
+            <input type="number" step="0.001" id="id" placeholder="12" aria-label="12">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="qty">Quantity</label>
+            <input type="number" step="1" min="1" value="1" id="qty" aria-label="Quantity">
+          </div>
+          <div class="field">
+            <label for="costPerLb">Cost per lb (optional)</label>
+            <input type="number" step="0.01" id="costPerLb" placeholder="1.25" aria-label="1.25">
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="stat-grid">
+          <article class="stat">
+            <div class="stat-label">Total weight</div>
+            <div class="stat-value" id="total">—</div>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Per piece</div>
+            <div class="stat-value" id="perPiece">—</div>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Area</div>
+            <div class="stat-value" id="areaValue">—</div>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Cost estimate</div>
+            <div class="stat-value" id="costValue">—</div>
+          </article>
+        </div>
+
+        <div class="breakdown" id="breakdown">
+          <div class="breakdown-row">
+            <strong>Waiting on inputs</strong>
+            <span>Enter thickness and part size to calculate weight.</span>
+          </div>
+        </div>
+
+        <div class="note" id="shopNote">
+          Start with the rectangle path. Most of the time you just need to know what a sheet or blank weighs before ordering, loading, or moving it.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const DENSITY = {
+        mild_steel: 0.284,
+        galvanized: 0.284,
+        stainless: 0.289,
+        aluminum: 0.098,
+        copper: 0.323,
+        brass: 0.306
+      };
+
+      const GAUGE_STEEL = {10:0.1345,12:0.1046,14:0.0747,16:0.0598,18:0.0478,20:0.0359,22:0.0299,24:0.0239,26:0.0179};
+      const GAUGE_STAINLESS = {10:0.1350,12:0.1090,14:0.0781,16:0.0625,18:0.0500,20:0.0375,22:0.0313,24:0.0250,26:0.0187};
+      const GAUGE_BS = {10:0.1019,12:0.0808,14:0.0641,16:0.0508,18:0.0403,20:0.0320,22:0.0253,24:0.0201,26:0.0159};
+
+      const MATERIALS = {
+        mild_steel: {label:"Mild Steel", dens:DENSITY.mild_steel, gauges:GAUGE_STEEL},
+        galvanized: {label:"Galvanized Steel", dens:DENSITY.galvanized, gauges:GAUGE_STEEL},
+        stainless: {label:"Stainless Steel", dens:DENSITY.stainless, gauges:GAUGE_STAINLESS},
+        aluminum: {label:"Aluminum", dens:DENSITY.aluminum, gauges:GAUGE_BS},
+        copper: {label:"Copper", dens:DENSITY.copper, gauges:GAUGE_BS},
+        brass: {label:"Brass", dens:DENSITY.brass, gauges:GAUGE_BS}
+      };
+
+      const els = {
+        uIn: document.getElementById("u-in"),
+        uMm: document.getElementById("u-mm"),
+        material: document.getElementById("material"),
+        gauge: document.getElementById("gauge"),
+        thickness: document.getElementById("thickness"),
+        shape: document.getElementById("shape"),
+        qty: document.getElementById("qty"),
+        costPerLb: document.getElementById("costPerLb"),
+        w: document.getElementById("w"),
+        l: document.getElementById("l"),
+        d: document.getElementById("d"),
+        od: document.getElementById("od"),
+        id: document.getElementById("id"),
+        dimsRect: document.getElementById("dims-rect"),
+        dimsCircle: document.getElementById("dims-circle"),
+        dimsRing: document.getElementById("dims-ring"),
+        rectPresets: document.getElementById("rect-presets"),
+        total: document.getElementById("total"),
+        perPiece: document.getElementById("perPiece"),
+        areaValue: document.getElementById("areaValue"),
+        costValue: document.getElementById("costValue"),
+        breakdown: document.getElementById("breakdown"),
+        shopNote: document.getElementById("shopNote"),
+        presetButtons: Array.from(document.querySelectorAll(".preset"))
+      };
+
+      let units = "in";
+
+      const f2 = (n) => Number(n).toFixed(2);
+      const f3 = (n) => Number(n).toFixed(3);
+      const f4 = (n) => Number(n).toFixed(4);
+      const inToMm = (n) => n * 25.4;
+      const mmToIn = (n) => n / 25.4;
+
+      function populateGauge() {
+        const gauges = MATERIALS[els.material.value].gauges;
+        const keys = Object.keys(gauges).map(Number).sort((a, b) => a - b);
+        els.gauge.innerHTML = '<option value="">Custom thickness</option>' + keys.map((key) => {
+          const inches = gauges[key];
+          const text = units === "in" ? `${f4(inches)} in` : `${f3(inToMm(inches))} mm`;
+          return `<option value="${inches}">${key} ga (${text})</option>`;
+        }).join("");
+      }
+
+      function applyGauge() {
+        if (!els.gauge.value) return;
+        const value = parseFloat(els.gauge.value);
+        els.thickness.value = units === "in" ? f4(value) : f3(inToMm(value));
+      }
+
+      function convertFields(nextUnits) {
+        if (units === nextUnits) return;
+        [els.thickness, els.w, els.l, els.d, els.od, els.id].forEach((input) => {
+          if (!input.value) return;
+          const value = parseFloat(input.value);
+          input.value = input === els.thickness
+            ? (nextUnits === "mm" ? f4(inToMm(value)) : f4(mmToIn(value)))
+            : (nextUnits === "mm" ? f3(inToMm(value)) : f3(mmToIn(value)));
+        });
+        units = nextUnits;
+        els.uIn.classList.toggle("active", units === "in");
+        els.uMm.classList.toggle("active", units === "mm");
+        populateGauge();
+        calculate();
+      }
+
+      function thicknessInches() {
+        const t = parseFloat(els.thickness.value);
+        if (!isFinite(t) || t <= 0) return NaN;
+        return units === "in" ? t : mmToIn(t);
+      }
+
+      function areaIn2() {
+        const factor = units === "in" ? 1 : 1 / 25.4;
+        const shape = els.shape.value;
+
+        if (shape === "rect") {
+          const w = parseFloat(els.w.value) * factor;
+          const l = parseFloat(els.l.value) * factor;
+          if (w > 0 && l > 0) return w * l;
+        }
+        if (shape === "circle") {
+          const d = parseFloat(els.d.value) * factor;
+          if (d > 0) return Math.PI * Math.pow(d / 2, 2);
+        }
+        if (shape === "ring") {
+          const od = parseFloat(els.od.value) * factor;
+          const id = parseFloat(els.id.value) * factor;
+          if (od > 0 && id >= 0 && od > id) return Math.PI * (od * od - id * id) / 4;
+        }
+        return NaN;
+      }
+
+      function updateShape() {
+        const shape = els.shape.value;
+        els.dimsRect.classList.toggle("d-none", shape !== "rect");
+        els.dimsCircle.classList.toggle("d-none", shape !== "circle");
+        els.dimsRing.classList.toggle("d-none", shape !== "ring");
+        els.rectPresets.classList.toggle("d-none", shape !== "rect");
+        calculate();
+      }
+
+      function setNote(total, each) {
+        if (each >= 150 || total >= 500) {
+          els.shopNote.textContent = "This is heavy enough that handling and support should be planned before it shows up.";
+          return;
+        }
+        if (each >= 75 || total >= 200) {
+          els.shopNote.textContent = "This is where sheet handling stops being casual. Think about lift, table height, and whether one person is really the plan.";
+          return;
+        }
+        if (each >= 30) {
+          els.shopNote.textContent = "Manageable, but real. Multiple parts or slick material can still get annoying fast.";
+          return;
+        }
+        els.shopNote.textContent = "Comfortably in the easy lane. Good for fast quote and loading checks.";
+      }
+
+      function calculate() {
+        const material = MATERIALS[els.material.value];
+        const thickness = thicknessInches();
+        const area = areaIn2();
+        const qty = Math.max(1, parseInt(els.qty.value || "1", 10));
+        const costPerLb = parseFloat(els.costPerLb.value);
+
+        if (!isFinite(thickness) || !isFinite(area) || thickness <= 0 || area <= 0) {
+          els.total.textContent = "—";
+          els.perPiece.textContent = "—";
+          els.areaValue.textContent = "—";
+          els.costValue.textContent = "—";
+          els.breakdown.innerHTML = '<div class="breakdown-row"><strong>Waiting on inputs</strong><span>Enter thickness and part size to calculate weight.</span></div>';
+          els.shopNote.textContent = "Start with the rectangle path. Most of the time you just need to know what a sheet or blank weighs before ordering, loading, or moving it.";
+          return;
+        }
+
+        const volume = area * thickness;
+        const each = volume * material.dens;
+        const total = each * qty;
+        const cost = isFinite(costPerLb) && costPerLb > 0 ? total * costPerLb : NaN;
+        const areaText = units === "in" ? `${f2(area / 144)} sq ft` : `${f2((area * 645.16) / 1000000)} sq m`;
+
+        els.total.textContent = `${f2(total)} lb`;
+        els.perPiece.textContent = `${f2(each)} lb`;
+        els.areaValue.textContent = areaText;
+        els.costValue.textContent = isFinite(cost) ? `$${f2(cost)}` : "—";
+
+        els.breakdown.innerHTML = `
+          <div class="breakdown-row"><strong>Material</strong><span>${material.label}</span></div>
+          <div class="breakdown-row"><strong>Thickness</strong><span>${units === "in" ? `${f4(parseFloat(els.thickness.value))} in` : `${f3(parseFloat(els.thickness.value))} mm`}</span></div>
+          <div class="breakdown-row"><strong>Quantity</strong><span>${qty}</span></div>
+          <div class="breakdown-row"><strong>Density</strong><span>${f3(material.dens)} lb/in³</span></div>
+        `;
+
+        setNote(total, each);
+      }
+
+      els.uIn.addEventListener("click", () => convertFields("in"));
+      els.uMm.addEventListener("click", () => convertFields("mm"));
+      els.material.addEventListener("change", () => {
+        populateGauge();
+        if (els.gauge.value) applyGauge();
+        calculate();
+      });
+      els.gauge.addEventListener("change", () => {
+        applyGauge();
+        calculate();
+      });
+      els.shape.addEventListener("change", updateShape);
+
+      [els.thickness, els.qty, els.costPerLb, els.w, els.l, els.d, els.od, els.id].forEach((input) => {
+        input.addEventListener("input", calculate);
+      });
+
+      els.presetButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const w = parseFloat(button.dataset.w);
+          const l = parseFloat(button.dataset.l);
+          els.w.value = units === "in" ? String(w) : f2(inToMm(w));
+          els.l.value = units === "in" ? String(l) : f2(inToMm(l));
+          calculate();
+        });
+      });
+
+      populateGauge();
+      updateShape();
+      calculate();
+    })();
+  </script>
+  </div>
+  </main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

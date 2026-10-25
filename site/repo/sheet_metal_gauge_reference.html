@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sheet Metal Gauge Reference - Follincraft</title>
+<meta name="description" content="Sheet metal gauge reference for steel, galvanized steel, stainless steel, aluminum, copper, and brass thickness lookup.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sheet Metal Gauge Reference">
+  <meta property="og:description" content="Sheet metal gauge reference for steel, galvanized steel, stainless steel, aluminum, copper, and brass thickness lookup.">
+  <meta property="og:url" content="https://follincraft.com/repo/sheet_metal_gauge_reference.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sheet Metal Gauge Reference">
+  <meta name="twitter:description" content="Sheet metal gauge reference for steel, galvanized steel, stainless steel, aluminum, copper, and brass thickness lookup.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/sheet_metal_gauge_reference.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root{
+    --bg:#000000;
+    --card:#0b0c0f;
+    --ink:#ffffff;
+    --muted:#bbbbbb;
+    --line:#333333;
+    --accent:#ff6600;
+  }
+
+  /* Orange scrollbars (standalone) */
+  html{scrollbar-width:thin; scrollbar-color: var(--accent) #0b0c0f;}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:#0b0c0f}
+  ::-webkit-scrollbar-thumb{background:var(--accent); border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:#ff8533}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .tool-page{padding:94px 0 40px}
+  .tool-intro{max-width:1100px; margin:0 auto; padding:0 24px 18px}
+  .eyebrow{margin:0 0 6px; color:#fff; font-size:14px; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+  .tool-intro h1{margin:0; font-size:42px; line-height:1.05; color:var(--accent)}
+  .tool-intro p{margin:12px 0 0; max-width:760px; color:var(--muted); font-size:16px; line-height:1.55}
+  .tool-wrap{max-width:1100px; margin:0 auto; padding:24px}
+  .page-head{margin-bottom:16px}
+  .title{margin:0; font-size:20px; color:var(--accent)}
+  .blurb{margin:6px 0 0 0; color:var(--muted); font-size:14px}
+
+  .container{
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 8px 26px rgba(0,0,0,.35);
+  }
+
+  .tabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;    /* center the selector buttons */
+    margin:12px 0 14px 0;
+  }
+  .tab{
+    padding:8px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:#121316;
+    cursor:pointer;
+    color:#fff;
+    font-weight:600;
+    user-select:none;
+    transition:background .2s, color .2s, border .2s;
+    font-size:12px;
+  }
+  .tab:hover{ border-color:var(--accent) }
+  .tab.active{
+    background:var(--accent);
+    color:#000;                /* black text for active tab */
+    border-color:var(--accent);
+  }
+
+  table{ width:100%; border-collapse:collapse; }
+  th, td{ border:1px solid var(--line); padding:8px 10px; text-align:center; }
+  th{ background:#111; color:var(--muted); font-weight:700; }
+
+  .note{
+    color:var(--muted);
+    font-size:13px;
+    text-align:center;         /* center the footnote */
+    margin-top:10px;
+  }
+
+  @media (max-width:600px){
+    th, td{ font-size:12px }
+    .tab{ padding:7px 10px }
+  }
+  @media (max-width:700px){
+    .tool-page{padding-top:86px}
+    .tool-intro{padding:0 16px 16px}
+    .tool-intro h1{font-size:34px}
+    .tool-intro p{font-size:15px}
+    .tool-wrap{padding:16px}
+  }
+</style>
+
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sheet Metal Gauge Reference",
+  "description": "Sheet metal gauge reference for steel, galvanized steel, stainless steel, aluminum, copper, and brass thickness lookup.",
+  "url": "https://follincraft.com/repo/sheet_metal_gauge_reference.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sheet Metal Gauge Reference",
+      "item": "https://follincraft.com/repo/sheet_metal_gauge_reference.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-tool-style="site">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+  </div>
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Sheet Metal Gauge Reference</span></p>
+      <p class="eyebrow">Shop Reference</p>
+      <h1>Sheet Metal Gauge Reference</h1>
+      <p>Quick gauge-to-thickness lookup for the alloys that actually come up when quoting, ordering, or double-checking material.</p>
+    </section>
+
+  <div class="tool-wrap">
+    <div class="container">
+      <div class="tabs" id="tabs"></div>
+
+      <div id="content"></div>
+
+      <p class="note" id="footnote">
+        Values use common U.S. sheet gauge thicknesses. Weights are computed from material density (lbs/ft²).
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // --- Densities (lb/in^3) ---
+    const DENSITY = {
+      mild_steel: 0.284,
+      galvanized: 0.284,
+      stainless:  0.289,
+      aluminum:   0.098,
+      copper:     0.323,
+      brass:      0.306
+    };
+
+    // --- Gauge -> thickness (inches) ---
+    const GAUGE_STEEL = {
+      10:0.1345, 12:0.1046, 14:0.0747, 16:0.0598, 18:0.0478,
+      20:0.0359, 22:0.0299, 24:0.0239, 26:0.0179
+    };
+    const GAUGE_STAINLESS = {
+      10:0.1350, 12:0.1090, 14:0.0781, 16:0.0625, 18:0.0500,
+      20:0.0375, 22:0.0313, 24:0.0250, 26:0.0187
+    };
+    const GAUGE_BS = {
+      10:0.1019, 12:0.0808, 14:0.0641, 16:0.0508, 18:0.0403,
+      20:0.0320, 22:0.0253, 24:0.0201, 26:0.0159
+    };
+
+    const MATERIALS = [
+      { id:'mild_steel', label:'Mild Steel', density:DENSITY.mild_steel, gauges:GAUGE_STEEL,
+        note:'Mild steel (plain carbon) using standard sheet steel gauge.' },
+      { id:'galvanized', label:'Galvanized Steel', density:DENSITY.galvanized, gauges:GAUGE_STEEL,
+        note:'Galvanized uses the same base steel gauge; zinc coating adds minimal weight by area.' },
+      { id:'stainless', label:'Stainless Steel', density:DENSITY.stainless, gauges:GAUGE_STAINLESS,
+        note:'Stainless sheet uses the stainless gauge series (slightly different thicknesses).' },
+      { id:'aluminum', label:'Aluminum', density:DENSITY.aluminum, gauges:GAUGE_BS,
+        note:'Aluminum follows Brown & Sharpe (B&S) gauge.' },
+      { id:'copper', label:'Copper', density:DENSITY.copper, gauges:GAUGE_BS,
+        note:'Copper follows B&S gauge. Weight is higher due to copper’s density.' },
+      { id:'brass', label:'Brass', density:DENSITY.brass, gauges:GAUGE_BS,
+        note:'Brass follows B&S gauge; density is slightly lower than copper.' },
+    ];
+
+    const mm = (inch) => inch * 25.4;
+    const lbsPerFt2 = (t, d) => t * d * 144;
+    const fIn = (n) => Number(n).toFixed(4).replace(/0+$/,'').replace(/\.$/,'');
+    const fMm = (n) => Number(n).toFixed(2);
+    const fLb = (n) => Number(n).toFixed(3).replace(/\.000$/,'');
+
+    const tabsEl = document.getElementById('tabs');
+    let activeMaterial = MATERIALS[0].id;
+    MATERIALS.forEach((m, i) => {
+      const btn = document.createElement('div');
+      btn.className = 'tab' + (i===0 ? ' active':'');
+      btn.textContent = m.label;
+      btn.dataset.id = m.id;
+      btn.addEventListener('click', () => switchTab(m.id));
+      tabsEl.appendChild(btn);
+    });
+
+    renderTable(activeMaterial);
+
+    function switchTab(id){
+      activeMaterial = id;
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.id === id);
+      });
+      renderTable(id);
+    }
+
+    function renderTable(id){
+      const mat = MATERIALS.find(m => m.id === id);
+      const content = document.getElementById('content');
+      const rows = Object.entries(mat.gauges)
+        .sort((a,b) => Number(a[0]) - Number(b[0]))
+        .map(([g, t]) => {
+          const weight = lbsPerFt2(t, mat.density);
+          return `
+            <tr>
+              <td>${g}</td>
+              <td>${fIn(t)}</td>
+              <td>${fMm(mm(t))}</td>
+              <td>${fLb(weight)}</td>
+            </tr>
+          `;
+        }).join('');
+
+      content.innerHTML = `
+        <table aria-label="${mat.label} gauge table">
+          <thead>
+            <tr>
+              <th>Gauge</th>
+              <th>Thickness (in)</th>
+              <th>Thickness (mm)</th>
+              <th>Weight (lbs/ft²)</th>
+            </tr>
+          </thead>
+          <tbody>${rows || '<tr><td colspan="4">No matching gauge rows.</td></tr>'}</tbody>
+        </table>
+      `;
+      document.getElementById('footnote').textContent = mat.note;
+    }
+  </script>
+  </div>
+  </main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

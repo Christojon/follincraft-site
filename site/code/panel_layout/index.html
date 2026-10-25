@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Panel Layout Calculator - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Simple nesting for flat parts. See how many parts fit per sheet and what the waste looks like, fast." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Panel Layout Calculator">
+  <meta property="og:description" content="Simple nesting for flat parts. See how many parts fit per sheet and what the waste looks like, fast.">
+  <meta property="og:url" content="https://follincraft.com/code/panel_layout/">
+  <meta property="og:image" content="https://follincraft.com/code/panel_layout/shear.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panel Layout Calculator">
+  <meta name="twitter:description" content="Simple nesting for flat parts. See how many parts fit per sheet and what the waste looks like, fast.">
+  <meta name="twitter:image" content="https://follincraft.com/code/panel_layout/shear.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <!-- Social -->
+  <link rel="canonical" href="https://follincraft.com/code/panel_layout/">
+
+
+
+
+
+<!-- Favicons (match your newer pages) -->
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" />
+  <link rel="manifest" href="../../site.webmanifest" />
+<meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    :root{
+      --accent:#ea580c;
+      --line:#222a33;
+      --panel:#0f1419;
+      --panel2:#11171e;
+      --muted:#9aa4ad;
+    }
+
+    .wrap{ max-width:1080px; margin:0 auto; padding:0 14px; }
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ color:var(--accent); margin:6px 0 10px; }
+
+    .section-title{
+      color:var(--accent);
+      font-size:13px;
+      margin:0 0 6px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    /* Grid */
+    .project-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left{ grid-area:media; display:flex; flex-direction:column; gap:14px; }
+    .project-grid>.right{ grid-area:side; display:flex; flex-direction:column; gap:14px; }
+    .project-grid>.below{
+      grid-area:below;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+
+    /* Hero */
+    .hero-frame{
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      aspect-ratio:1/1;
+      isolation:isolate;
+      background:#000;
+    }
+    .hero-frame::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background-image:var(--hero);
+      background-size:cover;
+      background-position:center;
+      filter:blur(20px) saturate(1.15);
+      transform:scale(1.06);
+      opacity:.55;
+    }
+    #heroImg{
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      background:transparent;
+      user-select:none;
+      -webkit-user-drag:none;
+      cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      font-size:22px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.85); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; }
+    .hero-nav.next{ right:8px; }
+
+    .thumbs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .thumbs a{
+      display:block;
+      border-radius:10px;
+      padding:3px;
+      border:2px solid transparent;
+      background:var(--panel2);
+    }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{
+      width:96px;
+      height:68px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+    }
+
+    /* Cards + chips */
+    .card{
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:12px;
+      padding:14px;
+    }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip{
+      background:rgba(234,88,12,.12);
+      border:1.5px solid var(--accent);
+      color:#fff;
+      padding:4px 10px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:.82rem;
+    }
+
+    /* Overview */
+    .overview .lede{
+      font-weight:800;
+      color:#fff;
+      margin:0 0 8px;
+    }
+    .overview p{ line-height:1.6; }
+    .overview .lead{ color:#fff; }
+    .keyline{
+      height:1px;
+      border:0;
+      background:linear-gradient(90deg,var(--accent),transparent);
+      margin:10px 0 10px;
+    }
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin:0 0 8px;
+    }
+    @media (max-width:620px){ .quick-grid{ grid-template-columns:1fr; } }
+    .q{
+      background:var(--panel2);
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px;
+    }
+    .q .sub{
+      color:var(--muted);
+      font-size:.82rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+      display:block;
+    }
+    .pull{
+      margin:8px 0 0;
+      padding:10px 12px;
+      border-left:3px solid var(--accent);
+      background:rgba(234,88,12,.06);
+      font-weight:700;
+    }
+
+    /* Info grid */
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{
+      border:1px solid var(--line);
+      background:var(--panel2);
+      border-radius:10px;
+      padding:10px 12px;
+    }
+    .info .k{
+      color:var(--muted);
+      font-size:.78rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .info .v{
+      color:#fff;
+      font-weight:600;
+      font-size:.98rem;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .copy-btn{
+      margin-left:auto;
+      font-size:.8rem;
+      padding:4px 8px;
+      border-radius:8px;
+      background:rgba(234,88,12,.12);
+      border:1px solid var(--accent);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+
+    /* Steps */
+    ol.steps{
+      counter-reset:step;
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:8px;
+    }
+    ol.steps li{
+      position:relative;
+      padding:10px 12px 10px 44px;
+      border:1px solid var(--line);
+      background:var(--panel2);
+      border-radius:10px;
+    }
+    ol.steps li::before{
+      counter-increment:step;
+      content:counter(step);
+      position:absolute;
+      left:10px;
+      top:50%;
+      transform:translateY(-50%);
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(234,88,12,.18);
+      border:1px solid var(--accent);
+      font-weight:700;
+      color:#fff;
+    }
+
+    /* Notes cards */
+    .bygo{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:12px;
+      padding:12px;
+    }
+    .bygo-grid-2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+    .bygo-card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--panel2);
+      padding:12px;
+    }
+    .bygo-card h6{
+      margin:0 0 8px;
+      font-size:.9rem;
+      color:var(--muted);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .bygo-card ul{ margin:0; padding-left:22px; }
+    .bygo-card li::marker{ color:var(--accent); }
+
+    .my-notes{
+      border:2px solid var(--accent) !important;
+      background:rgba(234,88,12,.06) !important;
+    }
+
+    /* Force copy to white */
+    .project .lead,
+    .project p,
+    .project li{
+      color:#fff;
+      line-height:1.6;
+    }
+    .project .card ul{ list-style:disc outside; padding-left:22px; margin:0; }
+    .project .card li{ margin:8px 0; }
+    .project .card li::marker{ color:var(--accent); }
+
+    /* Embedded app */
+    .app-shell{
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+      background:var(--panel2);
+    }
+    .app-bar{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      flex-wrap:wrap;
+    }
+    .app-bar strong{ color:#fff; }
+    .app-bar .meta{
+      color:var(--muted);
+      font-size:.86rem;
+      margin-left:6px;
+    }
+    .app-actions{
+      margin-left:auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .app-actions a{ text-decoration:none; }
+
+    /* Bigger iframe so the app does not need to scroll */
+    .app-iframe{
+      width:100%;
+      height:700px;   /* bigger than before */
+      border:0;
+      display:block;
+      background:#0b0c0f;
+    }
+    @media (max-width:900px){
+      .app-iframe{ height:700px; }
+    }
+
+    /* CTA (match your other pages) */
+    .cta-band{
+      margin:18px 0 0;
+      border-top:2px solid var(--accent);
+      border-bottom:2px solid var(--accent);
+      background:var(--panel);
+    }
+    .cta-band .wrap{
+      padding-top:18px;
+      padding-bottom:18px;
+    }
+    .cta-inner{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    @media (max-width:900px){
+      .cta-inner{ grid-template-columns:1fr; }
+    }
+    .cta-actions{
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .cta-gear-text{ color:var(--muted); }
+    .cta-gear-text a{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+    }
+    .cta-gear-text a:hover{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+    }
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Code",
+      "item": "https://follincraft.com/code/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Panel Layout Calculator",
+      "item": "https://follincraft.com/code/panel_layout/"
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+      <nav id="topNav">
+        <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-links">
+      <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Breadcrumbs + Title -->
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead">
+      <a href="../../index.html">Home</a> / / <span>Panel Layout Calculator</span>
+    </div>
+    <h1 class="title proj-title">Panel Layout Calculator</h1>
+  </div>
+
+  <main class="project">
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+
+          <!-- LEFT -->
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('shear.jpeg')">
+              <button class="hero-nav prev" aria-label="Previous image">‹</button>
+              <img id="heroImg" src="shear.jpeg" alt="Panel Layout Calculator preview" width="800" height="800">
+              <button class="hero-nav next" aria-label="Next image">›</button>
+            </div>
+
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="shear.jpeg" aria-label="Hero image"><img src="shear.jpeg" alt="Panel Layout preview" loading="lazy" width="800" height="800"></a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">HTML</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Shop Tool</span>
+              <span class="chip">Nesting</span>
+            </div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">Stop guessing what fits on a sheet.</p>
+
+              <p class="lead">
+                This tool is for the moment before the shear or the laser when you need a fast answer.
+                You plug in your sheet size, kerf or gap, and a list of parts. It shows you how many fit, what it looks like, and what waste you are carrying.
+              </p>
+
+              <p class="lead">
+                It is not trying to be a full CAD nesting engine. It is trying to be the fastest way to get to a layout you can trust.
+              </p>
+
+              <hr class="keyline">
+
+              <div class="quick-grid">
+                <div class="q">
+                  <span class="sub">Best for</span>
+                  Simple flat parts, quick planning, and sanity checks before you cut.
+                </div>
+                <div class="q">
+                  <span class="sub">Built around</span>
+                  Real sheet sizes, real kerf, and real shop constraints.
+                </div>
+              </div>
+
+              <p class="pull">If the layout looks weird, it usually is. Adjust kerf and margins first before changing part sizes.</p>
+            </article>
+          </div>
+
+          <!-- BELOW -->
+          <div class="below">
+
+            <!-- At a glance -->
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="info-grid">
+                <div class="info">
+                  <div class="k">Tool</div>
+                  <div class="v">Panel Layout Calculator</div>
+                </div>
+                <div class="info">
+                  <div class="k">Runs in</div>
+                  <div class="v">Browser (HTML + JS)</div>
+                </div>
+                <div class="info">
+                  <div class="k">Best for</div>
+                  <div class="v">Quick nesting and sheet utilization checks</div>
+                </div>
+
+                <div class="info">
+                  <div class="k">Live app</div>
+                  <div class="v" id="toolLinkVal" data-url="https://follincraft.com/repo/panel_layout_calculator.html">
+                    follincraft.com/repo/panel_layout_calculator.html
+                    <button class="copy-btn" id="copyToolLink" type="button">Copy</button>
+                  </div>
+                </div>
+
+                <div class="info">
+                  <div class="k">Status</div>
+                  <div class="v">Active</div>
+                </div>
+                <div class="info">
+                  <div class="k">Notes</div>
+                  <div class="v">Open in a new tab if you want full screen</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Run it here (embedded) -->
+            <article class="card rib tint span-2">
+              <h5 class="section-title">Run the App</h5>
+
+              <div class="app-shell">
+                <div class="app-bar">
+                  <div>
+                    <strong>Embedded preview</strong>
+                    <span class="meta">Runs live from the repo page</span>
+                  </div>
+
+                  <div class="app-actions">
+                    <a class="btn solid" href="https://follincraft.com/repo/panel_layout_calculator.html" target="_blank" rel="noopener">
+                      Open ↗
+                    </a>
+                    <button class="btn ghost" type="button" id="openSameTab" title="Opens the app in this tab">
+                      Open here
+                    </button>
+                  </div>
+                </div>
+
+                <iframe
+                  class="app-iframe"
+                  id="toolFrame"
+                  title="Panel Layout Calculator"
+                  src="https://follincraft.com/repo/panel_layout_calculator.html"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </article>
+
+            <!-- How to use -->
+            <article class="card rib tint">
+              <h5 class="section-title">How to Use</h5>
+              <ol class="steps lead">
+                <li>Enter your sheet width and height.</li>
+                <li>Set kerf or a gap between parts, then add an edge margin if you need it.</li>
+                <li>Add your parts and quantity. Toggle rotate when it makes sense.</li>
+                <li>Hit Optimize and use the result as a planning layout, not a religion.</li>
+              </ol>
+              <p class="lead" style="margin-top:8px;border-left:3px solid var(--accent);padding:10px 12px;background:rgba(234,88,12,.06);border-radius:0;">
+                The win is visibility. You see the waste before you create it.
+              </p>
+            </article>
+
+            <!-- Notes -->
+            <article class="card rib tint">
+              <h5 class="section-title">Notes</h5>
+              <div class="bygo">
+                <div class="bygo-grid-2">
+                  <div class="bygo-card">
+                    <h6>What it helps prevent</h6>
+                    <ul class="lead">
+                      <li>Overbuying sheet because the math felt uncertain</li>
+                      <li>Layouts that "should fit" but do not</li>
+                      <li>Kerf and margins getting ignored until it is too late</li>
+                    </ul>
+                  </div>
+                  <div class="bygo-card">
+                    <h6>What I would add next</h6>
+                    <ul class="lead">
+                      <li>Preset library for common sheet sizes (48x120, 60x120, etc.)</li>
+                      <li>Printable layout sheet for the floor</li>
+                      <li>Export: copy part list and layout summary</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- My notes -->
+            <article class="card rib tint my-notes">
+              <h5 class="section-title">My Notes</h5>
+              <p class="lead">
+                This is one of those tools that saves money quietly. It is not flashy, but it stops dumb waste.
+                If you run a shop, you know how often sheet gets ordered "just in case." This fights that.
+              </p>
+              <ul class="lead">
+                <li>Start with realistic kerf. Do not pretend you cut with a laser if you are shearing.</li>
+                <li>If the part count is high, run a couple margin values and pick the one that looks stable.</li>
+                <li>For repeat jobs, save the part list somewhere so you are not rebuilding it every time.</li>
+              </ul>
+            </article>
+
+          </div><!-- /.below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div>
+            <div class="section-title" style="margin:0; color:var(--accent);">
+              FIND THE NEXT TOOL
+            </div>
+            <h3 id="ctaTitle" class="title" style="margin:6px 0 8px; color:#fff;">
+              Small tools that actually make the day run smoother.
+            </h3>
+            <p class="lead cta-gear-text" style="margin:0;">
+              Useful code is not complicated. It is reliable.
+              <br>
+              <a href="../../code/index.html" aria-label="See all code projects">
+                See all code projects →
+              </a>
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn ghost" href="../../code/index.html">Back to Code</a>
+            <a class="btn solid" href="#contact">Contact Me →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <div class="wrap">
+        <article class="card span-2" id="contact">
+          <h5 class="section-title">Contact</h5>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. I'll read it and get back to you.</p>
+          <div style="margin-bottom:10px;"></div>
+          <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+            <div class="row">
+              <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+              <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+            </div>
+            <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+            <button class="btn solid" type="submit">Send Message</button>
+            <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+            <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (template-consistent) -->
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent);">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; text-align:left;">
+      <div>
+        <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px;">About Follincraft</h3>
+        <p class="lead" style="font-size:14px; color:var(--muted);">
+          A personal showcase of metal fabrication, design, coding, and outdoor adventures. It is all about making things work better.
+        </p>
+      </div>
+      <div>
+        <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px;">Location</h3>
+        <p class="lead" style="font-size:14px; color:var(--muted);">
+          Based in Phoenix, Arizona.
+        </p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+          width="100%" height="200"
+          style="border:1px solid var(--line); border-radius:10px; margin-top:10px;"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div>
+        <h3 style="color:var(--accent); margin-bottom:16px; font-size:20px;">Connect</h3>
+        <div style="display:flex; gap:10px; justify-content:left;">
+          <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+        </div>
+        <p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted);">
+          Got a tool idea? Share your thought process.
+        </p>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px;">
+      <span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span>
+    </p>
+    <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">‹</button>
+    <img id="lbImg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">›</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Gallery + lightbox
+    (function(){
+      const hero   = document.getElementById('heroImg');
+      const frame  = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb     = document.getElementById('lightbox');
+      const lbImg  = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+
+      function setHero(url){
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        if (lb && lb.style.display === 'flex' && lbImg) lbImg.src = url;
+      }
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        setHero(imgs[i]);
+      }
+
+      if (imgs[i]) setHero(imgs[i]);
+
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const idx = imgs.indexOf(a.getAttribute('href'));
+        if(idx >= 0) show(idx);
+      });
+
+      frame.querySelector('.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.next')?.addEventListener('click', () => show(i+1));
+
+      hero.addEventListener('click', () => {
+        if (!lb || !lbImg) return;
+        lbImg.src = imgs[i] || hero.src;
+        lb.style.display='flex';
+      });
+      lbClose?.addEventListener('click', () => { if (lb) lb.style.display='none'; });
+      lb?.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev?.addEventListener('click', () => show(i-1));
+      lbNext?.addEventListener('click', () => show(i+1));
+    })();
+
+    // Copy tool link
+    (function(){
+      const wrap = document.getElementById('toolLinkVal');
+      const btn  = document.getElementById('copyToolLink');
+      const url  = wrap?.dataset.url || "https://follincraft.com/repo/panel_layout_calculator.html";
+      btn?.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(url);
+          btn.textContent = 'Copied';
+          setTimeout(()=>btn.textContent='Copy',1200);
+        }catch(_){}
+      });
+    })();
+
+    // "Open here" button (same tab)
+    (function(){
+      const btn = document.getElementById('openSameTab');
+      const url = "https://follincraft.com/repo/panel_layout_calculator.html";
+      btn?.addEventListener('click', () => { location.href = url; });
+    })();
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Code", "item":"https://follincraft.com/#code" },
+          { "@type":"ListItem", "position":3, "name":"Panel Layout Calculator", "item":"https://follincraft.com/code/panel_layout/" }
+        ]
+      },
+      {
+        "@type":"Article",
+        "headline":"Panel Layout Calculator",
+        "description":"Simple nesting for flat parts. See how many parts fit per sheet and what the waste looks like, fast.",
+        "image":"https://follincraft.com/code/panel_layout/shear.jpeg",
+        "author":{"@type":"Person","name":"Chris Follin"},
+        "publisher": {"@type":"Organization", "name":"Follincraft"}
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Angle + Miter Cut Calculator - Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Angle and miter calculator with a live embedded app. Real references: outside, centerline, inside. Built for frames and intersections." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Angle + Miter Cut Calculator">
+  <meta property="og:description" content="Angle and miter calculator with a live embedded app. Real references: outside, centerline, inside. Built for frames and intersections.">
+  <meta property="og:url" content="https://follincraft.com/code/angle_miter_calculator/">
+  <meta property="og:image" content="https://follincraft.com/assets/sawblade.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Angle + Miter Cut Calculator">
+  <meta name="twitter:description" content="Angle and miter calculator with a live embedded app. Real references: outside, centerline, inside. Built for frames and intersections.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/sawblade.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <link rel="canonical" href="https://follincraft.com/code/angle_miter_calculator/">
+
+
+
+
+
+<link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" />
+  <link rel="manifest" href="../../site.webmanifest" />
+<meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    :root{
+      --accent:#ea580c;
+      --line:#222a33;
+      --panel:#0f1419;
+      --panel2:#11171e;
+      --muted:#9aa4ad;
+    }
+
+    .wrap{ max-width:1080px; margin:0 auto; padding:0 14px; }
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ color:var(--accent); margin:6px 0 10px; }
+
+    .section-title{
+      color:var(--accent);
+      font-size:13px;
+      margin:0 0 6px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left{ grid-area:media; display:flex; flex-direction:column; gap:14px; }
+    .project-grid>.right{ grid-area:side; display:flex; flex-direction:column; gap:14px; }
+    .project-grid>.below{
+      grid-area:below;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+
+    .hero-frame{
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      aspect-ratio:1/1;
+      isolation:isolate;
+      background:#000;
+    }
+    .hero-frame::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background-image:var(--hero);
+      background-size:cover;
+      background-position:center;
+      filter:blur(20px) saturate(1.15);
+      transform:scale(1.06);
+      opacity:.55;
+    }
+    #heroImg{
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      background:transparent;
+      user-select:none;
+      -webkit-user-drag:none;
+      cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      font-size:22px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.85); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; }
+    .hero-nav.next{ right:8px; }
+
+    .thumbs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .thumbs a{
+      display:block;
+      border-radius:10px;
+      padding:3px;
+      border:2px solid transparent;
+      background:var(--panel2);
+    }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{
+      width:96px;
+      height:68px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:12px;
+      padding:14px;
+    }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip{
+      background:rgba(234,88,12,.12);
+      border:1.5px solid var(--accent);
+      color:#fff;
+      padding:4px 10px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:.82rem;
+    }
+
+    .overview .lede{ font-weight:800; color:#fff; margin:0 0 8px; }
+    .overview p{ line-height:1.6; }
+    .overview .lead{ color:#fff; }
+    .keyline{
+      height:1px;
+      border:0;
+      background:linear-gradient(90deg,var(--accent),transparent);
+      margin:10px 0 10px;
+    }
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin:0 0 8px;
+    }
+    @media (max-width:620px){ .quick-grid{ grid-template-columns:1fr; } }
+    .q{
+      background:var(--panel2);
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px;
+    }
+    .q .sub{
+      color:var(--muted);
+      font-size:.82rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+      display:block;
+    }
+    .pull{
+      margin:8px 0 0;
+      padding:10px 12px;
+      border-left:3px solid var(--accent);
+      background:rgba(234,88,12,.06);
+      font-weight:700;
+      color:#fff;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{
+      border:1px solid var(--line);
+      background:var(--panel2);
+      border-radius:10px;
+      padding:10px 12px;
+    }
+    .info .k{
+      color:var(--muted);
+      font-size:.78rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .info .v{
+      color:#fff;
+      font-weight:600;
+      font-size:.98rem;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .copy-btn{
+      margin-left:auto;
+      font-size:.8rem;
+      padding:4px 8px;
+      border-radius:8px;
+      background:rgba(234,88,12,.12);
+      border:1px solid var(--accent);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+
+    /* Embedded app */
+    .app-shell{
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+      background:var(--panel2);
+    }
+    .app-bar{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      flex-wrap:wrap;
+    }
+    .app-bar strong{ color:#fff; }
+    .app-bar .meta{ color:var(--muted); font-size:.86rem; margin-left:6px; }
+    .app-actions{
+      margin-left:auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .app-actions a{ text-decoration:none; }
+
+    /* Bigger iframe so it doesn't need its own scroll */
+    .app-iframe{
+      width:100%;
+      height:760px;
+      border:0;
+      display:block;
+      background:#0b0c0f;
+    }
+    @media (max-width:900px){
+      .app-iframe{ height:860px; }
+    }
+
+    /* CTA band */
+    .cta-band{
+      margin:18px 0 0;
+      border-top:2px solid var(--accent);
+      border-bottom:2px solid var(--accent);
+      background:var(--panel);
+    }
+    .cta-band .wrap{ padding-top:18px; padding-bottom:18px; }
+    .cta-inner{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    @media (max-width:900px){ .cta-inner{ grid-template-columns:1fr; } }
+    .cta-actions{
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .cta-text{ color:var(--muted); }
+    .cta-text a{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+    }
+    .cta-text a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+
+    .cta-fade{ transition: opacity .22s ease; }
+    .cta-fade.hide{ opacity:0; }
+
+    /* Lightbox */
+    .lightbox{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,.92);
+      position:fixed;
+      inset:0;
+      z-index:9999;
+    }
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Code",
+      "item": "https://follincraft.com/code/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angle + Miter Cut Calculator",
+      "item": "https://follincraft.com/code/angle_miter_calculator/"
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">
+          <a href="../../index.html#about" style="text-decoration:none">
+            <span class="pair"><span class="f">F</span><span class="c">C</span></span>
+          </a>
+        </div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+      <nav id="topNav">
+        <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-links">
+      <a href="../../index.html#about">About</a><a href="../../projects/index.html">Projects</a><a href="../../camp/index.html">Camp</a><a href="../../gear/index.html">Gear</a><a href="../../repo/index.html">Tools</a><a href="../../index.html#store">Store</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead">
+      <a href="../../index.html">Home</a> / / <span>Angle + Miter Cut Calculator</span>
+    </div>
+    <h1 class="title proj-title">Angle + Miter Cut Calculator</h1>
+  </div>
+
+  <main class="project">
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+
+          <!-- LEFT -->
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('../../assets/sawblade.jpg')">
+              <button class="hero-nav prev" aria-label="Previous image">‹</button>
+              <img id="heroImg" src="../../assets/sawblade.jpg" alt="Angle + Miter calculator preview" width="1024" height="1024">
+              <button class="hero-nav next" aria-label="Next image">›</button>
+            </div>
+
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="../../assets/sawblade.jpg" aria-label="Hero image"><img src="../../assets/sawblade.jpg" alt="Calculator preview" loading="lazy" width="1024" height="1024"></a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">HTML</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Shop Math</span>
+              <span class="chip">Miter</span>
+            </div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">The angle is easy. The reference is where the mistakes live.</p>
+
+              <p class="lead">
+                Most miter calculators give you a number and send you back into the shop to guess what it means.
+                This one stays honest about what you are measuring - outside, inside, or centerline.
+              </p>
+
+              <p class="lead">
+                It covers two workflows: frame corners and intersections. The output is simple: your saw setting, and a length that matches the reference you actually used to measure.
+              </p>
+
+              <hr class="keyline">
+
+              <div class="quick-grid">
+                <div class="q">
+                  <span class="sub">Best for</span>
+                  Frames, perimeter rails, braces, and repeatable miters that fit on the first try.
+                </div>
+                <div class="q">
+                  <span class="sub">What it prevents</span>
+                  The classic "it is right but it does not fit" problem caused by reference drift.
+                </div>
+              </div>
+
+              <p class="pull">If two people measure the same corner two different ways, the part is already wrong.</p>
+            </article>
+          </div>
+
+          <!-- BELOW -->
+          <div class="below">
+
+            <article class="card span-2">
+              <h5 class="section-title">At a Glance</h5>
+              <div class="info-grid">
+                <div class="info"><div class="k">Tool</div><div class="v">Angle + Miter Cut Calculator</div></div>
+                <div class="info"><div class="k">Runs in</div><div class="v">Browser (HTML + JS)</div></div>
+                <div class="info"><div class="k">Modes</div><div class="v">Frame Corner, Intersection</div></div>
+
+                <div class="info">
+                  <div class="k">Live app</div>
+                  <div class="v" id="toolLinkVal" data-url="https://follincraft.com/repo/angle_miter_calculator.html">
+                    follincraft.com/repo/angle_miter_calculator.html
+                    <button class="copy-btn" id="copyToolLink" type="button">Copy</button>
+                  </div>
+                </div>
+
+                <div class="info"><div class="k">Reference</div><div class="v">Outside, Centerline, Inside</div></div>
+                <div class="info"><div class="k">Status</div><div class="v">Active</div></div>
+              </div>
+            </article>
+
+            <!-- Live embed -->
+            <article class="card rib tint span-2">
+              <h5 class="section-title">Run the App</h5>
+
+              <div class="app-shell">
+                <div class="app-bar">
+                  <div>
+                    <strong>Live embedded app</strong>
+                    <span class="meta">Runs directly from the repo tool page</span>
+                  </div>
+
+                  <div class="app-actions">
+                    <a class="btn solid" href="https://follincraft.com/repo/angle_miter_calculator.html" target="_blank" rel="noopener">
+                      Open ↗
+                    </a>
+                    <button class="btn ghost" type="button" id="openSameTab" title="Opens the app in this tab">
+                      Open here
+                    </button>
+                  </div>
+                </div>
+
+                <iframe
+                  class="app-iframe"
+                  id="toolFrame"
+                  title="Angle + Miter Calculator"
+                  src="https://follincraft.com/repo/angle_miter_calculator.html"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </article>
+
+            <article class="card rib tint">
+              <h5 class="section-title">How to Use</h5>
+              <ul class="lead">
+                <li>Pick your mode: frame corner or intersection.</li>
+                <li>Enter the angle and the reference you actually measure in the shop.</li>
+                <li>Set width W to the dimension that drives the outside or inside change.</li>
+              </ul>
+              <p class="pull">The goal is one set of assumptions, one answer, every time.</p>
+            </article>
+
+            <article class="card rib tint">
+              <h5 class="section-title">Notes</h5>
+              <ul class="lead">
+                <li>Centerline is the cleanest reference when you can use it.</li>
+                <li>Outside and inside are valid - but only if W matches reality.</li>
+                <li>If it is an intersection that wants a notch, do not force it into a miter.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rotating CTA band -->
+    <section class="cta-band" role="region" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div>
+            <div class="section-title cta-fade" id="ctaEyebrow" style="margin:0; color:var(--accent);">FIND THE NEXT TOOL</div>
+            <h3 id="ctaTitle" class="title cta-fade" style="margin:6px 0 8px; color:#fff;">
+              Small tools that actually make the day run smoother.
+            </h3>
+            <p class="lead cta-text cta-fade" id="ctaBody" style="margin:0;">
+              A good script should feel boring in the best way.
+              <br>
+              <a href="../../code/index.html" aria-label="See all code projects">See all code projects →</a>
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn ghost" href="../../code/index.html" id="ctaBtnLeft">Back to Code</a>
+            <a class="btn solid" href="#contact" id="ctaBtnRight">Contact Me →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">‹</button>
+    <img id="lbImg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">›</button>
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Gallery + lightbox
+    (function(){
+      const hero   = document.getElementById('heroImg');
+      const frame  = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb     = document.getElementById('lightbox');
+      const lbImg  = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+
+      const prevBtn = frame.querySelector('.prev');
+      const nextBtn = frame.querySelector('.next');
+
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href')).filter(Boolean);
+
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+      if (i < 0) i = 0;
+
+      const multi = imgs.length > 1;
+      if (!multi){
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (lbPrev) lbPrev.style.display = 'none';
+        if (lbNext) lbNext.style.display = 'none';
+      }
+
+      function setHero(url){
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        if (lb && lb.style.display === 'flex' && lbImg) lbImg.src = url;
+      }
+      function show(n){
+        if (!imgs.length) return;
+        i = (n + imgs.length) % imgs.length;
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        setHero(imgs[i]);
+      }
+
+      if (imgs[i]) setHero(imgs[i]);
+
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const href = a.getAttribute('href');
+        const idx = imgs.indexOf(href);
+        if(idx >= 0) show(idx);
+      });
+
+      prevBtn?.addEventListener('click', () => show(i-1));
+      nextBtn?.addEventListener('click', () => show(i+1));
+
+      hero.addEventListener('click', () => {
+        if (!lb || !lbImg || !imgs.length) return;
+        lbImg.src = imgs[i] || hero.src;
+        lb.style.display='flex';
+      });
+      lbClose?.addEventListener('click', () => { if (lb) lb.style.display='none'; });
+      lb?.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev?.addEventListener('click', () => show(i-1));
+      lbNext?.addEventListener('click', () => show(i+1));
+    })();
+
+    // Copy tool link
+    (function(){
+      const wrap = document.getElementById('toolLinkVal');
+      const btn  = document.getElementById('copyToolLink');
+      const url  = wrap?.dataset.url || "https://follincraft.com/repo/angle_miter_calculator.html";
+      btn?.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(url);
+          btn.textContent = 'Copied';
+          setTimeout(()=>btn.textContent='Copy',1200);
+        }catch(_){
+          btn.textContent = 'Copy failed';
+          setTimeout(()=>btn.textContent='Copy',1200);
+        }
+      });
+    })();
+
+    // "Open here" button
+    (function(){
+      const btn = document.getElementById('openSameTab');
+      const url = "https://follincraft.com/repo/angle_miter_calculator.html";
+      btn?.addEventListener('click', () => { location.href = url; });
+    })();
+
+    // Rotating CTAs
+    (function(){
+      const eyebrow = document.getElementById('ctaEyebrow');
+      const title   = document.getElementById('ctaTitle');
+      const body    = document.getElementById('ctaBody');
+      const btnL    = document.getElementById('ctaBtnLeft');
+      const btnR    = document.getElementById('ctaBtnRight');
+
+      const items = [
+        {
+          eyebrow: "FIND THE NEXT TOOL",
+          title: "Small tools that actually make the day run smoother.",
+          body: `A good script should feel boring in the best way.<br><a href="../../code/index.html">See all code projects →</a>`,
+          left: { text:"Back to Code", href:"/#code", cls:"btn ghost" },
+          right:{ text:"Contact Me →", href:"/#contact", cls:"btn solid" }
+        },
+        {
+          eyebrow: "SHOP MATH, CLEAN OUTPUT",
+          title: "If the reference stays consistent, the parts fit.",
+          body: `This calculator is built around outside, inside, and centerline - because that is where the errors actually happen.<br><a href="../../repo/angle_miter_calculator.html" target="_blank" rel="noopener">Open the tool full screen →</a>`,
+          left: { text:"Open Tool ↗", href:"/repo/angle_miter_calculator.html", cls:"btn ghost", target:true },
+          right:{ text:"See Cut Length Tool →", href:"/code/cut_length_calculator/", cls:"btn solid" }
+        },
+        {
+          eyebrow: "HAVE A TOOL IDEA?",
+          title: "Tell me the problem - I will build the boring fix.",
+          body: `If your crew keeps re-checking the same numbers, that is a tool waiting to exist.<br><a href="#contact">Send me the scenario →</a>`,
+          left: { text:"Back to Tools", href:"/#tools", cls:"btn ghost" },
+          right:{ text:"Contact Me →", href:"/#contact", cls:"btn solid" }
+        }
+      ];
+
+      let idx = 0;
+      function fade(el, hide){
+        el.classList.toggle('hide', hide);
+      }
+      function setItem(it){
+        eyebrow.innerHTML = it.eyebrow;
+        title.innerHTML   = it.title;
+        body.innerHTML    = it.body;
+
+        btnL.textContent = it.left.text;
+        btnL.setAttribute('href', it.left.href);
+        if (it.left.target){ btnL.setAttribute('target','_blank'); btnL.setAttribute('rel','noopener'); }
+        else { btnL.removeAttribute('target'); btnL.removeAttribute('rel'); }
+
+        btnR.textContent = it.right.text;
+        btnR.setAttribute('href', it.right.href);
+        if (it.right.target){ btnR.setAttribute('target','_blank'); btnR.setAttribute('rel','noopener'); }
+        else { btnR.removeAttribute('target'); btnR.removeAttribute('rel'); }
+      }
+
+      function rotate(){
+        idx = (idx + 1) % items.length;
+        [eyebrow,title,body].forEach(el => fade(el,true));
+        setTimeout(() => {
+          setItem(items[idx]);
+          [eyebrow,title,body].forEach(el => fade(el,false));
+        }, 240);
+      }
+
+      // init
+      setItem(items[0]);
+      setInterval(rotate, 9000);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Code", "item":"https://follincraft.com/#code" },
+          { "@type":"ListItem", "position":3, "name":"Angle + Miter Cut Calculator", "item":"https://follincraft.com/code/angle_miter_calculator/" }
+        ]
+      },
+      {
+        "@type":"Article",
+        "headline":"Angle + Miter Cut Calculator",
+        "description":"Angle and miter calculator with a live embedded app. Real references: outside, centerline, inside.",
+        "image":"https://follincraft.com/assets/sawblade.jpg",
+        "author":{"@type":"Person","name":"Chris Follin"},
+        "publisher":{"@type":"Organization","name":"Follincraft"}
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

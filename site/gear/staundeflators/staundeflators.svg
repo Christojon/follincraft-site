@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Staun Tire Deflators">
+  <rect width="1200" height="900" fill="#090b10"/>
+  <rect x="70" y="70" width="1060" height="760" rx="36" fill="#11141b" stroke="#ea580c" stroke-width="6"/>
+  <circle cx="600" cy="410" r="190" fill="#151922" stroke="#394152" stroke-width="10"/>
+  <circle cx="600" cy="410" r="120" fill="#0b0d12" stroke="#ea580c" stroke-width="10"/>
+  <g fill="#ea580c">
+    <rect x="570" y="200" width="60" height="90" rx="22"/>
+    <rect x="570" y="530" width="60" height="90" rx="22"/>
+    <rect x="390" y="380" width="90" height="60" rx="22"/>
+    <rect x="720" y="380" width="90" height="60" rx="22"/>
+  </g>
+  <text x="120" y="165" fill="#ea580c" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800">OFF-ROAD UTILITY</text>
+  <text x="120" y="690" fill="#ffffff" font-size="66" font-family="Inter, Arial, sans-serif" font-weight="800">Staun Tire Deflators</text>
+  <text x="120" y="755" fill="#9aa3b2" font-size="34" font-family="Inter, Arial, sans-serif">Preset tire pressure drop without kneeling there forever.</text>
+</svg>

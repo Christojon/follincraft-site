@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipe Schedule Quick Charts - Follincraft</title>
+<meta name="description" content="Quick pipe schedule reference tables for outside diameter, wall thickness, inside diameter, and weight for common pipe sizes.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pipe Schedule Quick Charts">
+  <meta property="og:description" content="Quick pipe schedule reference tables for outside diameter, wall thickness, inside diameter, and weight for common pipe sizes.">
+  <meta property="og:url" content="https://follincraft.com/repo/pipe_table.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pipe Schedule Quick Charts">
+  <meta name="twitter:description" content="Quick pipe schedule reference tables for outside diameter, wall thickness, inside diameter, and weight for common pipe sizes.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+<link rel="canonical" href="https://follincraft.com/repo/pipe_table.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pipe Schedule Quick Charts",
+  "description": "Quick pipe schedule reference tables for outside diameter, wall thickness, inside diameter, and weight for common pipe sizes.",
+  "url": "https://follincraft.com/repo/pipe_table.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Follin",
+    "url": "https://follincraft.com/contact/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Follincraft",
+    "url": "https://follincraft.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://follincraft.com/assets/favicon.jpg"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://follincraft.com/repo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pipe Schedule Quick Charts",
+      "item": "https://follincraft.com/repo/pipe_table.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="tool-utility-page" data-tool-style="site">
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo"><a href="../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+      <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+    </div>
+                      <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </div>
+</header>
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+              <nav class="mobile-links">
+      <a href="../projects/index.html">Projects</a>
+      <a href="../camp/index.html">Camp</a>
+      <a href="../gear/index.html">Gear</a>
+      
+      <a href="../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="../search/index.html">Search</a>
+    </nav>
+</div>
+<main class="tool-page">
+<!-- ======= Pipe Schedule Quick Charts (black bg / orange accent / white text) ======= -->
+<style>
+  :root{
+    --accent:#ea580c;
+    --line:#2a2f36;
+    --ink:#e5e7eb;
+    --muted:#9ca3af;
+    --card:#0f1115;
+    --bg:#0a0c0f;
+  }
+
+  html, body { margin:0; padding:0; background:var(--bg); height:100%; }
+  /* Orange scrollbars (standalone) */
+  html{scrollbar-width:thin; scrollbar-color:var(--accent) var(--bg);}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--accent); border-radius:5px; border:2px solid var(--bg)}
+  ::-webkit-scrollbar-thumb:hover{background:#f97316}
+
+  .pipe-wrap{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: transparent;
+    color: var(--ink);
+  }
+  .pipe-wrap .container{
+    max-width: 980px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012)), var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: none;
+    border: 1px solid var(--line);
+  }
+
+  /* Heading + description (match your critter tool) */
+  .pipe-head{ margin-bottom: 12px; }
+  .pipe-head .title{
+    margin: 0;
+    font-size: 20px;
+    color: var(--accent);        /* orange heading */
+  }
+  .pipe-head .blurb{
+    margin: 6px 0 0 0;
+    color: var(--muted);         /* muted paragraph */
+    font-size: 14px;
+  }
+
+  /* Tabs */
+  .tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;      /* centered selector buttons */
+    margin:12px 0 14px 0;
+  }
+  .tab{
+    padding:10px 18px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:rgba(255,255,255,.035);
+    cursor:pointer;
+    color:#fff;
+    font-weight:700;
+    user-select:none;
+    transition:.15s ease;
+  }
+  .tab:hover{ border-color:var(--accent); background:rgba(234,88,12,.08); }
+  .tab.active{
+    background: var(--accent);
+    color:#090b0f;
+    border-color: var(--accent);
+  }
+
+  /* Table */
+  .pipe-wrap table{ width:100%; border-collapse:collapse; margin-bottom:6px; }
+  .pipe-wrap th, .pipe-wrap td{
+    border:1px solid var(--line);
+    padding:8px 10px; text-align:center;
+    background:transparent;
+    color:#fff;
+  }
+  .pipe-wrap thead th{ background:#11151b; font-weight:700; color:#c4cad3; }
+
+/* Zebra + hover */
+.pipe-wrap tbody tr:nth-child(odd){ background:rgba(255,255,255,.012); }
+.pipe-wrap tbody tr:nth-child(even){ background:rgba(255,255,255,.028); }
+.pipe-wrap tbody tr:hover{
+  background: var(--accent);    /* orange background */
+}
+.pipe-wrap tbody tr:hover td{
+  color: #fff;                  /* force white text on hover */
+}
+
+  /* Center the note */
+  .pipe-wrap .note{
+    font-size:13px;
+    margin-top:8px;
+    color: var(--muted);
+    text-align:center;           /* centered footnote */
+  }
+
+  /* Only show active schedule inside the widget */
+  .pipe-wrap .tab-content{ display:none !important; }
+  .pipe-wrap .tab-content.active{ display:block !important; }
+
+  @media (max-width:600px){
+    .tab{ padding:8px 12px; font-size:14px; }
+    .pipe-wrap table, .pipe-wrap th, .pipe-wrap td{ font-size:12px; }
+  }
+</style>
+
+<section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Pipe Schedule Quick Charts</span></p>
+  <p class="eyebrow">Shop Reference</p>
+  <h1>Pipe Schedule Quick Charts</h1>
+  <p>Fast lookup for common pipe schedules, outside diameter, wall thickness, inside diameter, and weight before ordering or laying out fabrication work.</p>
+</section>
+
+<section id="pipe-schedule" class="pipe-wrap">
+  <div class="container" data-aos="fade-up">
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="EMP_showSched('sch40', this)">Sch 40</div>
+      <div class="tab" onclick="EMP_showSched('sch10', this)">Sch 10</div>
+      <div class="tab" onclick="EMP_showSched('sch80', this)">Sch 80</div>
+      <div class="tab" onclick="EMP_showSched('sch160', this)">Sch 160</div>
+      <div class="tab" onclick="EMP_showSched('schxxs', this)">XXS</div>
+    </div>
+
+    <!-- ===== Sch 40 (default) ===== -->
+    <div id="sch40" class="tab-content active">
+      <table>
+        <thead>
+          <tr><th>NPS</th><th>OD (in)</th><th>Wall (in)</th><th>ID (in)</th><th>Weight (lb/ft)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1/8"</td><td>0.405</td><td>0.068</td><td>0.269</td><td>0.245</td></tr>
+          <tr><td>1/4"</td><td>0.540</td><td>0.088</td><td>0.364</td><td>0.425</td></tr>
+          <tr><td>3/8"</td><td>0.675</td><td>0.091</td><td>0.493</td><td>0.568</td></tr>
+          <tr><td>1/2"</td><td>0.840</td><td>0.109</td><td>0.622</td><td>0.851</td></tr>
+          <tr><td>3/4"</td><td>1.050</td><td>0.113</td><td>0.824</td><td>1.131</td></tr>
+          <tr><td>1"</td><td>1.315</td><td>0.133</td><td>1.049</td><td>1.679</td></tr>
+          <tr><td>1-1/4"</td><td>1.660</td><td>0.140</td><td>1.380</td><td>2.273</td></tr>
+          <tr><td>1-1/2"</td><td>1.900</td><td>0.145</td><td>1.610</td><td>2.718</td></tr>
+          <tr><td>2"</td><td>2.375</td><td>0.154</td><td>2.067</td><td>3.853</td></tr>
+          <tr><td>2-1/2"</td><td>2.875</td><td>0.203</td><td>2.469</td><td>5.793</td></tr>
+          <tr><td>3"</td><td>3.500</td><td>0.216</td><td>3.068</td><td>7.576</td></tr>
+          <tr><td>3-1/2"</td><td>4.000</td><td>0.226</td><td>3.548</td><td>9.109</td></tr>
+          <tr><td>4"</td><td>4.500</td><td>0.237</td><td>4.026</td><td>10.790</td></tr>
+          <tr><td>4-1/2"</td><td>5.000</td><td>0.247</td><td>4.506</td><td>12.540</td></tr>
+          <tr><td>5"</td><td>5.563</td><td>0.258</td><td>5.047</td><td>14.620</td></tr>
+          <tr><td>6"</td><td>6.625</td><td>0.280</td><td>6.065</td><td>18.970</td></tr>
+          <tr><td>8"</td><td>8.625</td><td>0.322</td><td>7.981</td><td>28.550</td></tr>
+          <tr><td>10"</td><td>10.750</td><td>0.365</td><td>10.020</td><td>40.480</td></tr>
+          <tr><td>12"</td><td>12.750</td><td>0.406</td><td>11.938</td><td>53.520</td></tr>
+          <tr><td>14"</td><td>14.000</td><td>0.438</td><td>13.124</td><td>63.440</td></tr>
+          <tr><td>16"</td><td>16.000</td><td>0.500</td><td>15.000</td><td>82.770</td></tr>
+          <tr><td>18"</td><td>18.000</td><td>0.562</td><td>16.876</td><td>104.700</td></tr>
+          <tr><td>20"</td><td>20.000</td><td>0.594</td><td>18.812</td><td>123.100</td></tr>
+          <tr><td>24"</td><td>24.000</td><td>0.688</td><td>22.624</td><td>171.300</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Sch 10 ===== -->
+    <div id="sch10" class="tab-content">
+      <table>
+        <thead>
+          <tr><th>NPS</th><th>OD (in)</th><th>Wall (in)</th><th>ID (in)</th><th>Weight (lb/ft)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1/8"</td><td>0.405</td><td>0.049</td><td>0.307</td><td>0.186</td></tr>
+          <tr><td>1/4"</td><td>0.540</td><td>0.065</td><td>0.410</td><td>0.330</td></tr>
+          <tr><td>3/8"</td><td>0.675</td><td>0.065</td><td>0.545</td><td>0.424</td></tr>
+          <tr><td>1/2"</td><td>0.840</td><td>0.083</td><td>0.674</td><td>0.671</td></tr>
+          <tr><td>3/4"</td><td>1.050</td><td>0.083</td><td>0.884</td><td>0.857</td></tr>
+          <tr><td>1"</td><td>1.315</td><td>0.109</td><td>1.097</td><td>1.404</td></tr>
+          <tr><td>1-1/4"</td><td>1.660</td><td>0.109</td><td>1.442</td><td>1.806</td></tr>
+          <tr><td>1-1/2"</td><td>1.900</td><td>0.109</td><td>1.682</td><td>2.085</td></tr>
+          <tr><td>2"</td><td>2.375</td><td>0.109</td><td>2.157</td><td>2.638</td></tr>
+          <tr><td>2-1/2"</td><td>2.875</td><td>0.120</td><td>2.635</td><td>3.531</td></tr>
+          <tr><td>3"</td><td>3.500</td><td>0.120</td><td>3.260</td><td>4.332</td></tr>
+          <tr><td>3-1/2"</td><td>4.000</td><td>0.120</td><td>3.760</td><td>4.937</td></tr>
+          <tr><td>4"</td><td>4.500</td><td>0.120</td><td>4.260</td><td>5.613</td></tr>
+          <tr><td>5"</td><td>5.563</td><td>0.134</td><td>5.295</td><td>7.770</td></tr>
+          <tr><td>6"</td><td>6.625</td><td>0.134</td><td>6.357</td><td>9.290</td></tr>
+          <tr><td>8"</td><td>8.625</td><td>0.148</td><td>8.329</td><td>13.400</td></tr>
+          <tr><td>10"</td><td>10.750</td><td>0.165</td><td>10.420</td><td>18.650</td></tr>
+          <tr><td>12"</td><td>12.750</td><td>0.180</td><td>12.390</td><td>24.160</td></tr>
+          <tr><td>14"</td><td>14.000</td><td>0.188</td><td>13.624</td><td>20.650</td></tr>
+          <tr><td>16"</td><td>16.000</td><td>0.188</td><td>15.624</td><td>20.650</td></tr>
+          <tr><td>18"</td><td>18.000</td><td>0.188</td><td>17.624</td><td>23.250</td></tr>
+          <tr><td>20"</td><td>20.000</td><td>0.218</td><td>19.564</td><td>28.550</td></tr>
+          <tr><td>22"</td><td>22.000</td><td>0.250</td><td>21.500</td><td>34.670</td></tr>
+          <tr><td>24"</td><td>24.000</td><td>0.250</td><td>23.500</td><td>37.400</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Sch 80 ===== -->
+    <div id="sch80" class="tab-content">
+      <table>
+        <thead>
+          <tr><th>NPS</th><th>OD (in)</th><th>Wall (in)</th><th>ID (in)</th><th>Weight (lb/ft)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1/8"</td><td>0.405</td><td>0.095</td><td>0.215</td><td>0.315</td></tr>
+          <tr><td>1/4"</td><td>0.540</td><td>0.119</td><td>0.302</td><td>0.535</td></tr>
+          <tr><td>3/8"</td><td>0.675</td><td>0.126</td><td>0.423</td><td>0.739</td></tr>
+          <tr><td>1/2"</td><td>0.840</td><td>0.147</td><td>0.546</td><td>1.088</td></tr>
+          <tr><td>3/4"</td><td>1.050</td><td>0.154</td><td>0.742</td><td>1.474</td></tr>
+          <tr><td>1"</td><td>1.315</td><td>0.179</td><td>0.957</td><td>2.172</td></tr>
+          <tr><td>1-1/4"</td><td>1.660</td><td>0.191</td><td>1.278</td><td>2.997</td></tr>
+          <tr><td>1-1/2"</td><td>1.900</td><td>0.200</td><td>1.500</td><td>3.631</td></tr>
+          <tr><td>2"</td><td>2.375</td><td>0.218</td><td>1.939</td><td>5.022</td></tr>
+          <tr><td>2-1/2"</td><td>2.875</td><td>0.276</td><td>2.323</td><td>7.651</td></tr>
+          <tr><td>3"</td><td>3.500</td><td>0.300</td><td>2.900</td><td>10.250</td></tr>
+          <tr><td>3-1/2"</td><td>4.000</td><td>0.318</td><td>3.364</td><td>12.510</td></tr>
+          <tr><td>4"</td><td>4.500</td><td>0.337</td><td>3.826</td><td>14.980</td></tr>
+          <tr><td>5"</td><td>5.563</td><td>0.375</td><td>4.813</td><td>20.780</td></tr>
+          <tr><td>6"</td><td>6.625</td><td>0.432</td><td>5.761</td><td>28.570</td></tr>
+          <tr><td>8"</td><td>8.625</td><td>0.500</td><td>7.625</td><td>43.390</td></tr>
+          <tr><td>10"</td><td>10.750</td><td>0.500</td><td>9.750</td><td>54.740</td></tr>
+          <tr><td>12"</td><td>12.750</td><td>0.500</td><td>11.750</td><td>65.420</td></tr>
+          <tr><td>14"</td><td>14.000</td><td>0.500</td><td>13.000</td><td>72.090</td></tr>
+          <tr><td>16"</td><td>16.000</td><td>0.500</td><td>15.000</td><td>79.430</td></tr>
+          <tr><td>18"</td><td>18.000</td><td>0.562</td><td>16.876</td><td>95.450</td></tr>
+          <tr><td>20"</td><td>20.000</td><td>0.594</td><td>18.812</td><td>107.200</td></tr>
+          <tr><td>24"</td><td>24.000</td><td>0.688</td><td>22.624</td><td>141.900</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Sch 160 ===== -->
+    <div id="sch160" class="tab-content">
+      <table>
+        <thead>
+          <tr><th>NPS</th><th>OD (in)</th><th>Wall (in)</th><th>ID (in)</th><th>Weight (lb/ft)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1/2"</td><td>0.840</td><td>0.187</td><td>0.466</td><td>1.304</td></tr>
+          <tr><td>3/4"</td><td>1.050</td><td>0.218</td><td>0.614</td><td>1.937</td></tr>
+          <tr><td>1"</td><td>1.315</td><td>0.250</td><td>0.815</td><td>2.844</td></tr>
+          <tr><td>1-1/4"</td><td>1.660</td><td>0.250</td><td>1.160</td><td>3.765</td></tr>
+          <tr><td>1-1/2"</td><td>1.900</td><td>0.281</td><td>1.337</td><td>4.859</td></tr>
+          <tr><td>2"</td><td>2.375</td><td>0.344</td><td>1.687</td><td>7.462</td></tr>
+          <tr><td>2-1/2"</td><td>2.875</td><td>0.375</td><td>2.125</td><td>10.010</td></tr>
+          <tr><td>3"</td><td>3.500</td><td>0.438</td><td>2.624</td><td>14.320</td></tr>
+          <tr><td>4"</td><td>4.500</td><td>0.531</td><td>3.438</td><td>22.510</td></tr>
+          <tr><td>5"</td><td>5.563</td><td>0.625</td><td>4.313</td><td>32.960</td></tr>
+          <tr><td>6"</td><td>6.625</td><td>0.719</td><td>5.189</td><td>43.350</td></tr>
+          <tr><td>8"</td><td>8.625</td><td>0.906</td><td>6.813</td><td>74.790</td></tr>
+          <tr><td>10"</td><td>10.750</td><td>1.125</td><td>8.500</td><td>115.600</td></tr>
+          <tr><td>12"</td><td>12.750</td><td>1.312</td><td>10.126</td><td>150.300</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== XXS ===== -->
+    <div id="schxxs" class="tab-content">
+      <table>
+        <thead>
+          <tr><th>NPS</th><th>OD (in)</th><th>Wall (in)</th><th>ID (in)</th><th>Weight (lb/ft)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1/2"</td><td>0.840</td><td>0.294</td><td>0.252</td><td>1.714</td></tr>
+          <tr><td>3/4"</td><td>1.050</td><td>0.308</td><td>0.434</td><td>2.441</td></tr>
+          <tr><td>1"</td><td>1.315</td><td>0.358</td><td>0.599</td><td>3.659</td></tr>
+          <tr><td>1-1/4"</td><td>1.660</td><td>0.382</td><td>0.896</td><td>5.214</td></tr>
+          <tr><td>1-1/2"</td><td>1.900</td><td>0.400</td><td>1.100</td><td>6.408</td></tr>
+          <tr><td>2"</td><td>2.375</td><td>0.436</td><td>1.503</td><td>9.029</td></tr>
+          <tr><td>2-1/2"</td><td>2.875</td><td>0.552</td><td>1.771</td><td>13.700</td></tr>
+          <tr><td>3"</td><td>3.500</td><td>0.600</td><td>2.300</td><td>18.580</td></tr>
+          <tr><td>3-1/2"</td><td>4.000</td><td>0.636</td><td>2.728</td><td>22.850</td></tr>
+          <tr><td>4"</td><td>4.500</td><td>0.674</td><td>3.152</td><td>27.540</td></tr>
+          <tr><td>5"</td><td>5.563</td><td>0.750</td><td>4.063</td><td>38.550</td></tr>
+          <tr><td>6"</td><td>6.625</td><td>0.864</td><td>4.897</td><td>53.160</td></tr>
+          <tr><td>8"</td><td>8.625</td><td>0.875</td><td>6.875</td><td>72.420</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">Source: industry schedule tables consistent with ASME B36.10. Always verify for critical design.</div>
+  </div>
+</section>
+
+<script>
+  function EMP_showSched(id, el){
+    document.querySelectorAll('#pipe-schedule .tab-content').forEach(c=>c.classList.remove('active'));
+    document.querySelectorAll('#pipe-schedule .tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+
+</main>
+
+  <section id="contact" class="category-shell-contact">
+    <div class="wrap">
+      <div class="inline-contact-head">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h3 class="title">Contact</h3>
+          <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+          <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+        </div>
+        <div class="inline-contact-photo" aria-label="Chris Follin">
+          <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+        </div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+        <div class="row">
+          <input name="name" class="input" placeholder="Your name" required aria-required="true" aria-label="Your name">
+          <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true" aria-label="Your email">
+        </div>
+        <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+        <input type="hidden" name="_subject" value="Follincraft: New message from site">
+        <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+        <button class="btn solid" type="submit">Send Message</button>
+        <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px"></p>
+        <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../privacy/index.html">Privacy details</a>.</p>
+          </form>
+    </div>
+  </section>
+
+  <footer style="padding:40px 0; background:var(--panel); border-top:1px solid var(--accent)">
+  <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; text-align:left">
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">About Follincraft</h3><p class="lead" style="font-size:14px; color:var(--muted)">A personal showcase of 20+ years in metal fabrication, design, coding, and outdoor adventures. From clean welds and CNC builds in the shop to camping gear recommendations and code scripts that streamline workflows. It's all about making things work better.</p></div>
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Location</h3><p class="lead" style="font-size:14px; color:var(--muted)">Based in Phoenix, Arizona.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus" width="100%" height="200" style="border:1px solid var(--line); border-radius:10px; margin-top:10px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div><h3 style="color:var(--accent); margin-bottom:16px; font-size:20px">Connect</h3><div style="display:flex; gap:10px; justify-content:left; flex-wrap:wrap"><a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a><a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a><a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a></div><p class="lead" style="margin-top:16px; font-size:14px; color:var(--muted)">Fabrication, code, camp systems, or the half-formed idea you want to make real.</p></div>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:30px; border-top:1px solid var(--line); padding-top:20px"><span>All Rights Reserved © <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+  <p class="footer-legal"><a href="../privacy/index.html">Privacy</a> &middot; <a href="../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

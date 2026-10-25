@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Material Takeoff & Weight Builder - Follincraft</title>
+  <meta name="description" content="Build a steel, stainless, or aluminum material takeoff with weight, surface area, linear footage, and printable totals.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Material Takeoff & Weight Builder">
+  <meta property="og:description" content="Build a steel, stainless, or aluminum material takeoff with weight, surface area, linear footage, and printable totals.">
+  <meta property="og:url" content="https://follincraft.com/repo/material_weight_cost_estimator.html">
+  <meta property="og:image" content="https://follincraft.com/assets/favicon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Material Takeoff & Weight Builder">
+  <meta name="twitter:description" content="Build a steel, stainless, or aluminum material takeoff with weight, surface area, linear footage, and printable totals.">
+  <meta name="twitter:image" content="https://follincraft.com/assets/favicon.jpg">
+  <link rel="canonical" href="https://follincraft.com/repo/material_weight_cost_estimator.html">
+  <link rel="stylesheet" href="../styles.css?v=hero-hyphen-1">
+  <link rel="icon" href="../assets/favicon.jpg" sizes="any">
+  <style>
+    :root{--bg:#0a0c0f;--card:#0b0c10;--ink:#e5e7eb;--muted:#9ca3af;--accent:#ea580c;--blue:#8abfff;--teal:#66d1c7;--gold:#f4c957;--line:#2a2f36;--input:#0e1115}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--ink)}
+    body{font-family:Inter,Roboto,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+    html{scrollbar-width:thin;scrollbar-color:var(--accent) #0b0c10}
+    ::-webkit-scrollbar{width:10px;height:10px}
+    ::-webkit-scrollbar-track{background:#0b0c10}
+    ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:6px}
+    .tool-page{padding:94px 0 40px;background:radial-gradient(circle at 82px 120px,rgba(234,88,12,.075),transparent 300px),var(--bg)}
+    .tool-intro{max-width:1100px;margin:0 auto;padding:0 20px}
+    .breadcrumbs{margin:0 0 16px;color:var(--muted);font-size:16px}
+    .breadcrumbs a{color:inherit;text-decoration:none}
+    .breadcrumbs a:hover{color:var(--accent)}
+    .section-kicker{margin:0 0 6px;color:#fff;font-size:14px;font-weight:800;line-height:1.2;letter-spacing:.08em;text-transform:uppercase}
+    .tool-intro .title{margin:0 0 8px;color:var(--accent);font-size:1.8rem;line-height:1.08;letter-spacing:0}
+    .tool-intro p.section-intro{margin:0;max-width:780px;color:var(--muted);font-size:17px;line-height:1.55}
+    .tool-heading-rule{max-width:1100px;margin:20px auto 0;padding:0 20px}
+    .tool-heading-rule .section-divider{height:1px;border:0;background:linear-gradient(90deg,var(--accent),rgba(234,88,12,.45) 42%,rgba(234,88,12,0))}
+    .tool-wrap{max-width:1100px;margin:0 auto;padding:24px 20px}
+    .grid{display:grid;gap:16px;grid-template-columns:390px 1fr;align-items:start}
+    .card{background:linear-gradient(145deg,#13161b,#0b0c10);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 22px 60px rgba(0,0,0,.34)}
+    h2,h3{margin:0;color:#fff;line-height:1.1}
+    h2{font-size:19px}
+    h3{font-size:16px}
+    .note{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+    label{display:block;margin:0 0 6px;color:var(--muted);font-size:13px;font-weight:800}
+    input,select,textarea{width:100%;box-sizing:border-box;border:1px solid #30343c;border-radius:8px;background:var(--input);color:#fff;padding:10px 11px;font:inherit;outline:none}
+    textarea{min-height:70px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(234,88,12,.18)}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .full{grid-column:1/-1}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    button{appearance:none;border:1px solid transparent;border-radius:8px;background:var(--accent);color:#000;padding:10px 14px;font-weight:900;cursor:pointer}
+    button.secondary{background:#14171d;color:#fff;border-color:var(--line)}
+    button.danger{background:#211315;color:#ffb4a5;border-color:#5b2b21}
+    button:hover{filter:brightness(1.06)}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 14px}
+    .stat{border:1px solid var(--line);border-radius:8px;background:#101319;padding:10px}
+    .stat span{display:block;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .stat strong{display:block;margin-top:3px;color:#fff;font-size:19px}
+    .results{display:grid;gap:16px;padding:0}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#0e1115}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;color:#fff;vertical-align:top}
+    th{background:#12161c;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+    td.num{text-align:right;white-space:nowrap}
+    tbody tr:hover{background:#141922}
+    .empty{border:1px dashed var(--line);border-radius:8px;padding:28px;text-align:center;color:var(--muted)}
+    .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .mini-list{display:grid;gap:8px;margin-top:12px}
+    .mini-row{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:8px;background:#101319;padding:9px 10px;color:var(--muted);font-size:13px}
+    .mini-row strong{color:#fff}
+    .status{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.45}
+    .status strong{color:#fff}
+    .print-report{display:none}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.stats,.summary-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:620px){.tool-page{padding-top:86px}.tool-intro,.tool-wrap,.tool-heading-rule{padding-left:16px;padding-right:16px}.field-row,.stats,.summary-grid{grid-template-columns:1fr}}
+    @media print{
+      @page{size:letter;margin:.45in}
+      body{background:#fff;color:#111;font-family:Arial,sans-serif}
+      header,.tool-page,#contact,footer{display:none!important}
+      .print-report{display:block!important;color:#111}
+      .print-report h1{margin:0 0 4px;font-size:24px}
+      .print-report p{margin:0 0 10px;color:#333}
+      .print-report .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 16px;font-size:11px}
+      .print-report .meta div{border:1px solid #999;padding:6px;border-radius:4px}
+      .print-report table{font-size:10px;width:100%;border-collapse:collapse}
+      .print-report th,.print-report td{color:#111;border:1px solid #aaa;padding:4px;text-align:left}
+      .print-report th{background:#eee}
+      .print-report td.num{text-align:right}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../index.html" style="text-decoration:none;color:inherit"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+      <nav id="topNav">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../camp/index.html">Camp</a>
+        <a href="../gear/index.html">Gear</a>
+        
+        <a href="../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true"><nav class="mobile-links">
+    <a href="../projects/index.html">Projects</a>
+    <a href="../camp/index.html">Camp</a>
+    <a href="../gear/index.html">Gear</a>
+    
+    <a href="../repo/index.html">Tools</a>
+    <a href="#contact">Contact</a>
+    <a href="../search/index.html">Search</a>
+  </nav></div>
+
+  <main class="tool-page">
+    <section class="tool-intro">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../repo/index.html">Tools</a> / <span>Material Takeoff &amp; Weight Builder</span></p>
+      <p class="section-kicker">SHOP TAKEOFF</p>
+      <h1 class="title">Material Takeoff &amp; Weight Builder</h1>
+      <p class="lead section-intro">Build a material takeoff for steel, stainless, or aluminum shapes, with weight, surface area, linear footage, and a clean printout.</p>
+    </section>
+    <div class="tool-heading-rule"><hr class="section-divider"></div>
+
+    <section class="tool-wrap">
+      <div class="grid">
+        <aside class="card">
+          <h2>Add material</h2>
+          <p class="note">Choose the shape, enter the real order dimensions, and add it to the takeoff. Use it for material weight, footage, surface area, and handling notes.</p>
+          <div class="field-row">
+            <div class="full">
+              <label for="description">Description</label>
+              <input id="description" type="text" placeholder="Frame rail, base plate, rack upright" aria-label="Frame rail, base plate, rack upright">
+            </div>
+            <div>
+              <label for="material">Material</label>
+              <select id="material" aria-label="Material">
+                <option value="steel">Steel</option>
+                <option value="stainless">Stainless</option>
+                <option value="aluminum">Aluminum</option>
+              </select>
+            </div>
+            <div>
+              <label for="shape">Shape</label>
+              <select id="shape" aria-label="Shape">
+                <option value="rect_tube">Rect / square tube</option>
+                <option value="round_tube">Round tube / pipe</option>
+                <option value="plate">Plate / sheet</option>
+                <option value="flat_bar">Flat bar</option>
+                <option value="angle">Angle</option>
+                <option value="channel">Channel</option>
+                <option value="beam">Beam / wide flange</option>
+                <option value="round_bar">Round bar</option>
+              </select>
+            </div>
+          </div>
+          <div id="dimensionFields" class="field-row"></div>
+          <div class="field-row">
+            <div>
+              <label for="qty">Quantity</label>
+              <input id="qty" type="number" min="0" step="1" value="1" aria-label="Quantity">
+            </div>
+            <div>
+              <label for="lengthFt">Length / piece (ft)</label>
+              <input id="lengthFt" type="number" min="0" step="0.01" value="10" aria-label="Length Ft">
+            </div>
+            <div class="full">
+              <label for="notes">Notes</label>
+              <textarea id="notes" placeholder="Finish, handling, drop note, order note" aria-label="Finish, handling, drop note, order note"></textarea>
+            </div>
+            <div class="full">
+              <label for="jsonInput">Load saved takeoff</label>
+              <input id="jsonInput" type="file" accept=".json,application/json" aria-label="Json Input">
+            </div>
+          </div>
+          <div class="actions">
+            <button id="addBtn" type="button">Add item</button>
+            <button id="sampleBtn" class="secondary" type="button">Load sample</button>
+            <button id="clearInputsBtn" class="secondary" type="button">Clear inputs</button>
+          </div>
+          <div class="actions">
+            <button id="printBtn" class="secondary" type="button">Print takeoff</button>
+            <button id="csvBtn" class="secondary" type="button">Export CSV</button>
+            <button id="saveBtn" class="secondary" type="button">Save JSON</button>
+            <button id="clearAllBtn" class="danger" type="button">Clear all</button>
+          </div>
+          <div id="status" class="status">Add a material item or load the sample takeoff.</div>
+        </aside>
+
+        <section class="results" aria-label="Estimator results">
+          <div id="stats" class="stats"></div>
+          <div id="takeoffOutput"></div>
+          <div class="summary-grid">
+            <article class="card">
+              <h3>By material</h3>
+              <div id="materialSummary" class="mini-list"></div>
+            </article>
+            <article class="card">
+              <h3>By shape</h3>
+              <div id="shapeSummary" class="mini-list"></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div id="printReport" class="print-report"></div>
+
+  <script>
+    const MATERIALS = {
+      steel: {label:"Steel", density:.283},
+      stainless: {label:"Stainless", density:.289},
+      aluminum: {label:"Aluminum", density:.0975}
+    };
+    const SHAPES = {
+      rect_tube: {label:"Rect / square tube", fields:[["width","Outside width (in)",2],["height","Outside height (in)",2],["wall","Wall (in)",.125]], needsLength:true},
+      round_tube: {label:"Round tube / pipe", fields:[["od","OD (in)",1.9],["wall","Wall (in)",.145]], needsLength:true},
+      plate: {label:"Plate / sheet", fields:[["width","Width (in)",48],["height","Length (in)",96],["thickness","Thickness (in)",.125]], needsLength:false},
+      flat_bar: {label:"Flat bar", fields:[["width","Width (in)",2],["thickness","Thickness (in)",.25]], needsLength:true},
+      angle: {label:"Angle", fields:[["legA","Leg A (in)",2],["legB","Leg B (in)",2],["thickness","Thickness (in)",.25]], needsLength:true},
+      channel: {label:"Channel", fields:[["height","Web height (in)",4],["flange","Flange width (in)",1.75],["thickness","Thickness (in)",.25]], needsLength:true},
+      beam: {label:"Beam / wide flange", fields:[["depth","Depth (in)",6],["flange","Flange width (in)",4],["web","Web thickness (in)",.23],["flangeT","Flange thickness (in)",.35]], needsLength:true},
+      round_bar: {label:"Round bar", fields:[["diameter","Diameter (in)",1]], needsLength:true}
+    };
+    const els = {
+      description:document.getElementById("description"),
+      material:document.getElementById("material"),
+      shape:document.getElementById("shape"),
+      dimensions:document.getElementById("dimensionFields"),
+      qty:document.getElementById("qty"),
+      lengthFt:document.getElementById("lengthFt"),
+      notes:document.getElementById("notes"),
+      add:document.getElementById("addBtn"),
+      sample:document.getElementById("sampleBtn"),
+      clearInputs:document.getElementById("clearInputsBtn"),
+      print:document.getElementById("printBtn"),
+      csv:document.getElementById("csvBtn"),
+      save:document.getElementById("saveBtn"),
+      json:document.getElementById("jsonInput"),
+      clearAll:document.getElementById("clearAllBtn"),
+      status:document.getElementById("status"),
+      stats:document.getElementById("stats"),
+      output:document.getElementById("takeoffOutput"),
+      materialSummary:document.getElementById("materialSummary"),
+      shapeSummary:document.getElementById("shapeSummary"),
+      printReport:document.getElementById("printReport")
+    };
+    let items = [];
+    let editId = null;
+    function n(v){return Number.isFinite(+v) ? +v : 0}
+    function fmt(v,d=2){return n(v).toLocaleString(undefined,{maximumFractionDigits:d})}
+    function escapeHtml(s){return String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+    function lineIn(){return n(els.lengthFt.value) * 12}
+    function renderDimensionFields(){
+      const def = SHAPES[els.shape.value];
+      els.dimensions.innerHTML = def.fields.map(([key,label,value]) => `<div><label for="dim_${key}">${label}</label><input id="dim_${key}" data-dim="${key}" type="number" min="0" step="0.001" value="${value}" aria-label="Dim ${key}"></div>`).join("");
+      els.lengthFt.closest("div").style.display = def.needsLength ? "" : "none";
+    }
+    function dims(){
+      const out = {};
+      document.querySelectorAll("[data-dim]").forEach(input => out[input.dataset.dim] = n(input.value));
+      return out;
+    }
+    function areaIn2(shape,d){
+      if(shape === "rect_tube"){
+        const iw = Math.max(0,d.width - 2*d.wall), ih = Math.max(0,d.height - 2*d.wall);
+        return Math.max(0,d.width*d.height - iw*ih);
+      }
+      if(shape === "round_tube"){
+        const id = Math.max(0,d.od - 2*d.wall);
+        return Math.PI/4*(d.od*d.od - id*id);
+      }
+      if(shape === "plate") return d.width*d.height;
+      if(shape === "flat_bar") return d.width*d.thickness;
+      if(shape === "angle") return d.thickness*(d.legA + d.legB - d.thickness);
+      if(shape === "channel") return d.thickness*(d.height + 2*d.flange);
+      if(shape === "beam") return 2*d.flange*d.flangeT + Math.max(0,d.depth - 2*d.flangeT)*d.web;
+      if(shape === "round_bar") return Math.PI*Math.pow(d.diameter/2,2);
+      return 0;
+    }
+    function surfaceFt2(shape,d,lenIn){
+      if(shape === "plate") return (2*d.width*d.height + 2*d.width*d.thickness + 2*d.height*d.thickness)/144;
+      if(shape === "rect_tube") return (2*(d.width+d.height)*lenIn)/144;
+      if(shape === "round_tube") return (Math.PI*d.od*lenIn)/144;
+      if(shape === "flat_bar") return (2*(d.width+d.thickness)*lenIn)/144;
+      if(shape === "angle") return (2*(d.legA+d.legB)*lenIn)/144;
+      if(shape === "channel") return (2*(d.height+2*d.flange)*lenIn)/144;
+      if(shape === "beam") return (2*(d.depth+2*d.flange)*lenIn)/144;
+      if(shape === "round_bar") return (Math.PI*d.diameter*lenIn)/144;
+      return 0;
+    }
+    function dimensionsLabel(shape,d){
+      if(shape === "rect_tube") return `${fmt(d.width,3)} x ${fmt(d.height,3)} x ${fmt(d.wall,3)} wall`;
+      if(shape === "round_tube") return `${fmt(d.od,3)} OD x ${fmt(d.wall,3)} wall`;
+      if(shape === "plate") return `${fmt(d.width,3)} x ${fmt(d.height,3)} x ${fmt(d.thickness,3)}`;
+      if(shape === "flat_bar") return `${fmt(d.width,3)} x ${fmt(d.thickness,3)}`;
+      if(shape === "angle") return `${fmt(d.legA,3)} x ${fmt(d.legB,3)} x ${fmt(d.thickness,3)}`;
+      if(shape === "channel") return `${fmt(d.height,3)} channel x ${fmt(d.flange,3)} flange x ${fmt(d.thickness,3)}`;
+      if(shape === "beam") return `${fmt(d.depth,3)} x ${fmt(d.flange,3)} x web ${fmt(d.web,3)} x flange ${fmt(d.flangeT,3)}`;
+      if(shape === "round_bar") return `${fmt(d.diameter,3)} dia`;
+      return "";
+    }
+    function calculateLine(data){
+      const mat = MATERIALS[data.material];
+      const def = SHAPES[data.shape];
+      const lengthIn = def.needsLength ? data.lengthFt * 12 : data.dims.height || 0;
+      const volume = data.shape === "plate" ? data.dims.width * data.dims.height * data.dims.thickness : areaIn2(data.shape,data.dims) * lengthIn;
+      const eachWeight = volume * mat.density;
+      const totalWeight = eachWeight * data.qty;
+      const surface = surfaceFt2(data.shape,data.dims,lengthIn) * data.qty;
+      const linearFt = def.needsLength ? data.lengthFt * data.qty : 0;
+      return {...data, dimensions:dimensionsLabel(data.shape,data.dims), eachWeight,totalWeight,surface,linearFt};
+    }
+    function formData(){
+      return calculateLine({
+        id:editId || Date.now().toString(36),
+        description:els.description.value.trim() || SHAPES[els.shape.value].label,
+        material:els.material.value,
+        shape:els.shape.value,
+        dims:dims(),
+        qty:Math.max(0,n(els.qty.value)),
+        lengthFt:Math.max(0,n(els.lengthFt.value)),
+        notes:els.notes.value.trim()
+      });
+    }
+    function addItem(){
+      const item = formData();
+      if(!item.qty || !item.totalWeight){els.status.textContent = "Enter dimensions and quantity before adding the item.";return}
+      if(editId) items = items.map(row => row.id === editId ? item : row);
+      else items.push(item);
+      editId = null;
+      els.add.textContent = "Add item";
+      els.status.innerHTML = `<strong>${escapeHtml(item.description)}</strong> added to the takeoff.`;
+      render();
+    }
+    function loadItem(id){
+      const item = items.find(row => row.id === id);
+      if(!item) return;
+      editId = item.id;
+      els.description.value = item.description;
+      els.material.value = item.material;
+      els.shape.value = item.shape;
+      renderDimensionFields();
+      Object.entries(item.dims).forEach(([key,value]) => {
+        const input = document.querySelector(`[data-dim="${key}"]`);
+        if(input) input.value = value;
+      });
+      els.qty.value = item.qty;
+      els.lengthFt.value = item.lengthFt;
+      els.notes.value = item.notes;
+      els.add.textContent = "Update item";
+      els.status.textContent = "Editing selected takeoff item.";
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+    function deleteItem(id){
+      items = items.filter(row => row.id !== id);
+      if(editId === id) editId = null;
+      render();
+    }
+    function totals(){
+      return items.reduce((acc,row) => {
+        acc.weight += row.totalWeight;
+        acc.surface += row.surface;
+        acc.linearFt += row.linearFt;
+        return acc;
+      }, {weight:0,surface:0,linearFt:0});
+    }
+    function groupBy(key){
+      const map = new Map();
+      items.forEach(row => {
+        const label = key === "material" ? MATERIALS[row.material].label : SHAPES[row.shape].label;
+        const current = map.get(label) || {weight:0,linearFt:0,surface:0};
+        current.weight += row.totalWeight;
+        current.linearFt += row.linearFt;
+        current.surface += row.surface;
+        map.set(label,current);
+      });
+      return Array.from(map.entries());
+    }
+    function renderMini(target, rows){
+      target.innerHTML = rows.length ? rows.map(([label,row]) => `<div class="mini-row"><span>${escapeHtml(label)}<br>${fmt(row.linearFt,1)} ft | ${fmt(row.surface,1)} ft²</span><strong>${fmt(row.weight,1)} lb</strong></div>`).join("") : `<div class="mini-row"><span>No items yet</span><strong>-</strong></div>`;
+    }
+    function renderStats(t){
+      els.stats.innerHTML = `
+        <div class="stat"><span>Items</span><strong>${items.length}</strong></div>
+        <div class="stat"><span>Total weight</span><strong>${fmt(t.weight,1)} lb</strong></div>
+        <div class="stat"><span>Linear feet</span><strong>${fmt(t.linearFt,1)} ft</strong></div>
+        <div class="stat"><span>Surface</span><strong>${fmt(t.surface,1)} ft²</strong></div>
+      `;
+    }
+    function renderTable(){
+      if(!items.length){
+        els.output.innerHTML = `<div class="empty">Add material items to build a printable takeoff.</div>`;
+        return;
+      }
+      els.output.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Item</th><th>Material</th><th>Shape</th><th>Size</th><th>Qty</th><th>Length</th><th class="num">Each lb</th><th class="num">Total lb</th><th class="num">Surface</th><th></th></tr></thead><tbody>${items.map(row => `
+        <tr>
+          <td><strong>${escapeHtml(row.description)}</strong>${row.notes ? `<br><span class="note">${escapeHtml(row.notes)}</span>` : ""}</td>
+          <td>${MATERIALS[row.material].label}</td>
+          <td>${SHAPES[row.shape].label}</td>
+          <td>${escapeHtml(row.dimensions)}</td>
+          <td>${fmt(row.qty,0)}</td>
+          <td>${SHAPES[row.shape].needsLength ? `${fmt(row.lengthFt,2)} ft` : "-"}</td>
+          <td class="num">${fmt(row.eachWeight,1)}</td>
+          <td class="num">${fmt(row.totalWeight,1)}</td>
+          <td class="num">${fmt(row.surface,1)} ft²</td>
+          <td><button class="secondary" type="button" data-edit="${row.id}">Edit</button><br><button class="danger" type="button" data-delete="${row.id}">Delete</button></td>
+        </tr>`).join("")}</tbody></table></div>`;
+      document.querySelectorAll("[data-edit]").forEach(btn => btn.addEventListener("click", () => loadItem(btn.dataset.edit)));
+      document.querySelectorAll("[data-delete]").forEach(btn => btn.addEventListener("click", () => deleteItem(btn.dataset.delete)));
+    }
+    function render(){
+      const t = totals();
+      renderStats(t);
+      renderTable();
+      renderMini(els.materialSummary, groupBy("material"));
+      renderMini(els.shapeSummary, groupBy("shape"));
+      buildPrintReport();
+    }
+    function buildPrintReport(){
+      const t = totals();
+      els.printReport.innerHTML = `<h1>Material Takeoff & Weight Builder</h1><p>Follincraft material takeoff</p><div class="meta"><div><strong>Items</strong><br>${items.length}</div><div><strong>Total weight</strong><br>${fmt(t.weight,1)} lb</div><div><strong>Linear feet</strong><br>${fmt(t.linearFt,1)} ft</div><div><strong>Surface area</strong><br>${fmt(t.surface,1)} ft²</div></div><table><thead><tr><th>Item</th><th>Material</th><th>Shape</th><th>Size</th><th>Qty</th><th>Length</th><th class="num">Each lb</th><th class="num">Total lb</th><th class="num">Surface</th><th>Notes</th></tr></thead><tbody>${items.map(row => `<tr><td>${escapeHtml(row.description)}</td><td>${MATERIALS[row.material].label}</td><td>${SHAPES[row.shape].label}</td><td>${escapeHtml(row.dimensions)}</td><td>${fmt(row.qty,0)}</td><td>${SHAPES[row.shape].needsLength ? `${fmt(row.lengthFt,2)} ft` : "-"}</td><td class="num">${fmt(row.eachWeight,1)}</td><td class="num">${fmt(row.totalWeight,1)}</td><td class="num">${fmt(row.surface,1)}</td><td>${escapeHtml(row.notes)}</td></tr>`).join("")}</tbody></table>`;
+    }
+    function clearInputs(){
+      editId = null;
+      els.add.textContent = "Add item";
+      els.description.value = "";
+      els.qty.value = "1";
+      els.lengthFt.value = "10";
+      els.notes.value = "";
+      renderDimensionFields();
+    }
+    function exportCsv(){
+      const rows = [["Description","Material","Shape","Size","Qty","Length ft","Each lb","Total lb","Linear ft","Surface ft2","Notes"], ...items.map(row => [row.description,MATERIALS[row.material].label,SHAPES[row.shape].label,row.dimensions,row.qty,row.lengthFt,row.eachWeight,row.totalWeight,row.linearFt,row.surface,row.notes])];
+      download("material-takeoff.csv", rows.map(r => r.map(cell => `"${String(cell ?? "").replace(/"/g,'""')}"`).join(",")).join("\n"), "text/csv");
+    }
+    function saveJson(){
+      download("material-takeoff.json", JSON.stringify({version:1,items},null,2), "application/json");
+    }
+    async function loadJsonFile(){
+      const file = els.json.files[0];
+      if(!file) return;
+      try{
+        const data = JSON.parse(await file.text());
+        if(!Array.isArray(data.items)) throw new Error("Missing items array");
+        items = data.items.map(row => calculateLine({
+          id: row.id || Date.now().toString(36) + Math.random().toString(36).slice(2),
+          description: row.description,
+          material: row.material,
+          shape: row.shape,
+          dims: row.dims || {},
+          qty: row.qty,
+          lengthFt: row.lengthFt,
+          notes: row.notes || ""
+        })).filter(row => MATERIALS[row.material] && SHAPES[row.shape]);
+        editId = null;
+        els.add.textContent = "Add item";
+        render();
+        els.status.innerHTML = `<strong>${items.length} saved items loaded.</strong>`;
+      }catch(error){
+        els.status.textContent = "That saved takeoff could not be loaded.";
+      }
+    }
+    function download(name,text,type){
+      const blob = new Blob([text], {type});
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 500);
+    }
+    function loadSample(){
+      items = [
+        calculateLine({id:"s1",description:"2 x 2 x .120 frame tube",material:"steel",shape:"rect_tube",dims:{width:2,height:2,wall:.12},qty:8,lengthFt:10,notes:"Rack frame members"}),
+        calculateLine({id:"s2",description:"3/16 base plates",material:"steel",shape:"plate",dims:{width:6,height:8,thickness:.1875},qty:12,lengthFt:0,notes:"Drill pattern not included"}),
+        calculateLine({id:"s3",description:"1-1/2 x 1-1/2 x 1/4 angle",material:"steel",shape:"angle",dims:{legA:1.5,legB:1.5,thickness:.25},qty:4,lengthFt:8,notes:"Clip angles"})
+      ];
+      els.status.innerHTML = "<strong>Sample takeoff loaded.</strong> Edit rows or add your own material.";
+      render();
+    }
+    els.shape.addEventListener("change", renderDimensionFields);
+    els.add.addEventListener("click", addItem);
+    els.sample.addEventListener("click", loadSample);
+    els.clearInputs.addEventListener("click", clearInputs);
+    els.print.addEventListener("click", () => window.print());
+    els.csv.addEventListener("click", exportCsv);
+    els.save.addEventListener("click", saveJson);
+    els.json.addEventListener("change", loadJsonFile);
+    els.clearAll.addEventListener("click", () => { items = []; editId = null; clearInputs(); render(); els.status.textContent = "Takeoff cleared."; });
+    renderDimensionFields();
+    render();
+  </script>
+</body>
+</html>

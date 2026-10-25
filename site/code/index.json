@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "fab_status",
+    "title": "Fab Status Flow (Apps Script)",
+    "page": "index.html"
+  },
+  {
+    "slug": "new_job_entry",
+    "title": "New Job Entry Form (HTML + GAS)",
+    "page": "index.html"
+  },
+  {
+    "slug": "quote_builder",
+    "title": "Quote Builder (HTML + GAS)",
+    "page": "index.html"
+  },
+  {
+    "slug": "cut_lenth_calculator",
+    "title": "Cut Length Calculator",
+    "page": "index.html"
+  },
+  {
+    "slug": "panel_layout",
+    "title": "Panel Layout Optimizer",
+    "page": "index.html"
+  }
+]

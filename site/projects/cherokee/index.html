@@ -1,0 +1,653 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>XJ Cherokee &ndash; Trail-Ready Overland Build &ndash; Follincraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="1992 Jeep Cherokee Sport XJ build on a 6.5-inch lift and 33s, focused on Arizona trail reliability, simple service, road manners, cargo use, and lessons." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="XJ Cherokee &ndash; Trail-Ready Overland Build &ndash; Follincraft">
+  <meta property="og:description" content="1992 Jeep Cherokee Sport XJ build on a 6.5-inch lift and 33s, focused on Arizona trail reliability, simple service, road manners, cargo use, and lessons.">
+  <meta property="og:url" content="https://follincraft.com/projects/cherokee/">
+  <meta property="og:image" content="https://follincraft.com/projects/cherokee/jeep1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XJ Cherokee &ndash; Trail-Ready Overland Build &ndash; Follincraft">
+  <meta name="twitter:description" content="1992 Jeep Cherokee Sport XJ build on a 6.5-inch lift and 33s, focused on Arizona trail reliability, simple service, road manners, cargo use, and lessons.">
+  <meta name="twitter:image" content="https://follincraft.com/projects/cherokee/jeep1.jpg">
+
+  <!-- Fonts + GLOBAL styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=hero-hyphen-1" />
+
+  <!-- Social -->
+  <link rel="canonical" href="https://follincraft.com/projects/cherokee/" />
+
+
+
+
+
+<!-- Favicons -->
+  <link rel="icon" href="../../assets/favicon.jpg" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.jpg" />
+  <link rel="alternate icon" type="image/png" href="../../assets/favicon-32x32.jpg" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg" sizes="180x180" />
+<link rel="manifest" href="../../site.webmanifest" />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="msapplication-TileColor" content="#0a0c0f" />
+
+  <style>
+    /* page frame to mirror Camp layout */
+    .proj-wrap{ margin-top:86px; }
+    .breadcrumbs{ color:var(--muted); }
+    .breadcrumbs a{ color:var(--muted); text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; }
+    .proj-title{ margin:2px 0 2px; }
+
+        .detail-deck{
+      max-width:760px;
+      margin:0 0 8px;
+      color:#d7dde3;
+      font-size:1.02rem;
+      line-height:1.55;
+    }
+/* Grid: media + overview then full-width below */
+    .project-grid{
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:start; margin-top:-2px;
+      grid-template-areas:"media side" "below below";
+    }
+    .project-grid>.left  { grid-area: media; display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.right { grid-area: side;  display:flex; flex-direction:column; gap:16px; }
+    .project-grid>.below { grid-area: below; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    @media (max-width:900px){
+      .project-grid{ grid-template-columns:1fr; grid-template-areas:"media" "side" "below"; }
+      .project-grid>.below{ grid-template-columns:1fr; }
+    }
+    .span-2{ grid-column:1 / -1; }
+
+    /* Hero + arrows + blur */
+    .hero-frame{
+      position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+      aspect-ratio:1/1; isolation:isolate; background:#000;
+    }
+    .hero-frame::before{
+      content:""; position:absolute; inset:0; z-index:0;
+      background-image:var(--hero); background-size:cover; background-position:center;
+      filter:blur(18px) saturate(1.2); transform:scale(1.06); opacity:1;
+    }
+    .hero-frame img{
+      position:relative; z-index:1; display:block; width:100%; height:100%;
+      object-fit:contain; background:transparent; user-select:none; -webkit-user-drag:none; cursor:zoom-in;
+    }
+    .hero-nav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+      background:rgba(0,0,0,.55); color:#fff; font-size:22px; line-height:1; display:grid; place-items:center;
+      cursor:pointer; z-index:2;
+    }
+    .hero-nav:hover{ background:rgba(0,0,0,.82); border-color:var(--accent); }
+    .hero-nav.prev{ left:8px; } .hero-nav.next{ right:8px; }
+
+    .thumbs{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thumbs a{ display:block; border-radius:10px; padding:3px; border:2px solid transparent; background:var(--panel); }
+    .thumbs a.active{ border-color:var(--accent); }
+    .thumbs img{ display:block; width:96px; height:68px; object-fit:cover; border-radius:8px; }
+    @media (max-width:480px){ .thumbs img{ width:74px; height:52px; } }
+
+    /* Chips + cards */
+    .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+    .chip-row .chip{ background:rgba(234,88,12,.12); border:1.5px solid var(--accent); color:#fff; padding:4px 10px; border-radius:10px; font-weight:600; font-size:.82rem; }
+    .card h5.section-title{ color:var(--accent); font-size:13px; margin:0 0 6px; letter-spacing:.06em; text-transform:uppercase; }
+    .project .card{ width:100%; max-width:none; height:auto !important; overflow:visible !important; border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:12px; }
+    .project .card *{ overflow:visible !important; }
+    .project .lead, .project p, .project li{ color:#fff; line-height:1.6; white-space:normal !important; text-overflow:clip !important; }
+    .project .card p + p{ margin-top:8px; }
+    .project .card ul{ list-style:disc outside; padding-left:22px; margin:0; display:block; }
+    .project .card li{ display:list-item !important; margin:8px 0; line-height:1.6; }
+    .project .card li::marker{ color:var(--accent); }
+
+    /* Overview formatting */
+    .card.overview .lede{ font-size:1.02rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .card.overview .keyline{ height:1px; background:linear-gradient(90deg,var(--accent),transparent); border:0; margin:10px 0; }
+    .card.overview .quick-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:8px 0 6px; }
+    @media (max-width:620px){ .card.overview .quick-grid{ grid-template-columns:1fr; } }
+    .card.overview .q{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 10px; line-height:1.5; }
+    .card.overview .sub{ color:var(--muted); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    .card.overview .pull{ margin:10px 0 6px; padding:10px 12px; border-left:3px solid var(--accent); background:rgba(234,88,12,.06); font-weight:600; }
+
+    /* Info grid */
+    .info-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media (max-width:600px){ .info-grid{ grid-template-columns:1fr; } }
+    .info{ border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 12px; }
+    .info .k{ color:var(--muted); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info .v{ color:#fff; font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:8px; }
+
+    /* Utilities */
+    .rib{ border-top:2px solid var(--accent); padding-top:10px; }
+    .tint{ background:rgba(255,255,255,.02); }
+
+    /* Two-up feature cards */
+    .two-up{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:820px){ .two-up{ grid-template-columns:1fr; } }
+
+    /* Accents */
+    .accent-border{ border:1.5px solid var(--accent) !important; border-radius:12px; }
+
+    /* Only this project URL should look like body text, not blue */
+    .plain-link:link,
+    .plain-link:visited{
+      color:#fff;
+      text-decoration:none;
+    }
+    .plain-link:hover,
+    .plain-link:focus{
+      color:var(--accent);
+      text-decoration:none;
+      border-bottom:1px dotted var(--accent);
+      outline:none;
+    }
+
+    /* CTA band */
+    .cta-band{
+      margin: 18px 0 0;
+      border-top: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      background: var(--panel);
+    }
+    .cta-band .inner{
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      padding: 0;
+    }
+    @media (max-width: 900px){
+      .cta-band .inner{ grid-template-columns: 1fr; }
+    }
+    .cta-band .wrap{ padding-top: 18px; padding-bottom: 18px; }
+    .cta-eyebrow{ color:#fff; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    .cta-title{ margin:0 0 8px; }
+    .cta-text{ color:#fff; margin:0; line-height:1.6; }
+    .cta-actions{ display:flex; gap:10px; align-items:center; }
+    .cta-actions .btn{ text-decoration:none; }
+    .cta-actions .ghost{ background:transparent; border:1px solid var(--accent); }
+  </style>
+  <script type="application/ld+json" data-seo="breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://follincraft.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://follincraft.com/projects/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "XJ Cherokee &ndash; Trail-Ready Overland Build &ndash; Follincraft",
+      "item": "https://follincraft.com/projects/cherokee/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><a href="../../index.html#about" style="text-decoration:none"><span class="pair"><span class="f">F</span><span class="c">C</span></span></a></div>
+        <div class="brand-wordmark">Follin<span style="color:var(--accent)">craft</span></div>
+      </div>
+                        <nav id="topNav">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../camp/index.html">Camp</a>
+        <a href="../../gear/index.html">Gear</a>
+        
+        <a href="../../repo/index.html">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-search-link" href="../../search/index.html" aria-label="Search" title="Search"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="M15 15l4.5 4.5"></path></svg></a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <nav class="mobile-links">
+      <a href="../../projects/index.html">Projects</a>
+      <a href="../../camp/index.html">Camp</a>
+      <a href="../../gear/index.html">Gear</a>
+      
+      <a href="../../repo/index.html">Tools</a>
+      <a href="#contact">Contact</a>
+        <a href="../../search/index.html">Search</a>
+    </nav>
+  </div>
+
+  <!-- Breadcrumbs + Title -->
+  <div class="wrap proj-wrap">
+    <div class="breadcrumbs lead"><a href="../../index.html">Home</a> / <a href="../../projects/index.html">Projects</a> / <span>XJ Cherokee &ndash; Trail-Ready Overland Build</span></div>
+    <h1 class="title proj-title">XJ Cherokee &ndash; Trail-Ready Overland Build</h1><p class="detail-deck">A second-pass XJ build shaped by the lessons of the first one: enough lift and tire for Arizona trails, but still simple enough to inspect, service, and drive home.</p>
+  </div>
+
+  <!-- MAIN -->
+  <main class="project">
+    <section class="project-page">
+      <div class="wrap">
+        <div class="project-grid">
+
+          <!-- LEFT - hero + thumbs -->
+          <div class="left">
+            <div class="hero-frame" id="heroFrame" style="--hero:url('jeep1.jpg')">
+              <button class="hero-nav prev" aria-label="Previous image">&lsaquo;</button>
+              <img id="heroImg" src="jeep1.jpg" alt="XJ Cherokee build - hero image" width="1278" height="621">
+              <button class="hero-nav next" aria-label="Next image">&rsaquo;</button>
+            </div>
+            <div class="thumbs" id="thumbs">
+              <a class="active" href="jeep1.jpg" aria-label="Hero"><img src="jeep1.jpg" alt="jeep1" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep2.jpg" aria-label="jeep2"><img src="jeep2.jpg" alt="jeep2" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep3.jpg" aria-label="jeep3"><img src="jeep3.jpg" alt="jeep3" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep4.jpg" aria-label="jeep4"><img src="jeep4.jpg" alt="jeep4" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep5.jpg" aria-label="jeep5"><img src="jeep5.jpg" alt="jeep5" loading="lazy" width="442" height="910"></a>
+              <a href="jeep6.jpg" aria-label="jeep6"><img src="jeep6.jpg" alt="jeep6" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep7.jpg" aria-label="jeep7"><img src="jeep7.jpg" alt="jeep7" loading="lazy" width="1278" height="621"></a>
+              <a href="jeep8.jpg" aria-label="Cherokee side view"><img src="jeep8.jpg" alt="Lifted Jeep Cherokee in the driveway from the rear quarter" loading="lazy" width="1600" height="777"></a>
+              <a href="jeep9.jpg" aria-label="Cherokee front view"><img src="jeep9.jpg" alt="Lifted Jeep Cherokee from the front quarter" loading="lazy" width="1600" height="777"></a>
+              <a href="jeep10.jpg" aria-label="Cherokee stance"><img src="jeep10.jpg" alt="Jeep Cherokee showing its suspension height, wheels, and stance" loading="lazy" width="1600" height="777"></a>
+              <a href="jeep11.jpg" aria-label="Cherokee camp canopy"><img src="jeep11.jpg" alt="Jeep Cherokee with its rear camp canopy opened" loading="lazy" width="1600" height="777"></a>
+            </div>
+          </div>
+
+          <!-- RIGHT - chips + overview -->
+          <div class="right">
+            <div class="chip-row">
+              <span class="chip">Build</span><span class="chip">Overland</span><span class="chip">Trail</span><span class="chip">Fabrication</span><span class="chip">Photography</span>
+            </div>
+
+            <article class="card overview">
+              <h5 class="section-title">Overview</h5>
+              <p class="lede">A trail XJ built to get out there and come back without turning every weekend into repair work.</p>
+              <p class="lead">
+                This 1992 Cherokee Sport sat on a 6.5-inch lift and 33s, but the goal was never a parking-lot flex rig. It was built to reach the places I actually wanted to go around Crown King and the back roads outside Phoenix, then drive home without a list of fresh problems.
+              </p>
+              <p class="lead">
+                It was my second Cherokee build, which meant the priorities were clearer: steering and suspension that could be checked quickly, tire clearance without pretending sheet metal is sacred, cargo space that stayed usable, and electrical/mechanical changes that did not create a scavenger hunt later. Reliability, serviceability, and clean execution stayed ahead of flash. The Jeep is gone now, but the way this one was approached still shows up in a lot of my later work.
+              </p>
+              <hr class="keyline">
+              <div class="quick-grid">
+                <div class="q"><div class="sub">Goal</div>A dependable weekend rig for Arizona trails that still behaves on the road.</div>
+                <div class="q"><div class="sub">Approach</div>Keep the platform mostly stock, add a sensible lift and tires, and favor parts and layouts that are easy to service.</div>
+              </div>
+              <p class="pull">Real trails over likes. Keep it simple and serviceable.</p>
+            </article>
+          </div>
+
+          <!-- BELOW - full width content -->
+          <div class="below">
+
+  <!-- AT A GLANCE &mdash; full width, first -->
+  <article class="card span-2">
+    <h5 class="section-title">At a Glance</h5>
+    <div class="info-grid">
+      <div class="info"><div class="k">Project</div><div class="v">Personal build</div></div>
+      <div class="info"><div class="k">Platform</div><div class="v">1992 Jeep Cherokee Sport (XJ)</div></div>
+      <div class="info"><div class="k">Setup</div><div class="v">6.5" suspension lift &middot; 33" tires &middot; mostly stock otherwise</div></div>
+      <div class="info"><div class="k">Focus</div><div class="v">Reliability &middot; Trail-ready &middot; Field-serviceable</div></div>
+      <div class="info"><div class="k">Status</div><div class="v">Sold</div></div>
+      <div class="info"><div class="k">Region</div><div class="v">Crown King + greater Phoenix area</div></div>
+    </div>
+  </article>
+
+  <!-- BUILD PRIORITIES -->
+  <article class="card rib tint span-2">
+    <h5 class="section-title">Build Priorities</h5>
+    <div class="two-up">
+      <div class="bygo-card">
+        <h6>What had to work</h6>
+        <ul class="lead">
+          <li>Clear 33-inch tires without turning normal driving into a chore.</li>
+          <li>Keep steering, suspension, brake, and driveline checks simple enough to do before a trip.</li>
+          <li>Protect usable cargo space for tools, recovery gear, water, and overnight kit.</li>
+          <li>Stay field-serviceable with ordinary tools instead of stacking custom one-off dependencies everywhere.</li>
+        </ul>
+      </div>
+      <div class="bygo-card">
+        <h6>What I avoided</h6>
+        <ul class="lead">
+          <li>Adding weight just because something looked more built.</li>
+          <li>Complicated accessory wiring without a clean way to inspect or isolate circuits.</li>
+          <li>Suspension choices that looked good parked but made highway miles or trail repairs worse.</li>
+          <li>Turning every future maintenance job into a fight with hidden fasteners and cramped routing.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- SYSTEM NOTES -->
+  <article class="card rib tint span-2">
+    <h5 class="section-title">System Notes</h5>
+    <div class="two-up">
+      <div class="bygo-card">
+        <h6>Suspension and tires</h6>
+        <ul class="lead">
+          <li>The 6.5-inch lift and 33s gave the Jeep the clearance and stance it needed for the kind of Arizona trails I cared about.</li>
+          <li>The job was not just height. It was keeping the Jeep predictable enough to drive to the trail, use all day, and drive home.</li>
+          <li>Clearance, steering feel, and inspection access mattered more than chasing the most extreme articulation photo.</li>
+        </ul>
+      </div>
+      <div class="bygo-card">
+        <h6>Reliability and trail use</h6>
+        <ul class="lead">
+          <li>Crown King and Phoenix-area back roads reward boring reliability more than fancy parts.</li>
+          <li>The build stayed mostly stock where stock still worked, because every extra system becomes one more thing to diagnose later.</li>
+          <li>Tools, spares, recovery gear, and simple routing were treated as part of the build, not an afterthought tossed in the back.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- MY TAKE (left) -->
+  <article class="card rib tint accent-border">
+    <h5 class="section-title">My Take</h5>
+    <p class="lead">
+      I like rigs that start every time and can be fixed with hand tools. This XJ was not built for flex shots. It was built to get me out there and back with enough confidence that the trail was the story, not the repair afterward.
+    </p>
+    <ul class="lead">
+      <li>Straightforward setup that works hard without drama.</li>
+      <li>Serviceable choices over trendy parts.</li>
+      <li>Clean routing and simple layouts that are easy to check on the trail.</li>
+      <li>Enough restraint that the Jeep still behaved like transportation, not just a project.</li>
+    </ul>
+  </article>
+
+  <!-- WHAT I'D DO NEXT (right) -->
+  <article class="card rib tint">
+    <h5 class="section-title">What I'd Do Next</h5>
+    <ul class="lead">
+      <li>Short monthly notes on trips, fixes, and lessons learned.</li>
+      <li>Add mini case studies per system (suspension, armor, cooling, electrical) with 3 photos + 3 bullets.</li>
+      <li>Keep growing the photo gallery and write quick captions for trail context.</li>
+    </ul>
+  </article>
+
+  <!-- HIGHLIGHTS &mdash; full width -->
+  <article class="card rib tint span-2">
+    <h5 class="section-title">Highlights</h5>
+    <div class="two-up">
+      <div class="bygo-card">
+        <h6>Suspension & Rolling Setup</h6>
+        <ul class="lead">
+          <li>6.5" lift with 33" tires</li>
+          <li>Geometry checked for street manners and trail control</li>
+          <li>Kept the rest simple to reduce failure points</li>
+        </ul>
+      </div>
+      <div class="bygo-card">
+        <h6>Trail-Ready Priorities</h6>
+        <ul class="lead">
+          <li>Reliability first, easy to service anywhere</li>
+          <li>Practical add-ons only as needed</li>
+          <li>Built for real Arizona miles around Phoenix and Crown King</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- LESSONS -->
+  <article class="card rib tint span-2">
+    <h5 class="section-title">Lessons From The Second XJ</h5>
+    <div class="two-up">
+      <div class="bygo-card">
+        <h6>What aged well</h6>
+        <ul class="lead">
+          <li>The simple parts philosophy. If a modification did not make the Jeep easier to use, fix, or trust, it had to justify itself.</li>
+          <li>Keeping the cargo area and systems readable. A clean layout is not vanity when you are tired, dusty, and trying to find a problem fast.</li>
+          <li>Building around actual Arizona trips instead of an imaginary use case.</li>
+        </ul>
+      </div>
+      <div class="bygo-card">
+        <h6>What I would document sooner now</h6>
+        <ul class="lead">
+          <li>Before/after photos for each system, not just finished glamour shots.</li>
+          <li>A running maintenance log: what loosened, what rubbed, what stayed fine, and what got changed after real trail miles.</li>
+          <li>Small captions for each photo so the build record teaches instead of only proving that the Jeep existed.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+          <!-- /below -->
+        </div>
+      </div>
+    </section>
+
+<!-- CTA BAND -->
+<section class="cta-band" role="region" aria-labelledby="ctaTitle">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <div class="cta-eyebrow">Like clean, reliable builds?</div>
+        <h3 id="ctaTitle" class="title cta-title">Let's plan something that actually gets used.</h3>
+        <p class="lead cta-text">
+          I focus on practical design - in the shop and on the trail. If you want help planning or documenting a build, I can help.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn ghost" href="#contact" aria-label="Start a project with Follincraft">Start a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="category-shell-contact">
+      <div class="wrap">
+        <div class="inline-contact-head">
+          <div>
+            <p class="section-kicker">Get in touch</p>
+            <h3 class="title">Contact</h3>
+            <p class="lead">Tell me what you're building, fixing, or trying to figure out. Fabrication work, websites, tools, camp systems, gear questions, and rough ideas are all welcome.</p>
+            <p class="lead section-note">The best first message says what you want done, what is in the way, and any links, photos, measurements, or deadlines I should know about.</p>
+          </div>
+          <div class="inline-contact-photo" aria-label="Chris Follin">
+            <img src="/assets/people/chris-follin-portrait.jpg" alt="Chris Follin" loading="lazy" width="900" height="900">
+          </div>
+        </div>
+        <form id="contactForm" action="https://formspree.io/f/xgvlgzzg" method="POST" class="contact-box">
+          <div class="row">
+            <input name="name" class="input" placeholder="Your name" required aria-required="true"  aria-label="Your name"/>
+            <input name="email" class="input" placeholder="Your email" type="email" required aria-required="true"  aria-label="Your email"/>
+          </div>
+          <textarea name="message" class="input" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
+          <input type="hidden" name="_subject" value="Follincraft: New message from site">
+          <input type="text" name="_gotcha" style="display:none" aria-label="Gotcha">
+          <button class="btn solid" type="submit">Send Message</button>
+          <p id="contactStatus" class="lead" role="status" aria-live="polite" style="display:none;margin-top:8px;"></p>
+          <p class="form-privacy-note">Messages are delivered through Formspree. <a href="../../privacy/index.html">Privacy details</a>.</p>
+          </form>
+      </div>
+    </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="category-shell-footer">
+    <div class="wrap category-shell-footer-grid">
+      <div>
+        <h3>About Follincraft</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">
+          Twenty-plus years of fabrication, design, code, and field notes in one place. Shop builds, camp-tested gear, and practical tools for making the next decision faster.
+        </p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p class="lead" style="font-size:14px;color:var(--muted)">Based in Phoenix, Arizona.</p>
+        <iframe
+          class="footer-map"
+          title="Phoenix, Arizona map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2740571041!2d-112.0205025!3d33.4483769!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed65b0c3e3%3A0x9d2a4d5d4c8c2b1e!2sPhoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/chrisfollin" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.instagram.com/follincraft/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="mailto:cfollin84@gmail.com" class="btn">Email Me</a>
+        </div>
+        <p class="lead" style="margin-top:16px;font-size:14px;color:var(--muted)">
+          Fabrication, code, camp systems, or the half-formed idea you want to make real.
+        </p>
+      </div>
+    </div>
+    <p class="footer-copy"><span>All Rights Reserved &copy; <span id="year"></span>. Designed and Built by Chris Follin</span></p>
+    <p class="footer-legal"><a href="../../privacy/index.html">Privacy</a> &middot; <a href="../../disclosure/index.html">Affiliate disclosure</a></p>
+</footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92);position:fixed;inset:0;z-index:9999;">
+    <button class="lb-close" id="lbClose" aria-label="Close" style="position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:20px; display:grid; place-items:center; cursor:pointer;">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" style="position:fixed; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&lsaquo;</button>
+    <img id="lbImg" src="jeep1.jpg" alt="Full-size image" style="max-width:92vw; max-height:90vh; object-fit:contain; user-select:none; -webkit-user-drag:none;" width="1278" height="621">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next" style="position:fixed; top:50%; transform:translateY(-50%); right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:rgba(0,0,0,.55); color:#fff; font-size:24px; display:grid; place-items:center; cursor:pointer;">&rsaquo;</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Slider + blur + thumbs + arrows + keys + swipe + lightbox
+    (function(){
+      const hero   = document.getElementById('heroImg');
+      const frame  = document.getElementById('heroFrame');
+      const thumbs = document.getElementById('thumbs');
+      const lb     = document.getElementById('lightbox');
+      const lbImg  = document.getElementById('lbImg');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbClose= document.getElementById('lbClose');
+
+      if(!hero || !frame || !thumbs) return;
+
+      // blur on first paint
+      frame.style.setProperty('--hero', `url('${hero.currentSrc || hero.src}')`);
+
+      // collect images from hero thumbs
+      const links = Array.from(thumbs.querySelectorAll('a'));
+      const imgs  = links.map(a => a.getAttribute('href'));
+      let i = Math.max(0, links.findIndex(a => a.classList.contains('active')));
+
+      function show(n){
+        i = (n + imgs.length) % imgs.length;
+        const url = imgs[i];
+        hero.src = url;
+        frame.style.setProperty('--hero', `url('${url}')`);
+        links.forEach(el => el.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+        if (lb.style.display === 'flex') lbImg.src = url;
+      }
+
+      // thumbs
+      thumbs.addEventListener('click', e => {
+        const a = e.target.closest('a'); if(!a) return;
+        e.preventDefault();
+        const idx = imgs.indexOf(a.getAttribute('href'));
+        if(idx >= 0) show(idx);
+      });
+
+      // arrows
+      frame.querySelector('.hero-nav.prev')?.addEventListener('click', () => show(i-1));
+      frame.querySelector('.hero-nav.next')?.addEventListener('click', () => show(i+1));
+
+      // keyboard
+      window.addEventListener('keydown', e => {
+        if (lb.style.display === 'flex') {
+          if (e.key === 'Escape') lb.style.display='none';
+          if (e.key === 'ArrowLeft')  show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        } else {
+          if (e.key === 'ArrowLeft')  show(i-1);
+          if (e.key === 'ArrowRight') show(i+1);
+        }
+      });
+
+      // swipe
+      let sx=0, sy=0, dx=0, dy=0, touching=false;
+      function start(t){ touching=true; sx=t.touches[0].clientX; sy=t.touches[0].clientY; dx=dy=0; }
+      function move(t){ if(!touching) return; dx=t.touches[0].clientX - sx; dy=t.touches[0].clientY - sy; }
+      function end(){ if(!touching) return; touching=false; if (Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)) { dx<0?show(i+1):show(i-1); } }
+      frame.addEventListener('touchstart', start, {passive:true});
+      frame.addEventListener('touchmove',  move,  {passive:true});
+      frame.addEventListener('touchend',   end,   {passive:true});
+
+      // lightbox
+      hero.addEventListener('click', () => { lbImg.src = links.length ? imgs[i] : hero.src; lb.style.display='flex'; });
+      lbClose.addEventListener('click', () => lb.style.display='none');
+      lb.addEventListener('click', e => { if (e.target === lb) lb.style.display='none'; });
+      lbPrev.addEventListener('click', () => show(i-1));
+      lbNext.addEventListener('click', () => show(i+1));
+    })();
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://follincraft.com/" },
+          { "@type":"ListItem", "position":2, "name":"Projects", "item":"https://follincraft.com/#projects" },
+          { "@type":"ListItem", "position":3, "name":"XJ Cherokee &ndash; Trail-Ready Overland Build", "item":"https://follincraft.com/projects/cherokee/" }
+        ]
+      },
+      {
+        "@type":"CreativeWork",
+        "name":"XJ Cherokee &ndash; Trail-Ready Overland Build",
+        "description":"1992 Jeep Cherokee Sport (XJ) on a 6.5\" lift with 33\" tires. Built for reliable Arizona miles. Since sold.",
+        "author":{"@type":"Person","name":"Chris Follin"},
+        "image":[
+          "https://follincraft.com/projects/cherokee/jeep1.jpg",
+          "https://follincraft.com/projects/cherokee/jeep2.jpg",
+          "https://follincraft.com/projects/cherokee/jeep3.jpg",
+          "https://follincraft.com/projects/cherokee/jeep4.jpg",
+          "https://follincraft.com/projects/cherokee/jeep5.jpg",
+          "https://follincraft.com/projects/cherokee/jeep6.jpg",
+          "https://follincraft.com/projects/cherokee/jeep7.jpg"
+        ],
+        "url":"https://follincraft.com/projects/cherokee/"
+      }
+    ]
+  }
+  </script>
+  <script src="../../data-camp.js?v=clean-camp-filters-16"></script>
+  <script src="../../data-gear.js?v=clean-camp-filters-17"></script>
+  <script src="../../data-projects.js?v=project-copy-1"></script>
+  <script src="../../related-content.js?v=no-decision-card-1"></script>
+</body>
+</html>

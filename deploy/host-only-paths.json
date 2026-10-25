@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "preserve_without_overwrite_or_delete": [
+    {
+      "path": "camp/doublesprings/doublesprings6.jpg",
+      "reason": "Existing live JPEG has malformed metadata segment lengths; local copy quarantined rather than published without a reliable metadata cleanup."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Taut-line hitch tutorial diagram</title>
+  <desc id="desc">Four step diagram showing a taut-line hitch tied on a guyline after passing around a stake.</desc>
+  <defs>
+    <style>
+      .bg{fill:#080b0f}.panel{fill:#11151b;stroke:#2b333d;stroke-width:2}.stake{fill:#75808c}.rope{fill:none;stroke:#6ec7ff;stroke-width:20;stroke-linecap:round;stroke-linejoin:round}.rope-edge{fill:none;stroke:#16202a;stroke-width:26;stroke-linecap:round;stroke-linejoin:round}.arrow{fill:none;stroke:#f97316;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.txt{fill:#f6f7f8;font:700 34px Inter,Arial,sans-serif}.cap{fill:#b9c0ca;font:600 22px Inter,Arial,sans-serif}.num{fill:#f97316;font:800 28px Inter,Arial,sans-serif}.label{fill:#f8d5c0;font:700 19px Inter,Arial,sans-serif}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#f97316"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="52" y="62" class="txt">Taut-line hitch</text>
+  <text x="52" y="98" class="cap">Two wraps inside toward the stake, one outside wrap, then slide to tension.</text>
+
+  <g transform="translate(50 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">1</text><text x="66" y="45" class="cap">Go around the stake</text>
+    <path class="stake" d="M410 92l35 0l-12 112h-12z"/>
+    <path class="rope-edge" d="M70 135h330c60 0 60 62 0 62h-150"/>
+    <path class="rope" d="M70 135h330c60 0 60 62 0 62h-150"/>
+  </g>
+
+  <g transform="translate(630 135)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">2</text><text x="66" y="45" class="cap">Wrap twice inside</text>
+    <path class="rope-edge" d="M70 135h225"/>
+    <path class="rope" d="M70 135h225"/>
+    <path class="rope-edge" d="M325 105c-70 0-70 60 0 60c70 0 70-60 0-60"/>
+    <path class="rope" d="M325 105c-70 0-70 60 0 60c70 0 70-60 0-60"/>
+    <path class="rope-edge" d="M325 155c-64 0-64 52 0 52c64 0 64-52 0-52h118"/>
+    <path class="rope" d="M325 155c-64 0-64 52 0 52c64 0 64-52 0-52h118"/>
+    <text x="260" y="226" class="label">two inside wraps</text>
+  </g>
+
+  <g transform="translate(50 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">3</text><text x="66" y="45" class="cap">Add the outside wrap</text>
+    <path class="rope-edge" d="M60 132h226"/>
+    <path class="rope" d="M60 132h226"/>
+    <path class="rope-edge" d="M320 104c-66 0-66 56 0 56c66 0 66-56 0-56"/>
+    <path class="rope" d="M320 104c-66 0-66 56 0 56c66 0 66-56 0-56"/>
+    <path class="rope-edge" d="M320 154c-60 0-60 48 0 48c60 0 60-48 0-48"/>
+    <path class="rope" d="M320 154c-60 0-60 48 0 48c60 0 60-48 0-48"/>
+    <path class="rope-edge" d="M320 202c55 0 76 38 120 24"/>
+    <path class="rope" d="M320 202c55 0 76 38 120 24"/>
+  </g>
+
+  <g transform="translate(630 440)">
+    <rect class="panel" width="520" height="245" rx="18"/>
+    <text x="28" y="45" class="num">4</text><text x="66" y="45" class="cap">Dress it, then slide to tighten</text>
+    <path class="stake" d="M440 88l35 0l-12 112h-12z"/>
+    <path class="rope-edge" d="M60 137h250c74 0 74 50 0 50c-66 0-66-48 0-48c66 0 66 48 0 48c58 0 76 34 126 16"/>
+    <path class="rope" d="M60 137h250c74 0 74 50 0 50c-66 0-66-48 0-48c66 0 66 48 0 48c58 0 76 34 126 16"/>
+    <path class="arrow" marker-end="url(#arrow)" d="M258 92c-65 12-110 16-158 12"/>
+  </g>
+</svg>
