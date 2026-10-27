@@ -1,0 +1,83 @@
+name: Publish Follincraft (preparation)
+run-name: Follincraft ${{ inputs.mode }} at ${{ inputs.commit_sha }}
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Plan, connection check, or separately approved isolated test; production blocked
+        type: choice
+        required: true
+        default: plan
+        options:
+          - plan
+          - connection-test
+          - isolated-write-test
+          - publish
+      commit_sha:
+        description: Full 40-character reviewed commit SHA on main
+        type: string
+        required: true
+      test_directory:
+        description: Only for an approved isolated write test; exact folder __follincraft_publish_test_20261024_cf01
+        type: string
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: follincraft-publishing
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      sha: ${{ steps.verify.outputs.sha }}
+    steps:
+      - name: Check out reviewed main history
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2, official action
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify immutable reviewed commit
+        id: verify
+        env:
+          APPROVED_SHA: ${{ inputs.commit_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$APPROVED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo 'A full commit SHA is required'; exit 1; }
+          git cat-file -e "$APPROVED_SHA^{commit}"
+          git merge-base --is-ancestor "$APPROVED_SHA" origin/main
+          git checkout --detach "$APPROVED_SHA"
+          echo "sha=$APPROVED_SHA" >> "$GITHUB_OUTPUT"
+          python3 deploy/test_ftps.py
+          python3 deploy/ftps.py plan
+  hosting-check:
+    if: inputs.mode == 'connection-test' || inputs.mode == 'isolated-write-test'
+    needs: validate
+    environment: follincraft-production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact reviewed version
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ needs.validate.outputs.sha }}
+          persist-credentials: false
+      - name: Run the explicitly selected hosting check
+        env:
+          FOLLINCRAFT_FTPS_USERNAME: ${{ secrets.FOLLINCRAFT_FTPS_USERNAME }}
+          FOLLINCRAFT_FTPS_PASSWORD: ${{ secrets.FOLLINCRAFT_FTPS_PASSWORD }}
+          FOLLINCRAFT_TEST_PATH: ${{ inputs.test_directory }}
+          CHECK_MODE: ${{ inputs.mode }}
+        run: python3 deploy/ftps.py "$CHECK_MODE"
+  production-blocked:
+    if: inputs.mode == 'publish'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stop before any production access
+        run: |
+          echo 'Production writes are blocked pending account-scope review, durable private backup/restore, isolated write-test approval, and approval of the exact production commit.'
+          exit 1
